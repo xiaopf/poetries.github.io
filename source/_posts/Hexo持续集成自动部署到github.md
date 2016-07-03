@@ -11,6 +11,18 @@ categories: Hexo
 
 建新的分支`：dev`：存放博客的源代码
 
+
+
+Git怎么推送本地分支到远程新分支上面去？
+
+`git push --force origin local_branch:remote_branch`
+
+这个操作，`local_branch`必须为你本地存在的分支，`remote_branch`为远程分支，如果`remote_branch`不存在则会自动创建分支。
+
+类似，`git push origin :remote_branch，local_branch`留空的话则是删除远程`remote_branch`分支。
+
+
+
 **这里是分支常用命令：**
 
 
