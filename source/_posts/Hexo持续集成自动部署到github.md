@@ -169,12 +169,12 @@ hexo-write.sh
 - 关联远程仓库 `git remote add origin git@github.com:poetries/poetries.github.io.git`
 - 提交本地修改，推送至github仓库。
 
-`$ git add` .
-`$ git commit -m "test travis"`
-`$ git push origin dev:dev`
+- `$ git add` .
+- `$ git commit -m "test travis"`
+- `$ git push origin dev:dev`
 
 
-以下自己在Ubuntu下写的一个很简单很简单的脚本，用来方便写作部署博客
+以下是自己在Ubuntu下写的一个很简单很简单的脚本，用来方便写作部署博客
 
 
 - [hexo-write.sh](https://github.com/poetries/poetries.github.io/blob/dev/hexo-write.sh)
