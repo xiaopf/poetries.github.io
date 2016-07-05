@@ -159,24 +159,30 @@ env:
 
 ---
 
+hexo-write.sh
+
 ### **三、本地操作**
 
-- 初始化本地仓库
-- 切换到项目根目录下，删除原来部署时产生的.git文件夹.
-- 执行初始化操作
-
-`$ git init`
-
-- 关联远程仓库
-
-将github仓库改为自己的
-$ `git remote add origin git@github.com:SeayXu/seayxu.github.io.git`
-推送仓库
-提交本地修改，推送至github仓库。
+- 把远程仓库源码下载下来新建新的分支dev  `git clone  -b dev https://github.com/poetries/poetries.github.io.git `
+- 切换到项目根目录下
+- 开始写作
+- 关联远程仓库 `git remote add origin git@github.com:poetries/poetries.github.io.git`
+- 提交本地修改，推送至github仓库。
 
 `$ git add` .
 `$ git commit -m "test travis"`
-`$ git push -u origin dev`
+`$ git push origin dev:dev`
+
+
+以下自己在Ubuntu下写的一个很简单很简单的脚本，用来方便写作部署博客
+
+
+- [hexo-write.sh](https://github.com/poetries/poetries.github.io/blob/dev/hexo-write.sh)
+- [hexo-deploy.sh](https://github.com/poetries/poetries.github.io/blob/dev/hexo-deploy.sh)
+
+
+---
+
 push本地的代码至远程仓库之后，在https://travis-ci.org后台查看相关情况。
 
 下面是成功的结果：
