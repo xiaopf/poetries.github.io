@@ -13,7 +13,7 @@ categories: Back-end
 
 - 安装完成后，重启终端并执行下列命令即可安装 Node.js
  - `nvm install 4`
-
+<!--more-->
 - 安装 Hexo
 
     - 所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo
