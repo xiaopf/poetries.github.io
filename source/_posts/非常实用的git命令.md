@@ -27,6 +27,7 @@ categories: VCS
  
 - `git status` //查看状态
 
+<!--more-->
 ---
 
 ### 三、git clone 和 git remote
