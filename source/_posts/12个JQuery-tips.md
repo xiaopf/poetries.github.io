@@ -1,7 +1,9 @@
 ---
 title: 12个JQuery-tips
 date: 2016-07-20 00:35:09
-tags: jQuery
+tags: 
+    - jQuery
+    - Snippet
 categories: Front-End
 ---
 
