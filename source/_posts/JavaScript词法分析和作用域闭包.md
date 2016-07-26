@@ -38,7 +38,11 @@ var num = 99;
 
  }
 
- t();*/
+ t();
+ 
+ ```
+ 
+ ```javascript
 
 /*var str = 'global';
 
@@ -58,7 +62,7 @@ function t(){
 
 }
 
-t();*/
+t();
 
 ```
 
