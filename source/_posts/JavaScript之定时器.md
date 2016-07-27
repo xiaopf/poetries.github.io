@@ -1,9 +1,10 @@
 ---
-title:JavaScript之定时器
-date: 2016-07-27 00:50:43
+title: JavaScript之定时器
+date: 2016-07-27 11:40:43
 tags: JavaScript
 categories: Front-End
 ---
+
 - window定时器
 
    - `setIntval`(表达式,毫秒)
