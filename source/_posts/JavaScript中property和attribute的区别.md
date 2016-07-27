@@ -18,7 +18,7 @@ categories: Front-End
 
 - 对于有些标准的特性的操作，`el.getAttribute 与 el.property `获取的值存在差异性。如: `href、src、value、style、onclic 等
 
- - `Demo1：`el.getAttribute 获取的是 href 的实际值，el.property 获取的是完整的 url
+- `Demo1：`el.getAttribute 获取的是 href 的实际值，el.property 获取的是完整的 url
 ```javascript
     alEl.href = '/';
     alert(alEl.getAttribute('href'));  // '/'
