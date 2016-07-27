@@ -1,6 +1,6 @@
 ---
-title:JavaScript之IE,火狐兼容事件对象
-date: 2016-07-27 00:50:43
+title: JavaScript之IE,火狐兼容事件对象
+date: 2016-07-27 11:40:43
 tags: JavaScript
 categories: Front-End
 ---
