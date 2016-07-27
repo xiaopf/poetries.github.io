@@ -76,6 +76,6 @@ alert( document.body.getAttribute('ABba') ) // 1
 
  - 在实际应用中，98% 的 DOM 操作都是使用 properties。
 
-- 总结：只有两种情形需要使用` attributes ：`
+ - 总结：只有两种情形需要使用` attributes ：`
    - 1) 自定义的 `HTML attributes`，因为它并不同步到` DOM property`
    - 2) 访问内置的` HTML attributes`（设置的初始值），这些 `attribute `不能从` property` 同步过来。例如` input `标签的 value 值
