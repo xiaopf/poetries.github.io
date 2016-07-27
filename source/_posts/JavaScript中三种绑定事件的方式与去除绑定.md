@@ -1,9 +1,10 @@
 ---
-title:JavaScript中三种绑定事件的方式与去除绑定
-date: 2016-07-27 00:50:43
+title: JavaScript中三种绑定事件的方式与去除绑定
+date: 2016-07-27 11:40:43
 tags: JavaScript
 categories: Front-End
 ---
+
 
 - 绑定事件的第1种办法：
   - 函数写在结构层里面
