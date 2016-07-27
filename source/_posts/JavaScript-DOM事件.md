@@ -1,10 +1,9 @@
 ---
-title:JavaScript-DOM事件
-date: 2016-07-27 11:30:43
+title: JavaScript-DOM事件
+date: 2016-07-27 11:40:43
 tags: JavaScript
 categories: Front-End
 ---
-
 
 - DOM 事件就是指 当页面上发生某一件事的时候激发某一个函数 相当监听/触发设备
  
