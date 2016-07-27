@@ -1,6 +1,6 @@
 ---
-title:JavaScript之捕捉模型与冒泡模型
-date: 2016-07-27 00:50:43
+title: JavaScript之捕捉模型与冒泡模型
+date: 2016-07-27 11:40:43
 tags: JavaScript
 categories: Front-End
 ---
