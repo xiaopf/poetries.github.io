@@ -2,8 +2,8 @@
 title: DIV+CSS整体回顾
 date: 2016-07-30 16:35:08
 tags: 
-	- CSS
-	- XHTML
+    - CSS
+    - XHTML
 categories: Front-End
 ---
 
@@ -13,7 +13,7 @@ categories: Front-End
 
 - 非可视化标签：`head`  `meta`  `style`  `scrpit.`..
 - 可视化标签：`img`  `div` `span` `a` `ul` `li`...
-- 只有可视化标签，才能用css改变它
+- 只有可视化标签，才能用`css`改变它
 - 单标签：`meta`  `link`  `base`  `img`  `input` `br` `hr`
 - 双标签：`html` `head` `body`  `div`  `a`  `p`  `span` ..`ul` `li` `ol` ` dl` ....
 
@@ -69,15 +69,15 @@ categories: Front-End
 
       
 ```css
- /**每个在页面开始加上这些初始化**/
+ /**些初始化样式**/
 
-  *{
-	padding:0;
-	margin:0;
+*{
+     padding:0;
+     margin:0;
   }
-  html,body{
-	width:100%;
-	height:100%;
+html,body{
+     width:100%;
+     height:100%;
   }
   ```
 ---
@@ -294,16 +294,16 @@ categories: Front-End
 - **1、无序列表**
 ```html
 <ul>
-		<li>
-			<ul>
-				<li></li>
-			</ul>
-		</li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-	</ul>
+	<li>
+		<ul>
+			<li></li>
+		</ul>
+	</li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
  ```
   - `list-style-type:` `none`没有` disc` 默认值 实心圆` circle`空心圆点 `square`实心方块
   - `list-style-image`:url(路劲)
@@ -402,6 +402,7 @@ categories: Front-End
 ```
 
 - **2、单行文本框：**
+
 ```html
 <input type="text" name="username" value="" id=""/>
 <input type="password" name="mima" value="请输入密码" id="">
@@ -434,6 +435,7 @@ categories: Front-End
 ```
 
 - **7、`label`标签** 
+
 ```html
  	 <input type="text" name="usernmae" id="man" value=""/><label for="man">男</label>
   	 <input type="text" name="usernmae" id="man" value=""/><label for="man">男</label>
@@ -441,6 +443,7 @@ categories: Front-End
  
 
 - **8、按钮：**
+
   - `<input type="button" name="" value="普通按钮"/>`
 
   - `<button type="">按钮</button>` 在`form`表单里面不常用，因为他的默认属性就是`submit type="submit/button/reset"`
@@ -455,6 +458,7 @@ categories: Front-End
 `<input type=reset"" name="" value="重置"/>`
 
 - **11、下拉菜单：**
+
 ```html
 <select disabled="disabled" name="" id="" size="2">
 		<option></option>
@@ -471,6 +475,8 @@ categories: Front-End
 ---
 
 ### 附录  总结
+
+---
 
 ![CSS权威指南](http://7xq6al.com1.z0.glb.clouddn.com/CSS%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97.png)
 
