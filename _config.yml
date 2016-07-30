@@ -5,14 +5,14 @@
 # Site
 title: Poetry's Blog
 subtitle: 聆听、感受、成长
-description: 记录生活学习中点滴，记录成长足迹
+description: 技术改变生活
 author: Poetry
 language: zh-Hans
 timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://poetries.github.io
+url: https://poetries.github.io/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -76,7 +76,7 @@ deploy:
 
 
 # title, chinese available
-links_title: 资源导航
+links_title: 常用链接
 
 # links
 links:
