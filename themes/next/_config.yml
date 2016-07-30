@@ -1,9 +1,9 @@
 # when running hexo in a subdirectory (e.g. domain.tld/blog), remove leading slashes ( "/archives" -> "archives" )
 menu:
   home: /
-  archives: /archives
-  categories: /categories
-  tags: /tags
+  archives: https://poetries.github.io/archives/
+  categories: https://poetries.github.io/categories/
+  tags: https://poetries.github.io/tags/
   #about: /about
   #commonweal: /404.html
 
