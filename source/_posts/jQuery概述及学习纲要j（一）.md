@@ -69,6 +69,14 @@ categories: Front-End
 	   - 组选择器：`$("seletor1,seletor2,seletor3")`----无数量限制，用逗号分割。
 ---
 
-### 附录：简易jQuery内存图
+### 附录：
+
+- 简易jQuery内存图
 
 ![](https://raw.githubusercontent.com/poetries/TZ-Front-End-Note/master/jQuery-star/images/1.png)
+
+---
+
+- jQuery学习大纲
+
+![](https://raw.githubusercontent.com/poetries/TZ-Front-End-Note/master/jQuery-star/images/jQuery%20%E7%B3%BB%E7%BB%9F%E6%95%99%E5%AD%A6%E8%AF%BE%E7%A8%8B.png)
