@@ -2,22 +2,36 @@
 title: IE6下常见的兼容性问题
 date: 2016-08-08 21:20:43
 tags: 
-	- CSS
-	- csshack
+  - CSS
+  - csshack
 categories: Front-End
 ---
 
+- **常见问题一**：在Ie6下，内容会把父元素设置好的宽高撑开。计算一定要精确
 
-- **常见问题一**：在IE6下，内容会把父元素设置好的宽高撑开
+```css
+.box{width:400px;}
+.left{width:200px;height:210px;background:red;float:left}
+.right{width:200px;float:right;overflow:hidden;}
+.div{width:180px;height:180px;background:blue;padding:25px;}
+```
 
-![](http://7xq6al.com1.z0.glb.clouddn.com/1-3.png)
+```html
+<div class="box">
+	<div class="left"></div>
+	<div class="right">
+		<div class="div"></div>
+	</div>
+</div>
+```
+<!--more-->
 
 ![](http://7xq6al.com1.z0.glb.clouddn.com/1-1.png)
 
 ![](http://7xq6al.com1.z0.glb.clouddn.com/1-2.png)
 
 ---
-<!--more-->
+
 - **常见问题二**：在IE6元素浮动，如果宽度需要内容撑开，里面块级元素的内容也要加浮动
 
 ```css
