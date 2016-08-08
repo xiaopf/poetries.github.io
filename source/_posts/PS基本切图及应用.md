@@ -21,7 +21,7 @@ categories: Designed
   - 拖动：`空格+鼠标拖动`'
   - 撤销：`Ctrl+z ctrl+alt+z`
   - 保存：`Ctrl+shift+Alt+s`
-
+<!--more-->
 - 配置工作环境：
 
 ![](http://7xq6al.com1.z0.glb.clouddn.com/ps1.png)
