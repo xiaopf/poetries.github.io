@@ -111,7 +111,7 @@ h3{height:30px;float:left;}
  
  ![](http://7xq6al.com1.z0.glb.clouddn.com/6-1.png)
  
-  ![]((http://7xq6al.com1.z0.glb.clouddn.com/6-2.png)
+ ![](http://7xq6al.com1.z0.glb.clouddn.com/6-2.png)
   
 ---
 
