@@ -5,7 +5,7 @@ tags: PHP
 categories: Back-end
 ---
 
-```
+```php
 //heredoc nowdoc 适用于定义大段文本
 header("Content-type:text/html;charset=utf-8");
 $str3 = <<<INFO
