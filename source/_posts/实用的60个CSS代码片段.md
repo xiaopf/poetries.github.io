@@ -9,7 +9,7 @@ categories: Front-End
 
 ---
 
-- 1、垂直对齐
+#### 1、垂直对齐
 
 如果你用`CSS`，则你会有困惑：我该怎么垂直对齐容器中的元素？现在，利用`CSS3`的`Transform`，可以很优雅的解决这个困惑：
 
@@ -28,7 +28,7 @@ categories: Front-End
 
 <!--more-->
 
-- 2、伸展一个元素到窗口高度
+#### 2、伸展一个元素到窗口高度
 
 在具体场景中，你可能想要将一个元素伸展到窗口高度，基本元素的调整只能调整容器的大小,因此要使一个元素伸展到窗口高度，
 我们需要伸展顶层元素：`html`和`body`:
@@ -47,7 +47,7 @@ div {
 }
 ```
 
-- 3、基于文件格式使用不同的样式
+#### 3、基于文件格式使用不同的样式
 
 为了更容易知道链接的目标，有时你想让一些链接看起来和其它的不同。下面的片段在文本链接前添加一个图标，对不同的资源使用不同的图标或图片：
 
@@ -72,7 +72,7 @@ a[href$=".pdf"]{
 
 [效果演示](http://runjs.cn/code/a3uuodvh)
 
-- 4、创建跨浏览器的图像灰度
+#### 4、创建跨浏览器的图像灰度
 
 灰度有时看起来简约和优雅，能为网站呈现更深层次的色调。在示例中，我们将对一个SVG图像添加灰度过滤：
 
@@ -94,7 +94,7 @@ img {
 }
 ```
 
-- 5、背景渐变动画
+#### 5、背景渐变动画
 
 `CSS`中最具诱惑的一个功能是能添加动画效果，除了渐变，你可以给背景色、透明度、元素大小添加动画。目前，你不能为渐变添加动画，但下面的代码可能有帮助。它通过改变背景位置，让它看起来有动画效果。
 
@@ -113,7 +113,7 @@ button:hover {
 [效果演示：](http://runjs.cn/code/zfbvqptv)
 
 
-- 6、CSS：表格列宽自适用
+#### 6、CSS：表格列宽自适用
 
 对于表格，当谈到调整列宽时，是比较痛苦的。然后，这里有一个可以使用的技巧：给`td`元素添加` white-space: nowrap;`能让文本正确的换行
 
@@ -125,7 +125,7 @@ td {
 
 [演示](http://runjs.cn/code/yghxo4ht)
 
-- 7、只在一边或两边显示盒子阴影
+#### 7、只在一边或两边显示盒子阴影
 
 如果你要一个盒阴影，试试这个技巧，能为任一边添加阴影。为了实现这个，首先定义一个有具体宽高的盒子，然后正确定位`:after`伪类。实现底边阴影的代码如下
 
@@ -157,7 +157,7 @@ td {
 ```
 [演示](http://runjs.cn/code/mlynp05w)
 
-- 8、包裹长文本
+#### 8、包裹长文本
 
 如果你碰到一个比自身容器长的文本，这个技巧对你很有用。在这个示例中，默认时，不管容器的宽度，文本都将水平填充。
 
@@ -176,7 +176,7 @@ pre {
 
 ![](https://sfault-image.b0.upaiyun.com/377/497/3774978981-56fe3acb088b0_articlex)
 
-- 9、制造模糊文本
+#### 9、制造模糊文本
 
 想要让文本模糊？可以使用`color`透明和`text-shadow`实现
 
@@ -189,7 +189,7 @@ pre {
 
 [演示](http://runjs.cn/code/cjwnefhi)
 
-- 10、用CSS动画实现省略号动画
+#### 10、用CSS动画实现省略号动画
 
 这个片段将帮助你制造一个`ellipsis`的动画，对于简单的加载状态是很有用的，而不用去使用`gif`图像。
 
@@ -212,7 +212,7 @@ pre {
 ```
 [演示](http://runjs.cn/code/ouap5vot)
 
-- 11、样式重置
+#### 11、样式重置
 
 ```css
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -239,7 +239,7 @@ img { border: 0; max-width: 100%; }
 p { font-size: 1.2em; line-height: 1.0em; color: #333; }
 ```
 
-- 12、典型的CSS清除浮动
+#### 12、典型的CSS清除浮动
 
 ```css
 .clearfix:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
@@ -248,7 +248,7 @@ html[xmlns] .clearfix { display: block; }
 * html .clearfix { height: 1%; }
 ```
 
-- 13、新版清除浮动（2011）
+#### 13、新版清除浮动（2011）
 
 ```css
 .clearfix:before, .container:after { content: ""; display: table; }
@@ -257,7 +257,7 @@ html[xmlns] .clearfix { display: block; }
 .clearfix { zoom: 1; }
 ```
 
-- 14、跨浏览器的透明
+#### 14、跨浏览器的透明
 
 ```css
 .transparent {
@@ -268,7 +268,7 @@ html[xmlns] .clearfix { display: block; }
 }
 ```
 
-- 15、CSS引用模板
+#### 15、CSS引用模板
 
 ```css
 blockquote {
@@ -291,7 +291,7 @@ blockquote p {
 }
 ```
 
-- 16、个性圆角
+#### 16、个性圆角
 
 ```css
 #container {
@@ -313,7 +313,7 @@ blockquote p {
 }
 ```
 
-- 17、通用媒体查询
+#### 17、通用媒体查询
 
 ```css
 /* Smartphones (portrait and landscape) ----------- */
@@ -355,7 +355,7 @@ and (min-device-width : 320px) and (max-device-width : 480px) {
 }
 ```
 
-- 18、现代字体栈
+#### 18、现代字体栈
 
 ```css
 /* Times New Roman-based serif */
@@ -376,7 +376,7 @@ font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvet
 font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
 ```
 
-- 19、自定义文本选择
+#### 19、自定义文本选择
 
 ```css
 ::selection { background: #e2eae2; }
@@ -384,7 +384,7 @@ font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucid
 ::-webkit-selection { background: #e2eae2; }
 ```
 
-- 20、为logo隐藏H1
+#### 20、为logo隐藏H1
 
 ```css
 h1 {
@@ -396,7 +396,7 @@ h1 {
 }
 ```
 
-- 21、图片边框偏光
+#### 21、图片边框偏光
 
 ```css
 img.polaroid {
@@ -411,7 +411,7 @@ img.polaroid {
 }
 ```
 
-- 22、锚链接伪类
+#### 22、锚链接伪类
 
 ```css
 a:link { color: blue; }
@@ -420,7 +420,7 @@ a:hover { color: red; }
 a:active { color: yellow; }
 ```
 
-- 23、奇特的CSS引用
+#### 23、奇特的CSS引用
 
 ```css
 .has-pullquote:before {
@@ -457,7 +457,7 @@ a:active { color: yellow; }
 }
 ```
 
-- 24、CSS3：全屏背景
+#### 24、CSS3：全屏背景
 
 ```css
 html { 
@@ -469,7 +469,7 @@ html {
 }
 ```
 
-- 25、内容垂直居中
+#### 25、内容垂直居中
 
 ```css
 .container {
@@ -479,13 +479,13 @@ html {
 }
 ```
 
-- 26、强制出现垂直滚动条
+#### 26、强制出现垂直滚动条
 
 ```css
 html { height: 101% }
 ```
 
-- 27、CSS3渐变模板
+#### 27、CSS3渐变模板
 
 ```css
 #colorbox {
@@ -499,7 +499,7 @@ html { height: 101% }
 }
 ```
 
-- 28、@font-face模板
+#### 28、@font-face模板
 
 ```css
 @font-face {
@@ -515,7 +515,7 @@ body {
 }
 ```
 
-- 29、缝合CSS3元素
+#### 29、缝合CSS3元素
 
 ```css
 p {
@@ -553,7 +553,7 @@ p a:hover, p a:focus, p a:active {
 }
 ```
 
-- 30、CSS3 斑马线
+#### 30、CSS3 斑马线
 
 ```css
 tbody tr:nth-child(odd) {
@@ -561,7 +561,7 @@ tbody tr:nth-child(odd) {
 }
 ```
 
-- 31、有趣的&
+#### 31、有趣的&
 
 ```css
 .amp {
@@ -571,7 +571,7 @@ tbody tr:nth-child(odd) {
 }
 ```
 
-- 32、大字段落
+#### 32、大字段落
 
 ```css
 p:first-letter{
@@ -584,7 +584,7 @@ p:first-letter{
 }
 ```
 
-- 33、内部CSS3 盒阴影
+#### 33、内部CSS3 盒阴影
 
 ```css
 #mydiv { 
@@ -594,7 +594,7 @@ p:first-letter{
 }
 ```
 
-- 34、外部CSS3 盒阴影
+#### 34、外部CSS3 盒阴影
 
 ```css
 #mydiv { 
@@ -604,7 +604,7 @@ p:first-letter{
 }
 ```
 
-- 35、三角形列表项目符号
+#### 35、三角形列表项目符号
 
 ```css
 ul {
@@ -626,7 +626,7 @@ li:before {
 }
 ```
 
-- 36、固定宽度的居中布局
+#### 36、固定宽度的居中布局
 
 ```css
 #page-wrap {
@@ -635,7 +635,7 @@ li:before {
 }
 ```
 
-- 37、CSS3 列文本
+#### 37、CSS3 列文本
 
 ```css
 #columns-3 {
@@ -649,7 +649,7 @@ li:before {
 }
 ```
 
-- 38、CSS固定页脚
+#### 38、CSS固定页脚
 
 ```css
 #footer {
@@ -667,7 +667,7 @@ li:before {
 }
 ```
 
-- 39、IE6的PNG透明修复
+#### 39、IE6的PNG透明修复
 
 ```css
 .bg {
@@ -688,7 +688,7 @@ img, .png {
 }
 ```
 
-- 40、跨浏览器设置最小高度
+#### 40、跨浏览器设置最小高度
 
 ```css
 #container {
@@ -698,7 +698,7 @@ img, .png {
 }
 ```
 
-- 41、CSS3 鲜艳的输入
+#### 41、CSS3 鲜艳的输入
 
 ```css
 input[type=text], textarea {
@@ -719,7 +719,7 @@ input[type=text]:focus, textarea:focus {
 }
 ```
 
-- 42、基于文件类型的链接样式
+#### 42、基于文件类型的链接样式
 
 ```css
 /* external links */
@@ -739,7 +739,7 @@ a[href$=".pdf"] {
 }
 ```
 
-- 43、强制换行
+#### 43、强制换行
 
 ```css
 pre {
@@ -751,7 +751,7 @@ pre {
 }
 ```
 
-- 44、在可点击的项目上强制手型
+#### 44、在可点击的项目上强制手型
 
 ```css
 a[href], input[type='submit'], input[type='image'], label[for], select, button, .pointer {
@@ -759,7 +759,7 @@ a[href], input[type='submit'], input[type='image'], label[for], select, button, 
 }
 ```
 
-- 45、网页顶部盒阴影
+#### 45、网页顶部盒阴影
 
 ```css
 body:before {
@@ -776,7 +776,7 @@ body:before {
 }
 ```
 
-- 46、CSS3对话气泡
+#### 46、CSS3对话气泡
 
 ```css
 .chat-bubble {
@@ -817,7 +817,7 @@ body:before {
 }
 ```
 
-- 47、H1-H5默认样式
+#### 47、H1-H5默认样式
 
 ```css
 h1,h2,h3,h4,h5{
@@ -845,7 +845,7 @@ h5{
 }
 ```
 
-- 48、纯CSS背景噪音
+#### 48、纯CSS背景噪音
 
 ```css
 body {
@@ -854,7 +854,7 @@ body {
 }
 ```
 
-- 49、持久的列表排序
+#### 49、持久的列表排序
 
 ```css
 ol.chapters {
@@ -879,7 +879,7 @@ ol.continue {
 }
 ```
 
-- 50、CSS悬浮提示文本
+#### 50、CSS悬浮提示文本
 
 ```css
 a { 
@@ -945,7 +945,7 @@ a[data-tooltip]:active:before {
 }
 ```
 
-- 51、深灰色的圆形按钮
+#### 51、深灰色的圆形按钮
 
 ```css
 .graybtn {
@@ -981,7 +981,7 @@ a[data-tooltip]:active:before {
 }
 ```
 
-- 52、在可打印的网页中显示URLs
+#### 52、在可打印的网页中显示URLs
 
 ```css
 @media print   {  
@@ -991,7 +991,7 @@ a[data-tooltip]:active:before {
 }
 ```
 
-- 53、禁用移动Webkit的选择高亮
+#### 53、禁用移动Webkit的选择高亮
 
 ```css
 body {
@@ -1004,7 +1004,7 @@ body {
 }
 ```
 
-- 54、CSS3 圆点图案
+#### 54、CSS3 圆点图案
 
 ```css
 body {
@@ -1014,7 +1014,7 @@ body {
 }
 ```
 
-- 55、CSS3 方格图案
+#### 55、CSS3 方格图案
 
 ```css
 body {
@@ -1026,7 +1026,7 @@ body {
 }
 ```
 
-- 56、Github的fork色带
+#### 56、Github的fork色带
 
 ```css
 .ribbon {
@@ -1057,7 +1057,7 @@ body {
 }
 ```
 
-- 57、CSS font属性缩写
+#### 57、CSS font属性缩写
 
 ```css
 p {
@@ -1065,7 +1065,7 @@ p {
 }
 ```
 
-- 58、论文页面的卷曲效果
+#### 58、论文页面的卷曲效果
 
 ```css
 ul.box {
@@ -1120,7 +1120,7 @@ ul.box li:after {
 }
 ```
 
-- 59、鲜艳的锚链接
+#### 59、鲜艳的锚链接
 
 ```css
 a {
@@ -1149,7 +1149,7 @@ a:hover, .glow {
 }
 ```
 
-- 60、带CSS3特色的横幅显示
+#### 60、带CSS3特色的横幅显示
 
 ```css
 .featureBanner {
