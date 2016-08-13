@@ -119,8 +119,9 @@ baidu_analytics: 40b1f89aa80f2527b3db779c6898c879
 # JiaThis 分享服务
 jiathis: true
 
+
 # Swiftype Search Keyswiftype_key:
-Keyswiftype_key: PFwUDFwjd9mEh8mYeCTY
+swiftype_key: EbTRx7Hz-QvGDpgPn3Mk
 
 # 站点起始时间
 since: 2016
