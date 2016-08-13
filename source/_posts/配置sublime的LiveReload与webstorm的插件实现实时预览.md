@@ -50,10 +50,9 @@ git clone https://github.com/Grafikart/ST3-LiveReload.git LiveReload
 
 - `sublime`配上美美的透明插件，是不是很酷呢，再也不用来回切换了
 
-- 透明插件：`SublimeTextTrans`
+- 透明插件：[SublimeTextTrans](https://github.com/vhanla/SublimeTextTrans)
 
 ![](http://7xq6al.com1.z0.glb.clouddn.com/snapshot.png)
-
 
 
 ---
