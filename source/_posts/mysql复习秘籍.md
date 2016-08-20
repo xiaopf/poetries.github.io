@@ -5,4 +5,4 @@ tags: Mysql
 categories: DataBase
 ---
 
-[Mysql复习重要资料](http://jinggguanliuye.github.io/)
+[Mysql复习重要资料](https://jinggguanliuye.github.io/)
