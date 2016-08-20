@@ -6,4 +6,4 @@ categories: DataBase
 ---
 
 
-[mysql学习笔记整理](http://jinggguanliuye.github.io/studynote/index.html)
+[mysql学习笔记整理](https://jinggguanliuye.github.io/studynote/index.html)
