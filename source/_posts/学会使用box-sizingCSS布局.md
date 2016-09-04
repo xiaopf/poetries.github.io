@@ -1,5 +1,5 @@
 ---
-title: box-sizing让CSS布局更直观
+title: 学会使用box-sizingCSS布局
 date: 2016-09-04 17:20:08
 tags: CSS
 categories: Front-End
@@ -28,7 +28,7 @@ categories: Front-End
 
 - 语法：`box-sizing:`  `content-box` | `border-box` | `inherit`;
 
-- 与上面不同的是，当你设置`box-sizing:border-box`以后，这就能达到你想要的目的。例如，上面我们想要一个宽度为`200px`的盒子，那么我们直接设置宽度为`200px``。是不是看起来清晰多了。当再设置它的左右边框和左右补白后，它的内容区会自动调整。这可能更直接和一目了然。`CSS`代码如下：
+- 与上面不同的是，当你设置`box-sizing:border-box`以后，这就能达到你想要的目的。例如，上面我们想要一个宽度为`200px`的盒子，那么我们直接设置宽度为`200px`。是不是看起来清晰多了。当再设置它的左右边框和左右补白后，它的内容区会自动调整。这可能更直接和一目了然。`CSS`代码如下：
 
 ```css
 div {
