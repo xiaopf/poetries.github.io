@@ -54,7 +54,8 @@ div p{
 - html代码的文档树结构如图
 
 ![](http://7xq6al.com1.z0.glb.clouddn.com/div.png)
-html
+
+```html
 <div class="mainDiv">
     我是主DIV
     <div class="son">儿子
@@ -75,7 +76,6 @@ html
 	height:40px;
 }
 .mainDiv > div{background:green;}
-
 ```
 
 ![](http://7xq6al.com1.z0.glb.clouddn.com/%E5%AD%90%E4%BB%A3.png)
