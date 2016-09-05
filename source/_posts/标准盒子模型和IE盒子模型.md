@@ -4,7 +4,8 @@ date: 2016-09-05 18:50:32
 tags: CSS
 categories: Front-End
 ---
-###
+
+### 标准盒子模型
 
 - 盒子模型是css中一个重要的概念，理解了盒子模型才能更好的排版。其实盒子模型有两种，分别是 ie 盒子模型和标准 w3c 盒子模型。他们对盒子模型的解释各不相同，先来看看我们熟知的标准盒子模型
 
@@ -20,7 +21,6 @@ categories: Front-End
 
 - 从上图可以看到 `ie `盒子模型的范围也包括 `margin`、`border`、`padding`、`content`
 - 和标准 `w3c` 盒子模型不同的是：`ie` 盒子模型的 `content` 部分包含了 `border `和 `padding`
-
 - `IE`盒子模型`width` = `padding`+`border`+`内容`
 - 标准盒子模型 = 内容的宽度（不包含`border`+`padding`）
 
@@ -35,7 +35,7 @@ categories: Front-End
 
 - 再用 jquery 做的例子来证实一下
 
-```
+```html
 <html>
 <head>
 <title>你用的盒子模型是？</title>
@@ -52,7 +52,7 @@ document.write("您的页面目前支持："+sbox+"盒子模型");
 
 - 　上面的代码没有加上 `doctype` 声明，在 `ie` 浏览器中显示  `ie`盒子模型，在 ff 浏览器中显示“标准`w3c` 盒子模型”。
 
-```
+```html
 <!doctype html public "-//w3c//dtd xhtml 1.0 transitional//en" "http://www.w3.org/tr/xhtml1/dtd/xhtml1-transitional.dtd">
 <html>
 <head>
@@ -69,6 +69,4 @@ document.write("您的页面目前支持："+sbox+"盒子模型");
 ```
 
 - 　代码2 与代码1 唯一的不同的就是顶部加了 `doctype `声明。在所有浏览器中都显示“标准 `w3c `盒子模型”
-
-
 -  所以为了让网页能兼容各个浏览器，让我们用标准 `w3c` 盒子模型
