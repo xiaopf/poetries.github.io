@@ -9,7 +9,7 @@ categories: Front-End
 
 ### 第一部分 HTML
 
-
+<br>
 ---
 #### 第一章 职业规划和前景
 ---
@@ -35,9 +35,9 @@ categories: Front-End
     - 负责外观的`css`（层叠样式表）
     - 负责行为的`js`
     - `ps`切图
-
-  - 第二、分解目标（起步阶段、提升阶段、成型阶段）
 <!--more-->
+  - 第二、分解目标（起步阶段、提升阶段、成型阶段）
+
     - 起步阶段：
         - 基本知识的掌握
         - 常用工具的掌握
@@ -246,20 +246,21 @@ onmouseover=this.stop()  onmouseover=this.start()  scrollamout="1"(滚动速度)
   </ul>
  </li>
  <li>果汁</li>
- <li>牛奶</li></ol>5、定义列表
+ <li>牛奶</li></ol>
 ```
+- 定义列表
+  - 定义列表不仅仅是一列项目，而是项目及其注释的组合。定义列表以 `<dl>` 标签开始。每个定义列表项以 `<dt> `开始。每个自定义列表项的定义以 `<dd>` 开始。
 
-- 定义列表不仅仅是一列项目，而是项目及其注释的组合。定义列表以 `<dl>` 标签开始。每个定义列表项以 `<dt> `开始。每个自定义列表项的定义以 `<dd>` 开始。
 ```
 <dl>  
      <dt>pc网页制作</dt>  
-     <dd>学费1580，学习DIV+CSS JS JQ 项目实战</dd>  
+     <dd>学习DIV+CSS JS JQ 项目实战</dd>  
      <dt>手机网页制作</dt>  
-     <dd>内部VIP学费900，非VIP学1380</dd>
+     <dd>手机网页制作实战</dd>
 </dl>
 ```
 
-- `dd`是对`dt`的解释
+  - `dd`是对`dt`的解释
 
     - `< dl>< /dl>`用来创建一个普通的列表,
     - `< dt>< /dt>`用来创建列表中的上层项目，
@@ -484,6 +485,143 @@ onmouseover=this.stop()  onmouseover=this.start()  scrollamout="1"(滚动速度)
 		- 如果是合并横排的就是合并列（`colspan`）
 
 ---
+
+- 行内元素和快级元素小结
+
+ - 一、**块级元素**：block element
+
+   - 每个块级元素默认占一行高度，一行内添加一个块级元素后无法一般无法添加其他元素（`float`浮动后除外）。两个块级元素连续编辑时，会在页面自动换行显示。块级元素一般可嵌套块级元素或行内元素；
+   - 块级元素一般作为容器出现，用来组织结构，但并不全是如此。有些块级元素，如只能包含块级元素。
+
+   - `DIV` 是最常用的块级元素，元素样式的`display:block`都是块级元素。它们总是以一个块的形式表现出来，并且跟同级的兄弟块依次竖直排列，左右撑满。
+
+ - 二、**行内元素**：inline element
+
+   - 也叫内联元素、内嵌元素等；行内元素一般都是基于语义级(semantic)的基本元素，只能容纳文本或其他内联元素，常见内联元素 “a”。比如 `SPAN `元素，`IFRAME`元素和元素样式的`display : inline`的都是行内元素。例如文字这类元素，各个字母 之间横向排列，到最右端自动折行。
+
+ - 三、**block（块）元素的特点:**
+
+   - ①、总是在新行上开始；
+   - ②、高度，行高以及外边距和内边距都可控制；
+   - ③、宽度缺省是它的容器的100%，除非设定一个宽度。
+   - ④、它可以容纳内联元素和其他块元素
+
+ - 四、**inline元素的特点**
+
+   - ①、和其他元素都在一行上；
+   - ②、高，行高及外边距和内边距不可改变；
+   - ③、宽度就是它的文字或图片的宽度，不可改变
+   - ④、内联元素只能容纳文本或者其他内联元素
+
+ - 对行内元素，需要注意如下:
+
+> 设置宽度width 无效。 设置高度height 无效，可以通过line-height来设置。 设置margin
+> 只有左右margin有效，上下无效。
+> 设置padding只有左右padding有效，上下则无效。注意元素范围是增大了，但是对元素周围的内容是没影响的。
+
+- 五、**常见的块状元素**
+
+> address – 地址
+blockquote – 块引用
+center – 举中对齐块
+dir – 目录列表
+div – 常用块级容易，也是CSS layout的主要标签
+dl – 定义列表
+fieldset – form控制组
+form – 交互表单
+h1 – 大标题
+h2 – 副标题
+h3 – 3级标题
+h4 – 4级标题
+h5 – 5级标题
+h6 – 6级标题
+hr – 水平分隔线
+isindex – input prompt
+menu – 菜单列表
+noframes – frames可选内容，（对于不支持frame的浏览器显示此区块内容
+noscript – 可选脚本内容（对于不支持script的浏览器显示此内容）
+ol – 有序表单
+p – 段落
+pre – 格式化文本
+table – 表格
+ul – 无序列表
+
+- 六、**常见的内联元素**
+
+> a – 锚点
+abbr – 缩写
+acronym – 首字
+b – 粗体(不推荐)
+bdo – bidi override
+big – 大字体
+br – 换行
+cite – 引用
+code – 计算机代码(在引用源码的时候需要)
+dfn – 定义字段
+em – 强调
+font – 字体设定(不推荐)
+i – 斜体
+img – 图片
+input – 输入框
+kbd – 定义键盘文本
+label – 表格标签
+q – 短引用
+s – 中划线(不推荐)
+samp – 定义范例计算机代码
+select – 项目选择
+small – 小字体文本
+span – 常用内联容器，定义文本内区块
+strike – 中划线
+strong – 粗体强调
+sub – 下标
+sup – 上标
+textarea – 多行文本输入框
+tt – 电传文本
+u – 下划线
+
+- 七，**可变元素**
+
+ - 可变元素为根据上下文语境决定该元素为块元素或者内联元素。
+  - applet - java applet
+  - button - 按钮
+  - del - 删除文本
+  - iframe - inline frame
+  - ins - 插入的文本
+  - map - 图片区块(map)
+  - object - object对象
+  - script - 客户端脚本
+ 
+- 八、**行内元素与块级元素有什么不同**
+
+ - 区别一：
+
+   - 块级：块级元素会独占一行，默认情况下宽度自动填满其父元素宽度
+
+   - 行内：行内元素不会独占一行，相邻的行内元素会排在同一行。其宽度随内容的变化而变化。
+
+ - 区别二：
+
+   - 块级：块级元素可以设置宽高
+
+   - 行内：行内元素不可以设置宽高
+
+ - 区别三：
+
+   - 块级：块级元素可以设置`margin`，`padding`
+
+   - 行内：行内元素水平方向的`margin-left;` `margin-right;`
+
+ - `padding-left;` `padding-right`;可以生效。但是竖直方向的`margin-bottom`; `margin-top`; `padding-top`; `padding-bottom`;却不能生效。
+ 
+  - 区别四：
+
+   - 块级：`display:block`;
+
+   - 行内：`display:inline`;
+  
+- 可以通过修改display属性来切换块级元素和行内元素
+
+---
 **HTML部分导图总结**
 
 ---
@@ -511,14 +649,49 @@ onmouseover=this.stop()  onmouseover=this.start()  scrollamout="1"(滚动速度)
 
    - 盒子名或者标签名{属性:值;}
 
-   - **三种颜色表示方法：**
-        - 英文单词
-        - `#`开头`16`进制`6`位数（两两相同可以缩写）
-        - `rgb(0,0,0)`
+   - **CSS中几种颜色的表示方法**
+      - **用颜色名表示**
+        - 有17个预先确定的颜色，它们是
+           - `aqua`, `black`, `blue`, `fuchsia`, `gray`, `green`, `lime`, `maroon`, `navy`, 
+　　`olive`, `orange,` `purpl`, `red`, `silver`, `teal`, `white`, and `yellow`
 
-- 内部样式表（单单做一个页面时）
+    - **用十六进制的颜色值表示(红、绿、蓝)**
+      - `#FF0000`或者`#F00 ` 
+
+    - **用rgb(r,g,b)函数表示**
+      - 如：`rgb(255,255,0)`
+
+    - **用hsl(Hue,Saturation,Lightness)函数表示（色调、饱和度、亮度)**
+
+      - 如：`hsl(120,100%,100%)`,色调0代表红色，`120`代表绿色，`240`代表 
+蓝色 
+
+     - **用`rgba(r,g,b,a)`函数表示 **
+       - 其中`a`表示的是改颜色的透明度，取值范围是`0~1`，其中`0`代表完全透明
+
+    - **用hsla(Hue,Saturation,Lightness,alpha)函数表示**
+      - 色调、饱和度、亮度、透明度 
+  - 例子
+
+```html
+   <div style="position:absolute;top:0px">
+		<div style="background-color:gray;">background-color:gray</div>
+		<div style="background-color:#F00;">background-color:#F00</div>
+		<div style="background-color:#ffff00;">background-color:#ffff00</div>
+		<div style="background-color:rgb(255,0,255);">background-color:rgb(255,0,255)</div>
+		<div style="background-color:hsl(120,80%,50%);">background-color:hsl(120,80%,50%)</div>
+		<div style="background-color:rgba(255,0,255,0.5);">background-color:rgba(255,0,255,0.5)</div>
+		<div style="background-color:hsla(120,80%,50%,0.5);">background-color:hsla(120,80%,50%,0.5)</div>
+	</div>
+```
+
+![](http://upload-images.jianshu.io/upload_images/1480597-39e61a813f637282.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+- 内部样式表（单做一个页面时）
     - 当单个页面需要设置样式时，就应该使用内部样式表。
     - 使用 `<style></style>`标签在文档`<head></head>`里面定义内部样式表
+
 ```
 <head>
  <style type="text/css" >
@@ -552,6 +725,22 @@ onmouseover=this.stop()  onmouseover=this.start()  scrollamout="1"(滚动速度)
     - 兼容性的区别，因`@import``CSS2.1`才特有的，所以对于不兼容`CSS2.1`的浏览器来说，无效。
     
     - 在样式控制上(比如动态改变网页的布局时,使用`javascript`操作`DOM`)的区别，此时`@import`就无能为力了。
+
+---
+
+- **样式的优先级补充**
+  - 相同权值情况下，`CSS`样式的优先级总结来说，就是——就近原则（离被设置元素越近优先级别越高）：
+    - `内联样式表（标签内部）` > `嵌入样式表（当前文件中）`> `外部样式表（外部文件中）`
+- 权值不同时，浏览器是根据权值来判断使用哪种`css`样式的，哪种样式权值高就使用哪种样式
+
+- 层叠优先级是:
+ - 浏览器缺省 < 外部样式表 < 内部样式表 < 内联样式
+- 其中样式表又有:`类选择器` < `类派生选择器 `<` ID选择器` < `ID派生选择器`
+- 派生选择器以前叫上下文选择器，所以完整的层叠优先级是:
+ - `浏览器缺省` <` 外部样式表` < `外部样式表类选择器` < `外部样式表类派生选择器 `< `外部样式表ID选择器` < `外部样式表ID派生选择器 `< `内部样式表` < `内部样式表类选择器` < `内部样式表类派生选择器` < `内部样式表ID选择器` < `内部样式表ID派生选择器` < `内联样式`...共`12`个优先级
+
+- 另外，如果同一个元素在没有其他样式的作用影响下，其`Class`定义了多个并以空格分开，其优先级顺序为：
+  - 一个元素同时应用多个`class`，后定义的优先（即近者优先），加上`!important`者最优先！
 
 ---
 
@@ -745,6 +934,80 @@ onmouseover=this.stop()  onmouseover=this.start()  scrollamout="1"(滚动速度)
 
 - 外边距合并：两个盒子同时设置了外边距，会进行一个外边距合并
 
+---
+**补充盒子模型内容**
+
+---
+
+- **标准盒子模型**
+
+ - 盒子模型是`css`中一个重要的概念，理解了盒子模型才能更好的排版。其实盒子模型有两种，分别是 ie 盒子模型和标准 w3c 盒子模型。他们对盒子模型的解释各不相同，先来看看我们熟知的标准盒子模型
+
+![](http://upload-images.jianshu.io/upload_images/1480597-320bad065d62c499.JPG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+- 从上图可以看到标准 `w3c` 盒子模型的范围包括 `margin`、`border`、`padding`、`content`，并且 `content `部分不包含其他部分
+
+- ** IE盒子模型**
+
+![](http://upload-images.jianshu.io/upload_images/1480597-693242e2f03506f8.JPG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+- 从上图可以看到 `ie `盒子模型的范围也包括 `margin`、`border`、`padding`、`content`
+- 和标准 `w3c` 盒子模型不同的是：`ie` 盒子模型的 `content` 部分包含了 `border `和 `padding`
+
+- `IE`盒子模型`width` = `padding`+`border`+`内容`
+- 标准盒子模型 = 内容的宽度（不包含`border`+`padding`）
+
+- 例：
+ - 一个盒子的   ` margin `为 20px，`border` 为 1px，`padding `为 10px，`content` 的宽为 200px、高为 50px，假如用标准 `w3c` 盒子模型解释，那么这个盒子需要占据的位置为：宽 `20*2+1*2+10*2+200=262px`、高 `20*2+1*2*10*2+50=112px`，盒子的实际大小为：宽 `1*2+10*2+200=222px`、高 `1*2+10*2+50=72px`；假如用ie 盒子模型，那么这个盒子需要占据的位置为：宽 `20*2+200=240px`、高 `20*2+50=70px`，盒子的实际大小为：宽 `200px`、高 `50px`
+
+- 那应该选择哪中盒子模型呢？当然是“标准 `w3c` 盒子模型”了。怎么样才算是选择了“标准 `w3c `盒子模型”呢？很简单，就是在网页的顶部加上 `doctype` 声明。
+- 假如不加` doctype` 声明，那么各个浏览器会根据自己的行为去理解网页，即 `ie `浏览器会采用 `ie` 盒子模型去解释你的盒子，而 `ff `会采用标准 w3c 盒子模型解释你的盒子，所以网页在不同的浏览器中就显示的不一样了。
+- 反之，假如加上了 doctype 声明，那么所有浏览器都会采用标准 `w3c `盒子模型去解释你的盒子，网页就能在各个浏览器中显示一致了。
+
+---
+
+- 用 `jquery` 做的例子来证实一下
+
+```
+<html>
+<head>
+<title>你用的盒子模型是？</title>
+<script language="javascript" src="jquery.min.js"></script>
+<script language="javascript">
+var sbox = $.boxmodel ? "标准w3c":"ie";
+document.write("您的页面目前支持："+sbox+"盒子模型");
+</script>
+</head>
+<body>
+</body>
+</html>
+```
+
+- 　上面的代码没有加上 `doctype` 声明，在 `ie` 浏览器中显示  `ie`盒子模型，在 ff 浏览器中显示“标准`w3c` 盒子模型”。
+
+```
+<!doctype html public "-//w3c//dtd xhtml 1.0 transitional//en" "http://www.w3.org/tr/xhtml1/dtd/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>你用的盒子模型是标准w3c盒子模型</title>
+<script language="javascript" src="jquery.min.js"></script>
+<script language="javascript">
+var sbox = $.boxmodel ? "标准w3c":"ie";
+document.write("您的页面目前支持："+sbox+"盒子模型");
+</script>
+</head>
+<body>
+</body>
+</html>
+```
+
+- 　代码2 与代码1 唯一的不同的就是顶部加了 `doctype `声明。在所有浏览器中都显示“标准 `w3c `盒子模型”
+
+
+-  所以为了让网页能兼容各个浏览器，让我们用标准 `w3c` 盒子模型
+
+- 扩展
+  - [学会使用box-sizing布局](http://www.jianshu.com/p/e2eb0d8c9de6)
 
 ---
 
@@ -930,10 +1193,279 @@ onmouseover=this.stop()  onmouseover=this.start()  scrollamout="1"(滚动速度)
 
 ---
 
-### CSS部分导图总结
+- **CSS部分导图总结**
 
 ---
 
 - [原文件下载地址](https://yunpan.cn/cM9va2bHD4wwu)   访问密码 342a
 
 ![](http://upload-images.jianshu.io/upload_images/1480597-a893d4023c39c78a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+---
+
+
+### 第四部分 附录
+
+---
+
+#### 附录一 DIV命名规范
+
+---
+
+- 企业`DIV`使用频率高的命名方法
+
+- **网页内容类**
+  - 标题: title
+    - 摘要: summary
+    - 箭头： arrow
+    - 商标： label
+    - 网站标志： logo
+    - 转角/圆角： corner
+    - 横幅广告： banner
+    - 子菜单： subMenu
+    - 搜索： search
+    - 搜索框： searchBox
+    - 登录： login
+    - 登录条：loginbar
+    - 工具条： toolbar
+    - 下拉： drop
+    - 标签页： tab
+    - 当前的： current
+    - 列表： list
+    - 滚动： scroll
+    - 服务： service
+    - 提示信息： msg
+    - 热点：hot
+    - 新闻： news
+    - 小技巧： tips
+    - 下载： download
+    - 栏目标题： title
+    - 热点： hot
+    - 加入： joinus
+    - 注册： regsiter
+    - 指南： guide
+    - 友情链接： friendlink
+    - 状态： status
+    - 版权： copyright
+    - 按钮： btn
+    - 合作伙伴： partner
+    - 投票： vote
+    - 左右中：left right center
+    
+    --- 
+  - 注释的写法: `/* Footer */`
+
+    - 内容区 `/* End Footer */`
+    
+-  **id的命名:**
+    
+    - 页面结构
+    
+        - 容器: container
+        - 页头：header
+        - 内容：content/container
+        - 页面主体：main
+        - 页尾：footer
+        - 导航：nav
+        - 侧栏：sidebar
+        - 栏目：column
+        - 页面外围控制整体布局宽度：wrapper
+        - 左右中：left right center
+        
+    ---
+    - 导航
+    
+        - 导航：nav
+        - 主导航：mainbav
+        - 子导航：subnav
+        - 顶导航：topnav
+        - 边导航：sidebar
+        - 左导航：leftsidebar
+        - 右导航：rightsidebar
+        - 菜单：menu
+        - 子菜单：submenu
+        - 标题: title
+        - 摘要: summary
+    
+    ---
+    - 功能
+    
+        - 标志：logo
+        - 广告：banner
+        - 登陆：login
+        - 登录条：loginbar
+        - 注册：regsiter
+        - 搜索：search
+        - 功能区：shop
+        - 标题：title
+        - 加入：joinus
+        - 状态：status
+        - 按钮：btn
+        - 滚动：scroll
+        - 标签页：tab
+        - 文章列表：list
+        - 提示信息：msg
+        - 当前的: current
+        - 小技巧：tips
+        - 图标: icon
+        - 注释：note
+        - 指南：guild
+        - 服务：service
+        - 热点：hot
+        - 新闻：news
+        - 下载：download
+        - 投票：vote
+        - 合作伙伴：partner
+        - 友情链接：link
+        - 版权：copyright
+        
+    ---
+    
+   - **class的命名:**
+    
+    - 颜色:使用颜色的名称或者16进制代码,如
+    
+        - .red { color: red; }
+        - .f60 { color: #f60; }
+        - .ff8600 { color: #ff8600; }
+    
+    - 字体大小,直接使用"font+字体大小"作为名称,如
+    
+        - .font12px { font-size: 12px; }
+        - .font9px {font-size: 9pt; }
+    
+    - 对齐样式,使用对齐目标的英文名称,如
+    
+        - .left { float:left; }
+        - .bottom { float:bottom; }
+    
+    - 标题栏样式,使用"类别+功能"的方式命名,如
+    
+        - .barnews { }
+        - .barproduct { }
+    
+    ---
+    - **注意事项::**
+    
+        - 一律小写;
+        - 尽量用英文;
+        - 不加中杠和下划线;
+        - 尽量不缩写，除非一看就明白的单词.
+    
+    ---
+- **推荐的 CSS 书写顺序：**
+    
+    - 显示属性
+    
+        - display
+        - list-style
+        - position
+        - float
+        - clear
+    
+    - 自身属性
+    
+        - width
+        - height
+        - margin
+        - padding
+        - border
+        - background
+    
+    - 文本属性
+    
+        - color
+        - font
+        - text-decoration
+        - text-align
+        - vertical-align
+        - white-space
+        - other text
+        - content     
+
+---
+
+#### 附录二 前端学习资源
+
+---
+
+- [Github上前端学习的资源汇总](https://github.com/poetries/mywiki)
+- [编码规范](https://github.com/poetries/mywiki/blob/master/bookmark/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.md)
+- [WEB 前端开发学习笔记](https://github.com/poetries/mywiki/tree/master/front-end)
+- [DIV+CSS编码规范-网易](https://poetries.github.io/2016/06/25/HTML%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83-%E7%BD%91%E6%98%93/)
+---
+
+#### 附录三 CSS精灵
+
+---
+
+- **CSS精灵原理以及应用**
+
+  - `CSS`雪碧的基本原理是把你的网站上用到的一些图片整合到一张单独的图片中，从而减少你的网站的HTTP请求数量。
+    
+    - 该图片使用`CSS`   `background和background-position`属性渲染，这也就意味着你的标签变得更加复杂了，图片是在`CSS`中定义，而非<img>标签。
+    
+- **一个简单的例子**：
+    
+    - 一张图片作出一个按钮的三个状态
+    
+    - 一张图片作出一个按钮的三个状态
+    
+    - 一个链接用`CSS`做成按钮的样式，我们可以使用同一张图片，完成按钮的三个状态，`a:link`，`a:hover`，`a:active`。
+    `<a class="button" href="#">链接</a>`
+    
+    - 加入右侧的图片为：`200px 65px`的三个按钮图拼合而成的图片`button.png`，从上到下一次为按钮的普通、鼠标滑过、鼠标点击的状态。则可以使用`CSS`进行定义。
+    
+```
+    a {
+        display:block; 
+        width:200px; 
+        height:65px; 
+        line-height:65px; /*定义状态*/
+        text-indent:-2015px; /*隐藏文字*/
+        background-image:url(button.png); /*定义背景图片*/
+        background-position:0 0;
+        /*定义链接的普通状态，此时图像显示的是顶上的部分*/
+    }
+    
+    a:hover {
+        background-position:0 -66px;
+        /*定义链接的滑过状态，此时显示的为中间部分，向下取负值*/
+    }
+    a:active {
+        background-position:0 -132px;                      
+        /*定 义链接的普通状态，此时显示的是底部的部分，向下取负值*/
+    }
+```
+    
+- 更多的`CSS`雪碧，图片更复杂，背景定位更精确。可能会用到大量的数值
+    - 如：`background:url(nav.png) -180px 24pxno-repeat`; 来达到更精确的定位。
+    
+- **优点：**
+    
+    - 减少加载网页图片时对服务器的请求次数
+    
+    - 可以合并多数背景图片和小图标，方便在任何位置使用，这样不同位置的请求只需要调用一个图片，从而减少对服务器的请求次数，降低服务器压力，同时提高了页面的加载速度，节约服务器的流量。
+    
+    - 提高页面的加载速度
+    
+    - `sprite `技术的其中一个好处是图片的加载时间(在有许多 `sprite` 时，单张图片的加载时间)。由所需图片拼成的一张 `GIF`图片的尺寸会明显小于所有图片拼合前的大小。单张的 `GIF`只有相关的一个色表，而单独分割的每一张 `GIF` 都有自己的一个色表，这就增加了总体的大小。因此，单独的一张 `JPEG` 或者 `PNG` `sprite` 在大小上非常可能比把一张图分成多张得来的图片总尺寸小。
+    
+    - 减少鼠标滑过的一些`bug`
+    
+    - `IE6`不会主动预加载鼠标滑过即`a:hover`中的背景图片，所以，如果使用多张图片，鼠标滑过会出现闪白的现象。使用`CSS`雪碧，由于一张图片即可，所以不会出现这种现象。
+    
+- **不足：**
+    
+    - `CSS`雪碧的最大问题是内存使用
+    - 影响浏览器的缩放功能
+    - 拼图维护比较麻烦
+    - 使`CSS`的编写变得困难
+    - `CSS` 雪碧调用的图片不能被打印
+    - 错误得使用 `Sprites` 影响可访问性
+
+
+
+#### 其他
+
+- [本文Md源文件开源-欢迎转载]()
