@@ -10,7 +10,6 @@ categories: Front-End
 
 ### 第一部分 HTML
 
-<br>
 ---
 #### 第一章 职业规划和前景
 ---
@@ -439,8 +438,8 @@ onmouseover=this.stop()  onmouseover=this.start()  scrollamout="1"(滚动速度)
 ```
 
 - `<td>`单元格标签:
-
-    - `<td>`可以定义表格中的一个单元格，`<td></td>`表示一个单元格。
+    - `<td>`可以定义表格中的一个单元格，`<td></td>`表示一个单元格
+    
 ```
 <table border="1">
 <tr>
@@ -450,10 +449,10 @@ onmouseover=this.stop()  onmouseover=this.start()  scrollamout="1"(滚动速度)
 </tr>
 </table>
 ```
-  - `border-collapse` 属性设置是否将表格边框折叠为单一边框：
-  - `border-collapse:collapse`;
-  - `colspan`左右合并
-  - `rowspan`上下合并
+- `border-collapse` 属性设置是否将表格边框折叠为单一边框：
+- `border-collapse:collapse`;
+- `colspan`左右合并
+- `rowspan`上下合并
 
 **第一部分总结**：
 
@@ -625,10 +624,9 @@ onmouseover=this.stop()  onmouseover=this.start()  scrollamout="1"(滚动速度)
 ![](http://upload-images.jianshu.io/upload_images/1480597-3d15eb9c7be0cb65.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ![](http://upload-images.jianshu.io/upload_images/1480597-4b0073fd050ba4f3.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+
 ---
-
 ### 第二部分 CSS
-
 ---
 
 #### 第八章 css基础知识
@@ -1198,10 +1196,7 @@ document.write("您的页面目前支持："+sbox+"盒子模型");
 ![](http://upload-images.jianshu.io/upload_images/1480597-a893d4023c39c78a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ---
-
-
 ### 第三部分 附录
-
 ---
 
 #### 附录一 DIV命名规范
@@ -1389,6 +1384,7 @@ document.write("您的页面目前支持："+sbox+"盒子模型");
 - [编码规范](https://github.com/poetries/mywiki/blob/master/bookmark/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.md)
 - [WEB 前端开发学习笔记](https://github.com/poetries/mywiki/tree/master/front-end)
 - [DIV+CSS编码规范-网易](https://poetries.github.io/2016/06/25/HTML%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83-%E7%BD%91%E6%98%93/)
+
 ---
 
 #### 附录三 CSS精灵
@@ -1443,7 +1439,7 @@ document.write("您的页面目前支持："+sbox+"盒子模型");
     - `CSS` 雪碧调用的图片不能被打印
     - 错误得使用 `Sprites` 影响可访问性
 
-
+---
 
 #### 其他
 
