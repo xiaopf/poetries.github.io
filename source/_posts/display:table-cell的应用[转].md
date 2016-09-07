@@ -6,7 +6,7 @@ categories: Front-End
 ---
 
 
-### `display:table-cell`属性简述
+### display:table-cell属性简述
 
 - `display:table-cell`属性指让标签元素以表格单元格的形式呈现，类似于`td`标签。目前`IE8+`以及其他现代浏览器都是支持此属性的，但是`IE6/7`只能对你说sorry了，这一事实也是大大制约了`display:table-cell`属性在实际项目中的应用
 - `table-cell`同样会被其他一些`CSS`属性破坏，例如`float`, `position:absolute`，所以，在使用`display:table-cell`与`loat:left`或是`position:absolute`属性尽量不用同用。设置了`display:table-cell`的元素对宽度高度敏感，对`margin`值无反应，响应`padding`属性
