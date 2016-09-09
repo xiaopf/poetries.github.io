@@ -16,6 +16,7 @@ categories: 工欲善其事必先利其器
     <blockquote></blockquote>
 </div>
 ```
+
 - `div+div>p>span+em^^bq`
 
 ```html
@@ -25,7 +26,9 @@ categories: 工欲善其事必先利其器
 </div>
 <blockquote></blockquote>
 ```
-<!--mopre-->
+
+<!--more-->
+
 - `div>(header>ul>li*2>a)+footer>p`
 
 ```html
@@ -301,78 +304,115 @@ categories: 工欲善其事必先利其器
 ---
 
 - `pos:s`
+```css
 position:static;
 - `pos:a`
+```css
 position:absolute;
 - `pos:r`
+```css
 position:relative;
 - `pos:f`
+```css
 position:fixed;
 - ` t`
+```css
 top:;
 - `b:a`
+```css
 bottom:auto;
 - `l`
+```css
 left:;
 - `l:a`
+```css
 left:auto;
 - `z`
+```css
 z-index:;
 - `z:a`
+```css
 z-index:auto;
 - ` fl`
+```css
 float:left;
 - `fl:n`
+```css
 float:none;
 - `fl:l`
+```css
 float:left;
 -` fl:r`
+```css
 float:right;
 - `cl`
+```css
 clear:both;
 - `cl:n`
+```css
 clear:none;
 - `cl:l`
+```css
 clear:left;
 - `cl:r`
+```css
 clear:right;
 - `cl:b`
+```css
 clear:both;
 - `d`
+```css
 display:block;
 - `d:n`
+```css
 display:none;
 - `d:b`
+```css
 display:block;
 - `d:i`
+```css
 display:inline;
 - `d:ib`
+```css
 display:inline-block;
 - `d:itb`
+```css
 display:inline-table;
 - `d:tbc`
+```css
 display:table-cell;
 - `v`
+```css
 visibility:hidden;
 - `v:v`
+```css
 visibility:visible;
 - `v:h`
+```css
 visibility:hidden;
 - `ov`
+```css
 overflow:hidden;
 - `ov:v`
+```css
 overflow:visible;
 - `ov:h`
+```css
 overflow:hidden;
 - `ov:s`
+```css
 overflow:scroll;
 - `zoo, zm`
+```css
 zoom:1;
 - `cur:d`
+```css
 cursor:default;
 - `cur:ha`
+```css
 cursor:hand;
 - `cur:p`
+```css
 cursor:pointer;
 
 ---
