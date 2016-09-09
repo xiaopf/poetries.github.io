@@ -343,7 +343,7 @@ z-index:;
 ```css
 z-index:auto;
 ```
-- ` fl`
+- `fl`
 ```css
 float:left;
 ```
@@ -355,7 +355,7 @@ float:none;
 ```css
 float:left;
 ```
--` fl:r`
+- `fl:r`
 ```css
 float:right;
 ```
