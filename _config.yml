@@ -119,6 +119,8 @@ baidu_analytics: 40b1f89aa80f2527b3db779c6898c879
 # JiaThis 分享服务
 jiathis: true
 
+# 百度分享服务
+baidushare: true
 
 # Swiftype Search Keyswiftype_key:
 swiftype_key: EbTRx7Hz-QvGDpgPn3Mk
