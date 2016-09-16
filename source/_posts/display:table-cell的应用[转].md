@@ -38,8 +38,6 @@ div img{
 
 - `display:table-cell`可以用在两栏的自适应布局上
 
-![](http://image.zhangxinxu.com/image/blog/201010/2010-10-11_204048.png)
-
 - 对于不认识`display:table-cell`属性的IE6/7呢，使用display:inline-block属性代替`display:table-cell`就完全ok
 
 
