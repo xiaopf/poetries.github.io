@@ -1,5 +1,5 @@
 ---
-title: BFC(块级格式化上下文)
+title: CSS中的BFC
 date: 2016-09-07 18:20:08
 tags: CSS
 categories: Front-End
@@ -8,7 +8,7 @@ categories: Front-End
 ### BFC 是什么？
 
 - `BFC` (`Block Formatting Contexts`) 即块级格式化上下文，从样式上看，它与普通的容器没有什么区别，但是从功能上，`BFC` 可以看作是隔离了的独立容器，容器里面的元素不会在布局上影响到外面的元素，并且 `BFC` 具有普通容器没有的一些特性，例如可以包含浮动元素，使到它可以包含浮动元素，从而防止出现高度塌陷的问题
-
+<!--more-->
 ---
 
 ### 如何触发 BFC
@@ -22,7 +22,7 @@ categories: Front-End
  - 在 `CSS3` 中，`BFC` 叫做` Flow Root`，并增加了一些触发条件：
     - `display` 的 `table-caption` 值
     - `position` 的 `fixed` 值，其实 `fixed` 是 `absolute` 的一个子类，因此在 `CSS2.1` 中使用这个值也会触发 `BFC` ，只是在` CSS3` 中更加明确了这一点
-<!--more-->
+
 ---
 
 ### BFC布局规则
