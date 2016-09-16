@@ -8,15 +8,6 @@
   <span class="author" itemprop="copyrightHolder">{{ config.author }}</span>
 </div>
 
-<div class="powered-by">
-  {{ __('footer.powered', '<a class="theme-link" href="https://hexo.io/" target="_blank">Hexo</a>') }}
-</div>
 
-<div class="theme-info">
-  {{ __('footer.theme') }} -
-  <a class="theme-link" href="http://weibo.com/poetries1" target="_blank">
-    weibo{% if theme.scheme %}.{{ theme.scheme }}{% endif %}
-  </a>
-</div>
 
 {% block footer %}{% endblock %}
