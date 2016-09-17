@@ -6,9 +6,10 @@ categories: Front-End
 ---
 
 ### 引言
+---
 
 网页的所有元素，除了“块”就是“流”，而且“流”都是包含在“块”里面的（最外层的body就是一个“块”）
-
+<!--more-->
 ![](http://images.cnitblog.com/blog2015/138012/201503/060814201807518.png)
 
 在网上查找出`display`所有的属性，你会发现它有很多，但是不是每个都常用，甚至大部分你都没有用过
@@ -20,8 +21,9 @@ categories: Front-End
 -` list-item`：通过它可以模拟li列表样式；
 - `table`：也是一个“块”，但和`block`相比，`table`具有包裹性；
 - `table-cell`：最新的多列布局解决方案；
-<!--more-->
+
 ###  inline
+---
 
 常用的`inline`就是文字和图片，其实`inline`真没什么好说的，大家可以把它想象成一个杯子里的水，它是“流”，是没有大小和形状的，它的宽度取决于父容器的宽度。
 
@@ -34,12 +36,14 @@ categories: Front-End
 还有两种情况你应该去了解
 
 #### 第一，对inline元素设置float
+---
 
 我们对`span`元素添加一个`float:left`，运行看看效果，你就会大吃一惊。从显示的效果和监控的结果上看来，`span`元素已经“块”化。不要忘记`float`的“破坏性”、“包裹性”，在这里同样适用。
 
 ![](http://images.cnitblog.com/blog2015/138012/201503/060816212111595.png)
 
 ####  第二，对inline元素设置position:absolute/fixed
+---
 
  还是有同一个例子做演示，这次在`span`元素上加上`absolute/fixed`，效果大家应该能猜到，和加上`float`的效果相同。
  

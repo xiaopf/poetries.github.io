@@ -6,6 +6,7 @@ categories: 工欲善其事必先利其器
 ---
 
 ### 基本语法
+---
 
 - `div+div>p>span+em^bq`
 
@@ -137,6 +138,7 @@ categories: 工欲善其事必先利其器
 ---
 
 ### HTML
+---
 
 - **`!`**
 
@@ -296,7 +298,6 @@ categories: 工欲善其事必先利其器
 <![endif]-->
 ```
 
----
 
 ###  CSS
 
@@ -727,9 +728,8 @@ background-size:cover;
 ```
 
 
----
-
 #### Color
+---
 
 - `c`
 ```css
@@ -748,11 +748,10 @@ color:rgba(0, 0, 0, .5);
 opacity:;
 ```
 
----
 
 #### 其他
-
 ---
+
 
 - **`·@m·`, `@media`·**
 

@@ -10,7 +10,6 @@ categories: Front-End
 
 ### 第一部分 HTML
 
----
 #### 第一章 职业规划和前景
 ---
 
@@ -52,7 +51,6 @@ categories: Front-End
         - 熟悉运用`js`制作动态网站的效果
         - 能独立开发完成网站
 
----
 
 #### 第二章 html基本结构
 ---
@@ -97,11 +95,10 @@ categories: Front-End
     - `&lt`；--->小于号
     - `&quot`；--->引号
     - `&copy`;-->版权号
----
 
 #### 第三章 html基本标签
-
 ---
+
 - `HTMl`基本标签：
     - `span`标签
         - 对被用来组合文档中的行内元素
@@ -135,7 +132,6 @@ onmouseover=this.stop()  onmouseover=this.start()  scrollamout="1"(滚动速度)
 
 - 表示当鼠标移上区域的时候停止滚动，鼠标移开继续滚动
 
----
 
 #### 第四章 img图片标签与路径
 ---
@@ -178,7 +174,6 @@ onmouseover=this.stop()  onmouseover=this.start()  scrollamout="1"(滚动速度)
 
   - 这些都是相对于当前文件的位置来说的，如果用绝对路径的话就是写全了。
 
----
 
 #### 第五章 三种列表的讲解
 ---
@@ -286,7 +281,6 @@ onmouseover=this.stop()  onmouseover=this.start()  scrollamout="1"(滚动速度)
 - `list-style-type`： 设置列表项图标的类型
 - `list-style-image `：使用图像设置列表项图标
 
----
 
 #### 第六章 表单元素(上)
 ---
@@ -368,8 +362,6 @@ onmouseover=this.stop()  onmouseover=this.start()  scrollamout="1"(滚动速度)
 <label for="male">男：</label><input type="radio" name="sex" id="male"/>
 <label for="nv">女：</label><input type="radio" name="sex"checked="check"/>
 ```
-
----
 
 #### 第七章 表单和表格(下)
 ---
@@ -621,12 +613,11 @@ onmouseover=this.stop()  onmouseover=this.start()  scrollamout="1"(滚动速度)
 ![](http://upload-images.jianshu.io/upload_images/1480597-4b0073fd050ba4f3.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
----
 ### 第二部分 CSS
----
 
 #### 第八章 css基础知识
 ---
+
 - `css`基础知识：
   - `css`样式表的定义
   - `css`：（Cascading Style Sheets）层叠样式表；
@@ -732,9 +723,9 @@ onmouseover=this.stop()  onmouseover=this.start()  scrollamout="1"(滚动速度)
 - 另外，如果同一个元素在没有其他样式的作用影响下，其`Class`定义了多个并以空格分开，其优先级顺序为：
   - 一个元素同时应用多个`class`，后定义的优先（即近者优先），加上`!important`者最优先！
 
----
 
 ####  第九章 css选择器(上)
+---
 
 - `css`选择器：
    - `class`类选择器可以重复利用    
@@ -773,10 +764,10 @@ onmouseover=this.stop()  onmouseover=this.start()  scrollamout="1"(滚动速度)
 
     - `p + span{color:red;}`
 
----
- 
+
 ####  第十章 css选择器(下)
 ---
+
 -  `<a>`伪类选择器
    - `a:link {color:#FF0000;}`	/* 未访问的链接 */ （只用于a标签）
    - `a:visited {color:#00FF00;}`	/* 已访问的链接 */ （只用于a标签）
@@ -796,10 +787,10 @@ onmouseover=this.stop()  onmouseover=this.start()  scrollamout="1"(滚动速度)
 - `css`优先规则
     - 内联样式表-> `ID` 选择器—> `Class` 类选择器->标签选择器
 
----
 
 ####  第十一章 背景属性
 ---
+
 - 背景属性：
   - 背景的添加 ：
 
@@ -847,7 +838,6 @@ onmouseover=this.stop()  onmouseover=this.start()  scrollamout="1"(滚动速度)
     - `background-attachment:fixed; `  固定，不随内容的滚动而滚动	
     - `background-attachment:scroll; ` 滚动，随内容的滚动而滚动
 
----
 
 #### 第十二章 文字文本属性
 ---
@@ -871,10 +861,10 @@ onmouseover=this.stop()  onmouseover=this.start()  scrollamout="1"(滚动速度)
     - `text-decoration:none; ` 
        - 文本线(`none`/`underline`/`overline`/`line-through`)
     - `letter-spacing`:   字间距
----
 
 ####  第十三章 盒子模型
 ---
+
 - **盒子模型**
     - 盒子模型就是一个有高度和宽度的矩形区域
     - 所有`html`标签都是盒子模型
@@ -999,7 +989,6 @@ document.write("您的页面目前支持："+sbox+"盒子模型");
 - 扩展
   - [学会使用box-sizing布局](http://www.jianshu.com/p/e2eb0d8c9de6)
 
----
 
 ####  第十四章 块元素、行元素与溢出
 ---
@@ -1061,8 +1050,6 @@ document.write("您的页面目前支持："+sbox+"盒子模型");
   - `<object>`都是替换元素，这些元素都没有实际的内容
 
 
----
-
 #### 第十五章 定位
 ---
 
@@ -1101,7 +1088,6 @@ document.write("您的页面目前支持："+sbox+"盒子模型");
 ![](http://upload-images.jianshu.io/upload_images/1480597-f72c1c8486445df1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ![](http://upload-images.jianshu.io/upload_images/1480597-7ab9cda0bbd7e62f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
----
 
 #### 第十六章 框架
 ---
@@ -1143,10 +1129,10 @@ document.write("您的页面目前支持："+sbox+"盒子模型");
     - `frameborder ` 边框线（取值 0 / 1）
     - `src` 显示的网页的路径
 
----
 
 #### 第十七章 css高级属性
 ---
+
 - `opacity`透明属性
  - `opacity`
    - 对于`IE6/7/`，使用`filter:alpha(opacity:值;`)  值为`0-100`
@@ -1191,12 +1177,10 @@ document.write("您的页面目前支持："+sbox+"盒子模型");
 
 ![](http://upload-images.jianshu.io/upload_images/1480597-a893d4023c39c78a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
----
+
 ### 第三部分 附录
----
 
 #### 附录一 DIV命名规范
-
 ---
 
 - 企业`DIV`使用频率高的命名方法
@@ -1370,10 +1354,8 @@ document.write("您的页面目前支持："+sbox+"盒子模型");
         - other text
         - content     
 
----
 
 #### 附录二 前端学习资源
-
 ---
 
 - [Github上前端学习的资源汇总](https://github.com/poetries/mywiki)
@@ -1381,10 +1363,8 @@ document.write("您的页面目前支持："+sbox+"盒子模型");
 - [WEB 前端开发学习笔记](https://github.com/poetries/mywiki/tree/master/front-end)
 - [DIV+CSS编码规范-网易](https://poetries.github.io/2016/06/25/HTML%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83-%E7%BD%91%E6%98%93/)
 
----
 
 #### 附录三 CSS精灵
-
 ---
 
 - **CSS精灵原理以及应用**
@@ -1434,9 +1414,3 @@ document.write("您的页面目前支持："+sbox+"盒子模型");
     - 使`CSS`的编写变得困难
     - `CSS` 雪碧调用的图片不能被打印
     - 错误得使用 `Sprites` 影响可访问性
-
----
-
-#### 其他
-
-- [本文Md源文件开源-欢迎转载](https://github.com/poetries/poetries.github.io/blob/dev/source/_posts/DIV+CSS%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%9B%9E%E9%A1%BE.md)

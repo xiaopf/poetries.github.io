@@ -5,7 +5,7 @@ tags: JavaScript
 categories: Front-End
 ---
 
-**DOM 操作：**
+**DOM 操作**
 
 - 图片切换的相册效果
 - tab切换效果

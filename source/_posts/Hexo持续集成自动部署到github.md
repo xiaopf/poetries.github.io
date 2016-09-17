@@ -6,11 +6,12 @@ categories: Hexo
 ---
 
 ### **一、 新建新的分支**
+---
 
 `master：`博客的静态文件，也就是hexo生成后的HTML文件，因为要使用Gitpage服务，所以他规定的网页文件必须是在master分支
+<!--more-->
 
 建新的分支`：dev`：存放博客的源代码
-
 
 
 Git怎么推送本地分支到远程新分支上面去？
@@ -22,62 +23,58 @@ Git怎么推送本地分支到远程新分支上面去？
 类似，`git push origin :remote_branch，local_branch`留空的话则是删除远程`remote_branch`分支。
 
 
-
 **这里是分支常用命令：**
-
-
-```
-
-# 列出所有本地分支
-$ git branch
-
-# 列出所有远程分支
-$ git branch -r
-
-# 列出所有本地分支和远程分支
-$ git branch -a
-
-# 新建一个分支，但依然停留在当前分支
-$ git branch [branch-name]
-
-# 新建一个分支，并切换到该分支
-$ git checkout -b [branch]
-
-# 新建一个分支，指向指定commit
-$ git branch [branch] [commit]
-
-# 新建一个分支，与指定的远程分支建立追踪关系
-$ git branch --track [branch] [remote-branch]
-
-# 切换到指定分支，并更新工作区
-$ git checkout [branch-name]
-
-# 切换到上一个分支
-$ git checkout -
-
-# 建立追踪关系，在现有分支与指定的远程分支之间
-$ git branch --set-upstream [branch] [remote-branch]
-
-# 合并指定分支到当前分支
-$ git merge [branch]
-
-# 选择一个commit，合并进当前分支
-$ git cherry-pick [commit]
-
-# 删除分支
-$ git branch -d [branch-name]
-
-# 删除远程分支
-$ git push origin --delete [branch-name]
-$ git branch -dr [remote/branch]
-
-
-```
 ---
 
-<!--more-->
+
+- 列出所有本地分支
+`$ git branch`
+
+- 列出所有远程分支
+`$ git branch -r`
+
+- 列出所有本地分支和远程分支
+`$ git branch -a`
+
+- 新建一个分支，但依然停留在当前分支
+`$ git branch [branch-name]`
+
+- 新建一个分支，并切换到该分支
+`$ git checkout -b [branch]`
+
+- 新建一个分支，指向指定commit
+`$ git branch [branch] [commit]`
+
+- 新建一个分支，与指定的远程分支建立追踪关系
+`$ git branch --track [branch] [remote-branch]`
+
+- 切换到指定分支，并更新工作区
+`$ git checkout [branch-name]
+
+- 切换到上一个分支
+`$ git checkout -`
+
+- 建立追踪关系，在现有分支与指定的远程分支之间
+`$ git branch --set-upstream [branch] [remote-branch]`
+
+- 合并指定分支到当前分支
+`$ git merge [branch]`
+
+- 选择一个commit，合并进当前分支
+`$ git cherry-pick [commit]
+
+- 删除分支
+`$ git branch -d [branch-name]`
+
+- 删除远程分支
+```
+$ git push origin --delete [branch-name]
+$ git branch -dr [remote/branch]
+```
+
 
 ### **二、配置Travis**
+---
 
 - 接入Travis CI
  - 打开Travis CI网站，使用github账号登录。
@@ -112,16 +109,13 @@ $ git branch -dr [remote/branch]
   
 其中内容如下：
 
-
-```
-
+```javascript
 language: node_js
 node_js: stable
 
 # S: Build Lifecycle
 install:
   - npm install
-
 
 #before_script:
  # - npm install -g gulp
@@ -146,7 +140,6 @@ env:
  global:
    - GH_REF: github.com/lifengsofts/lifengsofts.github.io.git
 
-
 ```
 
 
@@ -155,13 +148,8 @@ env:
 
 到这一步我们配置已经完成了
 
-
-
----
-
-hexo-write.sh
-
 ### **三、本地操作**
+---
 
 - 把远程仓库源码下载下来新建新的分支dev  `git clone  -b dev https://github.com/poetries/poetries.github.io.git `
 - 切换到项目根目录下
@@ -176,24 +164,19 @@ hexo-write.sh
 
 以下是自己在Ubuntu下写的一个很简单很简单的脚本，用来方便写作部署博客
 
-
 - [hexo-write.sh](https://github.com/poetries/poetries.github.io/blob/dev/hexo-write.sh)
 - [hexo-deploy.sh](https://github.com/poetries/poetries.github.io/blob/dev/hexo-deploy.sh)
 
-
----
 
 push本地的代码至远程仓库之后，在https://travis-ci.org后台查看相关情况。
 
 下面是成功的结果：
 
-
 ![此处输入图片的描述][5]
 
 
----
-
 **参考：**
+---
 
 [使用Travis自动部署Hexo(3)][6]
 [使用Travis自动部署Hexo(1)][7]

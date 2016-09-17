@@ -6,9 +6,10 @@ categories: Front-End
 ---
 
 ### “层叠”的概念
+---
 
 `CSS`——层叠样式表，其中的“层叠”是什么意思呢？层叠就是浏览器对多个样式来源进行叠加，最终确定结果的过程
-
+<!--more-->
 ![enter description here][1]
 
  上图中有两个样式来源，第一个是引用的css1.css，第二个是自己在style中编写的样式。“层叠”是个叠加的过程，可通过下图表示：
@@ -16,8 +17,9 @@ categories: Front-End
  ![enter description here][2]
 
 层叠是CSS的核心机制，理解了它才能以最经济的方式写出最容易改动的`CSS`，让文档外观在达到设计要求的同时，也给用户留下一些空间，让他们根据需要更改文档的显示效果，例如调整字号
-<!--more-->
+
 ### 样式来源
+---
 
 `css`之所以有“层叠”的概念，是因为有多个样式来源。其实`css`的样式来源有5个，开发人员只能接触到前面3个
 
@@ -90,6 +92,7 @@ BDO[DIR="rtl"] { direction: rtl; unicode-bidi: bidi-override }/*定义BDO元素�
 ```
 
 ### 层叠的规则
+---
 
 由于样式的来源不同，浏览器在加载样式时，需要计算出最终的样式值，这样才能显示出正确的界面效果——浏览器会通过叠加和覆盖这两种方式来生成最终的样式值。
 
@@ -102,11 +105,6 @@ BDO[DIR="rtl"] { direction: rtl; unicode-bidi: bidi-override }/*定义BDO元素�
  ![](http://images.cnitblog.com/blog/138012/201502/062013470937714.png)
  
  虽然`color:blue`是后来者，但是它没有居上，因为前者`color:red`跟着`!important`
- 
- 
-
- 
-
 
   [1]: http://images.cnitblog.com/blog/138012/201502/062009519846753.png
   [2]: http://images.cnitblog.com/blog/138012/201502/062010034216948.png

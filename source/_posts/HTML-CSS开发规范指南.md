@@ -8,6 +8,7 @@ categories: Front-End
 # HTML/CSS开发规范指南
 
 ## 目录
+---
 
 1. [规范概述](#intro)
 2. [基本信息](#profile)
@@ -233,7 +234,7 @@ categories: Front-End
 
 不推荐：
 
-```
+```css
 .example {
   background: url(http://www.google.com/images/example);
 }
@@ -241,7 +242,7 @@ categories: Front-End
 
 推荐：
 
-```
+```css
 .example {
   background: url(//www.google.com/images/example);
 }
@@ -251,17 +252,21 @@ categories: Front-End
 
 <a name="validator"></a>
 ### 11.代码有效性
+---
 
 * 使用 [W3C HTML Validator](http://validator.w3.org/) 来验证你的HTML代码有效性；
 * 使用 [W3C CSS Validator](http://jigsaw.w3.org/css-validator/) 来验证你的CSS代码有效性。
 
 > 代码验证不是最终目的，真的目的在于让开发者在经过多次的这种验证过程后，能够深刻理解到怎样的语法或写法是非标准和不推荐的，即使在某些场景下被迫要使用非标准写法，也可以做到心中有数。
 
-<a name="html"></a>
+`<a name="html"></a>`
+
 ## HTML约定
+---
 
 <a name="doctype"></a>
 ### 1.文档类型
+---
 
 * 统一使用HTML5的标准文档类型：`<!DOCTYPE html>`；
 
@@ -277,6 +282,7 @@ categories: Front-End
 
 <a name="type"></a>
 ### 2.省略type属性
+---
 
 在调用CSS和JavaScript时，可以将type属性省略不写
 
@@ -294,6 +300,7 @@ categories: Front-End
 
 <a name="attribute"></a>
 ### 3.省略属性值
+---
 
 非必须属性值可以省略
 
@@ -311,6 +318,7 @@ categories: Front-End
 
 <a name="quots"></a>
 ### 4.用双引号包裹属性值
+---
 
 所有的标签属性值必须要用双引号包裹，同时也不允许有的用双引号，有的用单引号的情况
 
@@ -324,6 +332,7 @@ categories: Front-End
 
 <a name="nest"></a>
 ### 5.嵌套
+---
 
 所有元素必须正确嵌套
 
@@ -383,6 +392,7 @@ categories: Front-End
 
 <a name="close-tag"></a>
 ### 6.标签闭合
+---
 
 所有标签必须闭合
 
@@ -400,6 +410,7 @@ categories: Front-End
 
 <a name="perceivable"></a>
 ### 7.多媒体替代方案
+---
 
 * 为img元素加上alt属性；
 * 为视频内容提供音轨替代；
@@ -417,6 +428,7 @@ categories: Front-End
 
 <a name="friendly"></a>
 ### 8.有效操作
+---
 
 为表单元素label加上for属性
 
@@ -434,6 +446,7 @@ categories: Front-End
 
 <a name="html-comment"></a>
 ### 9.按模块添加注释
+---
 
 在每个模块开始和结束的地方添加注释
 
@@ -453,6 +466,7 @@ categories: Front-End
 
 <a name="format"></a>
 ### 10.格式
+---
 
 * 将每个块元素、列表元素或表格元素都放在新行；
 * inline元素视情况换行，以长度不超过编辑器一屏为宜；
@@ -471,6 +485,7 @@ categories: Front-End
 
 <a name="semantic"></a>
 ### 11.语义化标签
+---
 
 * 根据HTML元素的本身用途去使用它们；
 * 禁止使用被废弃的用于表现的标签，如 center, font 等；
@@ -490,6 +505,7 @@ categories: Front-End
 
 <a name="html-module"></a>
 ### 12.模块化
+---
 
 * 每个模块必须有一个模块名；
 * 每个模块的基本组成部分应该一致；
@@ -513,10 +529,13 @@ categories: Front-End
 > 其中 `.m-detail-hd`, `.m-detail-bd`, `.m-detail-ft` 为可选，视具体模块情况决定是否需要抽象为这种 **头，中，尾** 的结构
 
 <a name="css"></a>
+
 ## CSS约定
+---
 
 <a name="link"></a>
 ### 1.文件引用
+---
 
 * 一律使用link的方式调用外部样式
 * 不允许在页面中使用 `<style>` 块；
@@ -527,6 +546,7 @@ categories: Front-End
 
 <a name="element"></a>
 ### 2.命名-组成元素
+---
 
 * 命名必须由单词、中划线①或数字组成；
 * 不允许使用拼音（约定俗成的除外，如：youku, baidu），尤其是缩写的拼音、拼音与英文的混合。
@@ -549,6 +569,7 @@ categories: Front-End
 
 <a name="word"></a>
 ### 3.命名-词汇规范
+---
 
 * 不依据表现形式来命名；
 * 可根据内容来命名；
@@ -564,6 +585,7 @@ categories: Front-End
 
 <a name="abbr"></a>
 ### 4.命名-缩写规范
+---
 
 * 保证缩写后还能较为清晰保持原单词所能表述的意思；
 * 使用业界熟知的或者约定俗成的。
@@ -582,6 +604,7 @@ categories: Front-End
 
 <a name="prefix"></a>
 ### 5.命名-前缀规范
+---
 
 前缀|说明|示例
 ---|---|---|
@@ -612,11 +635,13 @@ js- 这种级别的className完全交由JSer自定义，但是命名的规则也
 
 <a name="id"></a>
 ### 6.id与class
+---
 
 重构工程师只允许使用class（因历史原因及大家的习惯做出妥协）。
 
 <a name="packaging"></a>
 ### 7.书写格式
+---
 
 * 选择器与大括号之间保留一个空格；
 * 分号之后保留一个空格；
@@ -648,6 +673,7 @@ js- 这种级别的className完全交由JSer自定义，但是命名的规则也
 
 <a name="semicolon"></a>
 ### 8.规则与分号
+---
 
 每条规则结束后都必须加上分号
 
@@ -669,6 +695,7 @@ js- 这种级别的className完全交由JSer自定义，但是命名的规则也
 
 <a name="unit"></a>
 ### 9.0与单位
+---
 
 如果属性值为0，则不需要为0加单位
 
@@ -688,6 +715,7 @@ js- 这种级别的className完全交由JSer自定义，但是命名的规则也
 
 <a name="decimal"></a>
 ### 10.0与小数
+---
 
 如果是0开始的小数，前面的0可以省略不写
 
@@ -707,6 +735,7 @@ js- 这种级别的className完全交由JSer自定义，但是命名的规则也
 
 <a name="non-quotes"></a>
 ### 11.去掉uri中引用资源的引号
+---
 
 不要在url()里对引用资源加引号
 
@@ -726,6 +755,7 @@ js- 这种级别的className完全交由JSer自定义，但是命名的规则也
 
 <a name="hex"></a>
 ### 12.HEX颜色值写法
+---
 
 * 将所有的颜色值小写；
 * 可以缩写的缩写至3位。
@@ -744,10 +774,11 @@ js- 这种级别的className完全交由JSer自定义，但是命名的规则也
 
 <a name="order"></a>
 ### 13.属性书写顺序
+---
 
 * 遵循先布局后内容的顺序。
 
-```
+```css
 .g-box {
 　　　display: block;
 　　　float: left;
@@ -768,7 +799,7 @@ js- 这种级别的className完全交由JSer自定义，但是命名的规则也
 
 拿上例的代码来说，如果我们还需要进行定位及堆叠，规则我们可以改成如下：
 
-```
+```css
 .g-box {
 　　　display: block;
 　　　position: relative;
@@ -791,7 +822,7 @@ js- 这种级别的className完全交由JSer自定义，但是命名的规则也
 
 * 私有属性在前标准属性在后
 
-```
+```css
 .g-box {
 　　　-webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
 　　　-moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
@@ -804,6 +835,7 @@ js- 这种级别的className完全交由JSer自定义，但是命名的规则也
 
 <a name="css-comment"></a>
 ### 14.注释规范
+---
 
 保持注释内容与星号之间有一个空格的距离
 
@@ -824,12 +856,13 @@ js- 这种级别的className完全交由JSer自定义，但是命名的规则也
 
 <a name="hack"></a>
 ### 15.hack规范
+---
 
 * 尽可能的减少对Hack的使用和依赖，如果在项目中对Hack的使用太多太复杂，对项目的维护将是一个巨大的挑战；
 * 使用其它的解决方案代替Hack思路；
 * 如果非Hack不可，选择稳定且常用并易于理解的。
 
-```
+```css
 .test {
 　　　color: #000;       /* For all */
 　　　color: #111\9;     /* For all IE */
@@ -869,6 +902,7 @@ if条件共包含6种选择方式：是否、大于、大于或等于、小于�
 
 <a name="low-selector"></a>
 ### 16.避免低效率选择器
+---
 
 * 避免类型选择器
 
@@ -896,12 +930,13 @@ if条件共包含6种选择方式：是否、大于、大于或等于、小于�
 
 <a name="override"></a>
 ### 17.属性缩写与分拆
+---
 
 * 无继承关系时，使用缩写
 
 不推荐：
 
-```
+```css
 body {
 　　　margin-top: 10px;
 　　　margin-right: 10px;
@@ -912,7 +947,7 @@ body {
 
 推荐：
 
-```
+```css
 body {
 　　　margin: 10px;
 }
@@ -922,7 +957,7 @@ body {
 
 不推荐：
 
-```
+```css
 .m-detail {
 　　　font: bold 12px/1.5 arial, sans-serif;
 }
@@ -933,7 +968,7 @@ body {
 
 要避免错误的覆盖：
 
-```
+```css
 .m-detail .info {
 　　　font: 14px sans;
 }
@@ -943,7 +978,7 @@ body {
 
 推荐：
 
-```
+```css
 .m-detail {
 　　　font: bold 12px/1.5 arial, sans-serif;
 }
@@ -959,7 +994,7 @@ body {
 
 不推荐：
 
-```
+```css
 .m-detail {
 　　　border-width: 1px;
 　　　border-style: solid;
@@ -969,7 +1004,7 @@ body {
 
 推荐：
 
-```
+```css
 .m-detail {
 　　　border: 1px solid #000;
 　　　border-bottom-color: #f00;
@@ -977,7 +1012,9 @@ body {
 ```
 
 <a name="css-module"></a>
+
 ### 18.模块化
+---
 
 * 每个模块必须是一个独立的样式文件，文件名与模块名一致；
 * 模块样式的选择器必须以模块名开头以作范围约定；
@@ -1041,6 +1078,7 @@ body {
 
 <a name="img"></a>
 ## 图像约定
+---
 
 <a name="img-compress"></a>
 ### 1.图像压缩
@@ -1067,7 +1105,9 @@ body {
 
 
 <a name="end"></a>
+
 ## 结语
+---
 
 坚持一致性的原则。
 

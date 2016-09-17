@@ -5,12 +5,8 @@ tags:  Hexo
 categories: Hexo
 ---
 
-
----
 ### 第一部分 基本介绍
-
 ---
-
 
 一直想自己搭建一个博客,断断续续,折折腾腾了两天多的多时间,终于算是搭建完毕了.
 
@@ -21,16 +17,16 @@ categories: Hexo
  - 佩服那些有博客的人,所以自己也想搞一个
  - 独立的才是自己的。
  - 但是不懂服务器,没有空间,不懂前端怎么破?
-
+<!--more-->
 **小白进入门槛**
 1、非常折腾，需要耐心；
 2、也需要一定的学习能力和钻研精神；
 3、懂一些网页基础知识
 
-<!--more-->
 本博客是利用 Hexo +Github搭建,主题是 [Next][1] ,感觉不错,不需要什么上面所说的知识,也能搭建成功,方便也美观
 
 **为什么选择GitHub Pages？**
+---
 
 很多人用wordpress，你为什么要用github pages来搭建？
 
@@ -40,7 +36,6 @@ categories: Hexo
  - github是趋势；
  - 就算github被墙了，我可以搬到国内的gitcafe中去。
 
----
 
 **搭建需要懂得github基本操作**
 
@@ -51,10 +46,8 @@ categories: Hexo
  - [史上最全github使用方法：github入门到精通][4]
  - [github搭建动态网站][5]
 
----
 
 ### 第二部分 Hexo+GitHub搭建博客
-
 ---
 
 **环境准备**
@@ -79,7 +72,6 @@ categories: Hexo
 
   最后可以验证一下`：ssh -T git@github.com`
  
----
 
 - **安装**
 
@@ -116,14 +108,15 @@ cd 到你的init目录，执行如下命令
 
     其中layout是可选参数，默认值为post。有哪些layout呢，请到scaffolds目录下查看，这些文件名称就是layout名称。当然你可以添加自己的layout，方法就是添加一个文件即可，同时你也可以编辑现有的layout，比如post的layout默认是hexo\scaffolds\post.md
     
-```
+```css
 title: { { title } }
 date: { { date } }
 tags:
 ```
 
 想添加categories，以免每次手工输入，只需要修改这个文件添加一行，如下：
-```
+
+```css
 title: { { title } }
 date: { { date } }
 categories: 
@@ -134,62 +127,51 @@ tags:
 接下来，你就可以用喜爱的编辑器尽情书写你的文章
 
 
-```
-
 **实现[fancybox][8]效果**
 
 只需要在你的文章*.md文件的头上添加photos项即可，然后一行行添加你要展示的照片：
 
-
->layout: photo
+```
+layout: photo
 title: 我的阅历
 date: 2085-01-16 07:33:44
 tags: [hexo]
 photos:
 - http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg
 - http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg
+```
 
-不想每次都手动添加怎么办？同样的，打开您的hexo\scaffolds\photo.md
+不想每次都手动添加怎么办？同样的，打开您的`hexo\scaffolds\photo.md`
 
+```
 >layout: { { layout } }
 title: { { title } }
 date: { { date } }
 tags: 
 photos: 
- - 
+```
 
 然后每次可以执行带layout的new命令生成照片文章：
 
 `hexo new photo "photoPostName" #新建照片文章`
----
 
-
-- **文章摘要**
-
-
->以上是摘要
-<!--more-->
-以下是余下全文`
-...
-
-
----
 
 - **主题安装**
+---
 
 hexo的主题列表[Hexo Themes][9]。
 比较喜欢[pacman][10]，[modernist][11]、next。Pacman最为优秀，简洁大方小清新，同时移动版本支持的也很好
 
----
+
 安装主题的方法就是一句git命令：
 
-    git clone https://github.com/heroicyang/hexo-theme-modernist.git themes/modernist
-
+```
+git clone https://github.com/heroicyang/hexo-theme-modernist.git themes/modernist
+```
 安装完成后，打开`hexo\_config.yml`，修改主题为`modernist`
 
 打开`hexo\themes\modernist`目录，编辑主题配置文件`_config.yml：`
 
----
 
 - **更新主题**
 
@@ -197,30 +179,31 @@ hexo的主题列表[Hexo Themes][9]。
 `cd themes/modernist`
 `git pull`
 
----
 
 **hexo命令行使用**
+---
 
 常用命令：
 
- - hexo help #查看帮助
- - hexo init #初始化一个目录
- - hexo new "postName" #新建文章
- - hexo new page "pageName" #新建页面
- - hexo generate #生成网页，可以在 public 目录查看整个网站的文件
- - hexo server #本地预览，'Ctrl+C'关闭
- - hexo deploy #部署.deploy目录
- - hexo clean #清除缓存，**强烈建议每次执行命令前先清理缓存，每次部署前先删除 .deploy 
+ - `hexo help` #查看帮助
+ - `hexo init` #初始化一个目录
+ - `hexo new "postName"` #新建文章
+ - `hexo new page "pageName"` #新建页面
+ - `hexo generate` #生成网页，可以在 public 目录查看整个网站的文件
+ - `hexo server` #本地预览，'Ctrl+C'关闭
+ - `hexo deploy` #部署.deploy目录
+ - `hexo clean` #清除缓存，**强烈建议每次执行命令前先清理缓存，每次部署前先删除 .deploy 
 
 **简写：**
 
- - hexo n == hexo new
- - hexo g == hexo generate
- - hexo s == hexo server
- - hexo d == hexo deploy
+ - `hexo n` == h`exo new`
+ - `hexo g` == `hexo generate`
+ - `hexo s` == `hexo server`
+ - `hexo d` == `hexo deploy`
 
 
 ### 第三方服务
+---
 
 - [为NexT主题添加文章阅读量统计功能][12]
 - [为hexo添加多说评论][13]
@@ -245,7 +228,6 @@ hexo的主题列表[Hexo Themes][9]。
 注册DNSpod，添加域名，如下图设置。
 
 
-
 其中A的两条记录指向的ip地址是github Pages的提供的ip
 如何知道你的github上项目的IP
 
@@ -253,20 +235,14 @@ hexo的主题列表[Hexo Themes][9]。
 更改godaddy的Nameservers为DNSpod的NameServers。
 
 
-
-
-----------
-
 ### 至此，基本操作介绍完毕，以下内容普通用户无需了解
-
 ---
 
 - 目录介绍
 
-
 默认目录结构：
 
-
+```
 ├── .deploy
 ├── public
 ├── scaffolds
@@ -277,7 +253,7 @@ hexo的主题列表[Hexo Themes][9]。
 ├── themes
 ├── _config.yml
 └── package.json
-
+```
 
 - .deploy：执行hexo deploy命令部署到GitHub上的内容目录
 - public：执行hexo generate命令，输出的静态网页内容目录
@@ -286,17 +262,17 @@ hexo的主题列表[Hexo Themes][9]。
 - source：文章源码目录，该目录下的markdown和html文件均会被hexo处理。该页面对应repo的根目录，404文件、favicon.ico文件，CNAME文件等都应该放这里，该目录下可新建页面目录。
  - _drafts：草稿文章
  - _posts：发布文章
-
 - themes：主题文件目录
 - _config.yml：全局配置文件，大多数的设置都在这里
 - package.json：应用程序数据，指明hexo的版本等信息，类似于一般软件中的关于按钮
 
----
 
 - **修改局部页面**
+---
 
 页面展现的全部逻辑都在每个主题中控制，源代码在hexo\themes\你使用的主题\中，以modernist主题为例：
 
+```
 ├── languages          #多语言
 |   ├── default.yml    #默认语言
 |   └── zh-CN.yml      #中文语言
@@ -314,11 +290,10 @@ hexo的主题列表[Hexo Themes][9]。
 |   └── js             #javascript源代码
 ├── _config.yml        #主题配置文件
 └── README.md          #用GitHub的都知道
-
-
----
+```
 
 - **插件**
+---
 
  - 安装插件：`npm install <plugin-name> --save`
  - 启用插件：在*hexo\_config.yml文件添加：
@@ -326,38 +301,32 @@ hexo的主题列表[Hexo Themes][9]。
  - 升级插件： `npm update`
  - 卸载插件：`npm uninstall <plugin-name>`
 
----
 
 - **迁移**
-
 hexo支持从其他类型站点迁移，如通用RSS，Jekyll，Octopress，WordPress等。请参考官方文档[Hexo Migration][18]。
 
 
----
-
 - **更新**
-
  - 更新hexo：`npm update -g hexo`
  - 更新主题：`cd themes/你的主题 git pull`
 
----
 
 - **换机器写博客**
+---
 
 保留好自己的博客源码。换机器写博客，就只能使用各种网盘的同步功能，或者你把你的站点源文件提交到某代码托管服务器。另外，貌似这篇很牛逼，[Hexo 服务器端布署及 Dropbox 同步][19]。
 
----
 办法是这样的，先在一个目录下做好`Node+Git+Hexo`的绿色环境，写个`hexos.bat`可以一键启动hexo工作台，把整个目录用`Dropbox同步`，这样随便在办公室或家的任何笔记本台式机都可以写博客，也不用处理什么文件拷贝备份的事情
 
 
 
 ### 问题详解
- 
-
+---
  - [hexo 部署至Git遇到的坑][20]
  - [Hexo常见问题解决方案][21]
 
 ## 总结
+---
 
  - 对于一个不懂什么服务器,什么前端的人来说,Hexo+Github给搭建个人博客带来了很大的便利.
  - 搭建博客不是心血来潮,也并不是一帆风顺的,所以需要耐心,折腾得起才行.
@@ -366,10 +335,8 @@ hexo支持从其他类型站点迁移，如通用RSS，Jekyll，Octopress，Word
  - 搭建博客才是第一步,坚持写好文章才是关键,路还很长.
 
 
-----------
-
-
 ** 参考：**
+---
 
  - [Hexo官网][22]
  - [Hexo + GitHub 博客搭建之旅][23]

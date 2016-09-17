@@ -7,37 +7,36 @@ tags:
 categories: Front-End   
 ---
 
----
 
-**字符串长度截取**
+### 字符串长度截取
 
 
 ```javascript
 function cutstr(str, len) {
-    var temp,
-        icount = 0,
-        patrn = /[^\x00-\xff]/，
-        strre = "";
-    for (var i = 0; i < str.length; i++) {
-        if (icount < len - 1) {
-            temp = str.substr(i, 1);
-                if (patrn.exec(temp) == null) {
-                   icount = icount + 1
-            } else {
-                icount = icount + 2
-            }
-            strre += temp
-            } else {
-            break;
+var temp,
+    icount = 0,
+    patrn = /[^\x00-\xff]/，
+    strre = "";
+for (var i = 0; i < str.length; i++) {
+    if (icount < len - 1) {
+        temp = str.substr(i, 1);
+            if (patrn.exec(temp) == null) {
+               icount = icount + 1
+        } else {
+            icount = icount + 2
         }
+        strre += temp
+        } else {
+        break;
     }
-    return strre + "..."
+}
+return strre + "..."
 }
 ```
 
 <!--more-->
 
-**替换全部** 
+### 替换全部 
     
 ```javascript
 String.prototype.replaceAll = function(s1, s2) {
@@ -46,7 +45,7 @@ String.prototype.replaceAll = function(s1, s2) {
 ```
 
 
-**清除空格 **    
+### 清除空格*    
 
 ```javascript
 String.prototype.trim = function() {
@@ -56,7 +55,7 @@ String.prototype.trim = function() {
 ```
 
 
-**清除左空格/右空格 ** 
+### 清除左空格/右空格* 
 
 ```javascript
 function ltrim(s){ return s.replace( /^(\s*|　*)/, ""); } 
@@ -64,7 +63,7 @@ function rtrim(s){ return s.replace( /(\s*|　*)$/, ""); }
 ```
 
 
-**判断是否以某个字符串开头 ** 
+### 判断是否以某个字符串开头* 
 
 ```javascript
 String.prototype.startWith = function (s) {
@@ -72,7 +71,7 @@ String.prototype.startWith = function (s) {
 }
 ```
 
-**判断是否以某个字符串结束 ** 
+### 判断是否以某个字符串结束* 
     
 ```javascript
 String.prototype.endWith = function (s) {
@@ -81,7 +80,7 @@ String.prototype.endWith = function (s) {
 }
 ```
     
-**转义html标签 ** 
+### 转义html标签* 
     
 ```javascript
 function HtmlEncode(text) {
@@ -90,7 +89,7 @@ function HtmlEncode(text) {
 ```
 
 
-**时间日期格式转换 **     
+### 时间日期格式转换*     
 ```javascript
 Date.prototype.Format = function(formatStr) {
     var str = formatStr;
@@ -113,7 +112,7 @@ Date.prototype.Format = function(formatStr) {
 ```
 
 
-**判断是否为数字类型 ** 
+### 判断是否为数字类型* 
 ```javascript
 function isDigit(value) {
     var patrn = /^[0-9]*$/;
@@ -126,7 +125,7 @@ function isDigit(value) {
 ```
 
 
-**设置cookie值 ** 
+### 设置cookie值* 
 
 ```javascript
 function setCookie(name, value, Hours) {
@@ -140,7 +139,7 @@ function setCookie(name, value, Hours) {
 }
 ```
 
-**获取cookie值 ** 
+### 获取cookie值* 
     
 ```javascript
 function getCookie(name) {
@@ -150,7 +149,7 @@ function getCookie(name) {
 }
 ```
     
-**加入收藏夹 ** 
+### 加入收藏夹* 
     
 ```javascript
 function AddFavorite(sURL, sTitle) {
@@ -167,7 +166,7 @@ function AddFavorite(sURL, sTitle) {
 ```
 
 
-**设为首页 **     
+### 设为首页*     
 
 ```javascript
 function setHomepage() {
@@ -189,7 +188,7 @@ function setHomepage() {
 ```
 
 
-**加载样式文件 **
+### 加载样式文件*
 
 ```javascript
 function LoadStyle(url) {
@@ -207,7 +206,7 @@ function LoadStyle(url) {
 ```
 
 
-**返回脚本内容 ** 
+### 返回脚本内容 
 
 ```javascript
 function evalscript(s) {
@@ -230,7 +229,7 @@ function evalscript(s) {
 }
 ```
 
-**清除脚本内容 ** 
+### 清除脚本内容 
     
 ```javascript
 function stripscript(s) {
@@ -238,7 +237,7 @@ function stripscript(s) {
 }
 ```
 
-**动态加载脚本文件 ** 
+### 动态加载脚本文件 
     
 ```javascript
 function appendscript(src, text, reload, charset) {
@@ -276,7 +275,7 @@ function appendscript(src, text, reload, charset) {
 ```
 
 
-**返回按ID检索的元素对象 **    
+### 返回按ID检索的元素对象    
 
 ```javascript
 function $(id) {
@@ -285,7 +284,7 @@ function $(id) {
 ```
 
 
-**跨浏览器绑定事件 ** 
+### 跨浏览器绑定事件 
 
 ```javascript
 function addEventSamp(obj,evt,fn){ 
@@ -301,7 +300,7 @@ function addEventSamp(obj,evt,fn){
 ```
 
 
-**跨浏览器删除事件 ** 
+### 跨浏览器删除事件 
 
 ```javascript
 function delEvt(obj,evt,fn){
@@ -317,7 +316,7 @@ function delEvt(obj,evt,fn){
 
 ```
 
-**为元素添加on方法 ** 
+### 为元素添加on方法 
     
 ```javascript
 Element.prototype.on = Element.prototype.addEventListener;
@@ -330,7 +329,7 @@ NodeList.prototype.on = function (event, fn) {、
 };
 ```
   
-**为元素添加trigger方法 ** 
+### 为元素添加trigger方法 
     
 ```javascript
 Element.prototype.trigger = function (type, data) {
@@ -352,7 +351,7 @@ NodeList.prototype.trigger = function (event) {
 ```
 
 
-**检验URL链接是否有效 **     
+### 检验URL链接是否有效     
 
 ```javascript
 function getUrlState(URL){ 
@@ -377,7 +376,7 @@ function getUrlState(URL){
 ```
 
 
-**格式化CSS样式代码 ** 
+### 格式化CSS样式代码 
 
 ```javascript
 function formatCss(s){//格式化代码
@@ -392,7 +391,7 @@ function formatCss(s){//格式化代码
 ```
 
 
-**压缩CSS样式代码 ** 
+### 压缩CSS样式代码 
 
 ```javascript
 function compressCss (s) {//压缩代码
@@ -405,7 +404,7 @@ function compressCss (s) {//压缩代码
 }
 ```
 
-**获取当前路径 ** 
+### 获取当前路径 
     
 ```javascript
 var currentPageUrl = "";
@@ -416,7 +415,7 @@ if (typeof this.href === "undefined") {
 }
 ```
     
-**判断是否移动设备 ** 
+### 判断是否移动设备 
     
 ```javascript
 function isMobile(){
@@ -439,7 +438,7 @@ function isMobile(){
 ```
 
 
-**判断是否移动设备访问 **     
+### 判断是否移动设备访问     
 
 ```javascript
 function isMobileUserAgent(){
@@ -448,7 +447,7 @@ function isMobileUserAgent(){
 ```
 
 
-**判断是否苹果移动设备访问 ** 
+### 判断是否苹果移动设备访问 
 
 ```javascript
 function isAppleMobileDevice(){
@@ -457,7 +456,7 @@ function isAppleMobileDevice(){
 ```
 
 
-**判断是否安卓移动设备访问 ** 
+### 判断是否安卓移动设备访问 
 
 ```javascript
 function isAndroidMobileDevice(){
@@ -465,7 +464,7 @@ function isAndroidMobileDevice(){
 }
 ```
 
-**判断是否Touch屏幕 ** 
+### 判断是否Touch屏幕 
     
 ```javascript
 function isTouchScreen(){
@@ -473,7 +472,7 @@ function isTouchScreen(){
 }
 ```
  
-**判断是否打开视窗 **   
+### 判断是否打开视窗   
 
 ```javascript
 function isViewportOpen() {
@@ -481,7 +480,7 @@ function isViewportOpen() {
 }
 ```
 
-**获取移动设备初始化大小 **   
+### 获取移动设备初始化大小   
 
 ```javascript
 function getInitZoom(){
@@ -496,7 +495,7 @@ function getInitZoom(){
 }
 ```
 
-**获取移动设备最大化大小 **   
+### 取移动设备最大化大小   
 
 ```javascript
 function getZoom(){
@@ -514,7 +513,7 @@ function getZoom(){
 }
 ```
 
-**获取移动设备屏幕宽度 **   
+### 取移动设备屏幕宽度   
 
 ```javascript
 function getScreenWidth(){
@@ -530,7 +529,7 @@ function getScreenWidth(){
 }
 ```
 
-**完美判断是否为网址 **   
+### 美判断是否为网址   
 
 ```javascript
 function IsURL(strUrl) {
@@ -543,7 +542,7 @@ function IsURL(strUrl) {
 }
 ```
 
-**getElementsByClassName **   
+### etElementsByClassName   
 
 ```javascript
 function getElementsByClassName(name) {
@@ -564,7 +563,7 @@ function getElementsByClassName(name) {
 }
 ```
 
-**获取页面高度 **   
+### 取页面高度   
 
 ```javascript
 function getPageHeight(){
@@ -575,7 +574,7 @@ function getPageHeight(){
 }
 ```
 
-**获取页面scrollLeft **   
+### 取页面scrollLeft   
 
 ```javascript
 function getPageScrollLeft(){
@@ -584,7 +583,7 @@ function getPageScrollLeft(){
 }
 ```
 
-**获取页面可视宽度 **   
+### 取页面可视宽度   
 
 ```javascript
 function getPageViewWidth(){
@@ -595,7 +594,7 @@ function getPageViewWidth(){
 }
 ```
 
-**获取页面宽度 **   
+### 取页面宽度   
 
 ```javascript
 function getPageWidth(){
@@ -606,7 +605,7 @@ function getPageWidth(){
 }
 ```
 
-**获取页面scrollTop **   
+### 取页面scrollTop   
 
 ```javascript
 function getPageScrollTop(){
@@ -615,7 +614,7 @@ function getPageScrollTop(){
 }
 ```
 
-**获取页面可视高度 **   
+### 取页面可视高度   
 
 ```javascript
 function getPageViewHeight() {
@@ -626,7 +625,7 @@ function getPageViewHeight() {
 }
 ```
 
-**去掉url前缀 **   
+### 掉url前缀  
 
 ```javascript
 function removeUrlPrefix(a){
@@ -638,7 +637,7 @@ function removeUrlPrefix(a){
 }
 ```
 
-**随机数时间戳 **   
+### 随机数时间戳  
 
 ```javascript
 function uniqueId(){
@@ -647,7 +646,7 @@ function uniqueId(){
 }
 ```
 
-**全角半角转换 **   
+### 全角半角转换  
 
 ```javascript
 //iCase: 0全到半，1半到全，其他不转化
@@ -681,7 +680,7 @@ function chgCase(sStr,iCase){
 }
 ```
 
-**确认是否键盘有效输入值 **   
+### 确认是否键盘有效输入值  
 
 ```javascript
 function checkKey(iKey){
@@ -696,7 +695,7 @@ function checkKey(iKey){
 }
 ```
 
-**获取网页被卷去的位置 **   
+### 获取网页被卷去的位置   
 
 ```javascript
 function getScrollXY() {
@@ -710,7 +709,7 @@ function getScrollXY() {
 }
 ```
 
-**日期格式化函数+调用方法 **   
+### 日期格式化函数+调用方法  
 
 ```javascript
 Date.prototype.format = function(format){
@@ -734,7 +733,7 @@ Date.prototype.format = function(format){
 alert(new Date().format("yyyy-MM-dd hh:mm:ss"));
 ```
 
-**时间个性化输出功能 **   
+### 时间个性化输出功能
 
 ```javascript
 /*
@@ -779,7 +778,7 @@ function timeFormat(time){
 }
 ```
 
-**解决offsetX兼容性问题 **   
+### 解决offsetX兼容性问题
 
 ```javascript
 // 针对火狐不支持offsetX/Y
@@ -819,7 +818,7 @@ function getPageCoord(element){
 }
 ```
 
-**常用的正则表达式 **   
+### 常用的正则表达式
 
 ```javascript
 //正整数
@@ -885,7 +884,7 @@ function getPageCoord(element){
 ^[\u4e00-\u9fa5_a-zA-Z0-9]+$
 ```
 
-**返回顶部的通用方法 **   
+### 返回顶部的通用方法   
 
 ```javascript
 function backTop(btnId) {
@@ -910,7 +909,7 @@ function backTop(btnId) {
 backTop('goTop');
 ```
 
-**获得URL中GET参数值 **   
+**获得URL中GET参数值   
 
 ```javascript
 // 用法：如果地址是 test.htm?t1=1&t2=2&t3=3, 那么能取得：GET["t1"], GET["t2"], GET["t3"]
@@ -929,7 +928,7 @@ function get_get(){
 }
 ```
 
-**打开一个窗体通用方法 **   
+### 打开一个窗体通用方法  
 
 ```javascript
 function openWindow(url,windowName,width,height){
@@ -954,14 +953,14 @@ function openWindow(url,windowName,width,height){
 }
 ```
 
-**提取页面代码中所有网址 **   
+### 提取页面代码中所有网址   
 
 ```javascript
 var aa = document.documentElement.outerHTML.match(/(url\(|src=|href=)[\"\']*([^\"\'\(\)\<\>\[\] ]+)[\"\'\)]*|(http:\/\/[\w\-\.]+[^\"\'\(\)\<\>\[\] ]+)/ig).join("\r\n").replace(/^(src=|href=|url\()[\"\']*|[\"\'\>\) ]*$/igm,"");
 alert(aa);
 ```
 
-**清除相同的数组 **   
+### 清除相同的数组  
 
 ```javascript
 String.prototype.unique=function(){
@@ -976,7 +975,7 @@ String.prototype.unique=function(){
 };
 ```
 
-**按字母排序，对每行进行数组排序 **   
+### 按字母排序，对每行进行数组排序  
 
 ```javascript
 function SetSort(){
@@ -986,7 +985,7 @@ function SetSort(){
 }
 ```
 
-**字符串反序 **   
+### 字符串反序   
 
 ```javascript
 function IsReverse(text){
@@ -994,7 +993,7 @@ function IsReverse(text){
 }
 ```
 
-**清除html代码中的脚本 **   
+### 清除html代码中的脚本  
 
 ```javascript
 function clear_script(){
@@ -1011,7 +1010,7 @@ function javascript(){
 }
 ```
 
-**动态执行VBScript脚本 **   
+### 动态执行VBScript脚本  
 
 ```javascript
 function vbscript(){
@@ -1025,7 +1024,7 @@ function vbscript(){
 }
 ```
 
-**金额大写转换函数 **   
+### 金额大写转换函数  
 
 ```javascript
 function transform(tranvalue) {
@@ -1104,7 +1103,7 @@ function splits(tranvalue) {
 }
 ```
 
-**resize的操作 **   
+### resize的操作
 
 ```javascript
 (function(){
@@ -1128,7 +1127,7 @@ function splits(tranvalue) {
 })();
 ```
 
-**实现base64解码 **   
+### 实现base64解码   
 
 ```javascript
 function base64_decode(data){
@@ -1159,7 +1158,7 @@ function base64_decode(data){
 }
 ```
 
-**实现utf8解码 **   
+### 实现utf8解码 
 
 ```javascript
 function utf8_decode(str_data){
@@ -1184,7 +1183,7 @@ function utf8_decode(str_data){
 }
 ```
 
-**获取窗体可见范围的宽与高 **   
+### 获取窗体可见范围的宽与高  
 
 ```javascript
 function getViewSize(){
@@ -1196,7 +1195,7 @@ function getViewSize(){
 }
 ```
 
-**断鼠标是否移出事件 **   
+### 断鼠标是否移出事件
 
 ```javascript
 function isMouseOut(e, handler) {
@@ -1211,7 +1210,7 @@ function isMouseOut(e, handler) {
 }
 ```
 
-**半角转换为全角函数 **   
+### 半角转换为全角函数  
 
 ```javascript
 function ToDBC(str){
@@ -1230,7 +1229,7 @@ function ToDBC(str){
 }
 ```
 
-**全角转换为半角函数 **   
+### 全角转换为半角函数
 
 ```javascript
 function ToCDB(str){

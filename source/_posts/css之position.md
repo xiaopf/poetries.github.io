@@ -6,9 +6,10 @@ categories: Front-End
 ---
 
 ### 引言
+---
 
 在学习`position`之前，我们应该去思考一个问题：什么情况下我们需要定位？如果没有定位将无法满足我们怎样的需求
-
+<!--more-->
 如果没有定位，我们做出来的网页将会是按部就班的自上而下、自左而右的平铺在浏览器上，外加通过`margin`和`padding`调整一下间距，还有就是通过`float`来浮动某些元素。做一些简单的网页这样就够了，例如`N`年之前的`yahoo`，虽然现在看来很`low`
 
 ![](http://images.cnitblog.com/blog2015/138012/201503/090756276438351.png)
@@ -16,12 +17,14 @@ categories: Front-End
 但是有些情况下，这种按部就班的网页排版满足不了我们的要求，我们需要某些元素跑出来，悬浮在网页上面，而且需要给它指定一个位置。这时候我们就需要用到了`position`，而且是非用不可。
 
 ### relative
-<!--more-->
+---
+
 `position`一共有四个可选属性：`static/relative/absolute/fixed`。其中`static`（静态定位）是默认值，即所有的元素如果不设置其他的`position`值，它的`position`值就是`static`
 
 `relative`会导致自身位置的相对变化，而不会影响其他元素的位置、大小的变化。这是`relative`的要点之一。还有第二个要点，就是`relative`产生一个新的定位上下文
 
 ### absolute
+---
 
 ![](http://images.cnitblog.com/blog2015/138012/201503/090759476741328.png)
 
@@ -42,10 +45,12 @@ categories: Front-End
 
 
 ### fixed
+---
 
 其实`fixed`和`absolute`是一样的，唯一的区别在于：`absolute`元素是根据最近的定位上下文确定位置，而`fixed`永远根据浏览器确定位置
 
 ### 定位上下文
+---
 
 #### relative的定位
 
@@ -54,12 +59,14 @@ categories: Front-End
 ![](http://images.cnitblog.com/blog2015/138012/201503/090804243309447.png)
 
 #### fixed的定位
+---
 
 `fixed`元素的定位永远是相对于浏览器边界的，和其他元素没有关系。但是它具有破坏性，会导致其他元素位置的变化
 
 ![](http://images.cnitblog.com/blog2015/138012/201503/090804452689278.png)
 
 #### absolute的定位
+---
 
 `absolute`的定位相对于前两者要复杂许多。如果为`absolute`设置了`top`、`left`，浏览器会根据什么去确定它的纵向和横向的偏移量呢？答案是浏览器会递归查找该元素的所有父元素，如果找到一个设置了`position:relative/absolute/fixed`的元素，就以该元素为基准定位，如果没找到，就以浏览器边界定位。如下两个图所示：
 

@@ -37,4 +37,4 @@ categories: Front-End
 	var  enc = escape(str);
 	alert(enc);
 	alert(unescape(enc));// unescape 对escape转化的Unicode编码 解密
-    ```
+```

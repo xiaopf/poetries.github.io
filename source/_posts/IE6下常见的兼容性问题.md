@@ -8,6 +8,7 @@ categories: Front-End
 ---
 
 #### 常见问题一：在Ie6下，内容会把父元素设置好的宽高撑开。计算一定要精确
+---
 
 ```css
 .box{width:400px;}
@@ -33,6 +34,7 @@ categories: Front-End
 ---
 
 #### 常见问题二：在IE6元素浮动，如果宽度需要内容撑开，里面块级元素的内容也要加浮动
+---
 
 ```css
 .box{width:400px;}
@@ -59,12 +61,12 @@ h3{height:30px;float:left;}
 ---
 
 #### 常见问题三：p里面不要套用p标签或者标题标签
+---
 
 ![](http://7xq6al.com1.z0.glb.clouddn.com/3-1.png)
 
----
-
 #### 常见问题四：IE6下最小高度问题
+---
 
 - 当`height<19px`的时候会被当作19px来处理
 
@@ -78,10 +80,10 @@ h3{height:30px;float:left;}
 
 ![](http://7xq6al.com1.z0.glb.clouddn.com/4-1.png)
 
----
-
 
 #### 常见问题五：`border:1px dotted `; `IE6`不支持
+---
+
 - 解决办法：切背景平铺
 
 ```html
@@ -93,9 +95,9 @@ h3{height:30px;float:left;}
 
 ![](http://7xq6al.com1.z0.glb.clouddn.com/5-2.png)
 
----
 
 #### 常见问题六：IE6下，父元素用边框，子元素的margin会消失 
+---
 
 - 解决办法：触发父元素的`haslayout`;
 
@@ -115,10 +117,9 @@ h3{height:30px;float:left;}
  
  ![](http://7xq6al.com1.z0.glb.clouddn.com/6-2.png)
   
----
-
 
 #### 常见问题七：`IE6`双边距`bug`：横向的`margin`值会被放大为两倍
+---
 
 - 解决方法：`display:inline`;
 
@@ -136,6 +137,7 @@ h3{height:30px;float:left;}
 
 
 #### 常见问题八：IE6下外边距消失：当父元素的宽度和一行内容的宽度的差别`>3px`的时候 
+---
 
 - IE6双边距bug：横向的`margin`值会被放大为两倍
 - 解决方法：`display:inline;`
@@ -162,9 +164,9 @@ h3{height:30px;float:left;}
 
 ![](http://7xq6al.com1.z0.glb.clouddn.com/8-2.png)
 
----
 
 #### 常见问题九：`IE6，7`下 `li`本身没有浮动，但是`li`里面的内容有浮动，每个`li`下边就会产生一个间距
+---
 
 - 解决办法：
   - 1、给`li`添加 `vertical-align:top`
@@ -180,27 +182,27 @@ span{width:100px;height:30px;float:right;background:blue;}
 
 ```html
 <ul>
-			<li>
-				<a href="#"></a>
-				<span></span>
-			</li>
-			<li>
-				<a href="#"></a>
-				<span></span>
-			</li>
-			<li>
-				<a href="#"></a>
-				<span></span>
-			</li>
-			<li>
-				<a href="#"></a>
-				<span></span>
-			</li>
-			<li>
-				<a href="#"></a>
-				<span></span>
-			</li>
-		<ul>
+    <li>
+        <a href="#"></a>
+        <span></span>
+    </li>
+    <li>
+        <a href="#"></a>
+        <span></span>
+    </li>
+    <li>
+        <a href="#"></a>
+        <span></span>
+    </li>
+    <li>
+        <a href="#"></a>
+        <span></span>
+    </li>
+    <li>
+        <a href="#"></a>
+        <span></span>
+    </li>
+<ul>
 ```
 
 ![](http://7xq6al.com1.z0.glb.clouddn.com/9-1.png)

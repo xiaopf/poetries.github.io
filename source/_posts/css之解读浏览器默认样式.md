@@ -6,14 +6,16 @@ categories: Front-End
 ---
 
 ### 理念上的转变
+---
 
 浏览器加载了html之后只为一件东西——`dom`树，浏览器把`html`变为`dom`树结构，就完成了对`html`的结构化。至于后来对视图的渲染，p是`block`、`br`换行，那是整合了`css`之后的事情。而浏览器整合`css`又是另一个路线，和解析`html`是分开的。这里的`“css”`就包含了浏览器默认样式。
-
-![](http://images.cnitblog.com/blog/138012/201502/090820101205470.png)
 <!--more-->
+![](http://images.cnitblog.com/blog/138012/201502/090820101205470.png)
+
 **一句话，浏览器将载入的`html`变为`dom`树，但是此时没有任何显示样式。所以显示的样式，都是css定义的，浏览器只会通过css来渲染视图样式**
 
 ### block元素
+---
 
 ![](http://images.cnitblog.com/blog/138012/201502/090820369016121.png)
 
@@ -22,6 +24,7 @@ categories: Front-End
 没有设置`block`的元素，默认为`inline`显示
 
 ### display: list-item
+---
 
 ![](http://images.cnitblog.com/blog/138012/201502/090821140895694.png)
 
@@ -32,6 +35,7 @@ categories: Front-End
 出现了`ul-li`中的效果了吧，如果再加一个`margin-left`是不是就跟`ul-li`一样了？所以，`ul-li`为什么会默认显示成那种样子？——`list-item`才是“罪魁祸首”
 
 ### diplay:table
+---
 
 ![](http://images.cnitblog.com/blog/138012/201502/090822126047851.png)
 
@@ -44,6 +48,7 @@ categories: Front-End
 第一个`div`默认是`block`，宽度撑满整个页面。第二`div`设置了`display:table`，宽度根据内容而定。这就是“包裹性”
 
 ### display: table-cell
+---
 
 ![](http://images.cnitblog.com/blog/138012/201502/090823168238830.png)
 
@@ -56,6 +61,7 @@ categories: Front-End
 你可以用`table-cell`，像用`table`一样做多列布局，做出来的效果和`table`做出来的效果是一模一样的
 
 ### body样式
+---
 
 在`body`中，定义了两个样式
 ![](http://images.cnitblog.com/blog/138012/201502/090826064958362.png)
@@ -77,6 +83,7 @@ categories: Front-End
 相信看到这里大家会发现，通过一个`line-height`我能能窥探到的道道有很多。如果大家看懂了这三种情况，从软件设计和系统扩展的角度说，当然我们都会`选择第一种`。
 
 ###  em和px
+---
 
 因为`px`是固定大小，一目了然。——当然，它也不利于扩展
 因此，我们推荐大家用`em`。而且浏览器的默认样式也建议我们这样书写：
@@ -86,6 +93,7 @@ categories: Front-End
 `em`是什么？——`em`是一个浏览器识别的长度单位，但是它不是绝对的、固定的，而是相对的。大家都知道`px`是一个绝对的长度单位制，它永远不会改变。浏览器默认情况下令`1em === 16px`。现在你知道为何p默认是`16px`了吧。而且你还知道了`h1`是`p`高度的两倍，`h2`是p高度的`1.5`倍
 
 ### 粗体和斜体
+---
 
 ![](http://images.cnitblog.com/blog/138012/201502/090829319794453.png)
 
@@ -93,6 +101,7 @@ categories: Front-End
 
 
 ### inline-block
+---
 
 ![](http://images.cnitblog.com/blog/138012/201502/090830027458186.png)
 

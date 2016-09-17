@@ -5,11 +5,10 @@ tags: CSS
 categories: Front-End
 ---
 
-利用CSS进行元素的水平居中，比较简单，手到擒来：行级元素设置其父元素的text-align center，块级元素设置其本身的left 和 right margins为auto即可。而撸起垂直居中，相信于大多初撸者来说，内心是抗拒的。
+利用`CSS`进行元素的水平居中，比较简单，手到擒来：行级元素设置其父元素的`text-align center`，块级元素设置其本身的`left `和 `right `margin`为`auto`即可。而撸起垂直居中，相信于大多初撸者来说，内心是抗拒的。
 
 <!--more-->
 ----------
-
 
  - [CSS实现水平居中(3法)][1]
  - [CSS实现垂直居中(8法)][2]

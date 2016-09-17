@@ -8,16 +8,14 @@ categories: Front-End
 ---
 
 ## 第一节 基本标签样式
-
 ---
 
 - 非可视化标签：`head`  `meta`  `style`  `scrpit.`..
 - 可视化标签：`img`  `div` `span` `a` `ul` `li`...
 - 只有可视化标签，才能用`css`改变它
 - 单标签：`meta`  `link`  `base`  `img`  `input` `br` `hr`
-- 双标签：`html` `head` `body`  `div`  `a`  `p`  `span` ..`ul` `li` `ol` ` dl` ....
-
-
+- 双标签：`html` `head` `body`  `div`  `a`  `p`  `span` ..`ul` `li` `ol` ` dl` 
+<!--more-->
 
 - **常用可视化标签**
 
@@ -41,10 +39,9 @@ categories: Front-End
 		- 如果是合并竖排的就是合并行（`rowspan`）
 		- 如果是合并横排的就是合并列（`colspan`）
 
-<!--more-->
----
 
  - **知识点：**
+---
 
     - **css概念**
         - 层叠样式表
@@ -88,10 +85,8 @@ html {overflow-y: scroll;}
 .clearfix { *zoom:1; }
 
 ```
----
 
 ### 第二节 常用css属性
-
 ---
 
 #### 知识点：
@@ -125,11 +120,8 @@ html {overflow-y: scroll;}
 			- 3.`inline-block`
 			- 4.`none` //隐藏
 
----
-
 
 ### 第三节 控制文本字体
-
 ---
 
 - **i** 字体斜体 
@@ -137,9 +129,9 @@ html {overflow-y: scroll;}
 - **i**  经常不用来做字体的倾斜 常用来做小图标
 - **b** 字体加粗 `strong`(强调)
 
----
 
 #### 控制文本
+---
 
 - 1、`text-decoration` 修饰文本  
 
@@ -167,9 +159,9 @@ html {overflow-y: scroll;}
 		  - `lowercase` 小写
 		  - `none` 默认
 
----
 
 #### 控制字体
+---
 
 - **`color`**：字体颜色 三种 
     - 第一种：`red` `blue` `green`  一般只用做测试
@@ -213,10 +205,8 @@ html {overflow-y: scroll;}
 	- `font-size/line-height` 常用
 	- `font-family`
 
----
 
 ### 第四节 盒子模型
-
 ---
 
 - **css盒子模型**
@@ -253,9 +243,8 @@ html {overflow-y: scroll;}
 
 ### 第五节 定位与浮动
 
----
-
 #### 定位
+---
 
 - **position**  //定位属性
 	- **`static`**:默认值 静态定位 元素处于普通文档流（画板） 
@@ -274,9 +263,9 @@ html {overflow-y: scroll;}
 
  - 只要是盒子漂浮起来（设置了`position:fixed/absolute`或者`float`）那么 `display:block/inline` 就不需要用到 没有效果` position`优先级比`float`的高
 
----
 
 ####  浮动
+---
 
 **浮动:** 浮动的元素框不在普通文档流中，漂浮起来了 原来所占据的空间位置也被删除了
 
@@ -293,10 +282,8 @@ html {overflow-y: scroll;}
     - ` auto`:自动出现滚动，高级
     -  `hidden`:内容溢出则隐藏
 
----
 
 ### 第六节 列表标签
-
 ---
 
 - **1、无序列表**
@@ -331,9 +318,9 @@ html {overflow-y: scroll;}
   - `dt` 规定列表的项目名
   - `dd` 描述项目的内容
 
----
 
 ### 第七节 框架与表格
+---
 
 - **1、框架**
 	- `iframe` 内框架 只能嵌套在`body`里面使用
@@ -362,31 +349,29 @@ html {overflow-y: scroll;}
 - `rowspan` 合并行
 
 ```html
-	<table border>
-		<caption></caption>//表头
-		<tr>//规定行
-			<th>姓名</th>//规定标题的列
-			<th>年龄</th>
-		</tr>
-		<tr>
-			<td></td>//内容的列
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-		</tr>
-	</table>
+<table border>
+    <caption></caption>//表头
+    <tr>//规定行
+        <th>姓名</th>//规定标题的列
+        <th>年龄</th>
+    </tr>
+    <tr>
+        <td></td>//内容的列
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
  ```
 
----
 
 ### 第七节 表单
-
 ---
 
 - **1、表单 `form`**
@@ -402,10 +387,8 @@ html {overflow-y: scroll;}
 
 ```html
 <form action="url路劲" method="get/post" target="">
-
 		<input />//单标签 ，行内块级元素
-
-	</form>
+</form>
 
 ```
 
@@ -480,11 +463,5 @@ html {overflow-y: scroll;}
 
    - `<input type="hidden" name="pass" value="123456"/>`  通常用来监控数据
 
----
 
-### 附录  总结
-
----
-
-![CSS权威指南](http://7xq6al.com1.z0.glb.clouddn.com/CSS%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97.png)
 
