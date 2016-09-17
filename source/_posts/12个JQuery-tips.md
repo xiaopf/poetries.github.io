@@ -7,11 +7,11 @@ tags:
 categories: Front-End
 ---
 
----
 
 ### 返回顶部
+---
 
-使用JQuery的 `animate `和 `scrollTop `方法可以创建简单地返回顶部的动画：
+使用`JQuery`的 `animate `和 `scrollTop `方法可以创建简单地返回顶部的动画：
 
 ```javascript
 // Back to top
@@ -20,17 +20,18 @@ $('a.top').click(function (e) {
   $(document.body).animate({scrollTop: 0}, 800);
 });
 ```
-
+<!--more-->
 HTML中得有一个按钮：
 
 ```html
 <!-- Create an anchor tag -->
 <a class="top" href="#">Back to top</a>
 ```
-<!--more-->
+
 可以改变 `scrollTop `的值来定位滚动条的位置。
 
 ### 图片预加载
+---
 
 如果页面使用了很多不是最初加载便可见的图片，有必要进行预加载：
 
@@ -42,7 +43,9 @@ $.preloadImages = function () {
 };
 $.preloadImages('img/hover-on.png', 'img/hover-off.png');
 ```
+
 ### 判断图片是否完全加载
+---
 
 有时需要图片完全加载才能进行后面的操作，下面的这段脚本可以实现：
 
@@ -55,6 +58,7 @@ $('img').load(function () {
 你也可以通过带 `id` 或者 `class` 的 `img` 标签来判断某张特定的图片是否完全加载
 
 ### 自动修复损坏图片
+---
 
 如果图片损坏，可以用另外一张进行替换：
 
@@ -64,6 +68,7 @@ $('img').on('error', function () {
 });
 ```
 ### Hover状态的类切换
+---
 
 当用户的鼠标指针悬浮在一个可以点击的元素上时，你可以通过添加一个 `class `改变它的视觉效果，鼠标指针离开该元素时，就移开刚刚添加的` class`：
 
@@ -74,6 +79,7 @@ $('.btn').hover(function () {
     $(this).removeClass('hover');
   });
   ```
+  
 一个更简单的方式是使用 `toggleClass`：
 
 ```javascript
@@ -82,6 +88,7 @@ $('.btn').hover(function () {
 });
 ```
 ### 输入框的不可编辑
+---
 
 有时，你想要表单的提交按钮或者文本框变的不可编辑，直到用户完成某个特定的动作，通过修改` input` 元素的 `disabled` 属性来实现：
 
@@ -96,6 +103,7 @@ $('input[type="submit"]').prop('disabled', false);
 ```
 
 ### 停止链接加载
+---
 
 若你不想点击链接跳转到另一个页面或者重新加载页面，仅仅只想让它做点别的事情，如触发其它脚本，则需要阻止链接的默认行为:
 
@@ -106,6 +114,7 @@ $('a.no-link').click(function (e) {
 ```
 
 ### Fade/Slide切换
+---
 
 `Slideing` 和 `fading `是很常用的` JQuery` 动画。如果你想要在用户产生点击事件时显示一个元素，可以用` fadeIn` 或者 `slideDown`，若要实现第一次点击显示元素而第二次点击隐藏元素的效果，可以参考下面的脚本：
 
@@ -121,6 +130,7 @@ $('.btn').click(function () {
 ```
 
 ### 简单地手风琴
+---
 
 下面的这段脚本可以简单实现手风琴效果：
 
@@ -137,6 +147,7 @@ $('#accordion').find('.accordion-header').click(function () {
 ```
 
 ### 让两个Div等高
+---
 
 有时，需要让两`个Div`保持等高，而不管两个`Div`的内容如何：
 
@@ -161,6 +172,7 @@ $rows.each(function () {
 ```
 
 ### 在新的Tab/Window打开外链
+---
 
 在浏览器的新`Tab/Window`打开外链，并且在同一个`Tab/Window`打开同源的链接：
 
@@ -171,6 +183,7 @@ $('a[href^="'+window.location.origin+'"]').attr('target','_self');
 ```
 
 ### 通过文本查找元素
+---
 
 利用 `JQuery` 的 `contains()` 选择器可以查找一个包含特定文本的元素，如果文本不存在，元素则隐藏：
 
