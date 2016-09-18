@@ -7,25 +7,28 @@ tags:
 categories: Front-End
 ---
 
-
 ### 第一部分 HTML
 
+---
 #### 第一章 职业规划和前景
 ---
 
 - **职业方向规划定位：**
+
   - `web`前端开发工程师
   - `web`网站架构师
   - 自己创业
   - 转岗管理或其他
 <!--more-->
 - **`web`前端开发的前景展望：**
+
   - 未来`IT`行业企业需求最多的人才
   - 结合最新的`html5`抢占移动端的市场
   - 自己创业做老板
   - 随着互联网的普及`web`开发成为企业的宠儿和核心
 
 -  **`web`职业发展目标：**
+
   - 第一、梳理知识架构
     - 负责内容的`HTML`
     - 负责外观的`css`（层叠样式表）
@@ -33,6 +36,7 @@ categories: Front-End
     - `ps`切图
 
   - 第二、分解目标（起步阶段、提升阶段、成型阶段）
+
     - 起步阶段：
         - 基本知识的掌握
         - 常用工具的掌握
@@ -51,6 +55,7 @@ categories: Front-End
         - 熟悉运用`js`制作动态网站的效果
         - 能独立开发完成网站
 
+---
 
 #### 第二章 html基本结构
 ---
@@ -95,10 +100,11 @@ categories: Front-End
     - `&lt`；--->小于号
     - `&quot`；--->引号
     - `&copy`;-->版权号
-
-#### 第三章 html基本标签
 ---
 
+#### 第三章 html基本标签
+
+---
 - `HTMl`基本标签：
     - `span`标签
         - 对被用来组合文档中的行内元素
@@ -132,6 +138,7 @@ onmouseover=this.stop()  onmouseover=this.start()  scrollamout="1"(滚动速度)
 
 - 表示当鼠标移上区域的时候停止滚动，鼠标移开继续滚动
 
+---
 
 #### 第四章 img图片标签与路径
 ---
@@ -174,6 +181,7 @@ onmouseover=this.stop()  onmouseover=this.start()  scrollamout="1"(滚动速度)
 
   - 这些都是相对于当前文件的位置来说的，如果用绝对路径的话就是写全了。
 
+---
 
 #### 第五章 三种列表的讲解
 ---
@@ -281,6 +289,7 @@ onmouseover=this.stop()  onmouseover=this.start()  scrollamout="1"(滚动速度)
 - `list-style-type`： 设置列表项图标的类型
 - `list-style-image `：使用图像设置列表项图标
 
+---
 
 #### 第六章 表单元素(上)
 ---
@@ -363,6 +372,8 @@ onmouseover=this.stop()  onmouseover=this.start()  scrollamout="1"(滚动速度)
 <label for="nv">女：</label><input type="radio" name="sex"checked="check"/>
 ```
 
+---
+
 #### 第七章 表单和表格(下)
 ---
 
@@ -426,8 +437,8 @@ onmouseover=this.stop()  onmouseover=this.start()  scrollamout="1"(滚动速度)
 ```
 
 - `<td>`单元格标签:
-    - `<td>`可以定义表格中的一个单元格，`<td></td>`表示一个单元格
-    
+
+    - `<td>`可以定义表格中的一个单元格，`<td></td>`表示一个单元格。
 ```
 <table border="1">
 <tr>
@@ -437,10 +448,10 @@ onmouseover=this.stop()  onmouseover=this.start()  scrollamout="1"(滚动速度)
 </tr>
 </table>
 ```
-- `border-collapse` 属性设置是否将表格边框折叠为单一边框：
-- `border-collapse:collapse`;
-- `colspan`左右合并
-- `rowspan`上下合并
+  - `border-collapse` 属性设置是否将表格边框折叠为单一边框：
+  - `border-collapse:collapse`;
+  - `colspan`左右合并
+  - `rowspan`上下合并
 
 **第一部分总结**：
 
@@ -473,156 +484,30 @@ onmouseover=this.stop()  onmouseover=this.start()  scrollamout="1"(滚动速度)
 		- 如果是合并横排的就是合并列（`colspan`）
 
 ---
-
-- 行内元素和快级元素小结
-
- - 一、**块级元素**：block element
-
-   - 每个块级元素默认占一行高度，一行内添加一个块级元素后无法一般无法添加其他元素（`float`浮动后除外）。两个块级元素连续编辑时，会在页面自动换行显示。块级元素一般可嵌套块级元素或行内元素；
-   - 块级元素一般作为容器出现，用来组织结构，但并不全是如此。有些块级元素，如只能包含块级元素。
-
-   - `DIV` 是最常用的块级元素，元素样式的`display:block`都是块级元素。它们总是以一个块的形式表现出来，并且跟同级的兄弟块依次竖直排列，左右撑满。
-
- - 二、**行内元素**：inline element
-
-   - 也叫内联元素、内嵌元素等；行内元素一般都是基于语义级(semantic)的基本元素，只能容纳文本或其他内联元素，常见内联元素 “a”。比如 `SPAN `元素，`IFRAME`元素和元素样式的`display : inline`的都是行内元素。例如文字这类元素，各个字母 之间横向排列，到最右端自动折行。
-
- - 三、**block（块）元素的特点:**
-
-   - ①、总是在新行上开始；
-   - ②、高度，行高以及外边距和内边距都可控制；
-   - ③、宽度缺省是它的容器的100%，除非设定一个宽度。
-   - ④、它可以容纳内联元素和其他块元素
-
- - 四、**inline元素的特点**
-
-   - ①、和其他元素都在一行上；
-   - ②、高，行高及外边距和内边距不可改变；
-   - ③、宽度就是它的文字或图片的宽度，不可改变
-   - ④、内联元素只能容纳文本或者其他内联元素
-
- - 对行内元素，需要注意如下:
-  - 设置宽度`width` 无效。 设置高度`height `无效，可以通过`line-height`来设置。 设置`margin`
-   - 只有左右`margin`有效，上下无效。
-   - 设置`padding`只有左右`padding`有效，上下则无效。注意元素范围是增大了，但是对元素周围的内容是没影响的。
-
-- 五、**常见的块状元素**
- - address – 地址
- - blockquote – 块引用
- - center – 举中对齐块
- - dir – 目录列表
- - div – 常用块级容易，也是CSS layout的主要标签
- - dl – 定义列表
- - fieldset – form控制组
- - form – 交互表单
- - h1 – 大标题
- - h2 – 副标题
- - h3 – 3级标题
- - h4 – 4级标题
- - h5 – 5级标题
- - h6 – 6级标题
- - hr – 水平分隔线
- - isindex – input prompt
- - menu – 菜单列表
- - noframes – frames可选内容，（对于不支持frame的浏览器显示此区块内容
- - noscript – 可选脚本内容（对于不支持script的浏览器显示此内容）
- - ol – 有序表单
- - p – 段落
- - pre – 格式化文本
- - table – 表格
- - ul – 无序列表
-
-- 六、**常见的内联元素**
-
- - a – 锚点
- - abbr – 缩写
- - acronym – 首字
- - b – 粗体(不推荐)
- - bdo – bidi override
- - big – 大字体
- - br – 换行
- - cite – 引用
- - code – 计算机代码(在引用源码的时候需要)
- - dfn – 定义字段
- - em – 强调
- - font – 字体设定(不推荐)
- - i – 斜体
- - img – 图片
- - input – 输入框
- - kbd – 定义键盘文本
- - label – 表格标签
- - q – 短引用
- - s – 中划线(不推荐)
- - samp – 定义范例计算机代码
- - select – 项目选择
- - small – 小字体文本
- - span – 常用内联容器，定义文本内区块
- - strike – 中划线
- - strong – 粗体强调
- - sub – 下标
- - sup – 上标
- - textarea – 多行文本输入框
- - tt – 电传文本
- - u – 下划线
-
- - 七，**可变元素**
-
-   - 可变元素为根据上下文语境决定该元素为块元素或者内联元素。
-   - applet - java applet
-   - button - 按钮
-   - del - 删除文本
-   - iframe - inline frame
-   - ins - 插入的文本
-   - map - 图片区块(map)
-   - object - object对象
-   - script - 客户端脚本
- 
- - 八、**行内元素与块级元素有什么不同**
-   - 区别一：
-     - 块级：块级元素会独占一行，默认情况下宽度自动填满其父元素宽度
-     - 行内：行内元素不会独占一行，相邻的行内元素会排在同一行。其宽度随内容的变化而变化。
-
-   - 区别二：
-
-     - 块级：块级元素可以设置宽高
-
-     - 行内：行内元素不可以设置宽高
-
-   - 区别三：
-
-     - 块级：块级元素可以设置`margin`，`padding`
-
-     - 行内：行内元素水平方向的`margin-left;` `margin-right;`
-
-    - `padding-left;` `padding-right`;可以生效。但是竖直方向的`margin-bottom`; `margin-top`; `padding-top`; `padding-bottom`;却不能生效。
- 
-    - 区别四：
-
-     - 块级：`display:block`;
-
-     - 行内：`display:inline`;
-  
-- 可以通过修改`display`属性来切换块级元素和行内元素
-
----
 **HTML部分导图总结**
 
 ---
+- [HTML5标签集合](http://www.html5star.com/manual/html5label-meaning/)
+
+![](http://upload-images.jianshu.io/upload_images/1480597-1950ccf50810a92b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ![](http://upload-images.jianshu.io/upload_images/1480597-3d15eb9c7be0cb65.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 ![](http://upload-images.jianshu.io/upload_images/1480597-4b0073fd050ba4f3.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+---
 
 ### 第二部分 CSS
 
-#### 第八章 css基础知识
 ---
 
+#### 第八章 css基础知识
+---
 - `css`基础知识：
   - `css`样式表的定义
   - `css`：（Cascading Style Sheets）层叠样式表；
 - 分类及位置：内部样式`-head`区域`style`标签里面
-     - 外部样式-link调用
+     - 外部样式-`link`调用
      - 内联样式-标签元素里面
 - `css`内的注释：/`*`注释内容`*`/
 - `css`样式表的语法
@@ -634,7 +519,7 @@ onmouseover=this.stop()  onmouseover=this.start()  scrollamout="1"(滚动速度)
       - **用颜色名表示**
         - 有17个预先确定的颜色，它们是
            - `aqua`, `black`, `blue`, `fuchsia`, `gray`, `green`, `lime`, `maroon`, `navy`, 
-　　`olive`, `orange,` `purpl`, `red`, `silver`, `teal`, `white`, and `yellow`
+　　`olive`, `orange,` `purple`, `red`, `silver`, `teal`, `white`, and `yellow`
 
     - **用十六进制的颜色值表示(红、绿、蓝)**
       - `#FF0000`或者`#F00 ` 
@@ -669,7 +554,7 @@ onmouseover=this.stop()  onmouseover=this.start()  scrollamout="1"(滚动速度)
 ![](http://upload-images.jianshu.io/upload_images/1480597-39e61a813f637282.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
-- 内部样式表（单做一个页面时）
+- 内部样式表
     - 当单个页面需要设置样式时，就应该使用内部样式表。
     - 使用 `<style></style>`标签在文档`<head></head>`里面定义内部样式表
 
@@ -715,7 +600,7 @@ onmouseover=this.stop()  onmouseover=this.start()  scrollamout="1"(滚动速度)
 - 权值不同时，浏览器是根据权值来判断使用哪种`css`样式的，哪种样式权值高就使用哪种样式
 
 - 层叠优先级是:
- - 浏览器缺省 < 外部样式表 < 内部样式表 < 内联样式
+ -  `浏览器缺省`< `外部样式表` < `内部样式表` < `内联样式`
 - 其中样式表又有:`类选择器` < `类派生选择器 `<` ID选择器` < `ID派生选择器`
 - 派生选择器以前叫上下文选择器，所以完整的层叠优先级是:
  - `浏览器缺省` <` 外部样式表` < `外部样式表类选择器` < `外部样式表类派生选择器 `< `外部样式表ID选择器` < `外部样式表ID派生选择器 `< `内部样式表` < `内部样式表类选择器` < `内部样式表类派生选择器` < `内部样式表ID选择器` < `内部样式表ID派生选择器` < `内联样式`...共`12`个优先级
@@ -723,9 +608,9 @@ onmouseover=this.stop()  onmouseover=this.start()  scrollamout="1"(滚动速度)
 - 另外，如果同一个元素在没有其他样式的作用影响下，其`Class`定义了多个并以空格分开，其优先级顺序为：
   - 一个元素同时应用多个`class`，后定义的优先（即近者优先），加上`!important`者最优先！
 
+---
 
 ####  第九章 css选择器(上)
----
 
 - `css`选择器：
    - `class`类选择器可以重复利用    
@@ -757,24 +642,22 @@ onmouseover=this.stop()  onmouseover=this.start()  scrollamout="1"(滚动速度)
     - `a[title][href]{color:red;}` 选择包含`title`和`href`的`a`标签
 
 - `> ` `+` 选择器子类选择器：只选择子元素（只选择儿子）（相当于包含元素）
-
     - `p > span{color:red;}`
-
 - 相邻兄弟选择器：只选择后面的相邻兄弟元素
-
     - `p + span{color:red;}`
 
-
+---
+ 
 ####  第十章 css选择器(下)
 ---
-
 -  `<a>`伪类选择器
    - `a:link {color:#FF0000;}`	/* 未访问的链接 */ （只用于a标签）
    - `a:visited {color:#00FF00;}`	/* 已访问的链接 */ （只用于a标签）
    - `a:hover {color:#FF00FF;}	`/* 鼠标移动到链接上
    - `*/`（可和其他标签结合一起用）
    - `a:active {color:#0000FF;}`	/* 选定的链接 */
-    
+   - **注意**
+     - 伪类选择器的排序很重要，`a:link` `a:visited` ` a:hover ` `a:active`，记作`lvha`
 - 输入伪类选择器（针对表单）
      - `input:focus{color:red;} `      /* 键盘输入焦点 */
 
@@ -787,10 +670,10 @@ onmouseover=this.stop()  onmouseover=this.start()  scrollamout="1"(滚动速度)
 - `css`优先规则
     - 内联样式表-> `ID` 选择器—> `Class` 类选择器->标签选择器
 
+---
 
 ####  第十一章 背景属性
 ---
-
 - 背景属性：
   - 背景的添加 ：
 
@@ -838,6 +721,7 @@ onmouseover=this.stop()  onmouseover=this.start()  scrollamout="1"(滚动速度)
     - `background-attachment:fixed; `  固定，不随内容的滚动而滚动	
     - `background-attachment:scroll; ` 滚动，随内容的滚动而滚动
 
+---
 
 #### 第十二章 文字文本属性
 ---
@@ -861,10 +745,10 @@ onmouseover=this.stop()  onmouseover=this.start()  scrollamout="1"(滚动速度)
     - `text-decoration:none; ` 
        - 文本线(`none`/`underline`/`overline`/`line-through`)
     - `letter-spacing`:   字间距
+---
 
 ####  第十三章 盒子模型
 ---
-
 - **盒子模型**
     - 盒子模型就是一个有高度和宽度的矩形区域
     - 所有`html`标签都是盒子模型
@@ -921,7 +805,7 @@ onmouseover=this.stop()  onmouseover=this.start()  scrollamout="1"(滚动速度)
 
 - **标准盒子模型**
 
- - 盒子模型是`css`中一个重要的概念，理解了盒子模型才能更好的排版。其实盒子模型有两种，分别是 ie 盒子模型和标准 w3c 盒子模型。他们对盒子模型的解释各不相同，先来看看我们熟知的标准盒子模型
+ - 盒子模型是`css`中一个重要的概念，理解了盒子模型才能更好的排版。其实盒子模型有两种，分别是 `ie `盒子模型和标准 `w3c` 盒子模型。他们对盒子模型的解释各不相同，先来看看我们熟知的标准盒子模型
 
 ![](http://upload-images.jianshu.io/upload_images/1480597-320bad065d62c499.JPG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -941,8 +825,8 @@ onmouseover=this.stop()  onmouseover=this.start()  scrollamout="1"(滚动速度)
  - 一个盒子的   ` margin `为 20px，`border` 为 1px，`padding `为 10px，`content` 的宽为 200px、高为 50px，假如用标准 `w3c` 盒子模型解释，那么这个盒子需要占据的位置为：宽 `20*2+1*2+10*2+200=262px`、高 `20*2+1*2*10*2+50=112px`，盒子的实际大小为：宽 `1*2+10*2+200=222px`、高 `1*2+10*2+50=72px`；假如用ie 盒子模型，那么这个盒子需要占据的位置为：宽 `20*2+200=240px`、高 `20*2+50=70px`，盒子的实际大小为：宽 `200px`、高 `50px`
 
 - 那应该选择哪中盒子模型呢？当然是“标准 `w3c` 盒子模型”了。怎么样才算是选择了“标准 `w3c `盒子模型”呢？很简单，就是在网页的顶部加上 `doctype` 声明。
-- 假如不加` doctype` 声明，那么各个浏览器会根据自己的行为去理解网页，即 `ie `浏览器会采用 `ie` 盒子模型去解释你的盒子，而 `ff `会采用标准 w3c 盒子模型解释你的盒子，所以网页在不同的浏览器中就显示的不一样了。
-- 反之，假如加上了 doctype 声明，那么所有浏览器都会采用标准 `w3c `盒子模型去解释你的盒子，网页就能在各个浏览器中显示一致了。
+- 假如不加` doctype` 声明，那么各个浏览器会根据自己的行为去理解网页，即 `ie `浏览器会采用 `ie` 盒子模型去解释你的盒子，而 `ff `会采用标准` w3c` 盒子模型解释你的盒子，所以网页在不同的浏览器中就显示的不一样了。
+- 反之，假如加上了 `doctype` 声明，那么所有浏览器都会采用标准 `w3c `盒子模型去解释你的盒子，网页就能在各个浏览器中显示一致了。
 
 ---
 
@@ -989,6 +873,7 @@ document.write("您的页面目前支持："+sbox+"盒子模型");
 - 扩展
   - [学会使用box-sizing布局](http://www.jianshu.com/p/e2eb0d8c9de6)
 
+---
 
 ####  第十四章 块元素、行元素与溢出
 ---
@@ -1010,45 +895,136 @@ document.write("您的页面目前支持："+sbox+"盒子模型");
 - 文本不换行：`white-space:nowrap`;
 - 长单词换行：`word-wrap:break-word`;
 
-- 常见块元素和行内元素
 
-    - 块元素(`block element`）
+- 行内元素和快级元素小结
 
-        - `address`  地址
-        - `center`  举中对齐块
-        - `div`- 常用块级容易
-        - `dl` 定义列表
-        - `form`  交互表单 （只能用来容纳其它块元素）
-        - `h`标签
-        - `hr`  水平分隔线
-        - `ol ` 无需列表
-        - `ul`有序列表
-        - `p ` 段落
-        - `pre`  格式化文本
+ - 一、**块级元素**：block element
 
+   - 每个块级元素默认占一行高度，一行内添加一个块级元素后无法一般无法添加其他元素（`float`浮动后除外）。两个块级元素连续编辑时，会在页面自动换行显示。块级元素一般可嵌套块级元素或行内元素；
+   - 块级元素一般作为容器出现，用来组织结构，但并不全是如此。有些块级元素，如只能包含块级元素。
 
-- 内联元素：
+   - `DIV` 是最常用的块级元素，元素样式的`display:block`都是块级元素。它们总是以一个块的形式表现出来，并且跟同级的兄弟块依次竖直排列，左右撑满。
 
-    - `a` - 锚点
-    - `b` - 粗体(不推荐)
-    - `br `- 换行
-    - `code` - 计算机代码(在引用源码的时候需要)
-    - `em` - 强调
-    - `i` - 斜体
-    - `img` - 图片（特殊的内联元素，同时是内联替换元素，替换元素可以设置宽高）
-    - 当图片和DIV在一起时，图片周围会出现margin现象，即元素不重合贴在一起，为了解决这个问题，设置`img`的`css`为`{margin：0；display：block；border：0px}`
-    - `input` - 输入框
-    - `label` - 表格标签
-    - `select` - 项目选择
-    - `strong` - 粗体强调
-    - `textarea` - 多行文本输入框
-    - `u` - 下划线
-    - `var` - 定义变量
+ - 二、**行内元素**：inline element
 
-- 替换元素有如下：（和`img`一样的设置方法）
-  - `<img>`、`<input>`、`<textarea>`、`<select>`
-  - `<object>`都是替换元素，这些元素都没有实际的内容
+   - 也叫内联元素、内嵌元素等；行内元素一般都是基于语义级(semantic)的基本元素，只能容纳文本或其他内联元素，常见内联元素 “a”。比如 `SPAN `元素，`IFRAME`元素和元素样式的`display : inline`的都是行内元素。例如文字这类元素，各个字母 之间横向排列，到最右端自动折行。
 
+ - 三、**block（块）元素的特点:**
+
+   - ①、总是在新行上开始；
+   - ②、高度，行高以及外边距和内边距都可控制；
+   - ③、宽度缺省是它的容器的100%，除非设定一个宽度。
+   - ④、它可以容纳内联元素和其他块元素
+
+ - 四、**inline元素的特点**
+
+   - ①、和其他元素都在一行上；
+   - ②、高，行高及外边距和内边距不可改变；
+   - ③、宽度就是它的文字或图片的宽度，不可改变
+   - ④、内联元素只能容纳文本或者其他内联元素
+
+ - **对行内元素，需要注意如下**:
+   - 设置宽度`width` 无效。 设置高度`height `无效，可以通过`line-height`来设置。 设置`margin`
+   - 只有左右`margin`有效，上下无效。
+   - 设置`padding`只有左右`padding`有效，上下则无效。注意元素范围是增大了，但是对元素周围的内容是没影响的。
+
+ - 五、**常见的块状元素**
+   - `address` – 地址
+   - `blockquote` – 块引用
+   - `center` – 举中对齐块
+   - `dir` – 目录列表
+   - `div` – 常用块级容易，也是`CSS layout`的主要标签
+   - `dl` – 定义列表
+   - `fieldset` – `form`控制组
+   - `form` – 交互表单
+   - `h1` – 大标题
+   - `h2` – 副标题
+   - `h3` – 3级标题
+   - `h4` – 4级标题
+   - `h5` – 5级标题
+   - `h6` – 6级标题
+   - `hr` – 水平分隔线
+   - `isindex` – `input prompt`
+   - `menu` – 菜单列表
+   - `noframes` – `frames`可选内容，（对于不支持frame的浏览器显示此区块内容
+   - `noscript` – 可选脚本内容（对于不支持`script`的浏览器显示此内容）
+   - `ol` – 有序表单
+   - `p` – 段落
+   - `pre` – 格式化文本
+   - `table` – 表格
+   - `ul` – 无序列表
+
+ - 六、**常见的内联元素**
+
+   - `a` – 锚点
+   - `abbr` – 缩写
+   - `acronym` – 首字
+   - `b` – 粗体(不推荐)
+   - `bdo` – `bidi override`
+   - `big` – 大字体
+   - `br` – 换行
+   - `cite` – 引用
+   - `code` – 计算机代码(在引用源码的时候需要)
+   - `dfn` – 定义字段
+   - `em` – 强调
+   - `font` – 字体设定(不推荐)
+   - `i` – 斜体
+   - `img` – 图片
+   - `input` – 输入框
+   - `kbd` – 定义键盘文本
+   - `label` – 表格标签
+   - `q` – 短引用
+   - `s` – 中划线(不推荐)
+   - `samp` – 定义范例计算机代码
+   - `select` – 项目选择
+   - `small` – 小字体文本
+   - `span` – 常用内联容器，定义文本内区块
+   - `strike` – 中划线
+   - `strong` – 粗体强调
+   - `sub` – 下标
+   - `sup` – 上标
+   - `textarea` – 多行文本输入框
+   - `tt` – 电传文本
+   - `u` – 下划线
+
+ - 七，**可变元素**
+
+   - 可变元素为根据上下文语境决定该元素为块元素或者内联元素。
+   - `applet` - `java applet`
+   - `button` - 按钮
+   - `del `- 删除文本
+   - `iframe` - `inline frame`
+   - `ins` - 插入的文本
+   - `map` - 图片区块(`map`)
+   - `object` - `object`对象
+   - `script` - 客户端脚本
+ 
+ - 八、**行内元素与块级元素有什么不同**
+   - 区别一：
+     - 块级：块级元素会独占一行，默认情况下宽度自动填满其父元素宽度
+     - 行内：行内元素不会独占一行，相邻的行内元素会排在同一行。其宽度随内容的变化而变化。
+
+   - 区别二：
+     - 块级：块级元素可以设置宽高
+     - 行内：行内元素不可以设置宽高
+
+   - 区别三：
+     - 块级：块级元素可以设置`margin`，`padding`
+     - 行内：行内元素水平方向的`margin-left;` `margin-right;`
+
+    - `padding-left;` `padding-right`;可以生效。但是竖直方向的`margin-bottom`; `margin-top`; `padding-top`; `padding-bottom`;却不能生效。
+ 
+    - 区别四：
+
+     - 块级：`display:block`;
+     - 行内：`display:inline`;
+
+  - 替换元素有如下：（和`img`一样的设置方法）
+   - `<img>`、`<input>`、`<textarea>`、`<select>`
+   - `<object>`都是替换元素，这些元素都没有实际的内容
+- 可以通过修改`display`属性来切换块级元素和行内元素
+
+---
 
 #### 第十五章 定位
 ---
@@ -1088,6 +1064,7 @@ document.write("您的页面目前支持："+sbox+"盒子模型");
 ![](http://upload-images.jianshu.io/upload_images/1480597-f72c1c8486445df1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ![](http://upload-images.jianshu.io/upload_images/1480597-7ab9cda0bbd7e62f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+---
 
 #### 第十六章 框架
 ---
@@ -1129,10 +1106,10 @@ document.write("您的页面目前支持："+sbox+"盒子模型");
     - `frameborder ` 边框线（取值 0 / 1）
     - `src` 显示的网页的路径
 
+---
 
 #### 第十七章 css高级属性
 ---
-
 - `opacity`透明属性
  - `opacity`
    - 对于`IE6/7/`，使用`filter:alpha(opacity:值;`)  值为`0-100`
@@ -1172,148 +1149,153 @@ document.write("您的页面目前支持："+sbox+"盒子模型");
 - **CSS部分导图总结**
 
 ---
+![](http://upload-images.jianshu.io/upload_images/1480597-4b55b5085a7d0c56.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+---
 - [原文件下载地址](https://yunpan.cn/cM9va2bHD4wwu)   访问密码 342a
 
 ![](http://upload-images.jianshu.io/upload_images/1480597-a893d4023c39c78a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+---
+
 
 ### 第三部分 附录
 
+---
+
 #### 附录一 DIV命名规范
+
 ---
 
 - 企业`DIV`使用频率高的命名方法
 
 - **网页内容类**
-  - 标题: title
-    - 摘要: summary
-    - 箭头： arrow
-    - 商标： label
-    - 网站标志： logo
-    - 转角/圆角： corner
-    - 横幅广告： banner
-    - 子菜单： subMenu
-    - 搜索： search
-    - 搜索框： searchBox
-    - 登录： login
-    - 登录条：loginbar
-    - 工具条： toolbar
-    - 下拉： drop
-    - 标签页： tab
-    - 当前的： current
-    - 列表： list
-    - 滚动： scroll
-    - 服务： service
-    - 提示信息： msg
-    - 热点：hot
-    - 新闻： news
-    - 小技巧： tips
-    - 下载： download
-    - 栏目标题： title
-    - 热点： hot
-    - 加入： joinus
-    - 注册： regsiter
-    - 指南： guide
-    - 友情链接： friendlink
-    - 状态： status
-    - 版权： copyright
-    - 按钮： btn
-    - 合作伙伴： partner
-    - 投票： vote
-    - 左右中：left right center
+  - 标题: `title`
+    - 摘要: `summary`
+    - 箭头： `arrow`
+    - 商标： `label`
+    - 网站标志： `logo`
+    - 转角/圆角：` corner`
+    - 横幅广告： `banner`
+    - 子菜单： `subMenu`
+    - 搜索： `search`
+    - 搜索框： `searchBox`
+    - 登录： `login`
+    - 登录条：`loginbar`
+    - 工具条： `toolbar`
+    - 下拉： `drop`
+    - 标签页： `tab`
+    - 当前的： `current`
+    - 列表： `list`
+    - 滚动： `scroll`
+    - 服务： `service`
+    - 提示信息： `msg`
+    - 热点：`hot`
+    - 新闻： `news`
+    - 小技巧： `tips`
+    - 下载： `download`
+    - 栏目标题： `title`
+    - 热点： `hot`
+    - 加入：` joinus`
+    - 注册： `regsiter`
+    - 指南： `guide`
+    - 友情链接： `friendlink`
+    - 状态： `status`
+    - 版权： `copyright`
+    - 按钮： `btn`
+    - 合作伙伴： `partner`
+    - 投票： `vote`
+    - 左右中：`left`  `right`  `center`
     
     --- 
-  - 注释的写法: `/* Footer */`
-
-    - 内容区 `/* End Footer */`
+  - 注释的写法: `/* Footer */ ` 内容区`/* End Footer */`
     
 -  **id的命名:**
     
     - 页面结构
     
-        - 容器: container
-        - 页头：header
-        - 内容：content/container
-        - 页面主体：main
-        - 页尾：footer
-        - 导航：nav
-        - 侧栏：sidebar
-        - 栏目：column
-        - 页面外围控制整体布局宽度：wrapper
-        - 左右中：left right center
+        - 容器: `container`
+        - 页头：`header`
+        - 内容：`content`/`container`
+        - 页面主体：`main`
+        - 页尾：`footer`
+        - 导航：`nav`
+        - 侧栏：`sidebar`
+        - 栏目：`column`
+        - 页面外围控制整体布局宽度：`wrapper`
+        - 左右中：`left` `right` `center`
         
     ---
     - 导航
     
-        - 导航：nav
-        - 主导航：mainbav
-        - 子导航：subnav
-        - 顶导航：topnav
-        - 边导航：sidebar
-        - 左导航：leftsidebar
-        - 右导航：rightsidebar
-        - 菜单：menu
-        - 子菜单：submenu
-        - 标题: title
-        - 摘要: summary
+        - 导航：`nav`
+        - 主导航：`mainbav`
+        - 子导航：`subnav`
+        - 顶导航：`topnav`
+        - 边导航：`sidebar`
+        - 左导航：`leftsidebar`
+        - 右导航：`rightsidebar`
+        - 菜单：`menu`
+        - 子菜单：`submenu`
+        - 标题: `title`
+        - 摘要: `summary`
     
     ---
     - 功能
     
-        - 标志：logo
-        - 广告：banner
-        - 登陆：login
-        - 登录条：loginbar
-        - 注册：regsiter
-        - 搜索：search
-        - 功能区：shop
-        - 标题：title
-        - 加入：joinus
-        - 状态：status
-        - 按钮：btn
-        - 滚动：scroll
-        - 标签页：tab
-        - 文章列表：list
-        - 提示信息：msg
-        - 当前的: current
-        - 小技巧：tips
-        - 图标: icon
-        - 注释：note
-        - 指南：guild
-        - 服务：service
-        - 热点：hot
-        - 新闻：news
-        - 下载：download
-        - 投票：vote
-        - 合作伙伴：partner
-        - 友情链接：link
-        - 版权：copyright
+        - 标志：`logo`
+        - 广告：`banner`
+        - 登陆：`login`
+        - 登录条：`loginbar`
+        - 注册：`regsiter`
+        - 搜索：`search`
+        - 功能区：`shop`
+        - 标题：`title`
+        - 加入：`joinus`
+        - 状态：`status`
+        - 按钮：`btn`
+        - 滚动：`scroll`
+        - 标签页：`tab`
+        - 文章列表：`list`
+        - 提示信息：`msg`
+        - 当前的:` current`
+        - 小技巧：`tips`
+        - 图标: `icon`
+        - 注释：`note`
+        - 指南：`guild`
+        - 服务：`service`
+        - 热点：`hot`
+        - 新闻：`news`
+        - 下载：`download`
+        - 投票：`vote`
+        - 合作伙伴：`partner`
+        - 友情链接：`link`
+        - 版权：`copyright`
         
     ---
     
-   - **class的命名:**
+   - **`class`的命名:**
     
     - 颜色:使用颜色的名称或者16进制代码,如
     
-        - .red { color: red; }
-        - .f60 { color: #f60; }
-        - .ff8600 { color: #ff8600; }
+        - `.red { color: red; }`
+        - `.f60 { color: #f60; }`
+        - `.ff8600 { color: #ff8600; }`
     
     - 字体大小,直接使用"font+字体大小"作为名称,如
     
-        - .font12px { font-size: 12px; }
-        - .font9px {font-size: 9pt; }
+        - `.font12px { font-size: 12px; }`
+        - `.font9px {font-size: 9pt; }`
     
     - 对齐样式,使用对齐目标的英文名称,如
     
-        - .left { float:left; }
-        - .bottom { float:bottom; }
+        - `.left { float:left; }`
+        - `.bottom { float:bottom; }`
     
     - 标题栏样式,使用"类别+功能"的方式命名,如
     
-        - .barnews { }
-        - .barproduct { }
+        - ` .barnews { }`
+        - `.barproduct { }`
     
     ---
     - **注意事项::**
@@ -1324,54 +1306,46 @@ document.write("您的页面目前支持："+sbox+"盒子模型");
         - 尽量不缩写，除非一看就明白的单词.
     
     ---
-- **推荐的 CSS 书写顺序：**
+- **推荐的 `CSS` 书写顺序：**
     
     - 显示属性
     
-        - display
-        - list-style
-        - position
-        - float
-        - clear
+        - `display`
+        - `list-style`
+        - `position`
+        - `float`
+        - `clear`
     
     - 自身属性
     
-        - width
-        - height
-        - margin
-        - padding
-        - border
-        - background
+        - ` width`
+        - `height`
+        - `margin`
+        - `padding`
+        - `border`
+        - `background`
     
     - 文本属性
     
-        - color
-        - font
-        - text-decoration
-        - text-align
-        - vertical-align
-        - white-space
-        - other text
-        - content     
+        - `color`
+        - ` font`
+        - `text-decoration`
+        - `text-align`
+        - `vertical-align`
+        - `white-space`
+        - `other text`
+        - `content `    
 
-
-#### 附录二 前端学习资源
 ---
 
-- [Github上前端学习的资源汇总](https://github.com/poetries/mywiki)
-- [编码规范](https://github.com/poetries/mywiki/blob/master/bookmark/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.md)
-- [WEB 前端开发学习笔记](https://github.com/poetries/mywiki/tree/master/front-end)
-- [DIV+CSS编码规范-网易](https://poetries.github.io/2016/06/25/HTML%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83-%E7%BD%91%E6%98%93/)
+#### 附录二 CSS精灵
 
-
-#### 附录三 CSS精灵
 ---
 
 - **CSS精灵原理以及应用**
   - `CSS`雪碧的基本原理是把你的网站上用到的一些图片整合到一张单独的图片中，从而减少你的网站的HTTP请求数量。
     - 该图片使用`CSS`   `background和background-position`属性渲染，这也就意味着你的标签变得更加复杂了，图片是在`CSS`中定义，而非`<img>`标签。
 - **一个简单的例子**：
-    - 一张图片作出一个按钮的三个状态
     - 一张图片作出一个按钮的三个状态
     - 一个链接用`CSS`做成按钮的样式，我们可以使用同一张图片，完成按钮的三个状态，`a:link`，`a:hover`，`a:active` `<a class="button" href="#">链接</a>`
     - 加入右侧的图片为：`200px 65px`的三个按钮图拼合而成的图片`button.png`，从上到下一次为按钮的普通、鼠标滑过、鼠标点击的状态。则可以使用`CSS`进行定义。
@@ -1414,3 +1388,36 @@ document.write("您的页面目前支持："+sbox+"盒子模型");
     - 使`CSS`的编写变得困难
     - `CSS` 雪碧调用的图片不能被打印
     - 错误得使用 `Sprites` 影响可访问性
+
+---
+#### 附录三 部分工具资源
+---
+
+- [Sublime专题](https://github.com/poetries/mywiki/blob/master/bookmark/sublime-text.md)
+- [Sublime常用插件总结](https://github.com/poetries/mywiki/blob/master/bookmark/Sublime%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E6%80%BB%E7%BB%93.md)
+- [Front-End -Develop -Tools](https://github.com/poetries/mywiki/blob/master/bookmark/Front-End%20-Develop%20-Tools.md)
+- [ToolsBox-自己整理的一份工具列表](https://github.com/poetries/mywiki/blob/master/bookmark/Tools.md)
+---
+
+#### 附录四 编码规范
+
+---
+
+- [编码规范](https://github.com/poetries/mywiki/blob/master/bookmark/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.md)
+- [web develop standard](https://github.com/poetries/mywiki/wiki/web-develop-standard)
+- [Web 前端开发规范文档](http://codecloud.net/5622.html)
+
+---
+
+#### 附录五 前端学习资源
+
+---
+
+- [Github上前端学习资源汇总](https://github.com/poetries/mywiki)
+- [WEB 前端开发学习笔记](https://github.com/poetries/mywiki/tree/master/front-end)
+- [前程开发工具箱](https://github.com/poetries/mywiki/wiki/%E6%94%B6%E9%9B%86%E5%A5%BD%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7)
+---
+
+#### 其他
+
+- [本文Mardown原文件-欢迎转载](https://github.com/poetries/poetries.github.io/blob/dev/source/_posts/DIV+CSS%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%9B%9E%E9%A1%BE.md)
