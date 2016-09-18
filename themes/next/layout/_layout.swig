@@ -44,6 +44,28 @@
     {% include '_partials/suprise/ball.swig' %}
     {% endif %}
 	
+	
+	<p style="position:fixed;top:10px;left:50px;">
+		<!-- Start of StatCounter Code for Default Guide -->
+		<script type="text/javascript">
+		var sc_project=11108670; 
+		var sc_invisible=0; 
+		var sc_security="ed24822a"; 
+		var scJsHost = (("https:" == document.location.protocol) ?
+		"https://secure." : "http://www.");
+		document.write("<sc"+"ript type='text/javascript' src='" +
+		scJsHost+
+		"statcounter.com/counter/counter.js'></"+"script>");
+		</script>
+		<noscript><div class="statcounter"><a title="shopify traffic
+		stats" href="http://statcounter.com/shopify/"
+		target="_blank"><img class="statcounter"
+		src="//c.statcounter.com/11108670/0/ed24822a/0/"
+		alt="shopify traffic stats"></a></div></noscript>
+		<!-- End of StatCounter Code for Default Guide -->
+	</p>
+	
+	
     <main id="main" class="main">
       <div class="main-inner">
         <div id="content" class="content"> {% block content %}{% endblock %} </div>
