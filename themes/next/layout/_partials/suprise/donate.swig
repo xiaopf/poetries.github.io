@@ -49,7 +49,7 @@
     #donate_guide table {
         border: none;
     }
-
+	
     #donate_guide td {
         border-bottom: none;
         border-right: none;

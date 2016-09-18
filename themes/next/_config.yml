@@ -4,9 +4,9 @@ menu:
   archives: /archives
   categories: /categories
   tags: /tags
-  about: /about
+  #about: /about
   #commonweal: /404.html
-
+  guestbook: /guestbook
 
 
 # Enable/Disable menu icons.
