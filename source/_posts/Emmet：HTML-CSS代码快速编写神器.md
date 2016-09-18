@@ -99,6 +99,7 @@ categories: Front-End
 
 ![此处输入图片的描述][8]
 
+
 #### 定义多个带属性的元素
 ---
 
@@ -110,29 +111,25 @@ categories: Front-End
   <li class="item2"></li>  
   <li class="item3"></li> 
 </ul>
-```  
-    
+```
 ![此处输入图片的描述][9]
-
 
 ### CSS缩写
 ---
 
 #### 值
 ---
-
 - 比如要定义元素的宽度，只需输入`w100`，即可生成 `width: 100px;`  
 
 ![此处输入图片的描述][10]
 
 - 除了`px`，也可以生成其他单位，比如输入`h10p+m5e`，结果如下：
- - `height: 10%`;  
- - `margin: 5em`; 
-  
+  - `height: 10%`;  
+  - `margin: 5em`; 
 - 单位别名列表：
- - `p` 表示`%`
- - `e` 表示 `em`
- - `x` 表示 `ex`
+  - `p` 表示`%`
+  - `e` 表示 `em`
+  - `x` 表示 `ex`
  
 
 #### 附加属性
@@ -146,9 +143,7 @@ font-family:;
   src:url();  
   }  
 ```
-
-- 一些其他的属性，比如`background-image`、`border-radius`、`font`、`@font-face`,`text-outline`、`text-shadow`等额外的选项，可以通过`“+”`符号来生成，比如输入`@f+`，将生成： 
-
+一些其他的属性，比如`background-image`、`border-radius`、`font`、`@font-face`,`text-outline`、`text-shadow`等额外的选项，可以通过`“+”`符号来生成，比如输入`@f+`，将生成： 
 
 ```css
 @font-face {  
@@ -168,8 +163,7 @@ font-family:;
 ---
 
 - 如果有些缩写你拿不准，`Emmet`会根据你的输入内容匹配最接近的语法，比如输入`ov:h`、`ov-h`、`ov`h和`oh`，生成的代码是相同的： 
-
-`overflow: hidden;` 
+`overflow: hidden`;
  
  ![此处输入图片的描述][12]
  
