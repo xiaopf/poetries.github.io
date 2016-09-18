@@ -99,7 +99,7 @@ categories: Front-End
 
 ![此处输入图片的描述][8]
 
-#### 定义多个带属性的元素** 
+#### 定义多个带属性的元素
 ---
 
 - 如果输入 `ul>li.item$*3`，将会生成如下代码： 
@@ -114,6 +114,7 @@ categories: Front-End
     
 ![此处输入图片的描述][9]
 
+
 ### CSS缩写
 ---
 
@@ -125,8 +126,8 @@ categories: Front-End
 ![此处输入图片的描述][10]
 
 - 除了`px`，也可以生成其他单位，比如输入`h10p+m5e`，结果如下：
-  - `height: 10%`;  
-  - `margin: 5em`; 
+ - `height: 10%`;  
+ - `margin: 5em`; 
   
 - 单位别名列表：
  - `p` 表示`%`
@@ -147,6 +148,7 @@ font-family:;
 ```
 
 - 一些其他的属性，比如`background-image`、`border-radius`、`font`、`@font-face`,`text-outline`、`text-shadow`等额外的选项，可以通过`“+”`符号来生成，比如输入`@f+`，将生成： 
+
 
 ```css
 @font-face {  
@@ -207,10 +209,10 @@ font-family:;
 #### 前缀缩写如下：
 ---
 
- - `w` 表示 `-webkit-``
- - `m `表示 `-moz-``
- - `s` 表示 `-ms-``
- - `o` 表示 `-o-``
+ - `w` 表示 `-webkit-`
+ - `m `表示 `-moz-`
+ - `s` 表示 `-ms-`
+ - `o` 表示 `-o-`
 
 #### 渐变
 ---
