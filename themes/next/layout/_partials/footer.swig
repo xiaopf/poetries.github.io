@@ -14,22 +14,22 @@
 <p style="position:relative;top:-45px;width:100px;height:30px;margin-left:10px;color:red;display:inline-block;">站点统计</p>
 
 <p style="width:80px;height:33px;margin-left:-35px;display:inline-block;">
-<!-- Start of StatCounter Code for Default Guide -->
-<script type="text/javascript">
-var sc_project=11108670; 
-var sc_invisible=0; 
-var sc_security="ed24822a"; 
-var scJsHost = (("https:" == document.location.protocol) ?
-"https://secure." : "http://www.");
-document.write("<sc"+"ript type='text/javascript' src='" +
-scJsHost+
-"statcounter.com/counter/counter.js'></"+"script>");
-</script>
-<noscript><div class="statcounter"><a title="shopify traffic
-stats" href="http://statcounter.com/shopify/"
-target="_blank"><img class="statcounter"
-src="//c.statcounter.com/11108670/0/ed24822a/0/"
-alt="shopify traffic stats"></a></div></noscript>
-<!-- End of StatCounter Code for Default Guide -->
+	<!-- Start of StatCounter Code for Default Guide -->
+	<script type="text/javascript">
+	var sc_project=11108670; 
+	var sc_invisible=0; 
+	var sc_security="ed24822a"; 
+	var scJsHost = (("https:" == document.location.protocol) ?
+	"https://secure." : "http://www.");
+	document.write("<sc"+"ript type='text/javascript' src='" +
+	scJsHost+
+	"statcounter.com/counter/counter.js'></"+"script>");
+	</script>
+	<noscript><div class="statcounter"><a title="web statistics"
+	href="http://statcounter.com/" target="_blank"><img
+	class="statcounter"
+	src="//c.statcounter.com/11108670/0/ed24822a/0/" alt="web
+	statistics"></a></div></noscript>
+	<!-- End of StatCounter Code for Default Guide -->
 </p>
 {% block footer %}{% endblock %}
