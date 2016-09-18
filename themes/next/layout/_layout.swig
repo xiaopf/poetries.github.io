@@ -45,7 +45,7 @@
     {% endif %}
 	
 	
-	<p style="position:fixed;top:10px;left:50px;">
+	<p style="position:fixed;top:10px;right:8px;width:70px;height:16px;">
 	<!-- Start of StatCounter Code for Default Guide -->
 	<script type="text/javascript">
 	var sc_project=11108670; 
