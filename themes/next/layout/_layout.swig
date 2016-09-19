@@ -156,8 +156,8 @@
   
   
   <div>
-    <button class="assist-btn circle" id="assist_btn" title="双击切换" style="left: 73px; top: 169px;">
-        亮
+    <button class="assist-btn circle" id="assist_btn" title="双击亮屏" style="left: 73px; top: 169px;">
+         开灯
     </button>
  </div>
 <script type="text/javascript">
