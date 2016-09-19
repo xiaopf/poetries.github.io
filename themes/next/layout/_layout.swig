@@ -8,7 +8,7 @@
     .circle {
         width: 40px;
         height: 40px;
-        background: #e8083a no-repeat;
+        background: rgba(98, 187, 77, 0.68) no-repeat;
         cursor: move;
 		opacity: 0.7;
     }
@@ -22,7 +22,7 @@
         border-radius: 50px;
         outline: none;
         border: none;
-        color: #FFEB3B;
+        color: rgb(214, 10, 10);
     }
 
 </style>
