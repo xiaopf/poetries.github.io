@@ -66,7 +66,7 @@
 
     <div class ="post-donate">
         <div id="donate_board" class="donate_bar center">
-              <a id="btn_donate" class="btn_donate" href="javascript:;" title="´òÉÍ"></a>
+              <a id="btn_donate" class="btn_donate" href="javascript:;" title="Donate me"></a>
               <span id="donate_txt" class="donate_txt">
                    {% if theme.donate.text %}
                         {{ theme.donate.text }}
@@ -78,14 +78,14 @@
         <div id="donate_guide" class="donate_bar center hidden">
             <!--
             {% if theme.donate.alipay %}
-                <a href="{{ theme.donate.alipay }}" title="Ö§¸¶±¦´òÉÍ" class="fancybox" rel="article0" 
+                <a href="{{ theme.donate.alipay }}" title="æ”¯ä»˜å®æ‰“èµ" class="fancybox" rel="article0" 
                     style="float:left;margin-left:25%;margin-right:10px;">
                     <img src="{{ theme.donate.alipay }}" title="" height="164px" width="164px">
                 </a> 
             {% endif %}  
 
             {% if theme.donate.wechat %}
-                <a href="{{ theme.donate.wechat }}" title="Î¢ÐÅ´òÉÍ" class="fancybox" rel="article0"
+                <a href="{{ theme.donate.wechat }}" title="å¾®ä¿¡æ‰“èµ" class="fancybox" rel="article0"
                     style="margin-right:30%">
                     <img src="{{ theme.donate.wechat }}" title="" height="164px" width="164px">
                 </a>
