@@ -64,12 +64,12 @@ div {
 - `content-box` 
   - 描述：在宽度和高度之外绘制元素的内边距和边框。
 
-![](http://d.hiphotos.baidu.com/exp/w=500/sign=301b5f9c0cb30f24359aec03f894d192/8718367adab44aed65e14a19b01c8701a08bfba4.jpg)
+![](http://7xq6al.com1.z0.glb.clouddn.com/box-size-1.jpg)
 
 - `border-box`
   - 描述：为元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制
 
-![](http://c.hiphotos.baidu.com/exp/w=500/sign=3a8b6bcc4f086e066aa83f4b32097b5a/f31fbe096b63f624e972cefe8444ebf81a4ca324.jpg)
+![](http://7xq6al.com1.z0.glb.clouddn.com/box-size-2.jpg)
 
 - `inherit`
   - 描述：继承 父元素 `box-sizing `属性的值 
