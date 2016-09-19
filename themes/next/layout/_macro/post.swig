@@ -80,9 +80,8 @@
           {% endif %}
          
          {% if theme.leancloud_visitors.enable %}
-         <span id="{{ url_for(post.path) }}"class="leancloud_visitors"  data-flag-title="{{ post.title }}">
-            &nbsp; | &nbsp;{{__('post.visitors')}}&nbsp;℃
-            </span>
+         <i>热度</i><span style="color:red;" id="{{ url_for(post.path) }}"class="leancloud_visitors"  data-flag-title="{{ post.title }}"></span>
+            
       {% endif %}
            
         </div>
