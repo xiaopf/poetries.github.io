@@ -187,8 +187,11 @@
     </footer>
     
     <div class="mod-category_article-time">
-      <span>2016/09</span>
-      <span>17&nbsp;&nbsp;周六</span>
+      <span>
+          <time itemprop="dateCreated" datetime="{{ moment(post.date).format() }}" content="{{ date(post.date, config.date_format) }}">
+                  {{ date(post.date, config.date_format) }}
+          </time>
+      </span>
     </div>
   </article>
 
