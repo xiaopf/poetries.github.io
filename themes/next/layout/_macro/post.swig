@@ -81,7 +81,8 @@
          
          {% if theme.leancloud_visitors.enable %}
          <span id="{{ url_for(post.path) }}"class="leancloud_visitors"  data-flag-title="{{ post.title }}">
-            &nbsp; | &nbsp; {{__('post.visitors')}}
+            &nbsp; | &nbsp; <i class="tongji" style="color:red;">{{__('post.visitors')}}<i>&nbsp;<em class="color:#000;">℃
+            </em>
             </span>
       {% endif %}
            
