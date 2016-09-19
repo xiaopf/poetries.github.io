@@ -186,7 +186,7 @@
       {% endif %}
     </footer>
     
-    <div class="mod-category__article-time">
+    <div class="mod-category_article-time">
       <span>2016/09</span>
       <span>17&nbsp;&nbsp;周六</span>
     </div>
