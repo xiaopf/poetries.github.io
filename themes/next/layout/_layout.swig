@@ -247,7 +247,7 @@
 
 </script>
 <script type="text/javascript">
-var duoshuoQuery = {short_name:"poetry.duoshuo.com"};
+var duoshuoQuery = {short_name:"poetry"};
 (function() {
     var ds = document.createElement('script');
     ds.type = 'text/javascript';ds.async = true;
