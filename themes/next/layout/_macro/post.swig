@@ -30,16 +30,17 @@
         {% endif %}
 
         <div class="post-meta">
-          <span class="post-time">
+        
+          <!-- <span class="post-time">
             {{ __('post.posted') }}
             <time itemprop="dateCreated" datetime="{{ moment(post.date).format() }}" content="{{ date(post.date, config.date_format) }}">
               {{ date(post.date, config.date_format) }}
             </time>
-          </span>
+          </span>-->
 
           {% if post.categories and post.categories.length %}
             <span class="post-category" >
-              &nbsp; | &nbsp; {{ __('post.in') }}
+              &nbsp; {{ __('post.in') }}
               {% for cat in post.categories %}
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="{{ url_for(cat.path) }}" itemprop="url" rel="index">
@@ -81,6 +82,7 @@
          
          {% if theme.leancloud_visitors.enable %}
             &nbsp; | &nbsp;<span>热度</span>&nbsp;<span style="color:red;" id="{{ url_for(post.path) }}"class="leancloud_visitors"  data-flag-title="{{ post.title }}"></span><span style="color:red;">&nbsp;℃</span>
+            
             <!-- <span id="{{ url_for(post.path) }}"class="leancloud_visitors"  data-flag-title="{{ post.title }}">
               &nbsp; | &nbsp;{{__('post.visitors')}}&nbsp;
                </span> -->
