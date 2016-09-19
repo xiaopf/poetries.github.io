@@ -185,6 +185,11 @@
         <div class="post-eof"></div>
       {% endif %}
     </footer>
+    
+    <div class="mod-category__article-time">
+      <span>2016/09</span>
+      <span>17&nbsp;&nbsp;周六</span>
+    </div>
   </article>
 
 {% endmacro %}
