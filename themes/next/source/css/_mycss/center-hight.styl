@@ -5,7 +5,7 @@
     box-shadow: 0 0 2px rgba(0,0,0,.1);
     -webkit-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
-    padding: 10px 15px 15px 15px;
+    padding: 10px 30px 15px 30px;
     border: 1px solid #e8e8e8;
     border-bottom: 2px solid #fff;
     margin-left: -50px;
@@ -17,4 +17,32 @@
     border-bottom: 2px solid #3c9dff;
 }
 
+.posts-expand .post .mod-category_article-time {
+    position: absolute;
+    top: 20px;
+    left: -56px;
+    width: 70px;
+    height: 45px;
+    background: #e5e5e5;
+    filter: alpha(opacity=80);
+    background: hsla(0,0%,80%,.4);
+}
 
+.posts-expand .post .mod-category_article-time span{
+    float: left;
+    font-size: 12px;
+    line-height: 22px;
+    color: #666;
+    text-indent: 10px;
+}
+.posts-expand .post .mod-category_article-time:after{
+    content: "";
+    position: absolute;
+    top: 45px;
+    left: 0;
+    border-color: transparent #bbb transparent transparent;
+    border-style: solid;
+    border-width: 0 50px 20px 0;
+    height: 0;
+    width: 0;
+}
