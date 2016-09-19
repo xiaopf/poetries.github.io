@@ -80,7 +80,11 @@
           {% endif %}
          
          {% if theme.leancloud_visitors.enable %}
-         <i>热度</i><span style="color:red;" id="{{ url_for(post.path) }}"class="leancloud_visitors"  data-flag-title="{{ post.title }}"></span>
+            &nbsp; | &nbsp;<span>热度</span>&nbsp;<span style="color:red;" id="{{ url_for(post.path) }}"class="leancloud_visitors"  data-flag-title="{{ post.title }}">&nbsp;℃</span>
+            
+            <!-- <span id="{{ url_for(post.path) }}"class="leancloud_visitors"  data-flag-title="{{ post.title }}">
+              &nbsp; | &nbsp;{{__('post.visitors')}}&nbsp;
+               </span> -->
             
       {% endif %}
            
