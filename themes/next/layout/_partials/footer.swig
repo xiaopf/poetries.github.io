@@ -21,8 +21,7 @@
 <p style="position:relative;top:-4px;width:100px;height:30px;margin-left:10px;color:red;display:inline-block;"><a href="http://ta.qq.com" target="_blank"><img class="fenxi" src="http://tcss.qq.com/icon/toss_21.gif" alt="腾讯分析"></a></p>
 
 <p class="la51">
-  <script language="javascript" type="text/javascript" src="http://js.users.51.la/18982958.js"></script>
-<noscript><a href="http://www.51.la/?18982958" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/18982958.asp" style="border:none" /></a></noscript>
+  <script language="javascript" type="text/javascript" src="http://quote.51.la/?id=18982958&amp;mb=3"></script>
 </p>
 
 {% block footer %}{% endblock %}
