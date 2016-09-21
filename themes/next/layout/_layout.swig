@@ -10,7 +10,7 @@
         height: 40px;
         background: rgba(98, 187, 77, 0.68) no-repeat;
         cursor: move;
-		opacity: 0.7;
+	    	opacity: 0.7;
     }
 
     .assist-btn {
@@ -47,26 +47,7 @@
 	<a href="https://github.com/poetries" target="_blank">
 	<img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/c6625ac1f3ee0a12250227cf83ce904423abf351/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png">
 	</a>
-	<p style="position:fixed;top:10px;right:8px;width:70px;height:16px;">
-	<!-- Start of StatCounter Code for Default Guide -->
-	<script type="text/javascript">
-	var sc_project=11108670; 
-	var sc_invisible=0; 
-	var sc_security="ed24822a"; 
-	var scJsHost = (("https:" == document.location.protocol) ?
-	"https://secure." : "http://www.");
-	document.write("<sc"+"ript type='text/javascript' src='" +
-	scJsHost+
-	"statcounter.com/counter/counter.js'></"+"script>");
-	</script>
-	<noscript><div class="statcounter"><a title="web statistics"
-	href="http://statcounter.com/" target="_blank"><img
-	class="statcounter"
-	src="//c.statcounter.com/11108670/0/ed24822a/0/" alt="web
-	statistics"></a></div></noscript>
-	<!-- End of StatCounter Code for Default Guide -->
-	</p>
-	
+
 	
     <main id="main" class="main">
       <div class="main-inner">
