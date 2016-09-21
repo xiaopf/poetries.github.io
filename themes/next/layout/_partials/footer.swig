@@ -20,24 +20,6 @@
 </p>
 <p style="position:relative;top:-4px;width:100px;height:30px;margin-left:10px;color:red;display:inline-block;"><a href="http://ta.qq.com" target="_blank"><img class="fenxi" src="http://tcss.qq.com/icon/toss_21.gif" alt="腾讯分析"></a></p>
 
-	<p style="margin-left:50px;display:inline-block;width:70px;height:16px;">
-	<!-- Start of StatCounter Code for Default Guide -->
-	<script type="text/javascript">
-	var sc_project=11108670; 
-	var sc_invisible=0; 
-	var sc_security="ed24822a"; 
-	var scJsHost = (("https:" == document.location.protocol) ?
-	"https://secure." : "http://www.");
-	document.write("<sc"+"ript type='text/javascript' src='" +
-	scJsHost+
-	"statcounter.com/counter/counter.js'></"+"script>");
-	</script>
-	<noscript><div class="statcounter"><a title="web statistics"
-	href="http://statcounter.com/" target="_blank"><img
-	class="statcounter"
-	src="//c.statcounter.com/11108670/0/ed24822a/0/" alt="web
-	statistics"></a></div></noscript>
-	<!-- End of StatCounter Code for Default Guide -->
-	</p>
+
 
 {% block footer %}{% endblock %}
