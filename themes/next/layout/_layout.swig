@@ -41,12 +41,13 @@
    }
   p.topUV {
       font-size: 12px;
-      position:absolute;
+      position:fixed;
       top:5px;
       right:20px;
    }
   p.topUV a img{
       display: inline-block; 
+      width: 25px;
     }
   p.topUV a{
       border-bottom: none;
