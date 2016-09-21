@@ -18,10 +18,6 @@
 <p style="margin-left:10px;width:60px;height:30px;display:inline-block;margin-top:10px;">
 	<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260404165'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260404165%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
 </p>
-<p style="position:relative;top:-4px;width:100px;height:30px;margin-left:10px;color:red;display:inline-block;"><a href="http://ta.qq.com" target="_blank"><img class="fenxi" src="http://tcss.qq.com/icon/toss_21.gif" alt="腾讯分析"></a></p>
-
-<p class="la51">
-  <script language="javascript" type="text/javascript" src="http://quote.51.la/?id=18982958&amp;mb=3"></script>
-</p>
+<p style="position:relative;top:-4px;width:24px;height:30px;margin-left:10px;margin-right:10px;color:red;display:inline-block;"><a href="http://ta.qq.com" target="_blank"><img class="fenxi" src="http://tcss.qq.com/icon/toss_21.gif" alt="腾讯分析"></a></p>
 
 {% block footer %}{% endblock %}
