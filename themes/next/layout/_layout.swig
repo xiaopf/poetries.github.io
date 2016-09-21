@@ -45,6 +45,12 @@
       top:5px;
       right:20px;
    }
+  p.topUV a img{
+      display: inline-block; 
+    }
+  p.topUV a{
+      border-bottom: none;
+    }
 </style>
 </head>
 
