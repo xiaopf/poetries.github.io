@@ -30,6 +30,9 @@
       top:5px;
       right:5px;
   }
+   p.top51la a span img{
+      display:inline-block;
+   }
 </style>
 </head>
 
