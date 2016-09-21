@@ -23,7 +23,5 @@
 <p class="la51">
   <script language="javascript" type="text/javascript" src="http://quote.51.la/?id=18982958&amp;mb=3"></script>
 </p>
-<p>
-  <script language="javascript" type="text/javascript" src="http://quote.51.la/?id=18982958&amp;mb=%C4%A3%B0%E5%D7%D6%B4%AE%A3%BA%D7%DC%B7%C3%CE%CA%C1%BF+%24PTL+%2C+%BD%F1%C8%D5%B7%C3%CE%CA%C1%BF+%24PTD+%2C+%D4%DA%CF%DF%C8%CB%CA%FD+%24POL%7Caj%7C6%7Caj%7Chttp%3A%2F%2Ficon%2Eajiang%2Enet%2Ffonts%2F003%7Caj%7C%23000000%7Caj%7C2&amp;target=ajiang%5F51la"></script>
-</p>
+
 {% block footer %}{% endblock %}
