@@ -78,8 +78,7 @@
   <script src='http://www.xiaoniu168.com/counts3110.html' language='JavaScript' charset='utf-8'></script>
   <script>
       var oP = document.getElementsByClassName("topUV")[0];
-      var oA =  document.getElementsByTagName("a")[0];
-      oP.oA.setAttribute("href","javascript:void(0);");
+      oP.getElementsByTagName("a")[0].setAttribute("href","javascript:void(0);");
   </script>
   <span style="color:#0e0e0e;position: relative;top: -2px;">&nbsp;&nbsp;℃</span>
 </p>
