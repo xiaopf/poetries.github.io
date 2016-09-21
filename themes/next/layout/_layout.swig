@@ -73,13 +73,10 @@
 	<a href="https://github.com/poetries" target="_blank">
 	<img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/c6625ac1f3ee0a12250227cf83ce904423abf351/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png">
 	</a>
-<p class="topUV"> <span class="color:red;font-size:14px;">您是本站的第&nbsp;</span>  
-  <script src='http://www.xiaoniu168.com/counts3107.html' language='JavaScript' charset='utf-8'></script> <span class="color:red;font-size:14px;">&nbsp;个访客，欢迎您</span>
+<p class="topUV"> <span style="color:red;font-size:14px;">您是本站的第&nbsp;</span>  
+  <script src='http://www.xiaoniu168.com/counts3107.html' language='JavaScript' charset='utf-8'></script> <span style="color:red;font-size:14px;">&nbsp;个访客，欢迎您</span>
 </p>
       
-<p class="top51la"> IP统计 
-  <script language="javascript" type="text/javascript" src="http://quote.51.la/?id=18982958&amp;mb=2"></script>
-</p>
 	
     <main id="main" class="main">
       <div class="main-inner">
