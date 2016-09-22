@@ -733,12 +733,14 @@ background-size:cover;
 
 - `c`
 ```css
-```
 color:#000;
+```
+
 - `c:r`
 ```css
 color:rgb(0, 0, 0);
 ```
+
 - `c:ra`
 ```css
 color:rgba(0, 0, 0, .5);
