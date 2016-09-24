@@ -1,5 +1,5 @@
 ---
-title: javascript学习笔记基础总结篇
+title: javascript笔记基础总结篇
 date: 2016-09-24 10:33:00
 tags: Javascript
 categories: Front-End
@@ -13,10 +13,10 @@ categories: Front-End
 - 操作系统就是个应用程序
 - 只要是应用程序都要占用物理内存
 - 浏览器本身也是一个应用程序
-
 - 浏览器本身只懂得解析`HTML`
 - 调用浏览器这个应用程序的一个功能绘制
 
+<!--more-->
 #### 1、javascript介绍
 
 - `JavaScript`操作`DOM`的本质是=获取+触发+改变
