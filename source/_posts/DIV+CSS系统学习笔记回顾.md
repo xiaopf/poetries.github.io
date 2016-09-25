@@ -7,6 +7,8 @@ tags:
 categories: Front-End
 ---
 
+> 转载请声明   [原文链接地址](http://blog.poetries.top/2016/09/06/DIV+CSS%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%9B%9E%E9%A1%BE/#more)
+
 ### 第一部分 HTML
 
 ---
@@ -19,7 +21,7 @@ categories: Front-End
   - `web`网站架构师
   - 自己创业
   - 转岗管理或其他
-<!--more-->
+
 - **`web`前端开发的前景展望：**
 
   - 未来`IT`行业企业需求最多的人才
@@ -1389,35 +1391,187 @@ document.write("您的页面目前支持："+sbox+"盒子模型");
     - `CSS` 雪碧调用的图片不能被打印
     - 错误得使用 `Sprites` 影响可访问性
 
----
-#### 附录三 部分工具资源
+#### 附录三 一些tips解决方案
 ---
 
+##### 页面优化实践
+---
+
+- 从下面的几个方面可以进行页面的优化：
+
+  - 减少请求数
+  - 图片合并
+  - `CSS `文件合并
+  - 减少内联样式
+  - 避免在 `CSS `中使用 `import`
+  - 减少文件大小
+  - 选择适合的图片格式
+  - 图片压缩
+  - `CSS` 值缩写（`Shorthand Property`)
+  - 文件压缩
+  - 页面性能
+  - 调整文件加载顺序
+  - 减少标签数量
+  - 调整选择器长度
+  - 尽量使用` CSS` 制作显示表现
+  - 增强代码可读性与可维护性
+  - 规范化
+  - 语义化
+  - 模块化
+
+##### 常用代码片段
+---
+
+- `mobile meta `标签
+
+```html
+<meta name=”viewport” content=”width=320,target-densitydpi=dpi_value,initial-scale=1, user-scalable=no”/>
+```
+
+- 表格不被撑开
+
+```css
+table-layout: fixed; word-break: break-all;;border-collapse: collapse
+```
+
+- 不设宽高居中
+
+```html
+<div id=”abc” style=”display:table;text-align:center;width:100%;height:100%;”>
+      <span style=”background:#f00; display:table-cell; vertical-align:middle;”>
+            <input type=”button” value=”item1″ />
+      </span>
+</div>
+```
+
+- 透明度的兼容代码
+
+```css
+filter:alpha(opacity=50); /*1-100*/
+-moz-opacity:0.5; /*0-1.0*/
+-khtml-opacity:0.5; /*0-1.0*/
+opacity:0.5; /*0-1.0*/
+```
+- 文字溢出点点省略
+
+```css
+white-space:nowrap;
+text-overflow:ellipsis;
+overflow:hidden;
+```
+
+- 清除浮动的几种方法
+  - 方法一：`投机取巧法` -- 不推荐
+   - 直接一个放到当作最后一个子标签放到父标签那儿，此方法屡试不爽，兼容性强
+
+- 方法二：`overflow + zoom`方法  --不推荐
+     `.fix{overflow:hidden; zoom:1;}`
+  - 此方法优点在于代码简洁，涵盖所有浏览器
+
+- 方法三：`after + zoom`方法 -推荐--此方法可以说是综合起来最好的方法了
+  - `clearfix`只应用在包含浮动子元素的父级元素上
+
+```css
+.fix{zoom:1;}
+.fix:after{
+     display:block; 
+     content:'clear'; 
+     clear:both;
+     line-height:0; 
+     visibility:hidden;
+}
+```
+
+- 更多代码片段详情
+   - [实用的60个CSS代码片段](http://www.jianshu.com/p/e878122a92a3)
+
+##### 一些总结
+---
+
+- 自动继承属性：
+
+  - `color`
+  - `font`
+  - `text-align`
+  - `list-style`
+...
+
+- 非继承属性：
+  - ` background`
+  - `border`
+  - `position`
+...
+
+- 具有破坏性的元素：
+
+  - `float`
+  - `display:none;`
+  - `position:absoblute/fixed/sticky;`
+
+- 具有包裹性的元素：
+
+  - `display:inline-block/table-cell`
+
+  - `position:absolute/fixed/sticky`
+
+  - `overflow:hidden/scroll`
+
+- 消除图片底部间隙的方法
+
+  - 图片块状化-无基线对齐
+  `img{display:block;}`
+
+  - 图片底线对齐
+  `img{vertical-align:bottom;}`
+
+  - 行高足够小 - 基线位置上移
+ `.box{line-height:0;}`
+
+##### 一些概念
+---
+
+- BFC
+   - BFC全称`”Block Formatting Context”` 中文为“块级格式化上下文”
+
+  - 记住这么一句话：`BFC`元素特性表现原则就是，内部子元素再怎么翻江倒海，翻云覆雨都不会影响外部的元素
+
+  - `BFC`就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此
+
+ - 扩展阅读
+    - [CSS中的BFC](https://github.com/dwqs/blog/issues/22)
+- 优雅降级(`graceful degradation`)
+  - 一开始就构建完整的功能，然后再针对低版本浏览器进行兼容
+- 渐进增强 `progressive enhancement`：
+  - 是在浏览器开启`JavaScript`功能后，如果浏览器版本不支持某些  `JavaScript`  能力，我们解决这种问题的方式
+- 平稳退化
+  - 是在浏览器没有`JavaScript`功能，或没有开启`JavaScript`功能情况下，我们解决这种问题的方式；
+
+#### 附录四 部分工具资源
+---
+
+- [学会使用Emmet插件快速编码](http://blog.poetries.top/2016/03/14/Emmet%EF%BC%9AHTML-CSS%E4%BB%A3%E7%A0%81%E5%BF%AB%E9%80%9F%E7%BC%96%E5%86%99%E7%A5%9E%E5%99%A8/)
+- [Emmet常用快捷键](http://blog.poetries.top/2016/09/09/Emmet%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/#more)
 - [Sublime专题](https://github.com/poetries/mywiki/blob/master/bookmark/sublime-text.md)
 - [Sublime常用插件总结](https://github.com/poetries/mywiki/blob/master/bookmark/Sublime%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6%E6%80%BB%E7%BB%93.md)
 - [Front-End -Develop -Tools](https://github.com/poetries/mywiki/blob/master/bookmark/Front-End%20-Develop%20-Tools.md)
 - [ToolsBox-自己整理的一份工具列表](https://github.com/poetries/mywiki/blob/master/bookmark/Tools.md)
----
 
-#### 附录四 编码规范
-
+#### 附录五 编码规范
 ---
 
 - [编码规范](https://github.com/poetries/mywiki/blob/master/bookmark/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.md)
 - [web develop standard](https://github.com/poetries/mywiki/wiki/web-develop-standard)
 - [Web 前端开发规范文档](http://codecloud.net/5622.html)
 
----
-
-#### 附录五 前端学习资源
-
+#### 附录六 前端学习资源
 ---
 
 - [Github上前端学习资源汇总](https://github.com/poetries/mywiki)
 - [WEB 前端开发学习笔记](https://github.com/poetries/mywiki/tree/master/front-end)
-- [前程开发工具箱](https://github.com/poetries/mywiki/wiki/%E6%94%B6%E9%9B%86%E5%A5%BD%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7)
----
+- [前端开发工具箱](https://github.com/poetries/mywiki/wiki/%E6%94%B6%E9%9B%86%E5%A5%BD%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7)
+- [148个资源让你成为CSS专家](https://segmentfault.com/a/1190000006689923)
 
 #### 其他
+---
 
 - [本文Mardown原文件-欢迎转载](https://github.com/poetries/poetries.github.io/blob/dev/source/_posts/DIV+CSS%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%9B%9E%E9%A1%BE.md)
