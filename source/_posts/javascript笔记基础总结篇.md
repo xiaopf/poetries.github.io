@@ -31,7 +31,7 @@ categories: Front-End
   - `BOM(window)`它包含了`DOM`
   - `DOM(document)`
   - `script`脚本推荐放在最下边好处：防止因网络问题，页面加载时间长，出现空白；即便网络问题，浏览器也把`DOM`加载渲染完成，等待从服务端下载完`js`脚本，出现效果
-  - `css`不放在最下面原因是：好比先穿好衣服在出去，浏览器先把`css`样式准备好，在加载结构层，使得页面有样子；如果放在下面，因为页面是从上往下加载，没有`css`，就剩下裸露的标签，很难看，使得用户体验不好
+  - `css`不放在最下面原因通俗地讲：好比先穿好衣服在出去，浏览器先把`css`样式准备好，在加载结构层，使得页面有样子；如果放在下面，因为页面是从上往下加载，没有`css`，就剩下裸露的标签，很难看，使得用户体验不好
 
 #### 2、基于对象的内存管理
 ---
@@ -64,13 +64,13 @@ categories: Front-End
 #### DOM在内存中的一些图示
 ---
 
-![DOM解析树](http://7xq6al.com1.z0.glb.clouddn.com/DOM%E8%A7%A3%E6%9E%90%E6%A0%91.png)
+![DOM解析树](http://upload-images.jianshu.io/upload_images/1480597-1ca35c7d64faec6c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![DOM内存图](http://7xq6al.com1.z0.glb.clouddn.com/DOM11.png)
+![DOM内存图](http://upload-images.jianshu.io/upload_images/1480597-3a4d0eba77f1a163.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![DOM内存图](http://7xq6al.com1.z0.glb.clouddn.com/DOM22.png)
+![DOM内存图](http://upload-images.jianshu.io/upload_images/1480597-80fe8bcddfbca269.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![DOM内存图](http://7xq6al.com1.z0.glb.clouddn.com/DOM33.png)
+![DOM内存图](http://upload-images.jianshu.io/upload_images/1480597-ce659f11e978cd3b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
   
   
   ### 第二课时 
@@ -450,6 +450,22 @@ alert(Object.prototype.toString.call(f) === ‘[object Function]’) -------> tr
 ---
 
 - `if`
+
+######  `javascript`中`if`语句优化写法
+
+ - 使用常见的三元操作符
+
+```javascript
+if (foo) bar(); else baz(); ==> foo?bar():baz();
+if (!foo) bar(); else baz(); ==> foo?baz():bar();
+if (foo) return bar(); else return baz(); ==> return foo?bar():baz();
+```
+- 使用`and(&&)`和`or(||)`运算符
+
+```javascript
+if (foo) bar(); ==> foo&&bar();
+if (!foo) bar(); ==> foo||bar();
+```
 - `if...else`
 - `if...else if...else`
 - 当通过判断返回某个值的时候，优先使用三元表达式
@@ -599,50 +615,50 @@ alert(c);//30
 #### 一些内存图示
 ---
 
-![闭包示例1](http://7xq6al.com1.z0.glb.clouddn.com/%E9%97%AD%E5%8C%85%E7%A4%BA%E4%BE%8B1.png)
+![闭包示例1](http://upload-images.jianshu.io/upload_images/1480597-d7b1dc1194558ac0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![闭包示例2](http://7xq6al.com1.z0.glb.clouddn.com/%E9%97%AD%E5%8C%85%E7%A4%BA%E4%BE%8B2.png)
+![闭包示例2](http://upload-images.jianshu.io/upload_images/1480597-32121bca4ab77dba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![闭包1](http://7xq6al.com1.z0.glb.clouddn.com/%E9%97%AD%E5%8C%8511.png)
+![闭包1](http://upload-images.jianshu.io/upload_images/1480597-f8c6735fdc8d7ee0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![闭包2](http://7xq6al.com1.z0.glb.clouddn.com/%E9%97%AD%E5%8C%8522.png)
+![闭包2](http://upload-images.jianshu.io/upload_images/1480597-54d5b8e92e0266af.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![闭包3](http://7xq6al.com1.z0.glb.clouddn.com/%E9%97%AD%E5%8C%8533.png)
+![闭包3](http://upload-images.jianshu.io/upload_images/1480597-0d7c71a08e5c3dd5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ---
 
 #### 原型链的几张图解
 ---
 
-![原型链图解](http://7xq6al.com1.z0.glb.clouddn.com/%E5%8E%9F%E5%9E%8B%E9%93%BE1.png)
+![原型链图解](http://upload-images.jianshu.io/upload_images/1480597-f6fab5bf39d4927a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![js原型链演示00-new Object](http://7xq6al.com1.z0.glb.clouddn.com/js%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%BC%94%E7%A4%BA00-new%20Object.png)
+![js原型链演示00-new Object](http://upload-images.jianshu.io/upload_images/1480597-960b48ae2a258f3a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![js原型链演示01-函数Foo声明](http://7xq6al.com1.z0.glb.clouddn.com/js%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%BC%94%E7%A4%BA01-%E5%87%BD%E6%95%B0Foo%E5%A3%B0%E6%98%8E.png)
+![js原型链演示01-函数Foo声明](http://upload-images.jianshu.io/upload_images/1480597-46a363299f4cb52d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![js原型链演示-对象继承模式-01-浅拷贝](http://7xq6al.com1.z0.glb.clouddn.com/js%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%BC%94%E7%A4%BA-%E5%AF%B9%E8%B1%A1%E7%BB%A7%E6%89%BF%E6%A8%A1%E5%BC%8F-01-%E6%B5%85%E6%8B%B7%E8%B4%9D.png)
+![js原型链演示-对象继承模式-01-浅拷贝](http://upload-images.jianshu.io/upload_images/1480597-5c2c02e45b6a34bd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![js原型链演示02-new Foo()](http://7xq6al.com1.z0.glb.clouddn.com/js%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%BC%94%E7%A4%BA02-new%20Foo%28%29.png)
+![js原型链演示02-new Foo()](http://upload-images.jianshu.io/upload_images/1480597-21688edeab3bb10d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![js原型链演示02-1-new 原理](http://7xq6al.com1.z0.glb.clouddn.com/js%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%BC%94%E7%A4%BA02-1-new%20%E5%8E%9F%E7%90%86.png)
+![js原型链演示02-1-new 原理](http://upload-images.jianshu.io/upload_images/1480597-fc562b41d866cae5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![js原型链演示03-Foo.prototype](http://7xq6al.com1.z0.glb.clouddn.com/js%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%BC%94%E7%A4%BA-%E5%AF%B9%E8%B1%A1%E7%BB%A7%E6%89%BF%E6%A8%A1%E5%BC%8F-02-%E6%B7%B1%E6%8B%B7%E8%B4%9D.png)
+![js原型链演示03-Foo.prototype](http://upload-images.jianshu.io/upload_images/1480597-f53b3e2d9833f545.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![js原型链演示-对象继承模式-03-基于对象的原型继承](http://7xq6al.com1.z0.glb.clouddn.com/js%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%BC%94%E7%A4%BA-%E5%AF%B9%E8%B1%A1%E7%BB%A7%E6%89%BF%E6%A8%A1%E5%BC%8F-03-%E5%9F%BA%E4%BA%8E%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%8E%9F%E5%9E%8B%E7%BB%A7%E6%89%BF.png)
+![js原型链演示-对象继承模式-03-基于对象的原型继承](http://upload-images.jianshu.io/upload_images/1480597-ccbf4ddf8ea86e17.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![js原型链演示05-继承函数示例](http://7xq6al.com1.z0.glb.clouddn.com/js%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%BC%94%E7%A4%BA05-%E7%BB%A7%E6%89%BF%E5%87%BD%E6%95%B0%E7%A4%BA%E4%BE%8B.png)
+![js原型链演示05-继承函数示例](http://upload-images.jianshu.io/upload_images/1480597-724c8ddd463e8497.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![js原型链演示06-继承prototype模式](http://7xq6al.com1.z0.glb.clouddn.com/js%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%BC%94%E7%A4%BA06-%E7%BB%A7%E6%89%BFprototype%E6%A8%A1%E5%BC%8F.png)
+![js原型链演示06-继承prototype模式](http://upload-images.jianshu.io/upload_images/1480597-b006171464fb7c9a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![js原型链演示07-继承prototype模式改进](http://7xq6al.com1.z0.glb.clouddn.com/js%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%BC%94%E7%A4%BA07-%E7%BB%A7%E6%89%BFprototype%E6%A8%A1%E5%BC%8F%E6%94%B9%E8%BF%9B.png)
+![js原型链演示07-继承prototype模式改进](http://upload-images.jianshu.io/upload_images/1480597-57f3858765368446.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![js原型链演示08-继承prototype直接继承](http://7xq6al.com1.z0.glb.clouddn.com/js%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%BC%94%E7%A4%BA08-%E7%BB%A7%E6%89%BFprototype%E7%9B%B4%E6%8E%A5%E7%BB%A7%E6%89%BF.png)
+![js原型链演示08-继承prototype直接继承](http://upload-images.jianshu.io/upload_images/1480597-fc1f9e36ede219f8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![js原型链演示08-继承prototype空对象中介](http://7xq6al.com1.z0.glb.clouddn.com/js%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%BC%94%E7%A4%BA08-%E7%BB%A7%E6%89%BFprototype%E7%A9%BA%E5%AF%B9%E8%B1%A1%E4%B8%AD%E4%BB%8B.png)
+![js原型链演示08-继承prototype空对象中介](http://upload-images.jianshu.io/upload_images/1480597-55110b7283224dde.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![js原型链演示09-继承prototype空对象中介封装expend](http://7xq6al.com1.z0.glb.clouddn.com/js%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%BC%94%E7%A4%BA09-%E7%BB%A7%E6%89%BFprototype%E7%A9%BA%E5%AF%B9%E8%B1%A1%E4%B8%AD%E4%BB%8B%E5%B0%81%E8%A3%85expend.png)
+![js原型链演示09-继承prototype空对象中介封装expend](http://upload-images.jianshu.io/upload_images/1480597-a45122592360a214.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![js原型链演示10-构造器拷贝继承](http://7xq6al.com1.z0.glb.clouddn.com/js%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%BC%94%E7%A4%BA10-%E6%9E%84%E9%80%A0%E5%99%A8%E6%8B%B7%E8%B4%9D%E7%BB%A7%E6%89%BF.png)
+![js原型链演示10-构造器拷贝继承](http://upload-images.jianshu.io/upload_images/1480597-b832f7372de9dc35.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 - 扩展阅读
    - [Javascript的原型链图详解](https://zhuanlan.zhihu.com/p/22189387)
@@ -681,6 +697,49 @@ alert(c);//30
 
 + 访问对象的属性除了用 对象引用`.属性` `key`以外，还可以使用对象引用`[属性key]`
 
+##### new 原理详细解析
+---
+
+* 无论什么时候，只要创建一个新函数，就会根据一组特定的规则为该函数创建一个`prototype`属性，这个属性指向函数的原型对象。
+* 在默认情况下，所有原型对象都会自动获得一个`constructor`（构造函数）属性，这个属性包含一个指向`prototype`属性所在函数的指针（就是指向新创建的函数）。
+* 通过这个构造函数（原型对象的构造函数），可以继续为原型对象添加其他属性和方法。
+* 当调用构造函数创建一个新实例后，该实例的内部将包含一个指针（内部属性），指向构造函数的原型对象。`ECMA-262`第5版管这个指针叫 `[[Prototype]] `。脚本中没有标准的方式访问` [[Prototype]]`，但`Firefox`、`Safari`和`Chrome`在每个对象上都支持一个属性`__proto__`；而在其他实现中，这个属性对脚本是完全不可见的。不过，要明确的真正重要的一点就是，这个连接存在于实例和构造函数的原型对象之间，而不是存在于实例和构造函数之间
+
+##### new创建对象的步骤
+---
+
+-  创建一个新的对象
+- 将构造函数的作用域赋给新对象
+- 执行构造函数的代码，为这个新对象添加属性
+- 返回新对象
+
+```javascript
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
+    this.say = function () {
+        console.log(this.name);
+    };
+}
+
+function createPerson(P) {
+    // 创建一个新对象
+    var o = new Object();
+    // 获取传递给Person函数的参数
+    var args = Array.prototype.slice.call(arguments, 1);
+    // 新对象的__proto__属性指向Person的原型对象
+    o.__proto__ = P.prototype;
+    // Person的原型对象的constructor指向Person
+    P.prototype.constructor = P;
+    // 把Person构造函数的作用域赋给新对象
+    // 给这个新对象添加属性（name,age,say）
+    P.apply(o, args);
+    // 返回这个新对象
+    return o;
+}
+
+var p = createPerson(Person, 'wang', 35);
+```
 
 #### **2、面向对象的程序设计**
 ---
@@ -698,7 +757,243 @@ alert(c);//30
 + `this` 指代当前创建的这块内存 `this.name=name` 指代当前内存中的这个`name`属性 接收外界传过来的值
 + `继承`
 
+##### 多种构造函数
 ---
+
+###### **传统的创建对象**
+---
+
+```javascript
+
+var person = new Object();
+
+person.name = “lancer”;
+
+person.age = 24;
+
+person.job = “UI”;
+
+person.sayName = function(){
+
+alert(this.name);
+
+}
+
+person.sayName();
+```
+
+###### **工厂模式**
+---
+
+```javascript
+
+function createPerson(name,age,job){
+
+var o = new Object();
+
+o.name = name;
+
+o.age = age;
+
+o.job = job;
+
+o.sayName = function(){
+
+alert(o.name);
+
+}
+
+return o;
+
+}
+
+var person1 = createPerson(“lancer”,24,”UI”);
+
+person1.sayName();
+```
+
+###### **构造函数**
+---
+
+```javascript
+
+function Person(name,age,job){
+
+this.name = name;
+
+this.age = age;
+
+this.job =job;
+
+this.sayName = function(){
+
+alert(this.name)
+
+}
+
+}
+
+var person1 = createPerson(“lancer”,24,”UI”);
+
+person1.sayName();
+
+```
+
+###### **原型模式**
+---
+
+```javascript
+
+function Person(){
+
+}
+
+Person.prototype.name =”lancer”;
+
+Person.prototype.age =24;
+
+Person.prototype.job = “UI”;
+
+Person.prototype.sayName = function(){
+
+alert(this.name)
+
+}
+
+var person1 = new Person();
+
+person1.sayName();
+
+var person2 = new Person();
+
+person2.name =”lara”
+
+person2.sayName();
+```
+
+###### **简单原型模式**
+---
+
+```javascript
+
+function Person(){
+
+}
+
+Person.prototype = {
+
+name : “lancer”,
+
+age : 24,
+
+job : “UI”,
+
+sayName : function(){
+
+alert(this.name)
+
+}
+
+};
+
+var person1 = new Person();
+
+person1.sayName();
+
+```
+
+###### **构造函数和原型模式**
+---
+
+```javascript
+
+function Person(name,age,job){
+
+this.name = name;
+
+this.age = age;
+
+this.job =job;
+
+}
+
+Person.prototype = {
+
+constructor :Person,
+
+sayName : function(){
+
+alert(this.name)
+
+}
+
+};
+
+var person1 = new Person(“lancer”,”24″,”UI”);
+
+person1.sayName();
+```
+
+###### **动态原型模式**
+---
+
+```javascript
+
+function Person(name,age,job){
+
+this.name = name;
+
+this.age = age;
+
+this.job =job;
+
+}
+
+if(typeof this.sayName !=”function”){
+
+Person.prototype = {
+
+constructor :Person,
+
+sayName : function(){
+
+alert(this.name)
+
+}
+
+};
+
+}
+
+var person1 = new Person(“lancer”,”24″,”UI”);
+
+person1.sayName();
+```
+
+###### **稳妥构造函数**
+---
+
+```javascript
+
+var Person = function(name,age,job){
+
+var O = new Object();
+
+O.sayName = function(){
+
+alert(name);
+
+};
+
+return O
+
+}
+
+var person1 = Person(“lancer”,24,”UI”);
+
+person1.sayName();
+
+```
 
 #### **其他：**
 ---
@@ -842,13 +1137,13 @@ s.work(h);
 #### **一些内存图示**
 ---
 
-![](http://7xq6al.com1.z0.glb.clouddn.com/pro1.png)
+![](http://upload-images.jianshu.io/upload_images/1480597-9d8603509767ea7a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![](http://7xq6al.com1.z0.glb.clouddn.com/pro2.png)
+![](http://upload-images.jianshu.io/upload_images/1480597-44bd5c0bf459b4d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![](http://7xq6al.com1.z0.glb.clouddn.com/pro3.png)
+![](http://upload-images.jianshu.io/upload_images/1480597-17266c52ca52c896.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![](http://7xq6al.com1.z0.glb.clouddn.com/pro4.png)
+![](http://upload-images.jianshu.io/upload_images/1480597-1bf8c506d61084c2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 ### 第十课时
@@ -889,7 +1184,361 @@ s.work(h);
 - 3.`Math Math.random();`
 - 4.`Date`
 
+##### 日期型函数`Date`
+---
+
+- **声明**
+
+```javascript
+var myDate = new Date(); //系统当前时间
+
+var myDate = new Date(yyyy, mm, dd, hh, mm, ss);
+
+var myDate = new Date(yyyy, mm, dd);
+
+var myDate = new Date(“monthName dd, yyyy hh:mm:ss”);
+
+var myDate = new Date(“monthName dd, yyyy”);
+
+var myDate = new Date(epochMilliseconds);
+```
+
+- **获取时间的某部份**
+
+```javascript
+var myDate = new Date();
+
+myDate.getYear(); //获取当前年份(2位)
+
+myDate.getFullYear(); //获取完整的年份(4位,1970-????)
+
+myDate.getMonth(); //获取当前月份(0-11,0代表1月)
+
+myDate.getDate(); //获取当前日(1-31)
+
+myDate.getDay(); //获取当前星期X(0-6,0代表星期天)
+
+myDate.getTime(); //获取当前时间(从1970.1.1开始的毫秒数) 时间戳！！
+
+myDate.getHours(); //获取当前小时数(0-23)
+
+myDate.getMinutes(); //获取当前分钟数(0-59)
+
+myDate.getSeconds(); //获取当前秒数(0-59)
+
+myDate.getMilliseconds(); //获取当前毫秒数(0-999)
+
+myDate.toLocaleDateString(); //获取当前日期
+
+myDate.toLocaleTimeString(); //获取当前时间
+
+myDate.toLocaleString( ); //获取日期与时间
+```
+- **计算之前或未来的时间**
+
+```javascript
+var myDate = new Date();
+
+myDate.setDate(myDate.getDate() + 10); //当前时间加10天//类似的方法都基本相同,以set开头,具体参考第2点
+```
+
+- **计算两个日期的偏移量**
+
+```javascript
+var i = daysBetween(beginDate,endDate); //返回天数
+
+var i = beginDate.getTimezoneOffset(endDate); //返回分钟数
+```
+- **检查有效日期**
+
+```javascript
+//checkDate() 只允许”mm-dd-yyyy”或”mm/dd/yyyy”两种格式的日期
+if( checkDate(“2006-01-01”) ){ }
+
+//正则表达式(自己写的检查 yyyy-mm-dd, yy-mm-dd, yyyy/mm/dd, yy/mm/dd 四种)
+
+var r = /^(\d{2}|\d{4})[\/-]\d{1,2}[\/-]\d{1,2}$/;if( r.test( myString ) ){ }
+```
+
+#####  字符串String型函数API
+---
+
+
+- **声明**
+
+```javascript
+var myString = new String(“Every good boy does fine.”);
+
+var myString = “Every good boy does fine.”;
+```
+
+- **字符串连接**
+
+```javascript
+var myString = “Every ” + “good boy ” + “does fine.”;
+
+var myString = “Every “; myString += “good boy does fine.”;
+```
+
+- **截取字符串**
+
+```javascript
+//截取第 6 位开始的字符
+
+var myString = “Every good boy does fine.”;
+
+var section = myString.substring(6); //结果: “good boy does fine.”
+
+//截取第 0 位开始至第 10 位为止的字符
+
+var myString = “Every good boy does fine.”;
+
+var section = myString.substring(0,10); //结果: “Every good”
+
+//截取从第 11 位到倒数第 6 位为止的字符
+
+var myString = “Every good boy does fine.”;
+
+var section = myString.slice(11,-6); //结果: “boy does”
+
+//从第 6 位开始截取长度为 4 的字符
+
+var myString = “Every good boy does fine.”;
+
+var section = myString.substr(6,4); //结果: “good”
+```
+
+- **转换大小写**
+
+```javascript
+var myString = “Hello”;
+
+var lcString = myString.toLowerCase(); //结果: “hello”
+
+var ucString = myString.toUpperCase(); //结果: “HELLO”
+```
+
+- **字符串比较**
+
+```javascript
+var aString = “Hello!”;
+
+var bString = new String(“Hello!”);
+
+if( aString == “Hello!” ){ } //结果: true
+
+if( aString == bString ){ } //结果: true
+
+if( aString === bString ){ } //结果: false (两个对象不同,尽管它们的值相同)
+```
+
+- **检索字符串**
+
+```javascript
+var myString = “hello everybody.”;
+
+// 如果检索不到会返回-1,检索到的话返回在该串中的起始位置
+
+if( myString.indexOf(“every”) > -1 ){ } //结果: true
+```
+
+- **查找替换字符串**
+
+```javascript
+var myString = “I is your father.”;
+
+var result = myString.replace(“is”,”am”); //结果: “I am your father.”
+```
+
+- **特殊字符**
+
+  - `\b` : 后退符 
+  - `\t` : 水平制表符
+  - `\n` : 换行符 
+  - `\v` : 垂直制表符
+  - `\f` : 分页符 
+  - `\r` : 回车符
+  - `\”` : 双引号 
+  - `\’` : 单引号
+  - `\\ 反斜杆`
+
+
+- **将字符转换成`Unicode`编码**
+
+```javascript
+var myString = “hello”;
+
+var code = myString.charCodeAt(3); //返回”l”的Unicode编码(整型)
+
+var char = String.fromCharCode(66); //返回Unicode为66的字符
+```
+
+- **将字符串转换成URL编码**
+
+```javascript
+var myString = “hello all”;
+
+var code = encodeURI(myString); //结果: “hello%20all”
+
+var str = decodeURI(code); //结果: “hello all”
+
+//相应的还有: encodeURIComponent() decodeURIComponent()
+```
+
+##### Math对象型
+---
+
+- `Math.abs(num)` : 返回`num`的绝对值
+
+- `Math.acos(num)` : 返回`num`的反余弦值
+
+- `Math.asin(num)` : 返回`num`的反正弦值
+
+- `Math.atan(num)` : 返回`num`的反正切值
+
+- `Math.atan2(y,x)` : 返回`y`除以`x`的商的反正切值
+
+- `Math.ceil(num)` : 返回大于`num`的最小整数
+
+- `Math.cos(num)` : 返回`num`的余弦值
+
+- `Math.exp(x)` : 返回以自然数为底,x次幂的数
+
+- `Math.floor(num)` : 返回小于`num`的最大整数
+
+- `Math.log(num)` : 返回`num`的自然对数
+
+- `Math.max(num1,num2)` : 返回`num1`和`num2`中较大的一个
+
+- `Math.min(num1,num2)` : 返回`num1`和`num2`中较小的一个
+
+- `Math.pow(x,y)` : 返回`x`的`y`次方的值
+
+- `Math.random()` : 返回`0`到`1`之间的一个随机数
+
+- `Math.round(num)` : 返回`num`四舍五入后的值
+
+- `Math.sin(num)` : 返回`num`的正弦值
+
+- `Math.sqrt(num)` : 返回`num`的平方根
+
+- `Math.tan(num)` : 返回`num`的正切值
+
+- `Math.E` : 自然数(`2.718281828459045`)
+
+- `Math.LN2` : `2`的自然对数(`0.6931471805599453`)
+
+- `Math.LN10` : `10`的自然对数(`2.302585092994046`)
+
+- `Math.LOG2E` : `log 2` 为底的自然数(`1.4426950408889634`)
+
+- `Math.LOG10E` : `log 10` 为底的自然数(`0.4342944819032518`)
+
+- `Math.PI` : `π(3.141592653589793)`
+
+- `Math.SQRT1_2` : `1/2`的平方根(`0.7071067811865476`)
+
+- `Math.SQRT2` : `2`的平方根(`1.4142135623730951`)
+
+##### Number型 常用的数字函数
+---
+
+
+- **声明**
+
+```javascript
+var i = 1;
+
+var i = new Number(1);
+```
+
+- **字符串与数字间的转换**
+
+```javascript
+var i = 1;
+
+var str = i.toString(); //结果: “1”
+
+var str = new String(i); //结果: “1”
+
+i = parseInt(str); //结果: 1
+
+i = parseFloat(str); //结果: 1.0
+
+//注意: parseInt,parseFloat会把一个类似于”32G”的字符串,强制转换成32
+```
+
+- **判断是否为有效的数字**
+
+```javascript
+var i = 123; var str = “string”;
+
+if( typeof i == “number” ){ } //true
+
+//某些方法(如:parseInt,parseFloat)会返回一个特殊的值NaN(Not a Number)
+
+//请注意第2点中的[注意],此方法不完全适合判断一个字符串是否是数字型!!
+
+i = parseInt(str);
+
+if( isNaN(i) ){ }
+```
+
+- **数字型比较**
+
+```javascript
+//此知识与[字符串比较]相同
+
+- **小数转整数**
+
+var f = 1.5;
+
+var i = Math.round(f); //结果:2 (四舍五入)
+
+var i = Math.ceil(f); //结果:2 (返回大于f的最小整数)
+
+var i = Math.floor(f); //结果:1 (返回小于f的最大整数)
+```
+
+- **格式化显示数字**
+
+```javascript
+var i = 3.14159;
+
+//格式化为两位小数的浮点数
+
+var str = i.toFixed(2); //结果: “3.14”
+
+//格式化为五位数字的浮点数(从左到右五位数字,不够补零)
+
+var str = i.toPrecision(5); //结果: “3.1415”
+```
+
+- **X进制数字的转换**
+
+```javascript
+
+var i = parseInt(“0x1f”,16);
+
+var i = parseInt(i,10);
+
+var i = parseInt(“11010011”,2);
+```
+
+- **随机数**
+
+```javascript
+//返回0-1之间的任意小数
+
+var rnd = Math.random();
+
+//返回0-n之间的任意整数(不包括n)
+
+var rnd = Math.floor(Math.random() * n)
+```
+
 ##### 5.`Regex`
+---
 
 ```javascript
 //在这个最大的对象的原型上加一个extends方法 使得下面所有的原型 都有这个方法
@@ -926,12 +1575,15 @@ s.work(h);
 #### **一些图示**
 ---
 
-![](http://7xq6al.com1.z0.glb.clouddn.com/pro5.png)
+![](http://upload-images.jianshu.io/upload_images/1480597-6828aabba7d2948e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![](http://7xq6al.com1.z0.glb.clouddn.com/pro6.png)
+![](http://upload-images.jianshu.io/upload_images/1480597-f4f9ade4c089cabd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+- 正则表达式扩展阅读
+  - [正则表达式30分钟入门教程](http://deerchao.net/tutorials/regex/regex.htm)
+ - [梳理常用的正则表达式.md](http://blog.poetries.top/2016/07/09/%E6%A2%B3%E7%90%86%E5%B8%B8%E7%94%A8%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/)
 
-### 十一课时
+### 第十一课时
 ---
 
 #### **上节回顾：**
@@ -954,7 +1606,7 @@ s.work(h);
   - f.`()`的作用就是为了分组匹配
 
 
-#### 简单的封装对象
+- 简单封装一个对象案例
 
 ```javascript
 String.prototype.isEmail = function(){
@@ -1062,7 +1714,7 @@ new Date(2012,2).printCalendar();
 #### 1.BOM 浏览器对象模型
 ---
 
-![BOM](http://images0.cnblogs.com/blog/644616/201508/122056471456596.jpg)
+![BOM](http://upload-images.jianshu.io/upload_images/1480597-8b133694198ad13f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 - a.`screen` 指的不是浏览器的宽度，指的是整个电脑屏幕的分辨率
      - 可以拿到屏幕可用分辨率
@@ -1279,6 +1931,161 @@ var child = document.getElementsByTagName('div')[2].createElement("p");
 child.innerHTML = 'pppppp';
 
 ```
+
+##### **DOM属性小结**
+---
+
+- `Attributes`	存储节点的属性列表(只读)
+
+- `childNodes`	存储节点的子节点列表(只读)
+
+- `dataType`	返回此节点的数据类型
+
+- `Definition`	以`DTD`或`XML`模式给出的节点的定义(只读)
+
+- `Doctype`	指定文档类型节点(只读)
+
+- `documentElement`	返回文档的根元素(可读写)
+
+- `firstChild`	返回当前节点的第一个子节点(只读)
+
+- `Implementation`	返回`XMLDOMImplementation`对象
+
+- `lastChild`	返回当前节点最后一个子节点(只读)
+
+- `nextSibling`	返回当前节点的下一个兄弟节点(只读)
+
+- `nodeName`	返回节点的名字(只读)
+
+- `nodeType`	返回节点的类型(只读)
+
+- `nodeTypedValue`存储节点值(可读写)
+
+- `nodeValue`	返回节点的文本(可读写)
+
+- `ownerDocument`	返回包含此节点的根文档(只读)
+
+- `parentNode	`返回父节点(只读)
+
+- `Parsed`	返回此节点及其子节点是否已经被解析(只读)
+
+- `Prefix`	返回名称空间前缀(只读)
+
+- `preserveWhiteSpace`	指定是否保留空白(可读写)
+
+- `previousSibling`	返回此节点的前一个兄弟节点(只读)
+
+- `Text`	返回此节点及其后代的文本内容(可读写)
+
+- `url	`返回最近载入的XML文档的`URL`(只读)
+
+- `Xml`	返回节点及其后代的`XML`表示(只读)
+
+##### DOM方法小结
+---
+
+  - `cloneNode`	返回当前节点的拷贝
+  - `createAttribute`	创建新的属性
+
+- **节点操作`DOMDocument`属性和方法**
+
+  - `createCDATASection`	创建包括给定数据的`CDATA`段
+
+  - `createComment`	创建一个注释节点
+
+  - `createDocumentFragment`	创建`DocumentFragment`对象
+
+  - `createElement_x_x`	创建一个元素节点
+
+  - `createEntityReference`	创建`EntityReference`对象
+
+  - `createNode`	创建给定类型,名字和命名空间的节点
+
+  - `createPorcessingInstruction`	创建操作指令节点
+
+  - `createTextNode`	创建包括给定数据的文本节点
+
+  - `getElementsByTagName	`返回指定名字的元素集合
+
+  - `hasChildNodes`	返回当前节点是否有子节点
+
+  - `insertBefore	`在指定节点前插入子节点
+
+  - `Load	`导入指定位置的XML文档
+
+  - `loadXML`	导入指定字符串的XML文档
+
+  - `removeChild`	从子结点列表中删除指定的子节点
+
+  - `replaceChild	`从子节点列表中替换指定的子节点
+
+  - `Save	把`XML`文件存到指定节点
+
+  - `selectNodes`	对节点进行指定的匹配,并返回匹配节点列表
+
+  - `selectSingleNode`	对节点进行指定的匹配,并返回第一个匹配节点
+
+  - `transformNode`	使用指定的样式表对节点及其后代进行转换
+
+  - `transformNodeToObject`	使用指定的样式表将节点及其后代转换为对象
+
+  - `document.documentElement	`返回文档的根节点
+
+  - `document.activeElement`	返回当前文档中被击活的标签节点
+
+  - `event.fromElement`	返回鼠标移出的源节点
+
+  - `event.toElement	`返回鼠标移入的源节点
+
+  - `event.srcElement`	返回激活事件的源节点
+
+  - `node.parentNode,node.parentElement`	返回父节点
+
+  - `node.childNodes`	返回子节点集合（包含文本节点及标签节点）
+
+  - `node.children`	返回子标签节点集合
+
+  - `node.textNodes`	返回子文本节点集合
+
+  - `node.firstChild	`返回第一个子节点
+
+  - `node.lastChild`	返回最后一个子节点
+
+  - `node.nextSibling	`返回同属下一个节点
+
+  - `node.previousSibling`	返回同属上一个节点
+
+  - `node.a(oNode)`	追加子节点：
+
+  - `node.applyElment(oNode,sWhere)`
+
+  - `sWhere`有两个值：`outside` / i`nside`	应用标签节点
+ 
+  - `node.insertBefore()`
+
+  - `node.insertAdjacentElement()`
+
+  - `node.replaceAdjacentText()`
+
+- **插入节点**
+
+  - `node.remove()`
+  - `node.removeChild()`
+  - `node.removeNode()`
+
+- **删除节点**
+
+  - `node.replaceChild()`
+  - `node.replaceNode()`
+  - `node.swapNode()`
+
+- **替换节点**
+
+  - `node.cloneNode(bAll)	`返回复制复制节点引用
+  - `node.contains()`	是否有子节点
+  - `node.hasChildNodes()	`是否有子节点
+
+
 - 扩展阅读
   - [DOM编程之API总结篇](http://www.jianshu.com/p/1e638b7da640)
 
@@ -1352,25 +2159,31 @@ child.innerHTML = 'pppppp';
 - 3.事件冒泡机制
 - 4.案例
 
-### 附录一份关于JS的导图笔记
+### JS视频
 ---
 
-![DOM基本操作](http://7xq6al.com1.z0.glb.clouddn.com/DOM%20%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C.gif)
+- [Javascript第一季初级视频教程【李炎恢老师】](http://edu.51cto.com/course/course_id-166-page-1.html)
+- [JavaScript视频教程 | 智能社](http://www.zhinengshe.com/video.html)
 
-![javascript函数基础](http://7xq6al.com1.z0.glb.clouddn.com/JavaScript%20%E5%87%BD%E6%95%B0%E5%9F%BA%E7%A1%80.gif)
+### 附录一份大神总结的关于JS的导图
+---
 
-![JavaScript数据类型](http://7xq6al.com1.z0.glb.clouddn.com/js%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.gif)
+![DOM基本操作](http://upload-images.jianshu.io/upload_images/1480597-3a584567c41f737d.gif?imageMogr2/auto-orient/strip)
 
-![window对象](http://7xq6al.com1.z0.glb.clouddn.com/js%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80-window%E5%B1%9E%E6%80%A7.gif)
+![javascript函数基础](http://upload-images.jianshu.io/upload_images/1480597-7de04acbf81543fc.gif?imageMogr2/auto-orient/strip)
 
-![javascript变量](http://7xq6al.com1.z0.glb.clouddn.com/JavaScript%20%E5%8F%98%E9%87%8F.gif)
+![JavaScript数据类型](http://upload-images.jianshu.io/upload_images/1480597-5737bc8360e9e8d3.gif?imageMogr2/auto-orient/strip)
 
-![JavaScript字符串函数](http://7xq6al.com1.z0.glb.clouddn.com/JavaScript%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0.gif)
+![window对象](http://upload-images.jianshu.io/upload_images/1480597-44d4ba1c8f6d48a6.gif?imageMogr2/auto-orient/strip)
 
-![JavaScript正则表达式](http://7xq6al.com1.z0.glb.clouddn.com/JavaScript%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.gif)
+![javascript变量](http://upload-images.jianshu.io/upload_images/1480597-05b7f79120cc6150.gif?imageMogr2/auto-orient/strip)
 
-![JavaScript流程控制](http://7xq6al.com1.z0.glb.clouddn.com/JavaScript%20%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6.gif)
+![JavaScript字符串函数](http://upload-images.jianshu.io/upload_images/1480597-1b25cf62140a30fb.gif?imageMogr2/auto-orient/strip)
 
-![JavaScript运算符](http://7xq6al.com1.z0.glb.clouddn.com/Javascript%20%E8%BF%90%E7%AE%97%E7%AC%A6.gif)
+![JavaScript正则表达式](http://upload-images.jianshu.io/upload_images/1480597-30e2e0981d225fd4.gif?imageMogr2/auto-orient/strip)
 
-![JavaScript数组](http://7xq6al.com1.z0.glb.clouddn.com/javascript%E6%95%B0%E7%BB%84.gif)
+![JavaScript流程控制](http://upload-images.jianshu.io/upload_images/1480597-8bdb24d940eceeea.gif?imageMogr2/auto-orient/strip)
+
+![JavaScript运算符](http://upload-images.jianshu.io/upload_images/1480597-caa897f33ef0e47d.gif?imageMogr2/auto-orient/strip)
+
+![JavaScript数组](http://upload-images.jianshu.io/upload_images/1480597-eb23ab7b14608e83.gif?imageMogr2/auto-orient/strip)
