@@ -5,7 +5,9 @@ tags: Javascript
 categories: Front-End
 ---
 
-> 转载请声明出处 [原文链接](http://blog.poetries.top/2016/09/24/javascript%E7%AC%94%E8%AE%B0%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E7%AF%87/#more)
+> 转载请声明出处 [博客原文](http://blog.poetries.top/2016/09/24/javascript%E7%AC%94%E8%AE%B0%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E7%AF%87/#more)
+
+随手翻阅以前的学习笔记，顺便整理一下放在这里，方便自己复习，也希望你有也有帮助吧
 
 ### 第一课时 入门基础
 ---
@@ -62,17 +64,13 @@ categories: Front-End
 #### DOM在内存中的一些图示
 ---
 
-![](https://github.com/poetries/TZ-Front-End-Note/raw/master/JS-Basic-star/images/DOM.png)
+![DOM解析树](http://7xq6al.com1.z0.glb.clouddn.com/DOM%E8%A7%A3%E6%9E%90%E6%A0%91.png)
 
-![](https://github.com/poetries/TZ-Front-End-Note/raw/master/JS-Basic-star/images/DOM1.png)
+![DOM内存图](http://7xq6al.com1.z0.glb.clouddn.com/DOM11.png)
 
-![enter description here][1]
+![DOM内存图](http://7xq6al.com1.z0.glb.clouddn.com/DOM22.png)
 
-![enter description here][2]
-
-
-  [1]: https://github.com/poetries/TZ-Front-End-Note/raw/master/JS-Basic-star/images/DOM2.png
-  [2]: https://github.com/poetries/TZ-Front-End-Note/raw/master/JS-Basic-star/images/DOM3.png
+![DOM内存图](http://7xq6al.com1.z0.glb.clouddn.com/DOM33.png)
   
   
   ### 第二课时 
@@ -601,11 +599,53 @@ alert(c);//30
 #### 一些内存图示
 ---
 
-![](https://github.com/poetries/TZ-Front-End-Note/raw/master/JS-Basic-star/images/DOM4.png)
+![闭包示例1](http://7xq6al.com1.z0.glb.clouddn.com/%E9%97%AD%E5%8C%85%E7%A4%BA%E4%BE%8B1.png)
 
-![](https://github.com/poetries/TZ-Front-End-Note/raw/master/JS-Basic-star/images/DOM5.png)
+![闭包示例2](http://7xq6al.com1.z0.glb.clouddn.com/%E9%97%AD%E5%8C%85%E7%A4%BA%E4%BE%8B2.png)
 
-![](https://github.com/poetries/TZ-Front-End-Note/raw/master/JS-Basic-star/images/DOM6.png)
+![闭包1](http://7xq6al.com1.z0.glb.clouddn.com/%E9%97%AD%E5%8C%8511.png)
+
+![闭包2](http://7xq6al.com1.z0.glb.clouddn.com/%E9%97%AD%E5%8C%8522.png)
+
+![闭包3](http://7xq6al.com1.z0.glb.clouddn.com/%E9%97%AD%E5%8C%8533.png)
+
+---
+
+#### 原型链的几张图解
+---
+
+![原型链图解](http://7xq6al.com1.z0.glb.clouddn.com/%E5%8E%9F%E5%9E%8B%E9%93%BE1.png)
+
+![js原型链演示00-new Object](http://7xq6al.com1.z0.glb.clouddn.com/js%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%BC%94%E7%A4%BA00-new%20Object.png)
+
+![js原型链演示01-函数Foo声明](http://7xq6al.com1.z0.glb.clouddn.com/js%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%BC%94%E7%A4%BA01-%E5%87%BD%E6%95%B0Foo%E5%A3%B0%E6%98%8E.png)
+
+![js原型链演示-对象继承模式-01-浅拷贝](http://7xq6al.com1.z0.glb.clouddn.com/js%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%BC%94%E7%A4%BA-%E5%AF%B9%E8%B1%A1%E7%BB%A7%E6%89%BF%E6%A8%A1%E5%BC%8F-01-%E6%B5%85%E6%8B%B7%E8%B4%9D.png)
+
+![js原型链演示02-new Foo()](http://7xq6al.com1.z0.glb.clouddn.com/js%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%BC%94%E7%A4%BA02-new%20Foo%28%29.png)
+
+![js原型链演示02-1-new 原理](http://7xq6al.com1.z0.glb.clouddn.com/js%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%BC%94%E7%A4%BA02-1-new%20%E5%8E%9F%E7%90%86.png)
+
+![js原型链演示03-Foo.prototype](http://7xq6al.com1.z0.glb.clouddn.com/js%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%BC%94%E7%A4%BA-%E5%AF%B9%E8%B1%A1%E7%BB%A7%E6%89%BF%E6%A8%A1%E5%BC%8F-02-%E6%B7%B1%E6%8B%B7%E8%B4%9D.png)
+
+![js原型链演示-对象继承模式-03-基于对象的原型继承](http://7xq6al.com1.z0.glb.clouddn.com/js%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%BC%94%E7%A4%BA-%E5%AF%B9%E8%B1%A1%E7%BB%A7%E6%89%BF%E6%A8%A1%E5%BC%8F-03-%E5%9F%BA%E4%BA%8E%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%8E%9F%E5%9E%8B%E7%BB%A7%E6%89%BF.png)
+
+![js原型链演示05-继承函数示例](http://7xq6al.com1.z0.glb.clouddn.com/js%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%BC%94%E7%A4%BA05-%E7%BB%A7%E6%89%BF%E5%87%BD%E6%95%B0%E7%A4%BA%E4%BE%8B.png)
+
+![js原型链演示06-继承prototype模式](http://7xq6al.com1.z0.glb.clouddn.com/js%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%BC%94%E7%A4%BA06-%E7%BB%A7%E6%89%BFprototype%E6%A8%A1%E5%BC%8F.png)
+
+![js原型链演示07-继承prototype模式改进](http://7xq6al.com1.z0.glb.clouddn.com/js%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%BC%94%E7%A4%BA07-%E7%BB%A7%E6%89%BFprototype%E6%A8%A1%E5%BC%8F%E6%94%B9%E8%BF%9B.png)
+
+![js原型链演示08-继承prototype直接继承](http://7xq6al.com1.z0.glb.clouddn.com/js%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%BC%94%E7%A4%BA08-%E7%BB%A7%E6%89%BFprototype%E7%9B%B4%E6%8E%A5%E7%BB%A7%E6%89%BF.png)
+
+![js原型链演示08-继承prototype空对象中介](http://7xq6al.com1.z0.glb.clouddn.com/js%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%BC%94%E7%A4%BA08-%E7%BB%A7%E6%89%BFprototype%E7%A9%BA%E5%AF%B9%E8%B1%A1%E4%B8%AD%E4%BB%8B.png)
+
+![js原型链演示09-继承prototype空对象中介封装expend](http://7xq6al.com1.z0.glb.clouddn.com/js%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%BC%94%E7%A4%BA09-%E7%BB%A7%E6%89%BFprototype%E7%A9%BA%E5%AF%B9%E8%B1%A1%E4%B8%AD%E4%BB%8B%E5%B0%81%E8%A3%85expend.png)
+
+![js原型链演示10-构造器拷贝继承](http://7xq6al.com1.z0.glb.clouddn.com/js%E5%8E%9F%E5%9E%8B%E9%93%BE%E6%BC%94%E7%A4%BA10-%E6%9E%84%E9%80%A0%E5%99%A8%E6%8B%B7%E8%B4%9D%E7%BB%A7%E6%89%BF.png)
+
+- 扩展阅读
+   - [Javascript的原型链图详解](https://zhuanlan.zhihu.com/p/22189387)
 
 ### 第七课时
 ---
@@ -802,13 +842,14 @@ s.work(h);
 #### **一些内存图示**
 ---
 
-![](https://github.com/poetries/TZ-Front-End-Note/raw/master/JS-Basic-star/images/DOM10.png)
+![](http://7xq6al.com1.z0.glb.clouddn.com/pro1.png)
 
-![](https://github.com/poetries/TZ-Front-End-Note/raw/master/JS-Basic-star/images/DOM11.png)
+![](http://7xq6al.com1.z0.glb.clouddn.com/pro2.png)
 
-![](https://github.com/poetries/TZ-Front-End-Note/raw/master/JS-Basic-star/images/DOM13.png)
+![](http://7xq6al.com1.z0.glb.clouddn.com/pro3.png)
 
-![](https://github.com/poetries/TZ-Front-End-Note/raw/master/JS-Basic-star/images/DOM12.png)
+![](http://7xq6al.com1.z0.glb.clouddn.com/pro4.png)
+
 
 ### 第十课时
 ---
@@ -885,9 +926,9 @@ s.work(h);
 #### **一些图示**
 ---
 
-![](https://github.com/poetries/TZ-Front-End-Note/raw/master/JS-Basic-star/images/DOM13.png)
+![](http://7xq6al.com1.z0.glb.clouddn.com/pro5.png)
 
-![](https://github.com/poetries/TZ-Front-End-Note/raw/master/JS-Basic-star/images/DOM15.png)
+![](http://7xq6al.com1.z0.glb.clouddn.com/pro6.png)
 
 
 ### 十一课时
@@ -1021,7 +1062,7 @@ new Date(2012,2).printCalendar();
 #### 1.BOM 浏览器对象模型
 ---
 
-![BOM](http://upload-images.jianshu.io/upload_images/1480597-fa2d960c2d33460c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![BOM](http://images0.cnblogs.com/blog/644616/201508/122056471456596.jpg)
 
 - a.`screen` 指的不是浏览器的宽度，指的是整个电脑屏幕的分辨率
      - 可以拿到屏幕可用分辨率
@@ -1062,7 +1103,6 @@ new Date(2012,2).printCalendar();
          + `setAttribute/getAttribute`
          + `appendChild`
 
-![](https://github.com/poetries/TZ-Front-End-Note/raw/master/JS-Basic-star/images/DOM17.png)
 
 ### 第十四课时
 ---
@@ -1312,3 +1352,25 @@ child.innerHTML = 'pppppp';
 - 3.事件冒泡机制
 - 4.案例
 
+### 附录一份关于JS的导图笔记
+---
+
+![DOM基本操作](http://7xq6al.com1.z0.glb.clouddn.com/DOM%20%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C.gif)
+
+![javascript函数基础](http://7xq6al.com1.z0.glb.clouddn.com/JavaScript%20%E5%87%BD%E6%95%B0%E5%9F%BA%E7%A1%80.gif)
+
+![JavaScript数据类型](http://7xq6al.com1.z0.glb.clouddn.com/js%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.gif)
+
+![window对象](http://7xq6al.com1.z0.glb.clouddn.com/js%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80-window%E5%B1%9E%E6%80%A7.gif)
+
+![javascript变量](http://7xq6al.com1.z0.glb.clouddn.com/JavaScript%20%E5%8F%98%E9%87%8F.gif)
+
+![JavaScript字符串函数](http://7xq6al.com1.z0.glb.clouddn.com/JavaScript%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0.gif)
+
+![JavaScript正则表达式](http://7xq6al.com1.z0.glb.clouddn.com/JavaScript%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.gif)
+
+![JavaScript流程控制](http://7xq6al.com1.z0.glb.clouddn.com/JavaScript%20%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6.gif)
+
+![JavaScript运算符](http://7xq6al.com1.z0.glb.clouddn.com/Javascript%20%E8%BF%90%E7%AE%97%E7%AC%A6.gif)
+
+![JavaScript数组](http://7xq6al.com1.z0.glb.clouddn.com/javascript%E6%95%B0%E7%BB%84.gif)
