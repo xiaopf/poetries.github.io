@@ -7,40 +7,20 @@ tags:
 categories: Front-End
 ---
 
-### 基本类型介绍
+> 原文 [链接](http://blog.poetries.top/2016/09/22/DOM%E7%BC%96%E7%A8%8B%E4%B9%8BAPI%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93%E7%AF%87/)
+
+### 一、基本类型介绍
 ---
 
-#### Node类型
+#### 1.1 Node类型
 ---
 
 - `DOM1`级定义了一个`Node`接口，该接口由`DOM`中所有节点类型实现。这个`Node`接口在`JS`中是作为`Node`类型实现的。在`IE9`以下版本无法访问到这个类型，`JS`中所有节点都继承自`Node`类型，都共享着相同的基本属性和方法
 - `Node`有一个属性`nodeType`表示`Node`的类型，它是一个整数，其数值分别表示相应的`Node`类型
 
-    - `node.element_node:`1
-    
-    - `node.attibute_node:`2
-    
-    - `node.text_node:`3
-    
-    - `node.CDATA_section_node:`4
-    
-    - `node.entity_reference_node:`5
-    
-    - `node.entity_node:`6
-    
-    - `node.rocession_instruction_node:`7
-    
-    - `node.comment_node:`8
-    
-    - `node.document_node:`9
-    
-    - `node.document_type_node:`10
-    
-    - `node.document_fragment_node:`11
-    
-    - `node.aotation_node:`12
-
+![Node类型](http://upload-images.jianshu.io/upload_images/1480597-8a0893521cfc83f9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 <!--more-->
+  
 - 假设我们要判断一个`Node`是不是元素，我们可以这样判断
 
 ```javascript
@@ -49,31 +29,31 @@ console.log("Node is a element");
 }
 ```
 
-- 这些`Node`类型中，我们最常用的就是`element`，`text`，`attribute`，`comment`，`document`，`document_fragment`这几种类型
+-  这些`Node`类型中，我们最常用的就是`element`，`text`，`attribute`，`comment`，`document`，`document_fragment`这几种类型
 
-##### Element类型
+##### 1.2 Element类型
 ---
 
 - `Element`提供了对元素标签名，子节点和特性的访问，我们常用`HTML`元素比如`div`，`span`，`a`等标签就是`element`中的一种。
 - **`Element`有下面几条特性：**
 
-    - `nodeType`为1
-    - `nodeName`为元素标签名，tagName也是返回标签名
+    - `nodeType`为`1`
+    - `nodeName`为元素标签名，`tagName`也是返回标签名
     - `nodeValue`为`null`
     - `parentNode`可能是`Document`或`Element`
-    -  子节点可能是`Element`，`Text`，`Comment`，`Processing_Instruction`，`CDATASection`或`EntityReference`
+    - 子节点可能是 `Element`，`Text`，`Comment`，`Processing_Instruction`，`CDATASection` 或 `EntityReference`
 
-##### Text类型
+##### 1.3 Text类型
 ---
 
 - `Text`表示文本节点，它包含的是纯文本内容，不能包含`html`代码，但可以包含转义后的`html`代码。`Text`有下面的特性：
-    - `nodeType`为3
-    - `nodeName`为#text
+    - `nodeType`为`3`
+    - `nodeName`为`#text`
     - `nodeValue`为文本内容
     - `parentNode`是一个`Element`
     - 没有子节点
 
-##### Attr类型
+##### 1.4 Attr类型
 ---
 
 - `Attr`类型表示元素的特性，相当于元素的`attributes`属性中的节点，它有下面的特性：
@@ -82,41 +62,39 @@ console.log("Node is a element");
     - `nodeValue`是特性的值
     - `parentNode`为`null`
 
-##### Comment类型
+##### 1.5 Comment类型
 ---
 
-- `Comment`表示HTML文档中的注释，它有下面的几种特征：
+- `Comment`表示`HTML`文档中的注释，它有下面的几种特征：
   - `nodeType`为8
-  - `nodeName`为#comment
+  - `nodeName`为`#comment`
   - `nodeValue`为注释的内容
   - `parentNode`可能是`Document`或`Element`
   - 没有子节点
 
-##### Document
+##### 1.6 Document
 ---
 
 - `Document`表示文档，在浏览器中，`document`对象是`HTMLDocument`的一个实例，表示整个页面，它同时也是`window`对象的一个属性。`Document`有下面的特性：
-  - `nodeType`为9
+  - `nodeType`为`9`
   - `nodeName`为`#document`
   - `nodeValue`为 `null`
   - `parentNode`为 `null`
   - 子节点可能是一个`DocumentType`或`Element`
 
-##### DocumentFragment类型
+##### 1.7 DocumentFragment类型
 ---
-
 - `DocumentFragment`是所有节点中唯一一个没有对应标记的类型，它表示一种轻量级的文档，可能当作一个临时的仓库用来保存可能会添加到文档中的节点。`DocumentFragment`有下面的特性：
-  - `nodeType`为11
+  - `nodeType`为`11`
   - `nodeName`为`#document-fragment`
   - `nodeValue`为`null`
   - `parentNode`为`null`
 
 - 我们简单地介绍了几种常见的`Node`类型，要记住，`HTML`中的节点并不只是包括元素节点，它还包括文本节点，注释节点等等。在这里我们只是简单地说明了几种常见的节点.
 
-### DOM提供的几个属性
+### 二、 DOM提供的几个属性
 ---
-
-#### childNodes属性
+#### 2.1 childNodes属性
 ---
 - 在一棵节点树上，`childNodes`属性可以用来获取任何一个元素的所有子节点，它是一个包含这个元素全部子元素的数组
 
@@ -124,8 +102,7 @@ console.log("Node is a element");
 element.childNodes
 ```
 
-
-#### nodeType属性
+#### 2.2 nodeType属性
 ---
 
 - 节点之间的关系构成了节点层次，`html` 页面的可以画出一个以`html`标签为根节点的树形结构
@@ -148,7 +125,6 @@ element.childNodes
 ```javascript
 node.nodeType
 ```
-
 - `nodeType`属性总共有12中可能取值，但其中仅有3种有实用价值
     - 元素节点的`nodeType`属性值是1
     - 属性节点的`nodeType`属性值是2
@@ -159,7 +135,7 @@ node.nodeType
 description.firstChild.nodeValue = text;
 ```
 
-#### nodeValue属性
+#### 2.3 nodeValue属性
 ---
 
 - `nodeValue`属性
@@ -168,7 +144,7 @@ description.firstChild.nodeValue = text;
     - nodeValue属性不仅可以用来检测节点的值，还可以设置节点的值
 
 
-#### firstChild和lastChild属性
+#### 2.4 firstChild和lastChild属性
 ---
 - 数组元素`childNodes[0]`有个更直观的同义词。无论如何，只要访问`childNodes`数组的第一个元素，都可以把它写成`firstChild`
 
@@ -187,13 +163,12 @@ node.childNodes[0]
 node.lastChild
 ```
 
-
- ### 节点创建型API
+ ### 三、节点创建型API
  ---
  
  - 在这里，我将常用的`DOM`操作`api`进行分类，首先要介绍的是创建型的`api`。这一类型的`api`，简而言之就是用来创建节点的
  
-#### createElement
+#### 3.1 createElement
 ---
 
 - `createElement`通过传入指定的一个标签名来创建一个元素，如果传入的标签名是一个未知的，则会创建一个自定义的标签，注意：`IE8`以下浏览器不支持自定义标签
@@ -205,7 +180,7 @@ var div = document.createElement("div");
 
 - 使用`createElement`要注意：通过`createElement`创建的元素并不属于`html`文档，它只是创建出来，并未添加到`html`文档中，要调用`appendChild`或`insertBefore`等方法将其添加到`HTML`文档树中
 
-#### createTextNode
+#### 3.2 createTextNode
 ---
 
 - `createTextNode`用来创建一个文本节点，用法如下
@@ -216,7 +191,7 @@ var textNode = document.createTextNode("一个TextNode");
 ```
 - `createTextNode`接收一个参数，这个参数就是文本节点中的文本，和`createElement`一样，创建后的文本节点也只是独立的一个节点，同样需要`appendChild`将其添加到`HTML`文档树中
 
-#### cloneNode
+#### 3.3 cloneNode
 
 - `cloneNode`是用来返回调用方法的节点的一个副本，它接收一个`bool`参数，用来表示是否复制子元素，使用如下：
 
@@ -266,7 +241,7 @@ document.getElementById("btnCopy").onclick = function(){
 ```
 - 这样的话，副本节点同样会触发事件
 
-#### createDocumentFragment
+#### 3.4 createDocumentFragment
 ---
 
 - `createDocumentFragment`方法用来创建一个`DocumentFragment`。在前面我们说到`DocumentFragment`表示一种轻量级的文档，它的作用主要是存储临时的节点用来准备添加到文档中
@@ -287,7 +262,7 @@ document.getElementById("btnAdd").onclick = function(){
 }
 ```
 
-- 这段代码将按钮绑定了一个事件，这个事件创建了100个`li`节点，然后依次将其添加HTML文档中。这样做有一个缺点：每次一创建一个新的元素，然后添加到文档树中，这个过程会造成浏览器的回流。所谓回流简单说就是指元素大小和位置会被重新计算，如果添加的元素太多，会造成性能问题。这个时候，就是使用`createDocumentFragment了`
+- 这段代码将按钮绑定了一个事件，这个事件创建了100个`li`节点，然后依次将其添加`HTML`文档中。这样做有一个缺点：每次一创建一个新的元素，然后添加到文档树中，这个过程会造成浏览器的回流。所谓回流简单说就是指元素大小和位置会被重新计算，如果添加的元素太多，会造成性能问题。这个时候，就是使用`createDocumentFragment了`
 
 - `DocumentFragment`不是文档树的一部分，它是保存在内存中的，所以不会造成回流问题。我们修改上面的代码如下
 
@@ -307,7 +282,7 @@ document.getElementById("btnAdd").onclick = function(){
 ```
 - 优化后的代码主要是创建了一个`fragment`，每次生成的`li`节点先添加到`fragment`，最后一次性添加到`list`
 
-#### 创建型API总结
+#### 3.5 创建型API总结
 ---
 
 - 创建型`api`主要包括`createElement`，`createTextNode`，`cloneNode`和`createDocumentFragment`四个方法，需要注意下面几点：
@@ -316,13 +291,13 @@ document.getElementById("btnAdd").onclick = function(){
     - `cloneNode`要注意如果被复制的节点是否包含子节点以及事件绑定等问题
     - 使用`createDocumentFragment`来解决添加大量节点时的性能问题
 
-### 页面修改型API
+### 四、页面修改型API
 ---
 
 - 前面我们提到创建型`api`，它们只是创建节点，并没有真正修改到页面内容，而是要调用`appendChild`来将其添加到文档树中。我在这里将这类会修改到页面内容归为一类。
 修改页面内容的`api`主要包括：`appendChild`，`insertBefore`，`removeChild`，`replaceChild`
 
-#### appendChild
+#### 4.1 appendChild
 ---
 
 - `appendChild`我们在前面已经用到多次，就是将指定的节点添加到调用该方法的节点的子元素的末尾。调用方法如下：
@@ -356,7 +331,7 @@ document.getElementById("btnMove").onclick = function(){
 - 这段代码主要是获取页面上的`child`节点，然后添加到指定位置，可以看到原本的`child`节点被移动到`parent`中了。
 这里还有一个要注意的点：如果`child`绑定了事件，被移动时，它依然绑定着该事件
 
-#### insertBefore
+#### 4.2 insertBefore
 ---
 
 - `insertBefore`用来添加一个节点到一个参照节点之前，用法如下
@@ -395,7 +370,7 @@ document.getElementById("insertNode").onclick = function(){
   - `refNode`是必传的，如果不传该参数会报错
   - 如果`refNode`是`undefined`或`null`，则`insertBefore`会将节点添加到子元素的末尾
  
-#### removeChild
+#### 4.3 removeChild
 ---
 
 - `removeChild`顾名思义，就是删除指定的子节点并返回，用法如下
@@ -418,7 +393,7 @@ if(node.parentNode){
 
 - 通过节点自己获取节点的父节点，然后将自身删除
 
-#### replaceChild
+#### 4.4 replaceChild
 ---
 
 - `replaceChild`用于使用一个节点替换另一个节点，用法如下
@@ -431,19 +406,19 @@ parent.replaceChild(newChild,oldChild);
 - `newChild`是替换的节点，可以是新的节点，也可以是页面上的节点，如果是页面上的节点，则其将被转移到新的位置
 - `oldChild`是被替换的节点
 
-#### 页面修改型API总结
+#### 4.5 页面修改型API总结
 ---
 
 - 页面修改型api主要是这四个接口，**要注意几个特点**：
      - 不管是新增还是替换节点，如果新增或替换的节点是原本存在页面上的，则其原来位置的节点将被移除，也就是说同一个节点不能存在于页面的多个位置
      - 节点本身绑定的事件会不会消失，会一直保留着
 
-### 节点查询型API
+### 五、节点查询型API
 ---
 
 - 节点查询型`API`也是非常常用的
 
-#### document.getElementById
+#### 5.1 document.getElementById
 ---
 
 - 这个接口很简单，根据元素`id`返回元素，返回值是`Element`类型，如果不存在该元素，则返回`null`
@@ -454,7 +429,7 @@ parent.replaceChild(newChild,oldChild);
   - `HTML`文档中可能存在多个`id`相同的元素，则返回第一个元素
   - 只从文档中进行搜索元素，如果创建了一个元素并指定`id`，但并没有添加到文档中，则这个元素是不会被查找到的
 
-#### document.getElementsByTagName
+#### 5.2 document.getElementsByTagName
 ---
 
 - 这个接口根据元素标签名获取元素，返回一个即时的`HTMLCollection`类型，什么是即时的`HTMLCollection`类型呢？
@@ -485,7 +460,7 @@ document.getElementById("btnShowCount").onclick = function(){
   - 如果没有存在指定的标签，该接口返回的不`是null`，而是一个空的`HTMLCollection`
   - `“*”`表示所有标签
  
-#### document.getElementsByName
+#### 5.3 document.getElementsByName
 ---
 
 - `getElementsByName`主要是通过指定的`name`属性来获取元素，它返回一个即时的`NodeList`对象。一般用于获取表单元素的·name·属性
@@ -495,7 +470,7 @@ document.getElementById("btnShowCount").onclick = function(){
   - 在`HTML`元素中，并不是所有元素都有`name`属性，比如`div`是没有`name`属性的，但是如果强制设置`div的`name`属性，它也是可以被查找到的
   - 在`IE`中，如果`id`设置成某个值，然后传入`getElementsByName`的参数值和`id`值一样，则这个元素是会被找到的，所以最好不好设置同样的值给`id`和`name`
   
-#### document.getElementsByClassName
+#### 5.4 document.getElementsByClassName
 ---
 
 - 这个`API`是根据元素的`class`返回一个即时的`HTMLCollection`，用法如下
@@ -514,7 +489,7 @@ var elements = document.getElementsByClassName(names);
 var elements = document.getElementsByClassName("test1 test2");
 ```
 
-#### document.querySelector和document.querySelectorAll
+#### 5.5 document.querySelector和document.querySelectorAll
 ---
 
 - 这两个`api`很相似，通过`css`选择器来查找元素，注意选择器要符合`CSS`选择器的规则
@@ -570,20 +545,20 @@ document.getElementById("btnShow").addEventListener("click",function(){
     - `document.getElementById`返回一个对象
     - `document.getElementsByName`和`document.getElementsByClasName`返回一个对象数组
 
-### 节点关系型API
+### 六、节点关系型API
 ---
 
 ![](https://segmentfault.com/img/remote/1460000006899101)
 
 - 在`html`文档中的每个节点之间的关系都可以看成是家谱关系，包含父子关系，兄弟关系等等
 
-#### 父关系型API
+#### 6.1 父关系型API
 ---
 
 - `parentNode`：每个节点都有一个`parentNode`属性，它表示元素的父节点。`Element`的父节点可能是`Element`，`Document`或`DocumentFragment`
 - `parentElement`：返回元素的父元素节点，与`parentNode`的区别在于，其父节点必须是一个`Element`，如果不是，则返回`null`
 
-#### 兄弟关系型API
+#### 6.2 兄弟关系型API
 ---
 
 - `previousSibling`：节点的前一个节点，如果该节点是第一个节点，则为`null`。注意有可能拿到的节点是文本节点或注释节点，与预期的不符，要进行处理一下
@@ -612,7 +587,7 @@ document.getElementById("btnShow").addEventListener("click",function(){
 - `nextSibling`：节点的后一个节点，如果该节点是最后一个节点，则为`null`。注意有可能拿到的节点是文本节点，与预期的不符，要进行处理一下
 - `nextElementSibling`：返回后一个元素节点，后一个节点必须是`Element`，注意`IE9`以下浏览器不支持
 
-#### 子关系型API
+#### 6.3 子关系型API
 ---
 
 - `childNodes`：
@@ -685,10 +660,10 @@ oUl.lastElementChild.style.background = 'red';
 - `hasChildNodes`方法：可以用来判断是否包含子节点
 
 
-### 元素属性型
+### 七、元素属性型
 ---
 
-#### setAttribute
+#### 7.1 setAttribute
 ---
 
 - `setAttribute`：它允许我们对元素属性值做出修改与`getAttribute`一样`setAttribute`也能用于元素节点
@@ -725,7 +700,7 @@ element.setAttribute("value","the new value");
 ```
 
 
-#### getAttribute
+#### 7.2 getAttribute
 ---
 
 - `getAttribute`返回指定的特性名相应的特性值，如果不存在，则返回`null`或空字符串。
@@ -739,7 +714,7 @@ for(var i=0;i<para.lenght;i++){
 }
 ```
 
-### 网上的一张导图总结
+### 八、网上的一张思维导图总结
 ---
 
-![](http://7xq6al.com1.z0.glb.clouddn.com/DOM%20%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C.gif)
+![](http://upload-images.jianshu.io/upload_images/1480597-1893e82e8c49b23d.gif?imageMogr2/auto-orient/strip)
