@@ -1128,6 +1128,248 @@ s.work(h);
 - 2：抽象（类，构造器）
 - 3：创建对象并且建立关系（操作对象）
 
+- 面向对象例子
+
+```javascript
+//小头爸爸牵着大头儿子的手去吃饭，吃完饭之后，
+
+//小头爸爸背着大头儿子回家，回家后儿子学习，老爸工作，工作学习完后
+
+//儿子看动画片
+
+//围裙妈妈带儿子睡觉
+
+//张三和张四
+
+//分析对象 小头爸爸 大头儿子 饭 以及功能
+
+//设计构造器（类）
+
+//创建对象以及他们之间的关联
+
+ function Person(name,age){
+
+ this.name = name;
+
+ this.age = age;
+
+ }
+
+function Rice(name){
+
+ this.name = name;
+
+}
+
+//Person.prototype.getHand = function(){//这样子写也可以 但还是用默认生成的那块空的内存对象 往里面添加属性 方法
+
+ //不浪费内存
+
+//}
+
+//在prototype中定义的每个对象都有这些功能
+
+Person.prototype = {//这样子写 抛弃了默认生成的那块空的内存对象 重新创建了一块新的内存对象 记住：原型的本质是对象
+
+ //多个功能写在一起
+
+ getHand:function(person){//牵手
+
+ alert(this.name+"在牵着"+person.name+"的手....");
+
+ },
+
+ eat:function(rice){
+
+ alert(this.name+"在吃"+rice.name);
+
+ },
+
+ //需求 18岁以上才能背人
+
+ /* //写法一 不推荐 这个满足18岁的功能是自己强加的 不是客户需求的
+
+ carry:function(person){//这里设计不合理 让老爸有这个功能 儿子没有这个功能
+
+ if(this.age>=18){
+
+ alert(this.name+'背着'+person.name);
+
+ }else{
+
+ alert(this.name+",还未满18岁，背不起");
+
+ }
+
+ },*/
+
+ backhome:function(){
+
+ alert(this.name+"回家");
+
+ },
+
+ study:function(){
+
+ alert(this.name+"正在学习");
+
+ },
+
+ watchTV:function(jm){
+
+ alert(this.name+"正在看"+jm+'...');
+
+ }
+
+};
+
+var p1 = new Person("老爸",20);
+
+var p2 = new Person("儿子",15);
+
+//p1.getHand(p2);
+
+//p1.eat(new Rice("蛋炒饭"));
+
+//p2.eat(new Rice("猪脚饭"));
+
+//p1.carry(p2);//老爸背儿子
+
+//p2.carry(p1);//让儿子背老爸 输出结果：儿子,还未满18岁，背不起
+
+//p1.backhome();
+
+//写法二 不推荐 100对关系 代码写很多遍
+
+/*
+
+//让老爸单独有背的这个功能 儿子没有这个功能
+
+p1.carry = function(person){
+
+ alert(this.name+'背着'+person.name);
+
+}
+
+p1.carry(p2);
+
+*/
+
+//-------通过继承解决这个 让老爸单独有背的这个功能 儿子没有这个功能 可以应对多功能 多需求
+
+//功能函数
+
+Object.prototype.extends = function(func,actions){//让所有的子孙 构造器都有这个功能
+
+ for(var prop in func.prototype){//传进一个func构造器 迭代构造器中的功能 把构造器中的功能全都映射过来 复制一份
+
+ this.prototype[prop] = func.prototype[prop];//迭代原型中的所有的功能到 当前里面去
+
+ }
+
+ for(var prop in actions){
+
+ this.prototype[prop] = actions[prop];
+
+ }
+
+};
+
+function Father(name){
+
+ this.name = name;
+
+}
+
+Father.extends(Person,{
+
+ carry:function(person){
+
+ alert(this.name+'背着'+person.name);
+
+ },
+
+ work:function(){
+
+ alert(this.name+"正在工作");
+
+ }
+
+});
+
+//扩展
+
+//设计程序有个原则：不修改只增加
+
+function Children(name){
+
+ this.name = name;
+
+}
+
+Children.extends(Person);
+
+function Mother(name){
+
+ this.name = name;
+
+}
+
+Mother.extends(Person,{
+
+ scoop:function(person){
+
+ //判断必须是children的对象才能执行这个功能
+
+ //if(){
+
+ alert(this.name+"唱着摇篮曲哄"+person.name+"睡觉");
+
+ //}
+
+ }
+
+});
+
+/*
+
+Father.prototype.carry= function(person){//创建这个原型的想法是：原来Person有的功能 我都需要有 并在这些基础上加一个功能 carry
+
+ //如何建立Father基础Person的功能？写一个继承的小工具来操作
+
+ alert(this.name+'背着'+person.name);
+
+};
+
+Father.prototype.work = function(){
+
+ alert(this.name+"正在工作");
+
+}
+
+*/
+
+var p1 = new Father("老爸");
+
+var p2 = new Children("儿子");
+
+p1.carry(p2);//只有老爸有carry这个功能
+
+//p2.carry(p1);//error 儿子没有carry这个功能
+
+p2.study();//儿子在学习
+
+p1.work();//老爸在工作
+
+p1.watchTV('看足球');
+
+p2.watchTV('蜡笔小新');
+
+var p3 = new Mother('围裙妈妈');
+
+p3.scoop(p2);
+```
+
 #### **知识点：**
 ---
 
@@ -1186,6 +1428,9 @@ s.work(h);
 
 ##### 日期型函数`Date`
 ---
+
+
+![Date 对象方法](http://upload-images.jianshu.io/upload_images/1480597-4c5426128f64acff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 - **声明**
 
@@ -1263,6 +1508,8 @@ var r = /^(\d{2}|\d{4})[\/-]\d{1,2}[\/-]\d{1,2}$/;if( r.test( myString ) ){ }
 #####  字符串String型函数API
 ---
 
+
+![js下常用的字符串方法](http://upload-images.jianshu.io/upload_images/1480597-588f28213506abe1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 - **声明**
 
@@ -1384,6 +1631,8 @@ var str = decodeURI(code); //结果: “hello all”
 
 //相应的还有: encodeURIComponent() decodeURIComponent()
 ```
+- 扩展阅读
+    - [JavaScript下常用的字符串](http://blog.poetries.top/2016/08/02/javascript%20%E4%B8%8B%E5%B8%B8%E7%94%A8%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C/)
 
 ##### Math对象型
 ---
@@ -1581,7 +1830,7 @@ var rnd = Math.floor(Math.random() * n)
 
 - 正则表达式扩展阅读
   - [正则表达式30分钟入门教程](http://deerchao.net/tutorials/regex/regex.htm)
- - [梳理常用的正则表达式.md](http://blog.poetries.top/2016/07/09/%E6%A2%B3%E7%90%86%E5%B8%B8%E7%94%A8%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/)
+ - [梳理常用的正则表达式](http://blog.poetries.top/2016/07/09/%E6%A2%B3%E7%90%86%E5%B8%B8%E7%94%A8%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/)
 
 ### 第十一课时
 ---
@@ -2159,13 +2408,30 @@ child.innerHTML = 'pppppp';
 - 3.事件冒泡机制
 - 4.案例
 
-### JS视频
+### 总结
 ---
 
-- [Javascript第一季初级视频教程【李炎恢老师】](http://edu.51cto.com/course/course_id-166-page-1.html)
-- [JavaScript视频教程 | 智能社](http://www.zhinengshe.com/video.html)
+- 以上是一些很基础的理论，笔记经验终究是别人的，看完了还是会忘记的，要转化成自己的东西，还要靠你不断实践。
 
-### 附录一份大神总结的关于JS的导图
+
+![学编程最佳实践](http://upload-images.jianshu.io/upload_images/1480597-7848f738f43affba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+- `JavaScript`读书路线
+
+![JavaScript读书路线--from phodal](https://github.com/phodal/developer/raw/master/images/js.gif)
+
+
+
+### js一些资料推荐
+---
+
+- 视频
+    - [Javascript第一季初级视频教程【李炎恢老师】](http://edu.51cto.com/course/course_id-166-page-1.html)
+    - [JavaScript视频教程 | 智能社](http://www.zhinengshe.com/video.html)
+- 了解`web`开发知识体系
+  - [Growth - 陪你成为顶尖开发者](https://github.com/phodal/growth)
+
+### 附录一份大神总结的关于js的导图
 ---
 
 ![DOM基本操作](http://upload-images.jianshu.io/upload_images/1480597-3a584567c41f737d.gif?imageMogr2/auto-orient/strip)
@@ -2187,3 +2453,5 @@ child.innerHTML = 'pppppp';
 ![JavaScript运算符](http://upload-images.jianshu.io/upload_images/1480597-caa897f33ef0e47d.gif?imageMogr2/auto-orient/strip)
 
 ![JavaScript数组](http://upload-images.jianshu.io/upload_images/1480597-eb23ab7b14608e83.gif?imageMogr2/auto-orient/strip)
+
+- [本文mardown原文件--欢迎转载](https://github.com/poetries/poetries.github.io/blob/dev/source/_posts/javascript%E7%AC%94%E8%AE%B0%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E7%AF%87.md)
