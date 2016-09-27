@@ -18,9 +18,10 @@ categories: Front-End
 - `DOM1`级定义了一个`Node`接口，该接口由`DOM`中所有节点类型实现。这个`Node`接口在`JS`中是作为`Node`类型实现的。在`IE9`以下版本无法访问到这个类型，`JS`中所有节点都继承自`Node`类型，都共享着相同的基本属性和方法
 - `Node`有一个属性`nodeType`表示`Node`的类型，它是一个整数，其数值分别表示相应的`Node`类型
 
-![Node类型](http://upload-images.jianshu.io/upload_images/1480597-8a0893521cfc83f9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![Node类型](http://upload-images.jianshu.io/upload_images/1480597-c55b0c3c89778cf0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 <!--more-->
-  
 - 假设我们要判断一个`Node`是不是元素，我们可以这样判断
 
 ```javascript
@@ -718,3 +719,11 @@ for(var i=0;i<para.lenght;i++){
 ---
 
 ![](http://upload-images.jianshu.io/upload_images/1480597-1893e82e8c49b23d.gif?imageMogr2/auto-orient/strip)
+
+---
+
+- [本文mardown原文件](https://github.com/poetries/poetries.github.io/blob/dev/source/_posts/DOM%E7%BC%96%E7%A8%8B%E4%B9%8BAPI%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93%E7%AF%87.md)
+
+---
+- 参考
+  - `JavaScript DOM`编程艺术
