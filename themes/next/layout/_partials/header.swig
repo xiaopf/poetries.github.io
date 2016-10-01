@@ -45,7 +45,7 @@
         
       {% endfor %}
 
-      <li class="menu-item" style="opacity: 1; transform: translateY(0px);"> <a title="把这个链接拖到你的工具栏中,任何网页都可以High" href='javascript:(function() {
+      <li class="menu-item" style="opacity: 1; transform: translateY(0px);"> <a  href='javascript:(function() {
           function c() {
               var e = document.createElement("link");
               e.setAttribute("type", "text/css");
