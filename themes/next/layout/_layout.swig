@@ -91,7 +91,7 @@
         {% if (theme.duoshuo_hotartical and page.title and page.type !== 'guestbook' and page.type !== 'categories' and page.type !== 'tags' and page.type !== 'archives' and page.type !== 'about') %}
             <!-- 多说热评文章-->
             <p class="hot-commit">热评文章</p>
-            <div class="ds-top-threads" data-range="monthly" data-num-items="5"></div>
+            <div class="ds-top-threads" data-range="monthly" data-num-items="10"></div>
         {% endif %}
 
         {% if page.comments %}
