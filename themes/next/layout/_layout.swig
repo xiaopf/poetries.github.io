@@ -10,7 +10,7 @@
     .circle {
         width: 40px;
         height: 40px;
-        background: rgba(228, 186, 144, 0.49);
+        background: rgb(227, 220, 213);
         cursor: move;
 	    	opacity: 0.7;
     }
@@ -24,7 +24,7 @@
         border-radius: 50px;
         outline: none;
         border: none;
-        color: rgb(214, 10, 10);
+        color: rgb(156, 188, 243);
     }
   p.top51la{
       font-size: 12px;
