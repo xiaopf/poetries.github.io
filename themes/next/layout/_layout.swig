@@ -10,7 +10,7 @@
     .circle {
         width: 40px;
         height: 40px;
-        background: rgba(98, 187, 77, 0.68) no-repeat;
+        background: rgba(228, 186, 144, 0.49);
         cursor: move;
 	    	opacity: 0.7;
     }
