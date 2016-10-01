@@ -8,10 +8,10 @@ categories: Front-End
 ---
 
 ![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071327.png)
-<!--more-->
+
 ### 一、骰子的布局
 ---
-
+<!--more-->
 ![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071329.png)
 
 - 如果不加说明，本节的HTML模板一律如下
