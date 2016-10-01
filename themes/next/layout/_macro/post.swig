@@ -81,7 +81,7 @@
           {% endif %}
          
          {% if theme.leancloud_visitors.enable %}
-            &nbsp; | &nbsp;<span>热度</span>&nbsp;<span style="color:red;" id="{{ url_for(post.path) }}"class="leancloud_visitors"  data-flag-title="{{ post.title }}"></span><span style="color:red;">&nbsp;℃</span>
+            &nbsp; | &nbsp;<span>热度</span>&nbsp;<span style="color:#E91E63;" id="{{ url_for(post.path) }}"class="leancloud_visitors"  data-flag-title="{{ post.title }}"></span><span style="color:#E91E63;">&nbsp;℃</span>
             
             <!-- <span id="{{ url_for(post.path) }}"class="leancloud_visitors"  data-flag-title="{{ post.title }}">
               &nbsp; | &nbsp;{{__('post.visitors')}}&nbsp;
