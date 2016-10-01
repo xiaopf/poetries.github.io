@@ -9,13 +9,13 @@ categories: Front-End
 
 ## 第一节 基本标签样式
 ---
-
+<!--more-->
 - 非可视化标签：`head`  `meta`  `style`  `scrpit.`..
 - 可视化标签：`img`  `div` `span` `a` `ul` `li`...
 - 只有可视化标签，才能用`css`改变它
 - 单标签：`meta`  `link`  `base`  `img`  `input` `br` `hr`
 - 双标签：`html` `head` `body`  `div`  `a`  `p`  `span` ..`ul` `li` `ol` ` dl` 
-<!--more-->
+
 
 - **常用可视化标签**
 

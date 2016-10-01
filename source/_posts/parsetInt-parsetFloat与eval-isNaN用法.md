@@ -9,9 +9,9 @@ categories: Front-End
 
 - parsetInt   把字符串的前缀部分分析成整型数字 如果首字不是数字 分析出非数字 NaN
 - 对于parseInt如果碰到前缀有小数点的 舍弃小数点后面的部分
-	
+<!--more-->	
 - parsetFloat  把字符串的前缀部分分析成整型浮点型
-	<!--more-->
+
 ```javascript
 	
 var age = '12';

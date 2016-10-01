@@ -8,7 +8,7 @@ categories: Front-End
 - **ajax** : `Asynchronous Javascript And XML` （异步的`JavaScript`和`XML`）
 
 - 创建`ajax`对象 `var xhr = new XMLHttpRequest();`
-
+<!--more-->
 - 准备发送请求
 
 - `get `
@@ -19,7 +19,7 @@ categories: Front-End
 - ` post`
 	- 传递的数据放在`send()`里面，并且一定要规定数据格式
 	- 没有缓存问题
-<!--more-->
+
 
 - form表单中:
 	- `action`:

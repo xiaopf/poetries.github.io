@@ -11,14 +11,14 @@ categories: Front-End
   - `clearIntval`(定时器对象)
   - `setTimeout`(表达式,毫秒)
   - `clearTimeout`(定时器对象)
- 
+ <!--more-->
  
 - `setTimeout`(表达式,毫秒)：是指经过指定时间后执行事件一次
  
 - 清除定时器：
  
 - 在创建定时器的时候 把创建的结果赋给一个定时器变量 比如：`var clock = windows.setTimeout() `再用`cleraTimeout(clock);`
- <!--more--> 
+
 ```javascript
 //定一段时间后执行某一个函数
 

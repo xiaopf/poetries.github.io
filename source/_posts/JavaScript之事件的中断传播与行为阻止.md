@@ -8,12 +8,12 @@ categories: Front-End
 - 如何中断事件的传播？
    -  `stopPropagation() `    `w3c `取消冒泡
    -  `cancleBubble = true`     `IE`取消冒泡
- 
+ <!--more-->
 - 取消事件默认效果：
   
   - `returnValue = false`  `IE` 取消事件效果
   - `defaultPrevent() `  `w3c`取消事件效果
-<!--more-->
+
 ---
 
 ```html

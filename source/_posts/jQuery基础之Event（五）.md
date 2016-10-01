@@ -5,8 +5,8 @@ tags: jQuery
 categories: Front-End
 ---
 
-  - 什么是`Event`？
-
+- 什么是`Event`？
+<!--more-->
 - Event属性：
 	- `type`：获取事件类型名称
 	- `target`:发生事件的节点
@@ -14,7 +14,7 @@ categories: Front-End
 
 	- `pageX`:光标对于页面原点的水平坐标 
 	- `pageY`：光标对于页面原点的垂直坐标 
-	<!--more-->
+
 	-  **浏览器**
 
 	- `clientX`：光标对于浏览器窗口的水平坐标 

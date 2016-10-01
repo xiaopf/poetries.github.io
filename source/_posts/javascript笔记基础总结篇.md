@@ -5,10 +5,11 @@ tags: Javascript
 categories: Front-End
 ---
 
+
 > 转载请声明出处 [博客原文](http://blog.poetries.top/2016/09/24/javascript%E7%AC%94%E8%AE%B0%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93%E7%AF%87/#more)
 
 随手翻阅以前的学习笔记，顺便整理一下放在这里，方便自己复习，也希望你有也有帮助吧
-
+<!--more-->
 ### 第一课时 入门基础
 ---
 
@@ -19,7 +20,7 @@ categories: Front-End
 - 浏览器本身也是一个应用程序
 - 浏览器本身只懂得解析`HTML`
 - 调用浏览器这个应用程序的一个功能绘制
-<!--more-->
+
 #### 1、javascript介绍
 ---
 

@@ -7,7 +7,7 @@ categories: Front-End
 
 
 认识一个html文档的基本结构：
-
+<!--more-->
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +21,7 @@ categories: Front-End
 </html>
 
 ```
-<!--more-->
+
 
 > HTML 文档是由 HTML 元素 定义的，而HTML 元素指的是从开始标签（start tag）到结束标签（end tag）的所有代码。
 

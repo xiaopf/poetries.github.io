@@ -7,10 +7,10 @@ categories: 工欲善其事必先利其器
 
 - 打开开发工具：`Ctrl + Shift + I （F12）`
 - 快捷键在面板之间移动 `Ctrl + [` 和 `Ctrl + ]` 
+<!--more-->
 - 快速定位一个特殊的文件  快速定位一个特殊的文件 `Ctrl + o`
 - 切换审查元素模式与浏览器窗口模式	`Ctrl + Shift + C`
 - 打开 DevTools 将面板放到控制台	`Ctrl + Shift + J`
-<!--more-->
 - 打开设备(Device)模式	`Ctrl + Shift + M`
 - 切换控制台/关闭设置对话框	`Esc`
 - 刷新页面	`F5`, `Ctrl + R`

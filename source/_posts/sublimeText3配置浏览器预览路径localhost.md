@@ -7,7 +7,7 @@ categories: 工欲善其事必先利其器
 
 Sublime Text 2 Sublime Text 3 都可以使用:
 
-
+<!--more-->
 ### 菜单 --> Tools --> New Pugin
 
 清掉内容, 添加如下代码
@@ -34,7 +34,7 @@ class OpenBrowserCommand(sublime_plugin.TextCommand):
             url = 'file://' + url
         webbrowser.open_new(url)
 ```
-<!--more-->
+
 然后保存文件, 保存的路径类似如下:
 
 `C:\Users\XXXX\AppData\Roaming\Sublime Text 3\Packages\User\open_browser.py`

@@ -6,7 +6,7 @@ categories: 工欲善其事必先利其器
 ---
 
 ### 创建插件：
-
+<!--more-->
 Tools → New Plugin:
 
 ```
@@ -24,7 +24,7 @@ class AddInfoCommand(sublime_plugin.TextCommand):
       }
     )
 ```
-<!--more-->
+
 
 保存为Sublime Text 2\Packages\User\ addInfo.py
 

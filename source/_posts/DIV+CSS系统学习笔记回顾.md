@@ -10,7 +10,7 @@ categories: Front-End
 > 转载请声明   [原文链接地址](http://blog.poetries.top/2016/09/06/DIV+CSS%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%9B%9E%E9%A1%BE/#more)
 
 ### 第一部分 HTML
-
+<!--more-->
 ---
 #### 第一章 职业规划和前景
 ---
@@ -21,7 +21,7 @@ categories: Front-End
   - `web`网站架构师
   - 自己创业
   - 转岗管理或其他
-<!--more-->
+
 - **`web`前端开发的前景展望：**
 
   - 未来`IT`行业企业需求最多的人才

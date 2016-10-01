@@ -8,7 +8,7 @@ categories: VCS
 ### 一、前言
 
 ![enter description here][1]
-
+<!--more-->
 
 ---
 
@@ -27,7 +27,7 @@ categories: VCS
  
 - `git status` //查看状态
 
-<!--more-->
+
 ---
 
 ### 三、git clone 和 git remote

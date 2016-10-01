@@ -4,7 +4,8 @@ date: 2016-05-24 15:35:57
 tags: PHP
 categories: Back-end
 ---
-
+---
+<!--more-->
 ```php
 //heredoc nowdoc 适用于定义大段文本
 header("Content-type:text/html;charset=utf-8");

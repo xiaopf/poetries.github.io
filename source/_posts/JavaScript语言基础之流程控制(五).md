@@ -9,10 +9,10 @@ categories: Front-End
     `if`
     `if...else`
     `if...else if...else`
-
+<!--more-->
     - 当通过判断返回某个值的时候，优先使用三元表达式
     - 当通过判断执行N段逻辑代码的时候，只能用条件结构
-<!--more-->
+
 
 - `switch`
 

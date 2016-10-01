@@ -6,7 +6,7 @@ categories: Hexo
 ---
 
 ### **一、 _config.yml配置**
-
+<!--more-->
 想要同时部署到2个平台，就要修改博客根目录下面的`_config.yml`文件中的deploy如下
 根据Hexo官方文档需要修改成下面的形式
 
@@ -19,7 +19,7 @@ deploy:
     gitcafe: <repository url>,[branch]
 ```
 
-<!--more-->
+
 
 我的配置
 

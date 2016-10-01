@@ -5,12 +5,12 @@ tags: XHTML
 categories: Front-End
 ---
 
----
+
 
 ![](http://7xq6al.com1.z0.glb.clouddn.com/HTML.png)
-
----
 <!--more-->
+---
+
 
 ![此处输入图片的描述][1]
 

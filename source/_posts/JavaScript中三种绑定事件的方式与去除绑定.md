@@ -9,11 +9,11 @@ categories: Front-End
 - 绑定事件的第1种办法：
   - 函数写在结构层里面
   - 非常不好，使页面很混乱，行为与结构得不到分离
-    
+<!--more-->    
 ```html
 <input type="button" onclick="func();">
 ```
-<!--more-->
+
 ---
 
 - 绑定事件的第2种办法

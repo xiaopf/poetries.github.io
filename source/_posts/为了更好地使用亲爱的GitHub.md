@@ -7,6 +7,7 @@ categories: VCS
 
 # [awesome-github](https://github.com/AntBranch/awesome-github)
 收集这个[awesome-github](https://github.com/AntBranch/awesome-github)列表，只是为了更好地使用亲爱的GitHub,欢迎提交pr和issue。
+<!--more-->
 ### 目录
 - [教程](#教程)
     - [通用教程](#通用教程)
@@ -31,7 +32,7 @@ categories: VCS
     - [库](#库)
 - [其他的awesome](#其他的awesome)
 
-<!--more-->
+
 ### 教程
 
 #### 通用教程

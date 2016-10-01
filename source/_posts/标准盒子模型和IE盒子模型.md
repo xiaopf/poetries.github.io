@@ -6,13 +6,13 @@ categories: Front-End
 ---
 
 ### 标准盒子模型
-
+<!--more-->
 - 盒子模型是css中一个重要的概念，理解了盒子模型才能更好的排版。其实盒子模型有两种，分别是 ie 盒子模型和标准 w3c 盒子模型。他们对盒子模型的解释各不相同，先来看看我们熟知的标准盒子模型
 
 ![](http://images.cnblogs.com/cnblogs_com/cchyao/%E6%A0%87%E5%87%86W3C%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E5%92%8CIE%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8BCSS%E5%B8%83%E5%B1%80%E7%BB%8F%E5%85%B8%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/1.JPG)
 
 - 从上图可以看到标准 `w3c` 盒子模型的范围包括 `margin`、`border`、`padding`、`content`，并且 `content `部分不包含其他部分
-<!--more-->
+
 ---
 
 ### IE盒子模型

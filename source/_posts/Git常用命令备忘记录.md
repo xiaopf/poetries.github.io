@@ -8,7 +8,7 @@ categories: VCS
 
 #### Git配置
 ---
-
+<!--more-->
 ```
 git config --global user.name "robbin"   
 git config --global user.email "fankai@gmail.com"
@@ -21,7 +21,7 @@ git config --global core.editor "mate -w"    # 设置Editor使用textmate
 git config -l  # 列举所有配置
 用户的git配置文件~/.gitconfig
 ```
-<!--more-->
+
 
 
 #### Git常用命令:查看、添加、提交、删除、找回，重置修改文件**

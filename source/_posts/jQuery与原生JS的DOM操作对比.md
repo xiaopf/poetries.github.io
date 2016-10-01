@@ -7,13 +7,13 @@ tags:
 categories: Front-End
 ---
 
----
+
 
 ### 1. 创建元素节点
 
 - 原生JS创建元素节点: `document.createElement("p");`
 - jQuery创建元素节点：`$('<p></p>');`
-
+<!--more-->
 ### 2. 创建并添加文本节点:
 
 - 原生JS创建文本节点：`document.createTextNode("Text Content");`
@@ -23,7 +23,7 @@ var textEl = document.createTextNode("Hello World.");
 var pEl = document.createElement("p");
 pEl.appendChild(textEl);
 ```
-<!--more-->
+
 - jQuery创建并添加文本节点：`var $p = $('<p>Hello World.</p>');`
 
 ### 3. 复制节点

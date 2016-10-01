@@ -6,12 +6,12 @@ categories: Front-End
 ---
 
 - DOM 事件就是指 当页面上发生某一件事的时候激发某一个函数 相当监听/触发设备
- 
+ <!--more-->
 **比如：**
 - 元素被单击时 `onclick`
 - 元素失去焦点时	`onblur`
 - 表单被提交时，用`onsubmit`
- <!--more-->
+
 - **DOM事件如何声明？**
 
   - 直接在元素标签中声明 `<input type='button' onclick="">`

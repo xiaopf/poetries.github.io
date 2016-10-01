@@ -6,7 +6,7 @@ categories: 工欲善其事必先利其器
 ---
 
 # Sublime使用详细总结
-
+<!--more-->
 ----------
 
 > 【导读】 Sublime Text具有漂亮的用户界面和强大的功能，例如代码缩略图，多重选择，快捷命令等。SublimeText更妙的是它的可扩展性。SublimeText：一款具有代码高亮、语法提示、自动完成且反应快速的编辑器软件，不仅具有华丽的界面，还支持插件扩展机制，用她来写代码，绝对是一种享受。相比于难于上手的Vim，浮肿沉重的Eclipse，VS，即便体积轻巧迅速启动的Editplus、Notepad++，在SublimeText面前大略显失色，无疑这款性感无比的编辑器是Coding和Writing最佳的选择，没有之一。
@@ -21,7 +21,7 @@ categories: 工欲善其事必先利其器
  - 更新了API，使用Python3.3
 
 强烈推荐朋友们使用3! 唯快不破，不解释
-<!--more-->
+
 
 ### **二、Sublime Text 3安装插件**
 

@@ -6,7 +6,7 @@ categories: Front-End
 ---
 
 - 面向对象中的静态方法-静态属性：没有new对象 也能引用静态方法属性
-
+<!--more-->
 
 ```javascript
 function Bird(){
@@ -20,7 +20,7 @@ function Bird(){
 
 // var maque = new Bird();//我们可以调用麻雀的属性和方法
 ```
-<!--more-->
+
 思考：可不可以不创建麻雀对象 直接调用Bird的相关方法
 
 - 函数是什么？是变量 是什么类型的变量？是一个对象类型的变量

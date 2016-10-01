@@ -6,8 +6,8 @@ categories: Front-End
 ---
 
 - 多态:同一个父类继承出来的子类各有各的形态
-
 <!--more-->
+
 ```javascript
 function Cat(){
 	this.eat = '肉';

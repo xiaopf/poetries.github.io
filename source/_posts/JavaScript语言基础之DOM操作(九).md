@@ -6,11 +6,10 @@ categories: Front-End
 ---
 
 **DOM 操作**
-
+<!--more-->
 - 图片切换的相册效果
 - tab切换效果
 - 表单验证
-<!--more-->
 - 特效就是DOM操作的具体应用 DOM操作就是用js来写HTML代码
 
 - 节点/元素/标签：

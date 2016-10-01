@@ -7,9 +7,9 @@ categories: Hexo
 
 ### **一、 新建新的分支**
 ---
-
-`master：`博客的静态文件，也就是hexo生成后的HTML文件，因为要使用Gitpage服务，所以他规定的网页文件必须是在master分支
 <!--more-->
+`master：`博客的静态文件，也就是hexo生成后的HTML文件，因为要使用Gitpage服务，所以他规定的网页文件必须是在master分支
+
 
 建新的分支`：dev`：存放博客的源代码
 

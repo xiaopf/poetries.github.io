@@ -7,10 +7,10 @@ categories: Front-End
 
 ### 盒子的宽度
 ---
-
+<!--more-->
 在盒子模型中，我们设置的宽度都是内容宽度，不是整个盒子的宽度
 盒子的宽度=`margin-right+margin-left+border-left+padding-left+width+padding-right+border-right`
-<!--more-->
+
 #### 设置了固定宽度的情况下
 ---
 

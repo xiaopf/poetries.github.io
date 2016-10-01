@@ -6,9 +6,8 @@ categories: Front-End
 ---
 
 ### javascript常用知识总结
-
-![此处输入图片的描述][21]
 <!--more-->
+![此处输入图片的描述][21]
 ![此处输入图片的描述][22]
 ![](http://7xq6al.com1.z0.glb.clouddn.com/js%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.gif)
 ![](http://7xq6al.com1.z0.glb.clouddn.com/js%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80-window%E5%B1%9E%E6%80%A7.gif)

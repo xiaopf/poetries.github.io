@@ -9,14 +9,14 @@ categories: Front-End
 
 ## HTML5 & CSS
 ---
-
+<!--more-->
 ### CSS Cheatsheet
 ---
 
 这张Cheat Sheet 包含了`CSS`中常见的选择器、盒模型、背景、色彩、字体等语法，以及使用说明
 <!--more-->
 ![](http://upload-images.jianshu.io/upload_images/1399853-d756ebf70c422dd5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-<!--more-->
+
 ---
 
 ### HTML5 Cheet Sheet 

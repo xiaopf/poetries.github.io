@@ -6,14 +6,14 @@ categories: Front-End
 ---
 
 - `This`与`arguments`
- 
+ <!--more-->
 - 当一个函数运行的时候 函数内部能引用的变量有这么几种
  
 - ` AO`
 - ` arguments`
 - ` this`
  
- <!--more-->
+
 - 对于`arguments`和`this `函数都有自己的`arguments`和`this `且不进行链式查找
  
 - **`arguments`是什么？**

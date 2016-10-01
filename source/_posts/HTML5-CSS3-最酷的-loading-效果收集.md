@@ -5,8 +5,9 @@ tags: HTML5
 categories: Front-End
 ---
 
-这里收集了几十个用 html5 和 css3 实现的 loading 效果，以供学习参考
 
+这里收集了几十个用 html5 和 css3 实现的 loading 效果，以供学习参考
+<!--more-->
 
 ### 01. CSS Rainbow Loader
 ---
@@ -15,7 +16,6 @@ categories: Front-End
 
 [演示][2] [下载][3]
 
-<!--more-->
 
 ### 02. Single element Slack loader
 ---

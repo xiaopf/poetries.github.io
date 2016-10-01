@@ -9,7 +9,7 @@ categories: Front-End
 
 ### 第一部分 JavaScript工具函数
 ---
-
+<!--more-->
 #### 转义特殊字符为html实体
 ---
 
@@ -18,7 +18,7 @@ categories: Front-End
         return str.replace(/&/g, '&amp;').replace(/\"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/'/g, '&apos;');
     },
 ```
-<!--more-->
+
 #### 验证是否为有效的手机电话号码
 ---
 

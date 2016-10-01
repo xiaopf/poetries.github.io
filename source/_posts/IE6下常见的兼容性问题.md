@@ -9,7 +9,7 @@ categories: Front-End
 
 #### 常见问题一：在Ie6下，内容会把父元素设置好的宽高撑开。计算一定要精确
 ---
-
+<!--more-->
 ```css
 .box{width:400px;}
 .left{width:200px;height:210px;background:red;float:left}
@@ -25,7 +25,7 @@ categories: Front-End
 	</div>
 </div>
 ```
-<!--more-->
+
 
 ![](http://7xq6al.com1.z0.glb.clouddn.com/1-1.png)
 

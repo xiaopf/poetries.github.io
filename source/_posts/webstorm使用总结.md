@@ -8,7 +8,7 @@ categories: 工欲善其事必先利其器
 **webstorm常用快捷键**
 
 ### **查找/代替**
-
+<!--more-->
 - `ctrl+shift+N`	通过文件名快速查找工程内的文件（必记）
 - `ctrl+shift+alt+N`	通过一个字符快速查找位置（必记）
 - `ctrl+F`	在文件内快速查找代码
@@ -18,7 +18,7 @@ categories: 工欲善其事必先利其器
 - `ctrl+shift+R`	指定目录内代码批量替换
 - `ctrl+shift+F`	指定目录内代码批量查找
 - `ctrl+R`	文件内代码替换
-<!--more-->
+
 
 ----------
 

@@ -9,6 +9,7 @@ categories: Front-End
 - `jQuery`是什么:
 	- 是一个`javascript`代码仓库，我们称之为`javascript`框架。
 	- 是一个快速的简洁的`javascript`框架，可以简化查询`DOM`对象、处理事件、制作动画、处理`Ajax`交互过程。
+	<!--more-->
 - `jQuery`可以帮我们做什么(有什么优势)、
 	- 体积小，使用灵巧(只需引入一个`js`文件)
 	- 方便的选择页面元素(模仿`CSS`选择器更精确、灵活)
@@ -23,7 +24,7 @@ categories: Front-End
 	- 动态操作样式`css`
 	- 数据访问
 	- 控制响应事件等
-  <!--more-->
+
 - 讲解`$(function(){})`
 	- `$`是`jQuery`别名。如`$()`也可`jQuery()`这样写,相当于页面初始化函数，当页面加载完毕，会执行`jQuery()`。
 	- 希望在做所有事情之前，`JQuery`操作`DOM`文档。必须确保在`DOM`载入完毕后开始执行，应该用`ready`事件做处理`HTML`文档的开始。

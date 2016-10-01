@@ -6,12 +6,12 @@ categories: Front-End
 ---
 
 ### 操作DOM
-
+<!--more-->
 - 什么是`DOM`：`Document Object Model`缩写，文档对象模型
 - 理解页面的树形结构
 - 什么是节点：是`DOM`结构中最小单元，包括元素、属性、文本、文档等。
 	
-<!--more-->
+
 ### 创建节点
 
 - 创建元素

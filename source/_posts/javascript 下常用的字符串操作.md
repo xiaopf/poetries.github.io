@@ -10,7 +10,7 @@ categories: Front-End
 
 
 #### **`charAt()`** 返回在指定位置的字符。
-
+<!--more-->
 ```javascript
 var str = "abac_dfra_wa";
 console.log(str.charAt(3)); //输出 c
@@ -21,7 +21,7 @@ console.log(str.charAt(3)); //输出 c
 var str = "abac_dfra_wa";
 console.log(str.charCodeAt(3)); //输出99
 ```
-<!--more-->
+
 #### **`fromCharCode()`** 从字符编码创建一个字符串
 
 ```javascript

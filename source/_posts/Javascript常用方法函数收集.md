@@ -10,7 +10,7 @@ categories: Front-End
 
 ### 字符串长度截取
 
-
+<!--more-->
 ```javascript
 function cutstr(str, len) {
 var temp,
@@ -34,7 +34,7 @@ return strre + "..."
 }
 ```
 
-<!--more-->
+
 
 ### 替换全部 
     

@@ -8,7 +8,7 @@ categories: Front-End
 ###  一、JavaScript中基本的数据类型
 
 查看数据类型用：typeof 变量名
-
+<!--more-->
 **Javascript的数据类型有六种（ES6新增了第七种Symbol）**
 
 - JS中的值有两种类型：原始类型(`Primitive`)、对象类型(`Object`)。
@@ -18,7 +18,7 @@ categories: Front-End
 - `Undefined`类型和`Null`类型的都只有一个值，即`undefined`和`null`；`Boolean`类型有两个值：`true`和`false`；`Number`类型的值有很多很多；String类型的值理论上有无数个。
 
 - 所有对象都有`valueOf()`和`toString()`方法，它们继承自Object，当然也可能被子类重写
-<!--more-->
+
 ---
 
 - 数值（`number`）：整数和小数（比如1和3.14）

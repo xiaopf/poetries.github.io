@@ -17,7 +17,6 @@ categories: Front-End
 
 <!--more-->
 
-
 ```html
 <!DOCTYPE html>
 <html>

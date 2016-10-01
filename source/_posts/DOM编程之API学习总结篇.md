@@ -11,7 +11,7 @@ categories: Front-End
 
 ### 一、基本类型介绍
 ---
-
+<!--more-->
 #### 1.1 Node类型
 ---
 
@@ -21,7 +21,7 @@ categories: Front-End
 
 ![Node类型](http://upload-images.jianshu.io/upload_images/1480597-c55b0c3c89778cf0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-<!--more-->
+
 - 假设我们要判断一个`Node`是不是元素，我们可以这样判断
 
 ```javascript

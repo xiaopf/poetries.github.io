@@ -7,12 +7,11 @@ tags:
 categories: Front-End
 ---
 
----
 
 #### 1、垂直对齐
 
 如果你用`CSS`，则你会有困惑：我该怎么垂直对齐容器中的元素？现在，利用`CSS3`的`Transform`，可以很优雅的解决这个困惑：
-
+<!--more-->
 ```css
 .verticalcenter{
     position: relative;
@@ -26,7 +25,7 @@ categories: Front-End
 使用这个技巧，从单行文本、段落到box，都会垂直对齐。目前浏览器对`Transform`的支持是需要关注的，
 `Chrome 4`, `Opera 10`, `Safari 3`, `Firefox 3`, `and Internet Explorer 9`均支持该属性
 
-<!--more-->
+
 
 #### 2、伸展一个元素到窗口高度
 

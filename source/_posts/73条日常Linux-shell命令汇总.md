@@ -6,9 +6,9 @@ categories: Back-end
 ---
 
 
-
 ####  检查远程端口是否对bash开放：
 
+<!--more-->
 	echo >/dev/tcp/8.8.8.8/53 && echo "open"
 
 ####  让进程转入后台：
@@ -18,7 +18,7 @@ categories: Back-end
 ####  将进程转到前台：
 
     fg
-<!--more-->
+
 ####  产生随机的十六进制数，其中n是字符数：
 
     openssl rand -hex n

@@ -7,12 +7,11 @@ tags:
 categories: VCS
 ---
 
----
 
 
 - 最核心的区别`Git`是分布式的，而`Svn`不是分布的。能理解这点，上手会很容易，声明一点`Git`并不是目前唯一的分布式版本控制系统，还有比如`Mercurial`等，所以说它们差不许多。话说回来`Git`跟`Svn`一样有自己的集中式版本库和Server端，但Git更倾向于分布式开发，因为每一个开发人员的电脑上都有一个`Local Repository`,所以即使没有网络也一样可以`Commit`，查看历史版本记录，创建项 目分支等操作，等网络再次连接上Push到Server端。
- 
-<!--more-->
+ <!--more-->
+
 - 从上面看`GIt`真的很棒，但是`GIt adds Complexity`,刚开始使用会有些疑惑，因为需要建两个`Repositories(Local Repositories & Remote Repositories)`,指令很多，除此之外你需要知道哪些指令在`Local Repository`，哪些指令在`Remote Repository`。
 
 - Git把内容按元数据方式存储，而SVN是按文件：因为,.git目录是处于你的机器上的一个克隆版的版本库，它拥有中心版本库上所有的东西，例如标签，分支，版本记录等。.git目录的体积大小跟.svn比较，你会发现它们差距很大。

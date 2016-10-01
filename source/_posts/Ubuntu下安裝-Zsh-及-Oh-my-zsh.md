@@ -7,12 +7,12 @@ tags:
 categories: Back-end
 ---
 
----
+
 
 不管是在服务器还是本机上打开终端，默认都会运行名叫 Bash 的 shell，它是目前最为流行的 shell，几乎每个基于UNIX的系统都支持。但是也存在其他的 Bash 替代方案，能帮助开发者更方便快捷地使用终端。
 
 其中之一就是Z shell，也被称为Zsh。Oh-My-Zsh的安装非常简单，只需在命令行输入以下命令并重启即可     
-   <!--more-->  
+ <!--more-->  
 ### 一、在 Ubuntu Linux 中安裝 Zsh 及 Oh-my-zsh
 
 - 安裝 zsh 套件

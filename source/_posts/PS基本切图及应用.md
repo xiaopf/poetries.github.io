@@ -8,7 +8,7 @@ categories: Designed
 之前一直用别人切好的页面，心中很是惭愧，为不在麻烦于他人，还是重新打开很久没用过得PS，学习了一下如何切页面，顺便整理一下近期学到的PS切图的基本方法。
 
 美工一般只提供设计稿，那么问题来了，我们如何把设计稿切成自己想要的图片呢，今天我们来简单学习一下如何切图：
-
+<!--more-->
 切图我们一般只切两种类型的图片，JPG图片和icon图表。重点还是在icon上。 
 
 #### PS环境配置
@@ -21,7 +21,6 @@ categories: Designed
   - 拖动：`空格+鼠标拖动`'
   - 撤销：`Ctrl+z ctrl+alt+z`
   - 保存：`Ctrl+shift+Alt+s`
-<!--more-->
 - 配置工作环境：
 
 ![](http://7xq6al.com1.z0.glb.clouddn.com/ps1.png)

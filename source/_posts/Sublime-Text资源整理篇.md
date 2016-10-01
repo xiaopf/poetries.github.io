@@ -6,7 +6,7 @@ categories: 工欲善其事必先利其器
 ---
 
 ### Sublime Text：学习资源篇
-
+<!--more-->
 **官网**
 
  - http://www.sublimetext.com/
@@ -25,7 +25,7 @@ categories: 工欲善其事必先利其器
  - [Sublime Text 3 使用心得][5]
  - [Sublime Text 3 新手上路：必要的安裝、設定與基本使用教學][6]
  - [6 Ways to Turn Sublime Text Into the Perfect Blogging Tool][7]
-<!--more-->[[%? &topic=`_custom`]]
+[[%? &topic=`_custom`]]
  **Scotch Series**
 
   - [Best of Sublime Text 3: Features, Plugins, and Settings][8]

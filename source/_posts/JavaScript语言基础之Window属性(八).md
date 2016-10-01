@@ -6,7 +6,7 @@ categories: Front-End
 ---
 
 - **一些讨论**
-
+<!--more-->
   - `window` 是`Window`构造器造出来的一个对象 `alert(window instanceof Window)`
   - `document` 是`Document`构造器造出来的一个对象
 
@@ -17,8 +17,7 @@ categories: Front-End
 
   - 整个浏览器的实现就是一个面向对象的编程思想 一切皆是对象
 
-<!--more-->
----
+
 
 - **BOM 浏览器对象模型**
 

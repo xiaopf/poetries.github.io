@@ -6,7 +6,7 @@ categories: Front-End
 ---
 
 # HTML/CSS开发规范指南
-
+<!--more-->
 ## 目录
 ---
 
@@ -38,7 +38,7 @@ categories: Front-End
 	* [语义化标签](#semantic)
 	* [模块化](#html-module)
 
-	<!--more-->
+
 	
 5. [CSS约定](#css)
 	* [文件引用](#link)

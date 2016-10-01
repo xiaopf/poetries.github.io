@@ -70,8 +70,8 @@ theme: next
 deploy:
   type: git
   repo: # 同时部署到github和coding
-    github: https://github.com/poetries/poetries.github.io.git,master
-    coding: git@git.coding.net:poetry/poetry.git,master
+    github: https://github.com/insistdream/insistdream.github.io.git
+    # coding: git@git.coding.net:poetry/poetry.git,master
 
 
 
@@ -120,7 +120,7 @@ baidu_analytics: 40b1f89aa80f2527b3db779c6898c879
 jiathis: true
 
 # 百度分享服务
-baidushare: true
+baidushare: false
 
 # Swiftype Search Keyswiftype_key:
 swiftype_key: v9qj9piTH6n2pV9s23zR

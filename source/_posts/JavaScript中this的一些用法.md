@@ -5,7 +5,6 @@ tags: JavaScript
 categories: Front-End
 ---
 
-
 #### 一、global this
 ---
 - 总结起来就是：在浏览器里面`this`是老大，它等价于`window`对象，如果你声明一些全局变量(不管在任何地方)，这些变量都会作为`this`的属性。
@@ -13,8 +12,9 @@ categories: Front-End
 - 对于直接运行一行行`JavaScript`代码的方式，`global`才是老大，`this`和它是等价的。在这种情况下，和浏览器比较相似
 - 也就是声明一些全局变量会自动添加给老大`global`，顺带也会添加给`this`。
 - 但是在`node`里面直接脚本文件就不一样了，你声明的全局变量不会自动添加到`this`，但是会添加到`global`对象。所以相同点是，在全局范围内，全局变量终究是属于老大的
-<!--more-->
 
+
+<!--more-->
 #### 二、function this
 ---
 - 如果不是用`new`调用，在函数里面使用`this`都是指代全局范围的`this`

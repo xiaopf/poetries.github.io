@@ -9,11 +9,11 @@ categories: VCS
 #### 签出源代码到本机
 
 在本机创建文件夹`StartKit`，右键点击`Checkout`，弹出如下图的窗体：
-
+<!--more-->
 ![enter description here][5]
 
 文本框中输入`svn server`中的代码库的地址，其他默认，点击OK按钮,就开始签出源代码了
-<!--more-->
+
 上图中的`Checkout Depth`，有4个选项，分别是迁出全部、只签出下一级子目录和文件、只签出文件、只签出空项目，默认的是第一项。上面的例子中，我们也可以使用web的方式访问代码库，在浏览器中输入`http://zt.net.henu.edu.cn/svn/StartKit/`
 这时候也会弹出对话框，要求输入用户名和密码，通过验证后即可浏览代码库中的内容。
 

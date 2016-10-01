@@ -5,7 +5,6 @@ tags: 规范
 categories: Front-End
 ---
 
----
 
 ### 通用规范：
 
@@ -14,8 +13,9 @@ categories: Front-End
 文件内容编码均统一为UTF-8。
 - CSS、JAVASCRIPT中的非注释类中文字符须转换成unicode编码使用，以避免编码错误时乱码显示。
 
----
 <!--more-->
+---
+
 
 ### 文件规范：
 

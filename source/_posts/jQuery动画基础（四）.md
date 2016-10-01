@@ -7,7 +7,7 @@ categories: Front-End
 
 **介绍`jQuery`动画**
 - `JavaScript`语言本身不支持动画设计，必须通过改变`CSS来实现动画效果。
-
+<!--more-->
 ### 显隐
 
 - **显隐动画**
@@ -26,7 +26,7 @@ categories: Front-End
       - `callback:` 动画完成时执行的方法
 
   - 显示和隐藏式一对密不可分的动画形式。
-<!--more-->
+
 - **显隐切换**
 
   - `toggle()`:切换元素的可见状态

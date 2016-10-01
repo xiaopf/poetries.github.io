@@ -8,11 +8,11 @@ categories: Front-End
 
 #### API集合
 ---
-
+<!--more-->
 - [百度网盘离线众多chm](http://t.cn/Rv38Wg7)
 - [在线api大全](http://devdocs.io/)
 
-<!--more-->
+
 #### Ecmascript 5
 ---
 

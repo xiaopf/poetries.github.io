@@ -6,14 +6,14 @@ categories: 工欲善其事必先利其器
 ---
 
 配置在Chrome,Firefox中打开
-
+<!--more-->
 安装 SideBarEnhancements
 
 然后通过ctrl + k, ctrl + b打开侧边栏，在侧边栏的文件中右击，找到 open width -> edit applications
 
 然后在这里边设置firefox打开的方式。
 
-<!--more-->
+
 application : 路径要修改为自己默认安装的路径。
 ```
 [

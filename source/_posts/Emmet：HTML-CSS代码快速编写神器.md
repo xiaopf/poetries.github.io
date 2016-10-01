@@ -6,9 +6,9 @@ categories: Front-End
 ---
 
 - [前端开发必备！Emmet使用手册](http://www.w3cplus.com/tools/emmet-cheat-sheet.html)
-
-- Emmet的前身是大名鼎鼎的`Zen coding`，如果你从事`Web`前端开发的话，对该插件一定不会陌生。它使用仿`CSS`选择器的语法来生成代码，大大提高了`HTML/CSS`代码编写的速度，比如下面的演示： 
 <!--more-->
+- Emmet的前身是大名鼎鼎的`Zen coding`，如果你从事`Web`前端开发的话，对该插件一定不会陌生。它使用仿`CSS`选择器的语法来生成代码，大大提高了`HTML/CSS`代码编写的速度，比如下面的演示： 
+
 ![此处输入图片的描述][1]
  
 - 该插件已经改名为Emmet。但Emmet不只改名，还带来了一些新特性。
