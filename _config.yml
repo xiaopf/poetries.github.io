@@ -70,7 +70,7 @@ theme: next
 deploy:
   type: git
   repo: # 同时部署到github和coding
-    github: https://github.com/insistdream/insistdream.github.io.git
+    github: https://github.com/poetries/poetries.github.io.git
     # coding: git@git.coding.net:poetry/poetry.git,master
 
 
