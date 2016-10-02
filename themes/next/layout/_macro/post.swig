@@ -39,7 +39,7 @@
           </span>-->
 
           {% if post.categories and post.categories.length %}
-            <span class="post-category" >
+            <span class="post-category" style="text-shadow: 1px 1px 1px rgba(0,0,0,0.3);">
               &nbsp; {{ __('post.in') }}
               {% for cat in post.categories %}
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
@@ -59,7 +59,7 @@
 
           {% if post.comments %}
             {% if (theme.duoshuo and theme.duoshuo.shortname) or theme.duoshuo_shortname %}
-              <span class="post-comments-count">
+              <span class="post-comments-count" style="text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);" >
                 &nbsp; | &nbsp;
                 <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
                   <span class="post-comments-count ds-thread-count" data-thread-key="{{ post.path }}" itemprop="commentsCount"></span>
@@ -81,7 +81,7 @@
           {% endif %}
          
          {% if theme.leancloud_visitors.enable %}
-            &nbsp; | &nbsp;<span>热度</span>&nbsp;<span style="color:#E91E63;" id="{{ url_for(post.path) }}"class="leancloud_visitors"  data-flag-title="{{ post.title }}"></span><span style="color:#E91E63;">&nbsp;℃</span>
+            &nbsp; | &nbsp;<span style="text-shadow: 1px 1px 1px rgba(139, 195, 74, 0);" >热度</span>&nbsp;<span style="color:#E91E63;" id="{{ url_for(post.path) }}"class="leancloud_visitors"  data-flag-title="{{ post.title }}"></span><span style="color:#E91E63;">&nbsp;℃</span>
             
             <!-- <span id="{{ url_for(post.path) }}"class="leancloud_visitors"  data-flag-title="{{ post.title }}">
               &nbsp; | &nbsp;{{__('post.visitors')}}&nbsp;
