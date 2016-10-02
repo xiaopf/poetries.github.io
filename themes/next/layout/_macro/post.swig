@@ -198,7 +198,7 @@
       </span>
 	  
 	  <span class="author center-author-info" itemprop="copyrightHolder"> 
-		 <a style="color: #9c27b0;" href="https://github.com/poetries" target="_blank">{{ config.author }} </a> 
+		 <a href="https://github.com/poetries" target="_blank">{{ config.author }} </a> 
 	  </span>
     </div>
   </article>
