@@ -44,8 +44,8 @@
 
         
       {% endfor %}
-<!--
-      <li class="menu-item" style="opacity: 1; transform: translateY(0px);"> <a  href='javascript:(function() {
+
+      <!--<li class="menu-item" style="opacity: 1; transform: translateY(0px);"> <a  href='javascript:(function() {
           function c() {
               var e = document.createElement("link");
               e.setAttribute("type", "text/css");
@@ -194,9 +194,7 @@
                   O.push(A)
               }
           }
-          })()' class="okmemo-tmp-unselect"><i class="menu-item-icon fa fa-music fa-fw"></i>High一下</a> </li>
-          
-         -->
+          })()' class="okmemo-tmp-unselect"><i class="menu-item-icon fa fa-music fa-fw"></i>High一下</a> </li>-->
 
       {# Search icon for default scheme #}
       {% if not theme.scheme and theme.swiftype_key %}
