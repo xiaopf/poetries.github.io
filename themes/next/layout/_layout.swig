@@ -24,7 +24,8 @@
         border-radius: 50px;
         outline: none;
         border: none;
-        color: rgb(156, 188, 243);
+        color: rgb(210, 200, 191);
+        text-shadow: 1px 1px 1px rgba(0,0,0,0.23);
     }
   p.top51la{
       font-size: 12px;
