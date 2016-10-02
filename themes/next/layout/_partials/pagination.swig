@@ -1,5 +1,5 @@
 {% if page.prev or page.next %}
-  <nav class="pagination">
+  <nav class="pagination pag-foo">
     {{
       paginator({
         prev_text: '<i class="fa fa-angle-left"></i>',
