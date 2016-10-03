@@ -173,8 +173,8 @@
   
   
   <div>
-    <button class="assist-btn circle" id="assist_btn" title="双击亮屏" style="left: 73px; top: 169px;">
-         开灯
+    <button class="assist-btn circle" id="assist_btn" title="双击亮屏" style="left: 27px; top: 152px;">
+         关灯
     </button>
  </div>
 <script type="text/javascript">
@@ -237,9 +237,9 @@
     $blue-deep    = #262a30
 */
     // white theme
-    var body = {color: "#555", background: "white"};
+    var body = {color: "#555", background: "#000"};
     var a_tag = {color: "#222"};
-    var header = { background: "#f5f5f5"};
+    var header = { background: "#222"};
     var logo_line_i = {background: "#222"};
     // var post_code = {background: "#eee", color: "#222"};
 
