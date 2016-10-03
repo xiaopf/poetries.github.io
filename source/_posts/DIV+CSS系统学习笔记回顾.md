@@ -7,10 +7,9 @@ tags:
 categories: Front-End
 ---
 
-> 转载请声明   [原文链接地址](http://blog.poetries.top/2016/09/06/DIV+CSS%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%9B%9E%E9%A1%BE/#more)
 
 ### 第一部分 HTML
-<!--more-->
+
 ---
 #### 第一章 职业规划和前景
 ---
@@ -21,7 +20,7 @@ categories: Front-End
   - `web`网站架构师
   - 自己创业
   - 转岗管理或其他
-
+<!--more-->
 - **`web`前端开发的前景展望：**
 
   - 未来`IT`行业企业需求最多的人才
@@ -1156,7 +1155,15 @@ document.write("您的页面目前支持："+sbox+"盒子模型");
 ---
 - [原文件下载地址](https://yunpan.cn/cM9va2bHD4wwu)   访问密码 342a
 
+---
+
 ![](http://upload-images.jianshu.io/upload_images/1480597-a893d4023c39c78a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+---
+- `css`常见简写
+
+![css简写速查](http://upload-images.jianshu.io/upload_images/1480597-cbce5ef927ab2589.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 ---
 
@@ -1419,8 +1426,149 @@ document.write("您的页面目前支持："+sbox+"盒子模型");
   - 语义化
   - 模块化
 
+##### 写DIV+CSS 的一些常识
+---
+
+- 不要使用过小的图片做背景平铺
+  - 这就是为何很多人都不用 `1px` 的原因，这才知晓。宽高 `1px` 的图片平铺出一个宽高 `200px` 的区域，需要 `200200=40, 000` 次，占用资源
+
+- 无边框
+  - 推荐的写法是 `border:none`;，哈哈，我一直在用这个。 `border:0;` 只是定义边框宽度为零，但边框样式、颜色还是会被浏览器解析，占用资源
+
+- 慎用 通配符
+   - 所谓通配符，就是将` CSS` 中的所有标签均初始化，不管用的不用的，过时的先进的，一视同仁，这样，大大的占用资源。要有选择的初始化标签。
+
+- `CSS `的十六进制颜色代码缩写
+   - 习惯了缩写及小写，这才知道，原来不是推荐的写法，为的是减少解析所占用的资源。但同时会增加文件体积。孰优孰劣，有待仔细考证。
+
+-  样式放头上，脚本放脚下。不内嵌，只外链
+
+-  坚决不用 `CSS `表达式
+
+- 使用 引用样式表，而不是通过` @import` 导入。
+
+-  一般来说，`PNG `比 `GIF` 要小，小得多。再者，`GIF` 中有多少颜色是被浪费的，很值得优化。
+
+- 千万不要在 `HTML `中缩放图片，一者不好看，二者占资源。
+
+- 正文字体最好用偶数
+   - `12px`、`14px`、`16px`，效果非常好。特例，`15px`。
+
+- `block`、`ul`、`ol `等上下留出至少一倍行距，左侧至少两倍行距，右侧随意。
+
+- 段落之间，至少要有一倍行距
+
+- 强行指定某些元素的 `line-height`，正文 `1.6 `倍于文字大小，标题`1.3 `倍。
+
+- 中文标点用全角
+   - 英文夹杂在中文中，左右空格，半角。
+
+- 中文字体的粗体和斜体，远离较好
+
 ##### 常用代码片段
 ---
+- 雅虎工程师提供的`CSS`初始化示例代码【仅供参考】
+   - 可以在`html`头文件中直接引用，从而避免浏览器的不兼容带来的错误。
+
+```css
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+p,
+blockquote,
+th,
+td { 
+    margin:0; padding:0; 
+}
+body {
+    background:#fff; 
+    color:#555; 
+    font-size:14px; 
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+}
+td,
+th,
+caption { 
+    font-size:14px;
+}
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 { 
+    font-weight:normal; 
+    font-size:100%; 
+}
+
+address, 
+caption,
+cite, 
+code, 
+dfn, 
+em, 
+strong,
+th, 
+var { 
+    font-style:normal; 
+    font-weight:normal;
+}
+a { 
+    color:#555; 
+    text-decoration:none; 
+}
+a:hover { 
+    text-decoration:underline; 
+}
+img {
+    border:none;
+}
+ol,ul,li { 
+    list-style:none; 
+}
+input, 
+textarea, 
+select, 
+button { 
+    font:14px Verdana,Helvetica,Arial,sans-serif; 
+}
+table { 
+    border-collapse:collapse; 
+}
+html {
+    overflow-y: scroll;
+} 
+.clearfix:after {
+    content: "."; 
+    display: block; 
+    height:0; 
+    clear:both; 
+    visibility: hidden;
+}
+.clearfix { 
+    *zoom:1; 
+}
+```
+
 
 - `mobile meta `标签
 
@@ -1464,12 +1612,12 @@ overflow:hidden;
   - 方法一：`投机取巧法` -- 不推荐
    - 直接一个放到当作最后一个子标签放到父标签那儿，此方法屡试不爽，兼容性强
 
-  - 方法二：`overflow + zoom`方法  --不推荐
+ - 方法二：`overflow + zoom`方法  --不推荐
      `.fix{overflow:hidden; zoom:1;}`
-    - 此方法优点在于代码简洁，涵盖所有浏览器
+   - 此方法优点在于代码简洁，涵盖所有浏览器
 
-  - 方法三：`after + zoom`方法 -推荐--此方法可以说是综合起来最好的方法了
-    - `clearfix`只应用在包含浮动子元素的父级元素上
+ - 方法三：`after + zoom`方法 -推荐--此方法可以说是综合起来最好的方法了
+   - `clearfix`只应用在包含浮动子元素的父级元素上
 
 ```css
 .fix{zoom:1;}
@@ -1546,6 +1694,34 @@ overflow:hidden;
 - 平稳退化
   - 是在浏览器没有`JavaScript`功能，或没有开启`JavaScript`功能情况下，我们解决这种问题的方式；
 
+##### 方案荟萃扩展阅读
+---
+
+- **关于布局**
+ - [垂直居中](http://www.qianduan.net/css-to-achieve-the-vertical-center-of-the-five-kinds-of-methods/)
+ - [css完全居中](http://codepen.io/shshaw/full/gEiDt)
+ - [居中之美](http://www.w3cplus.com/collective-5.html)
+ - [网页中的底部foot定位](http://www.zhihu.com/question/35290742#answer-20340542)
+ - [页面高度100%](http://www.webhek.com/css-100-percent-height)
+ - [textarea高度自适应](https://github.com/phoetry/textareaAutoHeight)
+ - [多行溢出省略](http://dotdotdot.frebsite.nl/)
+ - [Retina屏1px线](http://jinlong.github.io/2015/05/24/css-retina-hairlines/)
+ - [Flexbugs](https://github.com/philipwalton/flexbugs)
+
+- **其他**
+ - [IF IE ENDIF条件判断之IE10](http://www.stepday.com/topic/?690)
+ - [Chrome 翻译插件](http://www.zhihu.com/question/20158063)
+ - [网页retina优化](http://blog.netsh.org/posts/website-retina_1779.netsh.html)
+ - [常用meta](http://segmentfault.com/a/1190000002407912)
+ - [树状菜单](http://www.cnblogs.com/mq0036/p/3531848.html)
+ - [em vs rem](http://www.w3ctrain.com/2015/07/24/comprehensive-guide-when-to-use-em-vs-rem/)
+ - [css vs js](https://github.com/classicemi/blog/issues/3#issuecomment-113861251)
+ - [css解决方案（w3cplus）](http://www.w3cplus.com/solution/index/index.html)
+ - [Textures生成纹理](http://riccardoscalco.github.io/textures/)
+ - [CSSgram](http://una.im/CSSgram/)
+ - [Csscss（检查重复声明等）](http://zmoazeni.github.io/csscss/)
+
+
 #### 附录四 部分工具资源
 ---
 
@@ -1560,16 +1736,54 @@ overflow:hidden;
 ---
 
 - [编码规范](https://github.com/poetries/mywiki/blob/master/bookmark/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.md)
+- [前端规范](http://front-end-standards.com/)
 - [web develop standard](https://github.com/poetries/mywiki/wiki/web-develop-standard)
 - [Web 前端开发规范文档](http://codecloud.net/5622.html)
+- [前端开发规范手册](http://zhibimo.com/read/Ashu/front-end-style-guide/index.html)
 
-#### 附录六 前端学习资源
+#### 附录六 进阶学习
+---
+
+- [DOM编程之API学习](http://www.jianshu.com/p/1e638b7da640)
+- [JavaScript基础学习](http://www.jianshu.com/p/1f2314552e23)
+
+#### 附录七 其他资源
 ---
 
 - [Github上前端学习资源汇总](https://github.com/poetries/mywiki)
 - [WEB 前端开发学习笔记](https://github.com/poetries/mywiki/tree/master/front-end)
 - [前端开发工具箱](https://github.com/poetries/mywiki/wiki/%E6%94%B6%E9%9B%86%E5%A5%BD%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7)
 - [148个资源让你成为CSS专家](https://segmentfault.com/a/1190000006689923)
+- [学习CSS布局-经典必看](http://zh.learnlayout.com/)
+
+#### 附录八 常见问题
+---
+
+- 前端指路
+ - [写给前端面试者（w3cplus）](http://www.w3cplus.com/css/write-to-front-end-developer-interview.html)
+ - [如何成为一名卓越的前端工程师（勾三股四博客）](http://jiongks.name/blog/how-to-become-a-great-front-end-engineer/)
+ - [什么是全栈工程师](http://www.epubit.com.cn/article/144)
+ - [如何跟上前端开发的最新前沿](https://uptodate.frontendrescue.org/zh/)
+ - [浏览器的工作原理](http://blog.jobbole.com/12749/)
+ - [移动前端开发和 Web 前端开发的区别](http://www.zhihu.com/question/20269059#answer-19718763)
+ - [大型网站CSS编写与维护](http://segmentfault.com/q/1010000003723038?utm_source=weekly&utm_medium=email&utm_campaign=email_weekly)
+ - [CSS核心技术关键字](http://segmentfault.com/q/1010000003059724)
+
+- 性能/规范/实践
+
+ - [如何阅读W3c规范(王晓轩)](http://www.chinaw3c.org/how-to-read-spec-wxx.html)
+ - [如何阅读W3c规范(高博)](http://www.chinaw3c.org/how-to-read-spec-gb.html)
+ - [雅虎web性能优化军规](https://developer.yahoo.com/performance/rules.html)
+ - [权威前端性能指南](http://browserdiet.com/zh/)
+ - [高性能css](http://www.html-js.com/article/Front-end-home-best-practice-in-front-of-the-web-high-performance-CSS)
+
+- 一些问答社区
+
+ - [quora](https://www.quora.com/)
+ - [stackoverflow](http://stackoverflow.com/)
+ - [知乎](http://www.zhihu.com/)
+ - [前端乱炖问答区](http://www.html-js.com/qa)
+ - [segmentfault问答区](http://segmentfault.com/questions/newest)
 
 #### 其他
 ---
