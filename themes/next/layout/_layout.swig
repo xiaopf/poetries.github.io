@@ -24,7 +24,7 @@
         border-radius: 50px;
         outline: none;
         border: none;
-        color: rgb(210, 200, 191);
+        color: rgb(5, 169, 5);
         text-shadow: 1px 1px 1px rgba(0,0,0,0.23);
     }
   p.top51la{
@@ -173,7 +173,7 @@
   
   
   <div>
-    <button class="assist-btn circle" id="assist_btn" title="双击亮屏" style="left: 27px; top: 152px;">
+    <button class="assist-btn circle" id="assist_btn" title="双击切换黑屏，阅读体验更佳!," style="left: 27px; top: 152px;">
          关灯
     </button>
  </div>
