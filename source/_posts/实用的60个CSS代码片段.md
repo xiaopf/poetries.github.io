@@ -8,10 +8,13 @@ categories: Front-End
 ---
 
 
+
 #### 1、垂直对齐
 
+---
+
 如果你用`CSS`，则你会有困惑：我该怎么垂直对齐容器中的元素？现在，利用`CSS3`的`Transform`，可以很优雅的解决这个困惑：
-<!--more-->
+
 ```css
 .verticalcenter{
     position: relative;
@@ -24,10 +27,10 @@ categories: Front-End
 
 使用这个技巧，从单行文本、段落到box，都会垂直对齐。目前浏览器对`Transform`的支持是需要关注的，
 `Chrome 4`, `Opera 10`, `Safari 3`, `Firefox 3`, `and Internet Explorer 9`均支持该属性
-
-
-
+<!--more-->
 #### 2、伸展一个元素到窗口高度
+
+---
 
 在具体场景中，你可能想要将一个元素伸展到窗口高度，基本元素的调整只能调整容器的大小,因此要使一个元素伸展到窗口高度，
 我们需要伸展顶层元素：`html`和`body`:
@@ -47,6 +50,8 @@ div {
 ```
 
 #### 3、基于文件格式使用不同的样式
+
+---
 
 为了更容易知道链接的目标，有时你想让一些链接看起来和其它的不同。下面的片段在文本链接前添加一个图标，对不同的资源使用不同的图标或图片：
 
@@ -73,6 +78,8 @@ a[href$=".pdf"]{
 
 #### 4、创建跨浏览器的图像灰度
 
+---
+
 灰度有时看起来简约和优雅，能为网站呈现更深层次的色调。在示例中，我们将对一个SVG图像添加灰度过滤：
 
 ```svg
@@ -95,6 +102,8 @@ img {
 
 #### 5、背景渐变动画
 
+---
+
 `CSS`中最具诱惑的一个功能是能添加动画效果，除了渐变，你可以给背景色、透明度、元素大小添加动画。目前，你不能为渐变添加动画，但下面的代码可能有帮助。它通过改变背景位置，让它看起来有动画效果。
 
 ```css
@@ -114,6 +123,8 @@ button:hover {
 
 #### 6、CSS：表格列宽自适用
 
+---
+
 对于表格，当谈到调整列宽时，是比较痛苦的。然后，这里有一个可以使用的技巧：给`td`元素添加` white-space: nowrap;`能让文本正确的换行
 
 ```css
@@ -125,6 +136,8 @@ td {
 [演示](http://runjs.cn/code/yghxo4ht)
 
 #### 7、只在一边或两边显示盒子阴影
+
+---
 
 如果你要一个盒阴影，试试这个技巧，能为任一边添加阴影。为了实现这个，首先定义一个有具体宽高的盒子，然后正确定位`:after`伪类。实现底边阴影的代码如下
 
@@ -158,6 +171,8 @@ td {
 
 #### 8、包裹长文本
 
+---
+
 如果你碰到一个比自身容器长的文本，这个技巧对你很有用。在这个示例中，默认时，不管容器的宽度，文本都将水平填充。
 
 ![](https://sfault-image.b0.upaiyun.com/352/854/3528546899-56fe3aca51c9d_articlex)
@@ -177,6 +192,8 @@ pre {
 
 #### 9、制造模糊文本
 
+---
+
 想要让文本模糊？可以使用`color`透明和`text-shadow`实现
 
 ```css
@@ -189,6 +206,8 @@ pre {
 [演示](http://runjs.cn/code/cjwnefhi)
 
 #### 10、用CSS动画实现省略号动画
+
+---
 
 这个片段将帮助你制造一个`ellipsis`的动画，对于简单的加载状态是很有用的，而不用去使用`gif`图像。
 
@@ -212,6 +231,8 @@ pre {
 [演示](http://runjs.cn/code/ouap5vot)
 
 #### 11、样式重置
+
+---
 
 ```css
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -240,6 +261,8 @@ p { font-size: 1.2em; line-height: 1.0em; color: #333; }
 
 #### 12、典型的CSS清除浮动
 
+---
+
 ```css
 .clearfix:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
 .clearfix { display: inline-block; }
@@ -249,6 +272,8 @@ html[xmlns] .clearfix { display: block; }
 
 #### 13、新版清除浮动（2011）
 
+---
+
 ```css
 .clearfix:before, .container:after { content: ""; display: table; }
 .clearfix:after { clear: both; }
@@ -257,6 +282,8 @@ html[xmlns] .clearfix { display: block; }
 ```
 
 #### 14、跨浏览器的透明
+
+---
 
 ```css
 .transparent {
@@ -268,6 +295,8 @@ html[xmlns] .clearfix { display: block; }
 ```
 
 #### 15、CSS引用模板
+
+---
 
 ```css
 blockquote {
@@ -292,6 +321,8 @@ blockquote p {
 
 #### 16、个性圆角
 
+---
+
 ```css
 #container {
     -webkit-border-radius: 4px 3px 6px 10px;
@@ -313,6 +344,8 @@ blockquote p {
 ```
 
 #### 17、通用媒体查询
+
+---
 
 ```css
 /* Smartphones (portrait and landscape) ----------- */
@@ -356,6 +389,8 @@ and (min-device-width : 320px) and (max-device-width : 480px) {
 
 #### 18、现代字体栈
 
+---
+
 ```css
 /* Times New Roman-based serif */
 font-family: Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
@@ -377,6 +412,8 @@ font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucid
 
 #### 19、自定义文本选择
 
+---
+
 ```css
 ::selection { background: #e2eae2; }
 ::-moz-selection { background: #e2eae2; }
@@ -384,6 +421,8 @@ font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucid
 ```
 
 #### 20、为logo隐藏H1
+
+---
 
 ```css
 h1 {
@@ -396,6 +435,8 @@ h1 {
 ```
 
 #### 21、图片边框偏光
+
+---
 
 ```css
 img.polaroid {
@@ -412,6 +453,8 @@ img.polaroid {
 
 #### 22、锚链接伪类
 
+---
+
 ```css
 a:link { color: blue; }
 a:visited { color: purple; }
@@ -420,6 +463,8 @@ a:active { color: yellow; }
 ```
 
 #### 23、奇特的CSS引用
+
+---
 
 ```css
 .has-pullquote:before {
@@ -458,6 +503,8 @@ a:active { color: yellow; }
 
 #### 24、CSS3：全屏背景
 
+---
+
 ```css
 html { 
     background: url('images/bg.jpg') no-repeat center center fixed; 
@@ -470,6 +517,8 @@ html {
 
 #### 25、内容垂直居中
 
+---
+
 ```css
 .container {
     min-height: 6.5em;
@@ -480,11 +529,15 @@ html {
 
 #### 26、强制出现垂直滚动条
 
+---
+
 ```css
 html { height: 101% }
 ```
 
 #### 27、CSS3渐变模板
+
+---
 
 ```css
 #colorbox {
@@ -499,6 +552,8 @@ html { height: 101% }
 ```
 
 #### 28、@font-face模板
+
+---
 
 ```css
 @font-face {
@@ -515,6 +570,8 @@ body {
 ```
 
 #### 29、缝合CSS3元素
+
+---
 
 ```css
 p {
@@ -554,6 +611,8 @@ p a:hover, p a:focus, p a:active {
 
 #### 30、CSS3 斑马线
 
+---
+
 ```css
 tbody tr:nth-child(odd) {
     background-color: #ccc;
@@ -561,6 +620,8 @@ tbody tr:nth-child(odd) {
 ```
 
 #### 31、有趣的&
+
+---
 
 ```css
 .amp {
@@ -571,6 +632,8 @@ tbody tr:nth-child(odd) {
 ```
 
 #### 32、大字段落
+
+---
 
 ```css
 p:first-letter{
@@ -585,6 +648,8 @@ p:first-letter{
 
 #### 33、内部CSS3 盒阴影
 
+---
+
 ```css
 #mydiv { 
     -moz-box-shadow: inset 2px 0 4px #000;
@@ -595,6 +660,8 @@ p:first-letter{
 
 #### 34、外部CSS3 盒阴影
 
+---
+
 ```css
 #mydiv { 
     -webkit-box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.52);
@@ -604,6 +671,8 @@ p:first-letter{
 ```
 
 #### 35、三角形列表项目符号
+
+---
 
 ```css
 ul {
@@ -627,6 +696,8 @@ li:before {
 
 #### 36、固定宽度的居中布局
 
+---
+
 ```css
 #page-wrap {
     width: 800px;
@@ -635,6 +706,8 @@ li:before {
 ```
 
 #### 37、CSS3 列文本
+
+---
 
 ```css
 #columns-3 {
@@ -649,6 +722,8 @@ li:before {
 ```
 
 #### 38、CSS固定页脚
+
+---
 
 ```css
 #footer {
@@ -667,6 +742,8 @@ li:before {
 ```
 
 #### 39、IE6的PNG透明修复
+
+---
 
 ```css
 .bg {
@@ -689,6 +766,8 @@ img, .png {
 
 #### 40、跨浏览器设置最小高度
 
+---
+
 ```css
 #container {
     min-height: 550px;
@@ -698,6 +777,8 @@ img, .png {
 ```
 
 #### 41、CSS3 鲜艳的输入
+
+---
 
 ```css
 input[type=text], textarea {
@@ -720,6 +801,8 @@ input[type=text]:focus, textarea:focus {
 
 #### 42、基于文件类型的链接样式
 
+---
+
 ```css
 /* external links */
 a[href^="http://"] {
@@ -740,6 +823,8 @@ a[href$=".pdf"] {
 
 #### 43、强制换行
 
+---
+
 ```css
 pre {
     white-space: pre-wrap;       /* css-3 */
@@ -752,6 +837,8 @@ pre {
 
 #### 44、在可点击的项目上强制手型
 
+---
+
 ```css
 a[href], input[type='submit'], input[type='image'], label[for], select, button, .pointer {
     cursor: pointer;
@@ -759,6 +846,8 @@ a[href], input[type='submit'], input[type='image'], label[for], select, button, 
 ```
 
 #### 45、网页顶部盒阴影
+
+---
 
 ```css
 body:before {
@@ -776,6 +865,8 @@ body:before {
 ```
 
 #### 46、CSS3对话气泡
+
+---
 
 ```css
 .chat-bubble {
@@ -818,6 +909,8 @@ body:before {
 
 #### 47、H1-H5默认样式
 
+---
+
 ```css
 h1,h2,h3,h4,h5{
     color: #005a9c;
@@ -846,6 +939,8 @@ h5{
 
 #### 48、纯CSS背景噪音
 
+---
+
 ```css
 body {
     background-image: url(data:image/png;base64,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);
@@ -854,6 +949,8 @@ body {
 ```
 
 #### 49、持久的列表排序
+
+---
 
 ```css
 ol.chapters {
@@ -879,6 +976,8 @@ ol.continue {
 ```
 
 #### 50、CSS悬浮提示文本
+
+---
 
 ```css
 a { 
@@ -946,6 +1045,8 @@ a[data-tooltip]:active:before {
 
 #### 51、深灰色的圆形按钮
 
+---
+
 ```css
 .graybtn {
     -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
@@ -982,6 +1083,8 @@ a[data-tooltip]:active:before {
 
 #### 52、在可打印的网页中显示URLs
 
+---
+
 ```css
 @media print   {  
   a:after {  
@@ -991,6 +1094,8 @@ a[data-tooltip]:active:before {
 ```
 
 #### 53、禁用移动Webkit的选择高亮
+
+---
 
 ```css
 body {
@@ -1005,6 +1110,8 @@ body {
 
 #### 54、CSS3 圆点图案
 
+---
+
 ```css
 body {
     background: radial-gradient(circle, white 10%, transparent 10%),
@@ -1014,6 +1121,8 @@ body {
 ```
 
 #### 55、CSS3 方格图案
+
+---
 
 ```css
 body {
@@ -1026,6 +1135,8 @@ body {
 ```
 
 #### 56、Github的fork色带
+
+---
 
 ```css
 .ribbon {
@@ -1058,6 +1169,8 @@ body {
 
 #### 57、CSS font属性缩写
 
+---
+
 ```css
 p {
   font: italic small-caps bold 1.2em/1.0em Arial, Tahoma, Helvetica;
@@ -1065,6 +1178,8 @@ p {
 ```
 
 #### 58、论文页面的卷曲效果
+
+---
 
 ```css
 ul.box {
@@ -1121,6 +1236,8 @@ ul.box li:after {
 
 #### 59、鲜艳的锚链接
 
+---
+
 ```css
 a {
     color: #00e;
@@ -1149,6 +1266,8 @@ a:hover, .glow {
 ```
 
 #### 60、带CSS3特色的横幅显示
+
+---
 
 ```css
 .featureBanner {
@@ -1180,6 +1299,5 @@ a:hover, .glow {
     border-bottom-color: transparent;
 }
 ```
-
 
 
