@@ -7,7 +7,7 @@ tags:
 categories: Front-End
 ---
 
-> 原文 [链接](http://blog.poetries.top/2016/09/22/DOM%E7%BC%96%E7%A8%8B%E4%B9%8BAPI%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93%E7%AF%87/)
+
 
 ### 一、基本类型介绍
 ---
@@ -17,10 +17,11 @@ categories: Front-End
 
 - `DOM1`级定义了一个`Node`接口，该接口由`DOM`中所有节点类型实现。这个`Node`接口在`JS`中是作为`Node`类型实现的。在`IE9`以下版本无法访问到这个类型，`JS`中所有节点都继承自`Node`类型，都共享着相同的基本属性和方法
 - `Node`有一个属性`nodeType`表示`Node`的类型，它是一个整数，其数值分别表示相应的`Node`类型
+
+
+![节点类型](http://upload-images.jianshu.io/upload_images/1480597-7499b2d679fd9d7b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 <!--more-->
-
-![Node类型](http://upload-images.jianshu.io/upload_images/1480597-c55b0c3c89778cf0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
+![Node类型](http://upload-images.jianshu.io/upload_images/1480597-b485056bfc81ff46.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 - 假设我们要判断一个`Node`是不是元素，我们可以这样判断
 
@@ -35,6 +36,9 @@ console.log("Node is a element");
 ##### 1.2 Element类型
 ---
 
+
+![Element类型](http://upload-images.jianshu.io/upload_images/1480597-5d928d3a15fb7473.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 - `Element`提供了对元素标签名，子节点和特性的访问，我们常用`HTML`元素比如`div`，`span`，`a`等标签就是`element`中的一种。
 - **`Element`有下面几条特性：**
 
@@ -47,6 +51,8 @@ console.log("Node is a element");
 ##### 1.3 Text类型
 ---
 
+![Text类型](http://upload-images.jianshu.io/upload_images/1480597-8b4d7f05fd86cdeb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 - `Text`表示文本节点，它包含的是纯文本内容，不能包含`html`代码，但可以包含转义后的`html`代码。`Text`有下面的特性：
     - `nodeType`为`3`
     - `nodeName`为`#text`
@@ -56,6 +62,8 @@ console.log("Node is a element");
 
 ##### 1.4 Attr类型
 ---
+
+![Attr类型](http://upload-images.jianshu.io/upload_images/1480597-656d4a6df50a5892.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 - `Attr`类型表示元素的特性，相当于元素的`attributes`属性中的节点，它有下面的特性：
     - `nodeType`值为2
@@ -75,6 +83,9 @@ console.log("Node is a element");
 
 ##### 1.6 Document
 ---
+
+
+![Document类型](http://upload-images.jianshu.io/upload_images/1480597-4e5a4d94d8c9f789.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 - `Document`表示文档，在浏览器中，`document`对象是`HTMLDocument`的一个实例，表示整个页面，它同时也是`window`对象的一个属性。`Document`有下面的特性：
   - `nodeType`为`9`
@@ -701,7 +712,7 @@ element.setAttribute("value","the new value");
 ```
 
 
-#### 7.2 getAttribute
+####  7.2 getAttribute
 ---
 
 - `getAttribute`返回指定的特性名相应的特性值，如果不存在，则返回`null`或空字符串。
@@ -715,15 +726,35 @@ for(var i=0;i<para.lenght;i++){
 }
 ```
 
-### 八、网上的一张思维导图总结
+###  八、表格操作
+---
+
+
+![表格操作](http://upload-images.jianshu.io/upload_images/1480597-4f1fb1d420bd58de.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+### 九、样式操作
+---
+
+
+![样式操作](http://upload-images.jianshu.io/upload_images/1480597-45fa780cac73240e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+### 十、大小和偏移
+---
+
+![大小和偏移](http://upload-images.jianshu.io/upload_images/1480597-41da370c1bd5e927.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+### 十一、网上的一张思维导图总结
 ---
 
 ![](http://upload-images.jianshu.io/upload_images/1480597-1893e82e8c49b23d.gif?imageMogr2/auto-orient/strip)
 
 ---
-
-- [本文mardown原文件](https://github.com/poetries/poetries.github.io/blob/dev/source/_posts/DOM%E7%BC%96%E7%A8%8B%E4%B9%8BAPI%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93%E7%AF%87.md)
-
----
 - 参考
   - `JavaScript DOM`编程艺术
+  - [常用DOM操作](http://www.jianshu.com/p/e1391dc17361)
+
+---
+
+- [本文mardown原文件](https://github.com/poetries/poetries.github.io/blob/dev/source/_posts/DOM%E7%BC%96%E7%A8%8B%E4%B9%8BAPI%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93%E7%AF%87.md)
