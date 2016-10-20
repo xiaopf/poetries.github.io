@@ -7,11 +7,13 @@ tags:
 categories: Front-End
 ---
 
+> 原文链接 http://blog.poetries.top/2016/10/20/review-jQuery
+
 首先，来了解一下`jQuery`学习的整体思路
 
 ![jQuery系统学习篇](http://upload-images.jianshu.io/upload_images/1480597-9a2f1f1c4f44d752.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 <!--more-->
-- [XMind源文件提供参考下载](http://pan.baidu.com/s/1nu8Bmyd)
+-  [XMind源文件提供参考下载](http://pan.baidu.com/s/1nu8Bmyd)
 
 #### 第一节 jQuery初步认知
 ---
@@ -29,20 +31,21 @@ categories: Front-End
 - **`jQuery`是什么:**
     - 是一个`javascript`代码仓库，我们称之为`javascript`框架。
     - 是一个快速的简洁的`javascript`框架，可以简化查询`DOM`对象、处理事件、制作动画、处理`Ajax`交互过程。
-  - **它可以帮我们做什么(有什么优势)**
-    - 体积小，使用灵巧(只需引入一个`js`文件)
-    - 方便的选择页面元素(模仿`CSS`选择器更精确、灵活)
-    - 动态更改页面样式/页面内容(操作`DOM`，动态添加、移除样式)
-    - 控制响应事件(动态添加响应事件)
-    - 提供基本网页特效(提供已封装的网页特效方法)
-    - 快速实现通信(`ajax`)
-    - 易扩展、插件丰富
+    -  **它可以帮我们做什么(有什么优势)**
+     - 体积小，使用灵巧(只需引入一个`js`文件)
+     - 方便的选择页面元素(模仿`CSS`选择器更精确、灵活)
+     - 动态更改页面样式/页面内容(操作`DOM`，动态添加、移除样式)
+     - 控制响应事件(动态添加响应事件)
+     - 提供基本网页特效(提供已封装的网页特效方法)
+     - 快速实现通信(`ajax`)
+     - 易扩展、插件丰富
 
 
 - **如何引入`JQuery`包**
   - 引入本地的`JQuery`
   - 引入`Google`在线提供的库文件（稳定可靠高速）
   - 使用`Google`提供的`API`导入 `<script type=“text/javascript” src=“jquery.js”></script>`
+
   - 写第一个`JQUery`案例
     - 解释:在`JQuery`库中，`$`是`JQuery`的别名，`$()`等效于就`jQuery()`
 
@@ -755,9 +758,25 @@ function ajax(aJson){
 	
 })(jQuery);
 ```
+####   附录一 常见的CND加速服务
+---
+
+- [Bootstrap中文网开源项目免费 CDN 服务](http://www.bootcdn.cn/)
+- [百度静态资源公共库](http://cdn.code.baidu.com/)
+- [360网站卫士常用前端公共库CDN服务--已停止服务](http://libs.useso.com/)
+- [开放静态文件 CDN ](http://staticfile.org/)
+- [微软CDN服务](http://www.asp.net/ajax/cdn)
+- [阿里云](https://bbs.aliyun.com/read/139395.html)
+- [百度开放云平台](http://developer.baidu.com/wiki/index.php?title=docs/cplat/libs)
+- [jQuery CDN](http://code.jquery.com/)
+- [jQuery cdn加速](http://www.jq22.com/cdn/)
+- [新浪CDN](http://lib.sinaapp.com/)
 
 #### 扩展阅读
 ---
 
 - [jQuery源码分析系列](http://www.cnblogs.com/aaronjs/p/3279314.html)
+
+---
+- [本文md源文件提供参考](https://github.com/poetries/poetries.github.io/blob/dev/source/_posts/review-jQuery.md)
 
