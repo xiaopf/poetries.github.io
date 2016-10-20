@@ -136,7 +136,7 @@ facebook_sdk:
 
 # Some suprise plugs
 suprise:
-  ball: true
+  ball: false
   assist: true
   
 # donate
