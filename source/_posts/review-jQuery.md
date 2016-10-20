@@ -758,7 +758,7 @@ function ajax(aJson){
 	
 })(jQuery);
 ```
-####   附录一 常见的CND加速服务
+####   附录一 常见CND加速服务
 ---
 
 - [Bootstrap中文网开源项目免费 CDN 服务](http://www.bootcdn.cn/)
@@ -772,6 +772,23 @@ function ajax(aJson){
 - [jQuery cdn加速](http://www.jq22.com/cdn/)
 - [新浪CDN](http://lib.sinaapp.com/)
 
+#### 附录二 jQuery的一些资源
+---
+- 速查手册
+  - [jQuery API 中文文档--css88](http://www.css88.com/jqapi-1.9/)
+ - [jQuery-overapi](http://overapi.com/jquery)
+  - [在线桌面版API](http://www.sxt.cn/searchsxt/sxtapipro/index.html)
+  - [更多详情---一份实用的API参考手册集合](https://github.com/poetries/mywiki/blob/master/bookmark/%E5%AE%9E%E7%94%A8%E5%8F%82%E8%80%83%E6%89%8B%E5%86%8CAPI.md)
+- `jQuery`插件
+ - [滚动固定在某个位置](http://caibaojian.com/scrollfix)
+ - [jQuery图片滚动插件全能版](http://caibaojian.com/power-slider)
+ - [jQuery Wookmark Load 瀑布流布局](http://code.ciaoca.com/jquery/wookmark/?utm_source=caibaojian.com)
+ - [jQuery Jcrop 图像裁剪](http://code.ciaoca.com/jquery/jcrop/?utm_source=caibaojian.com)
+ - [jQuery kxbdMarquee 无缝滚动](http://code.ciaoca.com/jquery/kxbdmarquee/?utm_source=caibaojian.com)
+ - [jQuery lightBox 灯箱效果](http://code.ciaoca.com/jquery/lightbox/?utm_source=caibaojian.com)
+ - [Lazy Load Plugin for jQuery](http://www.appelsiini.net/projects/lazyload?utm_source=caibaojian.com)
+
+
 #### 扩展阅读
 ---
 
@@ -779,4 +796,3 @@ function ajax(aJson){
 
 ---
 - [本文md源文件提供参考](https://github.com/poetries/poetries.github.io/blob/dev/source/_posts/review-jQuery.md)
-
