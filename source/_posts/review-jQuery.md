@@ -11,9 +11,9 @@ categories: Front-End
 
 首先，来了解一下`jQuery`学习的整体思路
 
-![jQuery系统学习篇](http://upload-images.jianshu.io/upload_images/1480597-9a2f1f1c4f44d752.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![jQuery系统学习篇](http://upload-images.jianshu.io/upload_images/1480597-f9c90fc8d9fd263e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 <!--more-->
--  [XMind源文件提供参考下载](http://pan.baidu.com/s/1nu8Bmyd)
+-  [XMind源文件提供参考下载](http://pan.baidu.com/s/1nvyIelr)
 
 #### 第一节 jQuery初步认知
 ---
