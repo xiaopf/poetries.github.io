@@ -1,5 +1,5 @@
 ---
-title: 重温轻量级的js库---jQuery
+title: jQuery笔记总结篇
 date: 2016-10-20 09:35:08
 tags: 
     - JavaScript
