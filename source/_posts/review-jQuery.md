@@ -1099,7 +1099,7 @@ $("#testTest").load("test.html",function(responseText,textStatus,XMLHttpRequest)
 |`removeProp(proptyName,value)`|为匹配的元素删除设置的属性|
 |` :focus`|选择当前获取焦点的元素|
 
-####   附录二 jQuery性能优化
+#### 附录二 jQuery性能优化
 ---
 - **性能优化**
     - 使用最新版的jQuery类库
@@ -1148,7 +1148,7 @@ $("#testTest").load("test.html",function(responseText,textStatus,XMLHttpRequest)
   - **压缩JavaScript代码**
     - 一方面使用`Gzip`；另一方面去除`JavaScript`文件里面的注释、空白 
 
-##### 附录三 常用的jQuery代码片段
+#### 附录三 常用的jQuery代码片段
 ---
 
 - 禁用页面的右键菜单
@@ -1768,7 +1768,7 @@ return true;
 
 - [jQuery源码分析系列](http://www.cnblogs.com/aaronjs/p/3279314.html)
 
-##### 参考
+#### 参考
 ---
 
   - 锋利的`jQuery`
