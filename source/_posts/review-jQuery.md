@@ -234,32 +234,6 @@ alert($nav.get(0) == nav);//true
     - c.相邻选择器：`$("prev + next")` 匹配所有紧接在`prev`元素后的`next`元素。
     - d.兄弟选择器：`$("prev ~ siblings")` 匹配prev元素之后的所有`sibling`元素。
 
- - 案例：
-
-```html
-<BODY>
-	<!--包含选择器/子选择器/兄弟选择器/相邻选择器-->
-	<div class="main">
-		<span>1![](https://camo.githubusercontent.com/3318530334bbc8f5e7ce267866c43ba72fa01f32/687474703a2f2f6f61376436647871742e626b742e636c6f7564646e2e636f6d2f626c6f672f696d616765732f3038313734323039323736363338392e6a7067)</span>
-		2![](https://camo.githubusercontent.com/3318530334bbc8f5e7ce267866c43ba72fa01f32/687474703a2f2f6f61376436647871742e626b742e636c6f7564646e2e636f6d2f626c6f672f696d616765732f3038313734323039323736363338392e6a7067)
-	</div>
-		3![](https://camo.githubusercontent.com/3318530334bbc8f5e7ce267866c43ba72fa01f32/687474703a2f2f6f61376436647871742e626b742e636c6f7564646e2e636f6d2f626c6f672f696d616765732f3038313734323039323736363338392e6a7067)
-		4![](https://camo.githubusercontent.com/3318530334bbc8f5e7ce267866c43ba72fa01f32/687474703a2f2f6f61376436647871742e626b742e636c6f7564646e2e636f6d2f626c6f672f696d616765732f3038313734323039323736363338392e6a7067)
-	<div>
-		5![](https://camo.githubusercontent.com/3318530334bbc8f5e7ce267866c43ba72fa01f32/687474703a2f2f6f61376436647871742e626b742e636c6f7564646e2e636f6d2f626c6f672f696d616765732f3038313734323039323736363338392e6a7067)
-	</div>
-
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript">
-		$(function(){
-			//$(".main img").css("border","5px solid red");
-			//$(".main > img").css("border","5px solid blue");
-			//$(".main + img").css("border","5px solid blue");
-			$(".main ~ img").css("border","5px solid blue");
-		});
-	</script>
- </BODY>
-```
 ##### 过滤选择器
 ---
 
@@ -785,8 +759,27 @@ $(body).append($div);
 #### 第八节 jQuery与Ajax
 ---
 
-- **ajax** : `Asynchronous Javascript And XML` （异步的`JavaScript`和`XML`）
-- `ajax`,向后台传递数据
+- **Ajax**简介 :
+  -  `Asynchronous Javascript And XML` （异步的
+`JavaScript`和`XML`）
+  - 它并不是一种单一的技术，而是有机利用一系列交互式网页应用相关的技术所形成的结合体
+- **`Ajax`优势与不足**
+    - **`Ajax`优势**
+        - 优秀的用户体验
+            - 这是`Ajax`下最大的有点，能在不刷新整个页面前提下更新数据
+        - 提高`web`程序的性能
+            -  与传统模式相比，`Ajax`模式在性能上最大的区别在于传输数据的方式，在传统模式中，数据的提交时通过表单来实现的。`Ajax`模式只是通过`XMLHttpRequest`对象向服务器提交希望提交的数据，即按需发送
+        - 减轻服务器和带宽的负担
+           -  `Ajax`的工作原理相当于在用户和服务器之间加了一个中间层，似用户操作与服务器响应异步化。它在客户端创建`Ajax`引擎，把传统方式下的一些服务器负担的工作转移到客户端，便于客户端资源来处理，减轻服务器和带宽的负担
+    - **Ajax的不足**
+      - 浏览器对`XMLHttpRequest`对象的支持度不足
+      - 破坏浏览器前进、后退按钮的正常功能
+      - 对搜索引擎的支持的不足
+      - 开发和调试工具的缺乏
+
+##### 创建一个Ajax请求
+---
+- `Ajax`的核心是`XMLHttpRequest`对象，它是`Ajax`实现的关键，发送异步请求、接受响应以及执行回调都是通过它来完成
 
 - **创建`ajax`对象 `var xhr = new XMLHttpRequest();`**
 - **准备发送请求**
@@ -903,6 +896,86 @@ function ajax(aJson){
 	};
 ```
 
+##### jQuery中的Ajax  [补充部分--来自锋利的jQuery]
+---
+
+`jquery`对`Ajax`操作进行了封装，在`jquery`中的`$.ajax()`方法属于最底层的方法，第`2`层是`load()`、`$.get()`、`$.post();`第`3`层是`$.getScript()`、`$.getJSON()`，第`2`层使用频率很高 
+
+###### `load()`方法
+---
+
+  - `load()`方法是`jquery`中最简单和常用的`ajax`方法，能载入远程`HTML`代码并插入`DOM`中 结构为：`load(url,[data],[callback])`
+   - 使用`url`参数指定选择符可以加载页面内的某些元素 `load`方法中`url`语法：`url selector` 注意：`url`和选择器之间有一个空格
+  - 传递方式
+      - `load()`方法的传递方式根据参数`data`来自动指定，如果没有参数传递，则采用`GET`方式传递，反之，采用`POST`
+  - 回调参数
+    - 必须在加载完成后才执行的操作，该函数有三个参数 分别代表请求返回的内容、请求状态、`XMLHttpRequest`对象
+    - 只要请求完成，回调函数就会被触发
+
+```javascript
+$("#testTest").load("test.html",function(responseText,textStatus,XMLHttpRequest){
+    //respnoseText 请求返回的内容
+    //textStatus 请求状态 ：sucess、error、notmodified、timeout
+    //XMLHttpRequest 
+})
+```
+- **load方法参数**
+
+|参数名称|类型|说明|
+|---|---|---|
+|`url`|`String`|请求`HTML`页面的`URL`地址|
+|`data(可选)`|`Object`|发送至服务器的`key` / `value`数据|
+|`callback(可选)`|`Function`|请求完成时的回调函数，无论是请求成功还是失败|
+
+###### $.get()和$.post()方法
+---
+
+`load()`方法通常用来从web服务器上获取静态的数据文件。在项目中需要传递一些参数给服务器中的页面，那么可以使用`$.get()`和`$.post()`或`$.ajax()`方法
+- 注意：`$.get()`和`$.post()`方法是`jquery`中的全局函数
+
+- **$.get()方法**
+  - `$.get()`方法使用`GET`方式来进行异步请求
+  - 结构为：`$.get(url,[data],callback,type)`
+    - 如果服务器返回的内容格式是`xml`文档，需要在服务器端设置`Content-Type`类型 代码如下：`header("Content-Type:text/xml:charset=utf-8")` //`php`
+- **`$.get()`方法参数解析**
+
+|参数|类型|说明|
+|---|---|---|
+|`url`|`String`|请求`HTML`页的地址|
+|`data(可选)`|`Object`|发送至服务器的`key`/ `value` 数据会作为`QueryString`附加到请求URL中|  
+|`callback(可选)`|`Function`|载入成功的回调函数（只有当`Response`的返回状态是success才调用该方法）|
+|`type(可选)`|`String`|服务器返回内容的格式，包括`xml`、`html`、`script`、`json`、`text`和`_default`|
+
+- **$.post()方法**
+  - 它与`$.get()`方法的结构和使用方式相同，有如下区别
+      - `GET`请求会将参数跟张乃URL后进行传递，而`POST`请求则是作为`Http`消息的实体内容发送给web服务器，在`ajax`请求中，这种区别对用户不可见
+    - `GET`方式对传输数据有大小限制（通常不能大于`2KB`），而使用`POST`方式传递的数据量要比`GET`方式大得多（理论不受限制）
+    - `GET`方式请求的数据会被浏览器缓存起来，因此其他人可以从浏览器的历史纪录中读取这些数据，如：账号、密码。在某种情况下，`GET`方式会带来严重的安全问题，而`POST`相对来说可以避免这些问题
+    - `GET`和`POST`方式传递的数据在服务端的获取也不相同。在`PHP`中，`GET`方式用`$_GET[]`获取；`POST`方式用`$_POST[]`获取;两种方式都可用`$_REQUEST[]`来获取 
+
+- **总结**
+  - 使用`load()`、`$.get()`和`$.post()`方法完成了一些常规的`Ajax`程序，如果还需要复杂的`Ajax`程序，就需要用到`$.ajax()`方式
+
+###### $.ajax()方法
+---
+
+- `$.ajax()`方法是`jquery`最底层的`Ajax`实现，它的结构为`$.ajax(options)`
+- 该方法只有一个参数，但在这个对象里包含了`$.ajax()`方式所需要的请求设置以及回调函等信息，参数以`key` / `value`存在，所有参数都是可选的
+- **$.ajax()方式常用参数解析**
+
+|参数|类型|说明|
+|---|---|---|
+|`url`|`String`|(默认为当前页地址)发送请求的地址|
+|`type`|`String`|请求方式（`POST`或`GET`）默认为`GET`|
+|`timeout`|`Number`|设置请求超时时间（毫秒）|
+|`dataType`|`String`|预期服务器返回的类型。可用的类型如下<br /><br /> **xml**:返回`XML`文档，可用`jquery`处理<br />**html**:返回纯文本的`HTML`信息，包含的`script`标签也会在插入`DOM`时执行<br />**script**：返回纯文本的`javascript`代码。不会自动缓存结果，除非设置`cache`参数。注意：在远程请求时，所有的`POST`请求都将转为`GET`请求<br />**json**:返回`JSON`数据<br />**jsonp**:`JSONP`格式，使用`jsonp`形式调用函数时，例如：`myurl?call back=?,jquery`将自动替换后一个`？`为正确的函数名，以执行回调函数<br />**text**:返回纯文本字符串|
+|`beforeSend`|`Function`|发送请求前可以修改`XMLHttpRequest`对象的函数，例如添加自定义`HTTP`头。在`beforeSend`中如果返回`false`可以取消本次`Ajax`请求。`XMLHttpRequest`对象是唯一的参数<br /> function(XMLHttpRequest){<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`this`;//调用本次`Ajax`请求时传递的`options`参数<br>}|
+|`complete`|`Function`|请求完成后的回调函数（请求成功或失败时都调用）<br /> 参数：`XMLHttpRequest`对象和一个描述成功请求类型的字符串<br />function(XMLHttpRequest,textStatus){<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`this`;//调用本次Ajax请求时传递的`options`参数<br>}|
+|`success`|`Function`|请求成功后调用的回调函数，有两个参数<br />(1)由服务器返回，并根据`dataTyppe`参数进行处理后的数据<br />(2)描述状态的字符串<br />`function`(data,textStatus){<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//`data`可能是`xmlDoc、``jsonObj`、`html`、`text`等<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`this`;//调用本次`Ajax`请求时传递的`options`参数<br />}|
+|`error`|`Function`|请求失败时被调用的函数|
+|`global`|`Boolean`|默认为`true`。表示是否触发全局`Ajax`事件，设置为`false`将不会触发。`AjaxStart`或`AjaxStop`可用于控制各种`Ajax`事件|
+
+
 #### 第九节 插件
 ---
 
@@ -995,7 +1068,668 @@ function ajax(aJson){
 	
 })(jQuery);
 ```
-####   附录一 常见CND加速服务
+
+#### 附录一 jQuery各个版本新增的一些常用的方法
+---
+
+- `jQuery1.3`新增常用的方法
+
+|方法|说明|
+|---|---|
+|`.closest()`|从元素本身开始，逐级向上级元素匹配，并返回最先匹配的祖先元素|
+|` die()`|从元素中删除先前用`live()`方法绑定的所有的事件|
+|` live()`|附加一个事件处理器到符合目前选择器的所有元素匹配|
+
+- `jQuery1.4`新增常用的方法
+
+|方法|说明|
+|---|---|
+|`.first()`|获取集合中第一个元素|
+|` last()`|获取集合中最后一个元素|
+|` has(selector)`|保留包含特定后代的元素，去掉那些不含有指定后代的元素|
+|`detach()`|从`DOM`中去掉所有匹配的元素。`detach()`和`remov()`一样，除了`detach()`保存了所有`jquery`数据和被移走的元素相关联。当需要移走一个元素，不久又将该元素插入`DOM`时，这种方法很有用|
+|` delegate()`|为所有选择器匹配的元素附加一个处理一个或多个事件|
+|` undelegate()`|为所有选择器匹配的元素删除一个处理一个或多个事件|
+
+- `jQuery1.6`新增常用的方法
+
+|方法|说明|
+|---|---|
+|`prop(proptyName)`|获取在匹配元素集合中的第一个元素的属性值|
+|`removeProp(proptyName,value)`|为匹配的元素删除设置的属性|
+|` :focus`|选择当前获取焦点的元素|
+
+####   附录二 jQuery性能优化
+---
+- **性能优化**
+    - 使用最新版的jQuery类库
+    - **使用合适的选择器**
+        - `$(#id)`
+            - 使用`id`来定位`DOM`元素是最佳的方式，为了提高性能，建议从最近的`ID`元素开始往下搜索
+        -  `$("p")` , `$("div")` , `$("input")`
+            - 标签选择器性能也不错，它是性能优化的第二选择。因为`jQuery`将直接调用本地方法`document.getElementsByTagName()`来定位`DOM`元素
+        - `$(".class")`
+          - 建议有选择性的使用  
+        - `$("[attribute=value]")`
+          - 对这个利用属性定位`DOM`元素，本地`JavaScript`并没有直接实现。这种方式性能并不是很理想。建议避免使用。
+        - `$(":hidden")`
+          -  和上面利用属性定位`DOM`方式类似，建议尽量不要使用 
+        - **注意的地方**
+           - 尽量使用`ID`选择器
+           - 尽量给选择器指定上下文
+ 
+  - **缓存对象**
+     - 如果你需要在其他函数中使用`jQuery`对象，你可以把他们缓存在全局环境中
+  - **数组方式使用`jQuery`对象**
+    - 使用`jQuery`选择器获取的结果是一个`jQuery`对象。在性能方面，建议使用`for`或`while`循环来处理，而不是`$.each()`
+ - **事件代理**
+    - 每一个`JavaScript`事件（如：`click`、`mouseove`r）都会冒泡到父级节点。当我们需要给多个元素调用同个函数时这点很有用。比如，我们要为一个表单绑定这样的行为：点击td后，把背景颜色设置为红色
+      - `$("#myTable td").click(function(){$(this).css("background","red");});`
+      - 假设有`100`个`td`元素，在使用以上的方式时，绑定了`100`个事件，将带来性能影响
+      - 代替这种多元素的事件监听方法是，你只需向他们的父节点绑定一次事件，然后通过`event.target`获取到点击的当前元素
+        - `$("#myTable td").click(function({$(e.target).css("background","red")});`
+        - `e.target`捕捉到触发的目标 
+     - 在`jQuery1.7`中提供了一个新的方法`on()`，来帮助你将整个事件监听封装到一个便利的方法中
+        -  `$("#myTable td").on("click",'td',function(){$(this).css("background","red");});`
+  - **将你的代码转化成jQuery插件**
+    - 它能够使你的代码有更好的重用性，并且能够有效的帮助你组织代码
+ - **使用join()方法来拼接字符串**
+    - 也许你之前使用`+`来拼接字符串，现在可以改了。它确实有助于性能优化，尤其是长字符串处理的时候
+  
+ - **合理使用HTML5和Data属性**
+    - `HTML5`的`data`属性可以帮助我们插入数据，特别是后端的数据交换。`jQuery`的`Data()`方法有效利用`HTML5`的属性
+      - 例如：`<div id="dl" data-role="page" data-list-value="43" data-options='{"name:""John"}'>`
+      - 为了读取数据，你需要使用如下代码
+        - `$("#dl').data("role';//page)`
+        - `$("#dl').data("lastValue';//43)`
+        - `$("#dl').data("options';//john)`
+      
+  - **尽量使用原生的JavaScript方法**
+  - **压缩JavaScript代码**
+    - 一方面使用`Gzip`；另一方面去除`JavaScript`文件里面的注释、空白 
+
+##### 附录三 常用的jQuery代码片段
+---
+
+- 禁用页面的右键菜单
+  
+```javascript
+$(document).ready(functuion(){
+    $(document).bind("contextmenu",function(e){
+        return false;
+  });  
+});
+```
+- 新窗口打开页面
+
+```javascript
+$(document).ready(function(){
+    //例子1：href="http://"的链接将会在新窗口打开链接
+    $('a[href=^="http://"]').attr("target","_blank");
+    
+  //例子2：rel="external"的超链接将会在新窗口打开链接
+    $("a[rel$='external']").click(function(){
+      this.target = "_blank";
+    });
+});
+//use
+<a href="http://baidu.com" rel="external">open</a>
+```
+- 判断浏览器类型
+
+```javascript
+
+$(document).reday(function(){
+    //Firefox2 and above
+    if( $.browser.mozilla && $.browser.version>="1.8"){
+      //do something
+  }
+
+  // Safari
+  if($.browser.safari){
+     //do something
+  }
+
+  // Chrome
+  if($.browser.chrome){
+     //do something
+  }
+
+  // Opera
+  if($.browser.opera){
+     //do something
+  }
+
+})
+
+  // IE6 and blow
+  if($.browser.msie && $.browser.version<=6){
+     //do something
+  }
+
+  // anything above IE6
+  if($.browser.msie && $.browser.version > 6){
+     //do something
+  }
+
+```
+- 输入框文字获取和失去焦点
+
+```javascript
+
+$(document).ready(function(){
+    $("input.text1").val("Enter you search text here");
+    textFill($('input.text1'));
+});
+
+function textFill(input){//input focus text function
+    var originvalue = input.val();
+    input.focus(funtion(){
+        if($.trim(input.val())== originvalue){
+            input.val(' ');
+        }
+  }).blur(function(){
+      if($.trim(input.val()) == ' '){
+          input.val(originalvalue);
+      }
+  })
+}
+
+```
+
+- 获取鼠标位置
+
+```javascript
+
+$(document).ready(function(){
+  $(document).mousemove(function(e){
+      $("#XY").html("X:" + e.pageX+ "| Y" + e.pageY);
+  });
+});
+
+```
+
+- 判断元素是否存在
+
+```javascript
+$(document).ready(function(){
+    if($("#id").length){
+      // do some thing  
+  }
+})
+```
+- 点击div也可以跳转
+
+```javascript
+$("div").click(function(){
+    window.location  = $(this).find("a").attr("href");
+})
+
+//use
+
+<div><a href="index.html">home</a></div>
+
+```
+
+- 设置div在屏幕中央
+
+```javascript
+$(document).ready(function(){
+    jQuery.fn.center = function(){
+        this.css("position","absolute");
+        this.css("top",($(window).height() - this.lenght()) / 2 +$(window).scrollTop() + "px"); 
+        this.css("left",($(window).height() - this.lenght()) / 2 +$(window).scrollLeft() + "px"); 
+      return this;
+  }
+//use 
+
+ $("#XY").center();
+});
+
+```
+
+- 关闭所有动画效果
+
+```javascript
+$(document).ready(function(){
+    jQuery.fx.off = true;
+});
+
+```
+
+- 检测鼠标的右键和左键
+
+```javascript
+$(document).ready(function(){
+    $("#xy").mousedown(function(e){
+        alert(e.which);//1 = 鼠标左键  2= 鼠标中间 3 = 鼠标右键
+  });
+});
+
+```
+- 回车提交表单
+
+```javascript
+$(document).ready(function(){
+    $("input").keyup(function(e){
+        if(e.which == "13"){
+            alert("回车提交");
+      }
+  })
+});
+
+```
+- 设置全局的Ajax参数
+
+```javascript
+$("#load").ajaxStart(function(){
+    showLoading();//显示loading
+    disableButtons() //禁用按钮
+})
+ $("#load").ajaxComplete(function(){
+    hideLoading();//隐藏loading
+    enableButtons();//启用按钮
+})
+```
+
+- 获取选中的下拉框
+
+```javascript
+$("#someElement").find('option:selected');
+$("#someElement option:selected");
+```
+
+- 切换复选框
+
+```javascript
+var tog = false;
+$("button").click(function(){
+    $("input[type=checkbox]').attr("checked",!tog);
+    tog = !tog;
+});
+```
+
+- 个性化链接
+
+```javascript
+$(document).ready(function(){
+     $("a[href$='pdf']").addClass("pdf");
+     $("a[href$='zip']").addClass("zip");
+     $("a[href$='psd']").addClass("psd");
+});
+
+```
+
+- 在一段时间后自动隐藏或关闭元素
+
+```javascript
+setTimeOut(function(){
+        $("div").fadeIn(400);
+  },3000);
+
+//而在1.4之后的版本可以用delay()来实现
+$("div").slideUp(300).delay(3000).fadeIn(400);
+
+```
+
+
+- 使用事件代理绑定元素
+
+```javascript
+ //为table里面的td元素绑定click事件，不管td是一直存在还是动态创建的
+ //jQuery 1.4.2之前使用这种方式
+ $("table").each(function(){
+    $("td",this).live("click",function(){
+       $(this).toggleClass("hover"); 
+    });
+});
+
+//jquery 1.4.2使用的方式
+
+$("table").delegate("td","click",function(){
+    $(this).toggleClass("hover");
+});
+
+//jQuery1.7.1使用的方式
+$("table").on("click","td",function(){
+    $(this).toggleClass("hover");
+ })
+```
+
+- 预加载图片
+
+```javascript
+(function($) {
+  var cache = [];
+  // Arguments are image paths relative to the current page.
+  $.preLoadImages = function() {
+    var args_len = arguments.length;
+    for (var i = args_len; i--;) {
+      var cacheImage = document.createElement('img');
+      cacheImage.src = arguments[i];
+      cache.push(cacheImage);
+    }
+  }
+jQuery.preLoadImages("image1.gif", "/path/to/image2.png");
+```
+
+- 让页面中的每个元素都适合在移动设备上展示
+
+```javascript
+var scr = document.createElement('script');
+scr.setAttribute('src', 'https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js');
+document.body.appendChild(scr);
+scr.onload = function(){
+	$('div').attr('class', '').attr('id', '').css({
+		'margin' : 0,
+		'padding' : 0,
+		'width': '100%',
+		'clear':'both'
+	});
+};
+```
+
+- 图像等比例缩放
+
+```javascript
+$(window).bind("load", function() {
+	// IMAGE RESIZE
+	$('#product_cat_list img').each(function() {
+		var maxWidth = 120;
+		var maxHeight = 120;
+		var ratio = 0;
+		var width = $(this).width();
+		var height = $(this).height();
+		if(width > maxWidth){
+			ratio = maxWidth / width;
+			$(this).css("width", maxWidth);
+			$(this).css("height", height * ratio);
+			height = height * ratio;
+		}
+		var width = $(this).width();
+		var height = $(this).height();
+		if(height > maxHeight){
+			ratio = maxHeight / height;
+			$(this).css("height", maxHeight);
+			$(this).css("width", width * ratio);
+			width = width * ratio;
+		}
+	});
+	//$("#contentpage img").show();
+	// IMAGE RESIZE
+});
+```
+
+- 返回页面顶部
+
+```javascript
+// Back To Top
+$(document).ready(function(){ 
+  $('.top').click(function() {  
+     $(document).scrollTo(0,500);  
+  });
+}); 
+//Create a link defined with the class .top
+<a href="#" class="top">Back To Top</a>
+```
+
+- 使用jQuery打造手风琴式的折叠效果
+
+```javascript
+var accordion = {
+     init: function(){
+           var $container = $('#accordion');
+           $container.find('li:not(:first) .details').hide();
+           $container.find('li:first').addClass('active');
+           $container.on('click','li a',function(e){
+                  e.preventDefault();
+                  var $this = $(this).parents('li');
+                  if($this.hasClass('active')){
+                         if($('.details').is(':visible')) {
+                                $this.find('.details').slideUp();
+                         } else {
+                                $this.find('.details').slideDown();
+                         }
+                  } else {
+                         $container.find('li.active .details').slideUp();
+                         $container.find('li').removeClass('active');
+                         $this.addClass('active');
+                         $this.find('.details').slideDown();
+                  }
+           });
+     }
+};
+```
+
+- 使用jQuery和Ajax自动填充选择框
+
+```javascript
+$(function(){
+$("select#ctlJob").change(function(){
+$.getJSON("/select.php",{id: $(this).val(), ajax: 'true'}, function(j){
+var options = '';
+for (var i = 0; i < j.length; i++) {
+options += '
+' + j[i].optionDisplay + '
+';
+}
+$("select#ctlPerson").html(options);
+})
+})
+})
+```
+- 自动替换丢失的图片
+
+```javascript
+// Safe Snippet
+$("img").error(function () {
+	$(this).unbind("error").attr("src", "missing_image.gif");
+});
+// Persistent Snipper
+$("img").error(function () {
+	$(this).attr("src", "missing_image.gif");
+});
+```
+
+- 预防对表单进行多次提交
+
+```javascript
+$(document).ready(function() {
+  $('form').submit(function() {
+    if(typeof jQuery.data(this, "disabledOnSubmit") == 'undefined') {
+      jQuery.data(this, "disabledOnSubmit", { submited: true });
+      $('input[type=submit], input[type=button]', this).each(function() {
+        $(this).attr("disabled", "disabled");
+      });
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+  });
+});
+```
+
+- 动态添加表单元素
+
+```javascript
+//change event on password1 field to prompt new input
+$('#password1').change(function() {
+        //dynamically create new input and insert after password1
+        $("#password1").append("");
+});
+```
+
+- 在窗口滚动时自动加载内容
+
+```javascript
+var loading = false;
+$(window).scroll(function(){
+	if((($(window).scrollTop()+$(window).height())+250)>=$(document).height()){
+		if(loading == false){
+			loading = true;
+			$('#loadingbar').css("display","block");
+			$.get("load.php?start="+$('#loaded_max').val(), function(loaded){
+				$('body').append(loaded);
+				$('#loaded_max').val(parseInt($('#loaded_max').val())+50);
+				$('#loadingbar').css("display","none");
+				loading = false;
+			});
+		}
+	}
+});
+$(document).ready(function() {
+	$('#loaded_max').val(50);
+});
+```
+
+- 导航菜单背景切换效果
+
+```javascript
+<ul id='nav'> 
+    <li>导航一</li> 
+    <li>导航二</li> 
+    <li>导航三</li>
+</ul>
+
+//注意：代码需要修饰完善
+
+$('#nav').click(function(e) {
+ // 要知道siblings的使用          
+
+$(e.target).addClass('tclass').siblings('.tclass').removeClass('tclass');;
+
+ });
+```
+- 解决`jQuery`, `prototype`共存，`$`全局变量冲突问题
+
+```javascript
+<script src="prototype.js"></script>
+<script src="http://blogbeta.blueidea.com/jquery.js"></script>
+<script type="text/javascript"> jQuery.noConflict();</script> 
+
+注意：一定要先引入prototype.js 再引入jquery.js，先后顺序不可错
+```
+
+-  jQuery 判断元素上是否绑定了事件
+
+```javascript
+//jQuery event封装支持判断元素上是否绑定了事件，此方法只适用于jQuery绑定的事件
+var $events = $("#foo").data("events");
+if( $events && $events["click"] ){　　
+    //your code
+} 
+```
+- 如何正确地使用`toggleClass`
+
+```javascript
+//切换（toggle）类允许你根据某个类的//是否存在来添加或是删除该类。
+//这种情况下有些开发者使用：
+a.hasClass('blueButton') ? a.removeClass('blueButton') : a.addClass('blueButton');
+//toggleClass允许你使用下面的语句来很容易地做到这一点
+a.toggleClass('blueButton');
+```
+
+- 如何设置IE特有的功能
+
+```javascript
+if ($.browser.msie) {
+    // Internet Explorer就是个虐待狂
+}
+```
+- 如何验证某个元素是否为空
+
+```javascript
+// 方法一
+if (! $('#keks').html()) {
+    //什么都没有找到;
+}
+// 方法二
+if ($('#keks').is(":empty")) {
+    //什么都没有找到;
+}
+```
+- 访问IFrame里的元素
+
+```javascript
+var iFrameDOM = $("iframe#someID").contents();
+//然后，就可以通过find方法来遍历获取iFrame中的元素了
+iFrameDOM.find(".message").slideUp();
+```
+- 管理搜索框的值
+    - 现在各大网站都有搜索框，而搜索框通常都有默认值，当输入框获取焦点时，默认值消失。而一旦输入框失去焦点，而输入框里又没有输入新的值，输入框里的值又会恢复成默认值，如果往输入框里输入了新值，则输入框的值为新输入的值。这种特效用`JQuery`
+很容易实现
+
+```javascript
+$("#searchbox") .focus(function(){
+      $(this).val('')
+}) .blur(function(){
+     var $this = $(this); 
+    // '请搜索...'为搜索框默认值 
+    ($this.val() === '')? $this.val('请搜索...') : null; 
+});
+```
+
+- 部分页面加载更新
+  - 为了提高`web`性能，有更新时我们通常不会加载整个页面，而只是仅仅更新部分页面内容，如图片的延迟加载等。页面部分刷新的特效在`JQuery`中也很容易实现
+
+```javascript
+setInterval(function() { 
+//每隔5秒钟刷新页面内容 //获取的内容将增加到 id为content的元素后 
+
+$("#content").load(url); }, 5000);
+```
+- 采配置JQuery与其它库的兼容性
+  - 如果在项目中使用`JQuery`，`$` 是最常用的变量名，但`JQuery`并不是唯一一个使用`$`作为变量名的库，为了避免命名冲突，你可以按照下面方式来组织你的代码
+
+```javascript
+//方法一： 为JQuery重新命名为
+ $jvar $j = jQuery.noConflict();$j('#id').... //
+
+方法二： 推荐使用的方式
+
+(function($){ $(document).ready(function(){
+     //这儿，你可以正常的使用JQuery语法 });
+})(jQuery);
+```
+
+- 测试密码的强度
+  - 在某些网站注册时常常会要求设置密码，网站也会根据输入密码的字符特点给出相应的提示，如密码过短、强度差、强度中等、强度强等。这又是怎么实现的呢？看下面代码：
+
+```html
+<input type="password" name="pass" id="pass" /> <span id="passstrength"></span>
+```
+```javascript
+//下面的正则表达式建议各位收藏哦，项目上有可能会用得着
+$('#pass').keyup(function(e) { 
+
+//密码为八位及以上并且字母数字特殊字符三项都包括 
+var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g"); 
+
+//密码为七位及以上并且字母、数字、特殊字符三项中有两项，强度是中等 
+ var mediumRegex = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g"); 
+var enoughRegex = new RegExp("(?=.{6,}).*", "g"); 
+
+if (false == enoughRegex.test($(this).val())) { 
+
+$('#passstrength').html('More Characters'); }
+ else if (strongRegex.test($(this).val())) {
+     $('#passstrength').className = 'ok'; 
+     $('#passstrength').html('Strong!'); } 
+else if (mediumRegex.test($(this).val())) {
+    $('#passstrength').className = 'alert'; 
+    $('#passstrength').html('Medium!'); }
+ else { 
+    $('#passstrength').className = 'error';      
+    $('#passstrength').html('Weak!'); 
+} 
+return true;
+
+});
+```
+
+####   附录四 常见CND加速服务
 ---
 
 - [Bootstrap中文网开源项目免费 CDN 服务](http://www.bootcdn.cn/)
@@ -1009,7 +1743,7 @@ function ajax(aJson){
 - [jQuery cdn加速](http://www.jq22.com/cdn/)
 - [新浪CDN](http://lib.sinaapp.com/)
 
-#### 附录二 jQuery的一些资源
+#### 附录五 jQuery的一些资源
 ---
 - 速查手册
   - [jQuery API 中文文档--css88](http://www.css88.com/jqapi-1.9/)
