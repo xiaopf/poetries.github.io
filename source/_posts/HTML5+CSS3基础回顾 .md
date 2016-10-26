@@ -1,15 +1,16 @@
 ---
-title: HTML5+CSS3基础回顾
-date: 2016-10-19 17:21:43
+title: HTML5+CSS3整体回顾
+date: 2016-10-19 09:35:08
 tags: 
-   - HTML5
-   - CSS3
+    - HTMl5
+    - CSS3
 categories: Front-End
 top: true
 ---
 
+> 转载请声明 [原文链接](http://blog.poetries.top/2016/10/19/HTML5+CSS3%E5%9F%BA%E7%A1%80%E5%9B%9E%E9%A1%BE%20/)
 
-这篇文章主要总结Ｈ５的一些新增的功能以及一些基础，并不是很详细，后面会一直完善补充新的内容，仅供参考
+这篇文章主要总结H5的一些新增的功能以及一些基础归纳，并不是很详细，后面会一直完善补充新的内容，本文是一些笔记记录，放在这里供自己参考也供他人学习！
 
 #### 第一课 HTML5结构
 ---
@@ -20,12 +21,13 @@ top: true
     - 注意的地方			
         - `ie8` 不兼容
 
+![一些总结--from-dunitian](http://7xq6al.com1.z0.glb.clouddn.com/h1.jpg)
+<!--more-->
 ##### 常用的一些新的结构标签
 ---
 
-![结构标签](http://upload-images.jianshu.io/upload_images/1480597-4585c0d9a5309443.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-<!--more-->
-![多媒体交互标签](http://upload-images.jianshu.io/upload_images/1480597-a13888da66c8fc8a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![结构标签](http://7xq6al.com1.z0.glb.clouddn.com/h2.jpg)
+![多媒体交互标签](http://7xq6al.com1.z0.glb.clouddn.com/h3.jpg)
 
 
 ##### 删除的`HTML`标签
@@ -61,15 +63,19 @@ top: true
 
 - 崭新新的页面布局
 
-![传统的](http://img.my.csdn.net/uploads/201301/29/1359466352_8928.jpg)
+![传统的布局](http://7xq6al.com1.z0.glb.clouddn.com/h4.jpg)
 
-![HTML5](http://img.my.csdn.net/uploads/201301/29/1359466427_8585.jpg)
+![HTML5标签布局](http://7xq6al.com1.z0.glb.clouddn.com/h5.jpg)
+
+![实例-from-dunitian](http://7xq6al.com1.z0.glb.clouddn.com/h6.jpg)
+
+![草图--from-dunitian](http://7xq6al.com1.z0.glb.clouddn.com/h7.jpg)
 
 
 #### 第二课 HTML5智能表单
 ---
 
-##### HTML4.01 form表单复习**
+##### HTML4.01 form表单复习
 ---
 
 - `input`表单`type`属性值
@@ -174,13 +180,12 @@ top: true
 
 - **CSS3结构选择器**
 
-![CSS3结构选择器](http://upload-images.jianshu.io/upload_images/1480597-33def0f200fe738a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
+![CSS3结构选择器](http://7xq6al.com1.z0.glb.clouddn.com/h8.jpg)
 
 - **`Css3` 属性选择器**
 
 
-![Css3属性选择器](http://upload-images.jianshu.io/upload_images/1480597-f9339ed4dcc201aa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![Css3属性选择器](http://7xq6al.com1.z0.glb.clouddn.com/h9.jpg)
 
     
 - **`CSS3`伪类选择器**
@@ -303,9 +308,9 @@ top: true
 
 - CSS盒模型复习
 
-![标准盒子模型](http://upload-images.jianshu.io/upload_images/1480597-320bad065d62c499.JPG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![标准盒子模型](http://7xq6al.com1.z0.glb.clouddn.com/h10.jpg)
 
-![IE盒子模型](http://upload-images.jianshu.io/upload_images/1480597-693242e2f03506f8.JPG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![IE盒子模型](http://7xq6al.com1.z0.glb.clouddn.com/h11.jpg)
 
 - **CSS3弹性盒模型**
 
@@ -319,13 +324,12 @@ top: true
     - `box-ordinal-group`  设置元素的具体位置   设置子元素
 
 
-- `fex`布局语法篇
+- `flex`布局语法篇
 
-![fex布局语法篇小结](http://7xq6al.com1.z0.glb.clouddn.com/flex%E5%B8%83%E5%B1%80%E5%B0%8F%E7%BB%93.png)
-
+![flex布局语法篇小结](http://7xq6al.com1.z0.glb.clouddn.com/h12.jpg)
 - 拓展阅读
-    - [fex布局语法篇](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
-    - [fex布局实例篇](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html)
+    - [flex布局语法篇](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
+    - [flex布局实例篇](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html)
 
 
 #### 第六课 css3新增背景属性
@@ -411,8 +415,7 @@ top: true
 - HSL色轮
 
 
-![HSL色轮](http://upload-images.jianshu.io/upload_images/1480597-e966854f01e64406.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
+![HSL色轮](http://7xq6al.com1.z0.glb.clouddn.com/h13.jpg)
 
 - 透明颜色：`transparent`
     - 实例：`border`实现三角箭头、风车等
@@ -474,7 +477,7 @@ border-bottom-left-radius: 1em 3em;
 - **`border-image-slice`**
   - 设置或检索对象的边框背景图的分割方式
   
-![Paste_Image.png](http://upload-images.jianshu.io/upload_images/1480597-b6daa34d69905a1d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![Paste_Image.png](http://7xq6al.com1.z0.glb.clouddn.com/h14.jpg)
 
 - **`border-image-repeat`**
   - 用于指定边框背景图的重复方式
@@ -517,7 +520,7 @@ border-bottom-left-radius: 1em 3em;
 	- `cubic-bezier(n,n,n,n)`:在 `cubic-bezier` 函数中定义自己的值。可能的值是 `0 `至 `1` 之间的数值。
  
 - 过渡完成事件   
-![过渡完成事件](http://upload-images.jianshu.io/upload_images/1480597-f8a2291a249961ad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![过渡完成事件](http://7xq6al.com1.z0.glb.clouddn.com/h15.jpg)
 
 - `Webkit`内核： 
 ```javascript
@@ -762,6 +765,10 @@ obj.addEventListener('transitionend',function(){})
   - `font`：设置字体大小
   - `fillText`：填充字体
   - `strokeText`：绘制字体
+- 扩展阅读
+	- [canvas学习之API整理笔记（一）](http://luckykun.com/work/2016-09-01/canvas-study01.html)
+	- [HTML5 API大盘点](http://jartto.wang/2016/07/25/make-an-inventory-of-html5-api/)
+
 
 #### 第十四课 SVG绘图
 ---
@@ -1031,3 +1038,14 @@ obj.addEventListener('transitionend',function(){})
 			- `ev.total`  发送文件的总量
 			- `ev.loaded` 已发送的量
 		- `FormData`  构建提交二进制数据
+
+
+###### 附录一　HTML5速查表
+---
+
+- [可以查阅支持H5+CSS3的属性](http://caniuse.com/#search=canvas)
+- [HTML5 标签含义之元素周期表](http://www.html5star.com/manual/html5label-meaning/)
+- [HTML5标签速查表](http://www.inmotionhosting.com/img/infographics/html5_cheat_sheet_tags.png)
+
+---
+-  [本文md文件-仅供参考](https://github.com/poetries/poetries.github.io/blob/dev/source/_posts/HTML5+CSS3%E5%9F%BA%E7%A1%80%E5%9B%9E%E9%A1%BE%20.md)
