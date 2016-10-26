@@ -21,13 +21,14 @@ top: true
     - 注意的地方			
         - `ie8` 不兼容
 
-![一些总结--from-dunitian](http://7xq6al.com1.z0.glb.clouddn.com/h1.jpg)
+![一些总结--from-dunitian](http://upload-images.jianshu.io/upload_images/1480597-ce00790dcabf9c47.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 <!--more-->
 ##### 常用的一些新的结构标签
 ---
 
-![结构标签](http://7xq6al.com1.z0.glb.clouddn.com/h2.jpg)
-![多媒体交互标签](http://7xq6al.com1.z0.glb.clouddn.com/h3.jpg)
+![结构标签](http://upload-images.jianshu.io/upload_images/1480597-4585c0d9a5309443.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![多媒体交互标签](http://upload-images.jianshu.io/upload_images/1480597-a13888da66c8fc8a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 ##### 删除的`HTML`标签
@@ -63,14 +64,13 @@ top: true
 
 - 崭新新的页面布局
 
-![传统的布局](http://7xq6al.com1.z0.glb.clouddn.com/h4.jpg)
+![传统的布局](http://upload-images.jianshu.io/upload_images/1480597-b8990303b1d10379.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![HTML5标签布局](http://7xq6al.com1.z0.glb.clouddn.com/h5.jpg)
+![HTML5标签布局](http://upload-images.jianshu.io/upload_images/1480597-a7b3e5dca9341862.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![实例-from-dunitian](http://7xq6al.com1.z0.glb.clouddn.com/h6.jpg)
+![实例-from-dunitian](http://upload-images.jianshu.io/upload_images/1480597-6f30a458860e606f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![草图--from-dunitian](http://7xq6al.com1.z0.glb.clouddn.com/h7.jpg)
-
+![草图--from-dunitian](http://upload-images.jianshu.io/upload_images/1480597-dd4078736467f182.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 #### 第二课 HTML5智能表单
 ---
@@ -180,12 +180,13 @@ top: true
 
 - **CSS3结构选择器**
 
-![CSS3结构选择器](http://7xq6al.com1.z0.glb.clouddn.com/h8.jpg)
+![CSS3结构选择器](http://upload-images.jianshu.io/upload_images/1480597-33def0f200fe738a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 - **`Css3` 属性选择器**
 
 
-![Css3属性选择器](http://7xq6al.com1.z0.glb.clouddn.com/h9.jpg)
+![Css3属性选择器](http://upload-images.jianshu.io/upload_images/1480597-f9339ed4dcc201aa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
     
 - **`CSS3`伪类选择器**
@@ -308,9 +309,9 @@ top: true
 
 - CSS盒模型复习
 
-![标准盒子模型](http://7xq6al.com1.z0.glb.clouddn.com/h10.jpg)
+![标准盒子模型](http://upload-images.jianshu.io/upload_images/1480597-320bad065d62c499.JPG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![IE盒子模型](http://7xq6al.com1.z0.glb.clouddn.com/h11.jpg)
+![IE盒子模型](http://upload-images.jianshu.io/upload_images/1480597-693242e2f03506f8.JPG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 - **CSS3弹性盒模型**
 
@@ -326,7 +327,8 @@ top: true
 
 - `flex`布局语法篇
 
-![flex布局语法篇小结](http://7xq6al.com1.z0.glb.clouddn.com/h12.jpg)
+![flex布局语法篇小结](http://upload-images.jianshu.io/upload_images/1480597-885b1d526653b87d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 - 拓展阅读
     - [flex布局语法篇](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
     - [flex布局实例篇](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html)
@@ -415,7 +417,8 @@ top: true
 - HSL色轮
 
 
-![HSL色轮](http://7xq6al.com1.z0.glb.clouddn.com/h13.jpg)
+![HSL色轮](http://upload-images.jianshu.io/upload_images/1480597-e966854f01e64406.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 - 透明颜色：`transparent`
     - 实例：`border`实现三角箭头、风车等
@@ -477,7 +480,7 @@ border-bottom-left-radius: 1em 3em;
 - **`border-image-slice`**
   - 设置或检索对象的边框背景图的分割方式
   
-![Paste_Image.png](http://7xq6al.com1.z0.glb.clouddn.com/h14.jpg)
+![Paste_Image.png](http://upload-images.jianshu.io/upload_images/1480597-b6daa34d69905a1d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 - **`border-image-repeat`**
   - 用于指定边框背景图的重复方式
@@ -520,7 +523,7 @@ border-bottom-left-radius: 1em 3em;
 	- `cubic-bezier(n,n,n,n)`:在 `cubic-bezier` 函数中定义自己的值。可能的值是 `0 `至 `1` 之间的数值。
  
 - 过渡完成事件   
-![过渡完成事件](http://7xq6al.com1.z0.glb.clouddn.com/h15.jpg)
+![过渡完成事件](http://upload-images.jianshu.io/upload_images/1480597-f8a2291a249961ad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 - `Webkit`内核： 
 ```javascript
