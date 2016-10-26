@@ -13,7 +13,7 @@ categories: Front-End
 首先，来了解一下`jQuery`学习的整体思路
 
 
-![jQuery系统学习篇](http://upload-images.jianshu.io/upload_images/1480597-f9c90fc8d9fd263e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![jQuery系统学习篇](http://7xq6al.com1.z0.glb.clouddn.com/jquery1.png)
 <!--more-->
 -  [XMind源文件提供参考下载](http://pan.baidu.com/s/1slq212l)
 
@@ -197,9 +197,9 @@ alert($nav.get(0) == nav);//true
 - **代理模式以及代理内存结构**
 
 
-![代理内存结构1](http://upload-images.jianshu.io/upload_images/1480597-83ef47b79291acf9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![代理内存结构1](http://7xq6al.com1.z0.glb.clouddn.com/jquery2.png)
 
-![代理内存结构2](http://upload-images.jianshu.io/upload_images/1480597-eb9cf133cfb6dce5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![代理内存结构2](http://7xq6al.com1.z0.glb.clouddn.com/jquery3.png)
 
 
 #### 第二节 选择器
@@ -486,7 +486,11 @@ alert($nav.get(0) == nav);//true
     - 这两个方法的作用分别是获取元素的滚动条距顶端的距离和距左侧的距离
   - **一张图总结以上的位置关系(项目中很常用-必须要弄清楚)**
 
-![](https://camo.githubusercontent.com/3318530334bbc8f5e7ce267866c43ba72fa01f32/687474703a2f2f6f61376436647871742e626b742e636c6f7564646e2e636f6d2f626c6f672f696d616765732f3038313734323039323736363338392e6a7067)
+![](http://7xq6al.com1.z0.glb.clouddn.com/jquery4.jpg)
+![](http://7xq6al.com1.z0.glb.clouddn.com/jquery5.jpg)
+![](http://7xq6al.com1.z0.glb.clouddn.com/jquery6.jpg)
+![](http://7xq6al.com1.z0.glb.clouddn.com/jquery7.jpg)
+![](http://7xq6al.com1.z0.glb.clouddn.com/jquery7.jpg)
 
 
 #### 第六节 jQuery动画
@@ -832,7 +836,7 @@ xhr.onreadystatechange = function(){
 - `responseText` ：请求服务器返回的数据存在该属性里面
 - `status` : `http`状态码
 
-![HTTP状态码](http://upload-images.jianshu.io/upload_images/1480597-ae7614423c64ebb1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![HTTP状态码](http://7xq6al.com1.z0.glb.clouddn.com/jquery9.png)
 
 - 案例：`ajax`封装案例
 
