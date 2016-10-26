@@ -4,8 +4,8 @@
 
 # Site
 title: Poetry's Blog
-subtitle: 聆听、感受、成长
-description: 技术改变生活
+subtitle: Choose a gesture to allow yourself to live irreplaceable.
+description: 执于一种追求
 author: Poetry
 language: zh-Hans
 timezone: Asia/Shanghai
@@ -63,17 +63,14 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next
+theme: yilia
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: # 同时部署到github和coding
-    github: https://github.com/poetries/poetries.github.io.git
-    # coding: git@git.coding.net:poetry/poetry.git,master
-
-
+  repository: https://git.coding.net/poetry/poetry.git
+  branch: master
 
 # title, chinese available
 links_title: 常用链接
@@ -107,9 +104,14 @@ links:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 plugins:
-    # hexo-generator-feed
+    hexo-generator-feed
+    hexo-generator-search
 
-
+# 站内搜索打开
+search:
+  path: search.xml
+  field: all
+  
 avatar: /images/avatar.jpg
 
 duoshuo_shortname: poetry
