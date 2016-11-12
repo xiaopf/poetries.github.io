@@ -18,7 +18,7 @@ categories: Front-End
 |拆分为数组	|字符串.split( 分割符 );	|explode( 分隔符, 字符串 );|
 |转化为大写	|字符串.toLowerCase();	|strtoupper( 字符串 );|
 |转化为小写|	字符串.toUpperCase();	|strtolower( 字符串 );|
-
+<!--more-->
 ### 数组函数
 ---
 
