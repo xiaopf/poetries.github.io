@@ -1,6 +1,6 @@
 ---
 title: JavaScript&&PHP常用函数对比
-date: 2016-07-21 14:08:24
+date: 2016-11-12 16:08:24
 tags: 
     - JavaScript
     - PHP
