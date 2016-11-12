@@ -1,5 +1,5 @@
 ---
-title: 20张Cheat Sheet，提升前端开发与设计效率
+title: JavaScript&&PHP常用函数对比
 date: 2016-07-21 14:08:24
 tags: 
     - 速查表
