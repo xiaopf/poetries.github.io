@@ -120,8 +120,8 @@ body {
 article table>thead>tr>th, table>thead>tr>td {
    font-size:12px;
 }
-.article-content table thead tr {
-	    background-color: #555;
+article table thead tr {
+    background-color: #555;
     color: #fff;
 }
 article table tr:nth-child(odd) {
