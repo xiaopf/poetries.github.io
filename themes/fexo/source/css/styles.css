@@ -94,6 +94,9 @@ body {
 	.content.content-post .article-type-post {
 		margin-left:0;
 	}
+	.content-post .assist-btn1, .assist-btn2{
+		display:none;
+	}
 }
 .assist-btn1,.assist-btn2 {
     position: fixed;
