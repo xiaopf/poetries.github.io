@@ -120,7 +120,7 @@ body {
 article table>thead>tr>th, table>thead>tr>td {
    font-size:12px;
 }
-article table thead tr {
+article .article-content table thead tr {
     background-color: #555;
     color: #fff;
 }
