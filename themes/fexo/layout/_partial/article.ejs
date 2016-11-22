@@ -40,3 +40,59 @@
     <% } %>
   </div>
 </article>
+
+<button class="assist-btn2 circle" id="assist_btn2" title="点亮屏幕" style="left: 27px; top: 220px;">
+         亮
+    </button>
+<button class="assist-btn1 circle" id="assist_btn1" title="关闭屏幕亮度" style="left: 27px; top: 152px;">
+         灭
+    </button>
+	
+
+	
+<script type="text/javascript">
+
+
+    // white theme
+    var body = {color: "#555", background: "#000"};
+    var a_tag = {color: "#222"};
+    var header = { background: "#222"};
+    var logo_line_i = {background: "#222"};
+    // var post_code = {background: "#eee", color: "#222"};
+
+    function switch_theme() {
+        $("body").css(body);
+        $("a:not('.links-of-author-item a, .site-state-item a, .site-state-posts a, .feed-link a, .motion-element a, .post-tags a, .show-commit-cls a, #donate_board a')").css(a_tag);
+        $(".header, .footer").css(header);
+        $(".logo-line-before i, .logo-line-after i").css(logo_line_i);
+        //$(".post code").css(post_code);
+        $("#idhyt-surprise-ball #idhyt-surprise-ball-animation .drag").css(a_tag);
+        $(".post-title-link, .posts-expand .post-meta, .post-comments-count, .disqus-comment-count, .post-category a, .post-nav-next a, .post-nav-item a").css(a_tag);
+        
+        // $("code").css({color: '#c5c8c6', background: '#1d1f21'});
+        //$("#assist_btn1").hide(1500);
+    }
+
+    $(function () {
+		$("#assist_btn2").css("display","none");
+        $("#assist_btn1").click(function() {
+            switch_theme();
+			$("div#toc.toc-article").css({
+				"background":"#eaeaea",
+				"opacity":1
+			});
+			$(".toc-article ol").show();
+			$("#toc.toc-article .toc-title").css("color","#a98602");
+			$("#assist_btn1").css("display","none");
+			$("#assist_btn2").css("display","block");
+        });
+		$("#assist_btn2").click(function() {
+			$("#assist_btn2").css("display","none");
+			$("#assist_btn1").css("display","block");
+			 $("body").css("background","url(http://www.miaov.com/static/ie/images/news/bg.png)")
+            $(".header, .footer").css("background","url(http://www.miaov.com/static/ie/images/news/bg.png)")
+			$(".toc-article ol").toggle(1000);
+        });
+    });
+
+</script>
