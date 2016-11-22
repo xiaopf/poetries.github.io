@@ -95,4 +95,24 @@ body {
 		margin-left:0;
 	}
 }
+.assist-btn1,.assist-btn2 {
+    position: fixed;
+    top: 50％;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+    background: rgb(227, 220, 213);
+    cursor: pointer;
+    opacity: 0.7;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    color: rgb(5, 169, 5);
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.23);
+	
+   
+}
+
 /*# sourceMappingURL=styles.css.map */
