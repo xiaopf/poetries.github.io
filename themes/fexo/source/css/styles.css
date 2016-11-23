@@ -137,4 +137,9 @@ article table>thead>tr>th, table>thead>tr>td {
 	    opacity: 0.75;
     box-shadow: 0 0px 10px 5px rgba(46,204,113,0.9);
 }
+
+article figure .highlight.html table tr:nth-child(odd) {
+  background:none;
+}
+
 /*# sourceMappingURL=styles.css.map */
