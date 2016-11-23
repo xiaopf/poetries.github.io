@@ -138,7 +138,7 @@ article table>thead>tr>th, table>thead>tr>td {
     box-shadow: 0 0px 10px 5px rgba(46,204,113,0.9);
 }
 
-article figure .highlight.html table tr:nth-child(odd) {
+article figure table tr {
   background:none;
 }
 
