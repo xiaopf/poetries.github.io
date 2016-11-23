@@ -104,7 +104,7 @@ body {
     left: 10px;
     width: 40px;
     height: 40px;
-    background: rgb(227, 220, 213);
+    background: #1e824c;
     cursor: pointer;
     opacity: 0.7;
     -moz-border-radius: 50px;
@@ -112,7 +112,7 @@ body {
     border-radius: 50px;
     outline: none;
     border: none;
-    color: rgb(5, 169, 5);
+    color: #c8f7c5;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.23);
 	
    
@@ -129,5 +129,12 @@ article table tr:nth-child(odd) {
 }
 article table td, article table th {
    font-size:14px;
+}
+article table>thead>tr>th, table>thead>tr>td {
+   color:#fff;
+}
+.assist-btn1:hover, .assist-btn2:hover {
+	    opacity: 0.75;
+    box-shadow: 0 0px 10px 5px rgba(46,204,113,0.9);
 }
 /*# sourceMappingURL=styles.css.map */
