@@ -5,12 +5,11 @@ tags:
     - HTMl5
     - CSS3
 categories: Front-End
-top: true
 ---
 
 > 转载请声明 [原文链接](http://blog.poetries.top/2016/10/19/HTML5+CSS3%E5%9F%BA%E7%A1%80%E5%9B%9E%E9%A1%BE%20/)
 
-这篇文章主要总结H5的一些新增的功能以及一些基础归纳，并不是很详细，后面会一直完善补充新的内容，本文是一些笔记记录，放在这里供自己参考也供他人学习！
+这篇文章主要总结H5的一些新增的功能以及一些基础归纳，这里只是一个提纲，并不是很详细，后面会一直完善补充新的内容，本文是一些笔记记录，放在这里供自己参考也供他人学习！
 
 #### 第一课 HTML5结构
 ---
@@ -30,6 +29,13 @@ top: true
 
 ![多媒体交互标签](http://upload-images.jianshu.io/upload_images/1480597-a13888da66c8fc8a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+- 补充说明
+  - `hground`如果有多级标题，这个元素可以将`H`元素进行分组
+  - `mark`这个元素可以显示特殊情况下的重要文字
+  - `small` 这个元素表示边栏评论，如附属细则
+  - `cite`这个元素可用于显示作品标题（图书、电影、诗歌等）
+  - `adress`这个元素显示`article`或整个文档的合同信息，且位于`footer`这个元素之中
+  - `time`显示人和机器可读的日期和时间，而且机器可读的时间戳是属性`datetime`的值第二个可选的是`pubtime`用于表示出版日期值
 
 ##### 删除的`HTML`标签
 ---
@@ -147,6 +153,9 @@ top: true
      
 #### 第三课 css3选择器
 ---
+
+![css3属性快速一览](http://upload-images.jianshu.io/upload_images/1480597-556426384ddcc4ce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 - `CSS3`发展史简介
     
@@ -606,6 +615,7 @@ obj.addEventListener('transitionend',function(){})
 - 扩展阅读
   - [学会使用css3的box-sizing布局](http://www.jianshu.com/p/e2eb0d8c9de6)
 
+
 #### 第十课 transform 2D转换
 ---
 
@@ -934,6 +944,10 @@ obj.addEventListener('transitionend',function(){})
 #### 第十六课 HTML5新增JS方法
 ---
 
+
+![H5在JavaScript中新增的方法一览](http://upload-images.jianshu.io/upload_images/1480597-aec985a8f543f52e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
 - **新增选择器**
     - `document.querySelector() ` 选择单个元素
     - `document.querySelectorAll() ` 选择所有的
@@ -974,6 +988,8 @@ obj.addEventListener('transitionend',function(){})
     - 服务器下运行
       - `pushState` :  三个参数 ：数据  标题(都没实现)  地址(可选)
       - `onpopstate`事件 :  读取数据   `event.state`
+
+
 
 #### 第十七课 HTML5拖拽事件
 ---
@@ -1049,6 +1065,7 @@ obj.addEventListener('transitionend',function(){})
 - [可以查阅支持H5+CSS3的属性](http://caniuse.com/#search=canvas)
 - [HTML5 标签含义之元素周期表](http://www.html5star.com/manual/html5label-meaning/)
 - [HTML5标签速查表](http://www.inmotionhosting.com/img/infographics/html5_cheat_sheet_tags.png)
-
+- [展示 flexbox 属性的作用--推荐](chrome-extension://ikhdkkncnoglghljlkmcimlnlhkeamad/pdf-viewer/web/viewer.html?file=http%3A%2F%2Fjonibologna.com%2Fcontent%2Fimages%2Fflexboxsheet.pdf)
+- [Flexbox 视觉指南--更好更容易地理解 Flexbox 某个属性的作用](https://demos.scotch.io/visual-guide-to-css3-flexbox-flexbox-playground/demos/)
 ---
 -  [本文md文件-仅供参考](https://github.com/poetries/poetries.github.io/blob/dev/source/_posts/HTML5+CSS3%E5%9F%BA%E7%A1%80%E5%9B%9E%E9%A1%BE%20.md)
