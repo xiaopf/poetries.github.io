@@ -38,6 +38,7 @@ categories: Front-End
 	- 场景 3. 自动更新页面
 
 ### 二、ajax所包含的技术
+---
 
  大家都知道`ajax`并非一种新的技术，而是几种原有技术的结合体。它由下列技术组合而成。
 -  使用`CSS`和`XHTML`来表示。
@@ -49,9 +50,11 @@ categories: Front-End
 
 ### 三、怎样创建ajax
 ---
+
 >`Ajax`的原理简单来说通过`XmlHttpRequest`对象来向服务器发异步请求，从服务器获得数据，然后用`javascript`来操作`DOM`而更新页面。这其中最关键的一步就是从服务器获得请求数据。原生创建`ajax`可分为以下四步
 
 #### 1、创建`XMLHttpRequest`对象
+---
 
 `Ajax`的核心是`XMLHttpRequest`对象，它是`Ajax`实现的关键，发送异步请求、接受响应以及执行回调都是通过它来完成
 
@@ -89,6 +92,8 @@ function createRequest (){
 ```
 
 #### 4、处理响应
+---
+
 ```javascript
 xhr.onreadystatechange = function(){
 	if(xhr.readyState == 4 && xhr.status == 200){
@@ -118,6 +123,7 @@ xhr.onreadystatechange = function(){
 
 
 #### 5、完整例子
+---
 
 ```javascript
 var xhr;
