@@ -7,7 +7,7 @@ tags:
 categories: Front-End
 ---
 
-### Canvas API
+### 一、Canvas API
 ---
 
 `canvas API`是`H5`标准中最复杂的部分， 它提供几种属性和方法，可以在`canvas`元素上创建图形应用
@@ -18,30 +18,55 @@ categories: Front-End
 以下方法专门用于调用canvas API
 
 - `getContext(context)`创建可绘制图形的画布上下文，接受两个值，`2d`和`3d`
+
 - `fillRect(x,y,width,height) `绘制实心矩形
+
 - `strokeRect(x,y,width,height)`绘制矩形轮廓
+
 - `clearRect(x,y,width,height)`清除画布指定区域内容
+
 - `createLinearGradient(x1,y1,x2,y2)`创建一个线性渐变效果
+
 - `createRadialGradient(x1,y1,r1,x2,y2,r2)`创建一个放射渐变效果
+
 - `addColorStop(position,color)`用于声明渐变颜色` position`范围是`0.0-1.0` 用于确定颜色开始变化位置
+
 - `beginPath() `开始一条新路径
+
 - `closePath()`在路径最后实现封闭该路径，它会生成一条直线，连接笔触的最后一个位置与路径的起点。如想要保持路径开放，使用`fill()`绘图，不用这个方法
+
 - `stroke()` 用于创建路径轮廓
+
 - `fill()`用于绘制实心形状
+
 - `clip()`用于创建一个由路径定义的裁剪区域，只有在落入形状内的内容才绘制到画布上
+
 - `moveTo(x,y)`将虚拟笔触移到新位置，下一个方法会从改点的开始继续设置路径
+
 - `lineTo(x,y)`在新路径上添加一条直线
+
 - `rect(x,y,width,height)`在路径为`(x,y)`位置上添加`width`和`height`矩形
+
 - `arc(x,y,radius,startAngle,endAngle,direction)`在路径上添加一条弧线 ,`x`,`y`指定弧线的中心，角度单位为弧度，`direction`是一个表示顺时针或逆时针的布尔值。使用公式 `Math.PI/180x`角度，将角度转换为半径
+
 - `strokeText(text,x,y,max)` 直接在画布上绘制文字轮廓。可选参数，max声明文字最大尺寸
+
 - `fillText(text,x,y,max)`直接在画布上绘制实心文字。可选参数，`max`声明文字最大尺寸
+
 - `translate(x,y) `将画布原点移到点`(x,y)`处，原点`（0,0）`初始位置位于`canvas`所在区域的左上角
+
 - `rorate(angle) `这个方法可以使画布原点为中心发生旋转，角度必须是弧度。使用公式` Math.PI/180x` 将角度转换为弧度
+
 - `scale(x,y)` 改变画布比例 默认值是`（1.0,1.0）`这些值可以是负值
+
 - `transform（m1,m2,m3,m4,dx,dy）`修改画布的转换矩阵。新矩阵是基于之前的矩阵得到的
+
 - `setTransform（m1,m2,m3,m4,dx,dy）`修改画布的转换矩阵。重置之前的值，声明新的值
+
 - `save()`保存画布状态，包括转换矩阵、样式属性、裁剪遮罩
+
 - `restore()` 恢复上一次保存的状态
+
 - `drawImage()` 在画布上绘制图像
 
 
@@ -50,14 +75,23 @@ categories: Front-End
 `canvas API`专用属性列表
 
 - `strokeStyle `声明形状的线条颜色，可以接受任何的` css`值，包括`rgb()`、`rgba()`
+
 - `fillStyle` 声明实心形状的内部颜色
+
 - `globalAlpha` 设置每一个形状的透明度,接受的值0.0-1.0
+
 - `lineWidth` 设置线宽 默认值1.0
+
 - `lineCap `指定线条端点的形状 它支持的值有三个:butt(普通端点)、`round`（圆形端点）、`square`（正方形端点）
+
 - `lineJoin()`指定两条线间的连接形状
+
 - `font` 和`css`完全一致
+
 - `textAlign`文字对齐方式：接受的值 `start end left right center`
+
 - `textBaseline `设置垂直对齐方式，值：`top hanging middle bottom`
+
 - `shadowColor `使用`css`语法什么阴影颜色
 
 #### canvas常用总结
@@ -97,7 +131,7 @@ categories: Front-End
   - `strokeText`：绘制字体
 
 	
-### 视频音频
+### 二、视频音频
 ---
 
 - 视频音频格式的简单介绍
@@ -160,7 +194,7 @@ categories: Front-End
 |load()|	videoWidth|	progress|
 |canPlayType()|	videoHeight|	error|
 
-### 地理信息与本地存储
+### 三、地理信息与本地存储
 ---
 
 #### 地理位置
@@ -246,7 +280,7 @@ categories: Front-End
     - 注：`session`同窗口才可以,例子：`iframe`操作
     
 	
-###  HTML5拖拽
+###  四、HTML5拖拽
 ---
 
 - 图片自带拖拽功能
@@ -280,7 +314,7 @@ categories: Front-End
         - `onload`当读取文件成功完成的时候触发此事件
         - `this. result` 获取读取的文件数据
 
-### 跨文档操作
+### 五、跨文档操作
 ---
 
 - 跨文档请求
