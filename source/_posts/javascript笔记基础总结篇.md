@@ -1,7 +1,7 @@
 ---
 title: javascript笔记总结篇
 date: 2016-09-24 10:33:00
-tags: Javascript
+tags: JavaScript
 categories: Front-End
 ---
 
