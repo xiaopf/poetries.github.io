@@ -133,7 +133,8 @@ body {
 }
 
 article table>thead>tr>th, table>thead>tr>td {		
-  font-size:12px;		
+  font-size:12px;
+  text-align: center;		
 }		
 article .article-content table thead tr {		
   background-color: #555;		
