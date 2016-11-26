@@ -90,6 +90,47 @@ function createRequest (){
 	return xhr;
 }
 ```
+#### 2、准备请求
+---
+
+- 初始化该`XMLHttpRequest`对象，接受三个参数：
+```javascript
+xhr.open(method,url,async);
+```
+- 第一个参数表示请求类型的字符串，其值可以是`GET`或者`POST`。
+- `GET`请求：
+```javascript
+xhr.open("GET",demo.php?name=tsrot&age=24,true);
+```
+- `POST`请求：
+```javascript
+xhr.open("POST",demo.php,true);
+```
+- 第二个参数是要作为请求发送目标的URL。
+- 第三个参数是`true`或`false`，表示请求是以异步还是同步的模式发出。（默认为`true`，一般不建议为`false`）
+  - `false`：同步模式发出的请求会暂停所有javascript代码的执行，知道服务器获得响应为止，如果浏览器在连接网络时或者在下载文件时出了故障，页面就会一直挂起。 
+  - `true`：异步模式发出的请求，请求对象收发数据的同时，浏览器可以继续加载页面，执行其他javascript代码
+
+#### 3、发送请求
+---
+
+```javascript
+xhr.send();
+```
+一般情况下，使用`Ajax`提交的参数多是些简单的字符串，可以直接使用`GET`方法将要提交的参数写到`open`方法的`url`参数中，此时`send`方法的参数为`null`或为空。
+
+- `GET`请求：
+```javascript
+xhr.open("GET",demo.php?name=tsrot&age=24,true);
+xhr.send(null);
+```
+- `POST`请求：
+如果需要像 `HTML` 表单那样 `POST` 数据，请使用 `setRequestHeader() `来添加 `HTTP` 头。然后在` send() `方法中规定您希望发送的数据：
+```javascript
+xhr.open("POST",demo.php,true);
+xhr.setRequestHeder("Content-Type","application/x-www-form-urlencoded;charset=UTF-8");
+xhr.sen
+```
 
 #### 4、处理响应
 ---
