@@ -15,9 +15,11 @@
 	box-shadow: 0 0 10px rgba(0,0,0,0.2);
     border-bottom: 2px solid #3c9dff;
 }
+/**
 body {
 	background: url(http://www.miaov.com/static/ie/images/news/bg.png);
 }
+**/
 .text-center.donation .btn-donation {
 	border: 1px solid #d6bdbd;
 }
@@ -149,5 +151,10 @@ article table td, article table th {
 article table>thead>tr>th, table>thead>tr>td {		
     color:#fff;		
  }
-
+.content-home .nav .item a {
+	color: #9e9e9a;
+}
+.content-home {
+	height:200px;
+}
 /*# sourceMappingURL=styles.css.map */
