@@ -157,7 +157,7 @@ article table>thead>tr>th, table>thead>tr>td {
 .content-home {
 	height:200px;
 }
-.article .article-content blockquote {
+.content.content-post .article-content blockquote {
     background: #effaf0;
     border-color: #4dc657;	
 }
