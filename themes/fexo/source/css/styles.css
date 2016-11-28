@@ -157,4 +157,8 @@ article table>thead>tr>th, table>thead>tr>td {
 .content-home {
 	height:200px;
 }
+.article-content blockquote {
+    background: #effaf0;
+    border-color: #4dc657;	
+}
 /*# sourceMappingURL=styles.css.map */
