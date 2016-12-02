@@ -1,13 +1,13 @@
 ---
 title: Canvas 绘制八大行星
-date: 2016-12-03 00:00:24
+date: 2016-12-02 23:50:24
 tags: 
   - HTML5
   - Canvas
 categories: Front-End
 ---
 
-> 原文链接
+> 原文链接 http://blog.poetries.top/2016/12/02/Canvas-draw-sun/
 > 在线演示地址 http://codepen.io/poetries/pen/KNZLJZ
 
 
@@ -166,7 +166,3 @@ var sea=new Neptune();
 //使让星球进行运动
 setInterval(move,10);
 ```
-
-
-
-> 声明 本教程来自兄弟连，仅供参考
