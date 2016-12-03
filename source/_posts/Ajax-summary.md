@@ -39,14 +39,35 @@ categories: Front-End
 	- 场景 2. 按需取数据
 	- 场景 3. 自动更新页面
 
-- `ajax`所包含的技术
-  - `ajax`并非一种新的技术，而是几种原有技术的结合体。它由下列技术组合而成。
+- `AJAX` 包含以下五个部分：
+`ajax`并非一种新的技术，而是几种原有技术的结合体。它由下列技术组合而成。
   -  使用`CSS`和`XHTML`来表示。
   - 使用`DOM`模型来交互和动态显示。
+  - 数据互换和操作技术，使用`XML`与`XSLT`
   - 使用`XMLHttpRequest`来和服务器进行异步通信。
   - 使用`javascript`来绑定和调用。
 
 在上面几中技术中，除了`XmlHttpRequest`对象以外，其它所有的技术都是基于`web`标准并且已经得到了广泛使用的，`XMLHttpRequest`虽然目前还没有被`W3C`所采纳，但是它已经是一个事实的标准，因为目前几乎所有的主流浏览器都支持它
+
+
+
+![两张著名的AJAX 介绍的图](http://upload-images.jianshu.io/upload_images/1480597-6937419905da762f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+- 第一张图尤其说明了传统` Web` 应用程序的结构与采用了 `AJAX` 技术的 `Web`
+应用程序的结构上的差别
+- 主要的差别，其实不是 `JavaScript`，不是 `HTML/XHTML `和 `CSS`，而是采用
+了 `XMLHttpRequest` 来向服务器异步的请求 `XML` 数据
+
+
+![AJAX 介绍的图](http://upload-images.jianshu.io/upload_images/1480597-13adc82666fac3a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+- 再来看第二张图，传统的 `Web` 应用模式，用户的体验是割裂的，点击->等待->
+看到新的页面->再点击->再等待。而采用了`AJAX`技术之后，大部分的计算工作，都是在用户不察觉的情况下，交由服务器去完成了
+
+![XMLHttpRequest对象的属性](http://upload-images.jianshu.io/upload_images/1480597-4c6beed36bb246c2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+![XMLHttpRequest对象的方法](http://upload-images.jianshu.io/upload_images/1480597-1092e842e08d9012.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### 二、创建ajax的步骤
 ---
@@ -157,7 +178,29 @@ xhr.onreadystatechange = function(){
 
 - `responseText`：获得字符串形式的响应数据
 - `responseXML`：获得 `XML `形式的响应数据
+- 对象转换为JSON格式使用`JSON.stringify`
+- `json`转换为对象格式用`JSON.parse()`
 - 返回值一般为`json`字符串，可以用`JSON.parse(xhr.responseText)`转化为`JSON`对象
+
+- **从服务器传回的数据是json格式，这里做一个例子说明，如何利用**
+
+  - 1、首先需要从`XMLHttpRequest`对象取回数据这是一个`JSON`串，把它转换为真正的`JavaScript`对象。使用`JSON.parse(xhr.responseText)`转化为`JSON`对象
+  - 2、遍历得到的数组，向`DOM`中添加新元素
+
+```javascript
+function example(responseText){
+
+var saleDiv= document.getElementById("sales");
+var sales = JSON.parse(responseText);
+    for(var i=0;i<sales.length;i++){
+        var sale = sales[i];
+         var div = document.createElement("div");
+         div.setAttribute("class","salseItem");
+        div.innerHTML = sale.name + sale.sales;
+        salseDiv.appendChild(div);
+    }
+}
+```
 
 ![HTTP状态码](http://upload-images.jianshu.io/upload_images/1480597-ae7614423c64ebb1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -167,23 +210,27 @@ xhr.onreadystatechange = function(){
 ---
 
 ```javascript
-var xhr;
-if(XMLHttpRequest){
+var xhr = false;
+
+ if(XMLHttpRequest){
 	xhr = new XMLHttpRequest();
-}else{
+ }else{
 	xhr = new ActiveXObject("Microsoft.XMLHTTP");
 };
 
-xhr.open("GET","./data.json",true);
-xhr.send();
+if(xhr) {//如果xhr创建失败，还是原来的false
+   xhr.open("GET","./data.json",true);
+   xhr.send();
 
-xhr.onreadystatechange = function(){
+   xhr.onreadystatechange = function(){
 	if(xhr.readyState == 4 && xhr.status == 200){
 		console.log(JSON.parse(xhr.responseText).name);
 	}
+    }
 }
 ```
 - `data.json`
+
 ```json
 {
 	"name":"tsrot",
@@ -215,6 +262,44 @@ function ajax(url, success, fail){
 }
 ```
 
+
+![XMLHttpRequest 在异步请求远程数据时的工作流程](http://upload-images.jianshu.io/upload_images/1480597-9ea8be2721ca01c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+##### 谈谈JSONP
+---
+
+- 要访问web服务器的数据除了XMLHttpRequest外还有一种方法是JSONP
+- 如果HTML和JavaScript与数据同时在同一个机器上，就可以使用XMLHttpRequest
+
+- 什么是JSONP？
+  - JSONP(JSON with Padding)是一个非官方的协议，它允许在服务器端集成Script tags返回至客户端，通过javascript callback的形式实现跨域访问（这仅仅是JSONP简单的实现形式）
+- JSONP有什么用？
+  - 由于同源策略的限制，XmlHttpRequest只允许请求当前源（域名、协议、端口）的资源，为了实现跨域请求，可以通过script标签实现跨域请求，然后在服务端输出JSON数据并执行回调函数，从而解决了跨域的数据请求
+- 如何使用JSONP？
+  - 在客户端声明回调函数之后，客户端通过script标签向服务器跨域请求数据，然后服务端返回相应的数据并动态执行回调函数
+
+- 用XMLHttpRequest时，我们得到一个字符串；要用JSON.parse把字符串转化成对象，使用jsonp时，script标志会解析并执行返回的代码，等我们处理数据时，已经是一个JavaScript对象了
+
+- 简单实例
+
+```html
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />  
+<script type="text/javascript">  
+    function jsonpCallback(result) {  
+        alert(result.a);  
+        alert(result.b);  
+        alert(result.c);  
+        for(var i in result) {  
+            alert(i+":"+result[i]);//循环输出a:1,b:2,etc.  
+        }  
+    }  
+</script>  
+<script type="text/javascript" src="http://crossdomain.com/services.php?callback=jsonpCallback"></script>  
+<!--callback参数指示生成JavaScript代码时要使用的函数jsonpcallback-->
+```
+- 注意浏览器的缓存问题
+  - 在末尾增加一个随机数可避免频繁请求同一个链接出现的缓存问题
+  - `<script type="text/javascript" src="http://crossdomain.com/services.php?callback=jsonpCallback&random=(new Date()).getTime()"></script>  
 
 ### 三、 jQuery中的Ajax
 ---
@@ -282,7 +367,7 @@ function ajax(aJson){
 	}
 ```
 
-#### jQuery中的Ajax 
+#### jQuery中的Ajax的一些方法
 ---
 
 `jquery`对`Ajax`操作进行了封装，在`jquery`中的`$.ajax()`方法属于最底层的方法，第`2`层是`load()`、`$.get()`、`$.post();`第`3`层是`$.getScript()`、`$.getJSON()`，第`2`层使用频率很高 
