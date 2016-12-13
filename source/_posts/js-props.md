@@ -5,8 +5,6 @@ tags: JavaScript
 categories: Front-End
 ---
 
-### 第一部分 JavaScript中的宽高属性
----
 
 > 本文整理于互联网
 
