@@ -19,11 +19,12 @@ categories: Front-End
 - `window.outWidth`   外部的宽度
 - `window.outHeight`   外部的高度
 <!--more-->
-**window.innerHeight和window.outHeight**
+
+-  **window.innerHeight和window.outHeight**
 
 ![](http://img.mukewang.com/58295ba00001920309590540.jpg)
 
-**window.innerWidth和window.outWidth**
+- **window.innerWidth和window.outWidth**
 
 ![](http://img.mukewang.com/58295bd6000157a610960593.jpg)
 
