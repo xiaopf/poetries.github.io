@@ -20,7 +20,7 @@ categories: Front-End
     - 全局变量都是`window`对象的属性
     - 没有块级作用域
     - 函数中声明的变量在整个函数中都有定义
-
+<!--more-->
 ```javascript
     //全局作用域
     var a = 10;
