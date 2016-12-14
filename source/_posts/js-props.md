@@ -5,6 +5,7 @@ tags: JavaScript
 categories: Front-End
 ---
 
+> 原文链接 http://blog.poetries.top/2016/12/13/js-props
 > 声明：本文根据慕课网学习视频整理
 
 强烈建议打开控制台自己动手练习一遍，这样印象才会深刻
@@ -380,11 +381,175 @@ example.onclick = function(e){
 
 ![Event对象的5种坐标](http://upload-images.jianshu.io/upload_images/1480597-8596ee9ee7d11e15.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-
-
-
-### 四、js中的宽高属性总结
+### 四、 js各种宽高的应用
 ---
+
+- **example1：可视区域加载**
+
+
+![用来解决offset的兼容性难问题 ](http://upload-images.jianshu.io/upload_images/1480597-6aba0d1bb4eb7b3c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+```html
+<div id="example1" ></div>
+```
+```css
+#example1 {
+			width: 500px;
+			height: 350px;
+			background: red;
+			margin: 1000px auto 0 auto;
+		}
+		@-webkit-keyframes fadeInLeft{
+			0%{
+				opacity: 0;
+				transform: translate3d(-100%,0,0);
+			}
+			100%{
+				opacity: 1;
+				transform: none;
+				
+			}
+		}
+			.fadeInLeft {
+				animation-name: fadeInLeft;
+				animation-duration: 2s;
+			}
+```
+```javascript
+function showDiv(){
+			var example = document.getElementById("example");
+			var clients = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;//可视区域的高度
+			var divTop = example.getBoundingClientRect().top;
+			if(divTop <= clients){
+				example.classList.add("fadeInLeft");
+                              //  这里可以通过setAttribute设置图片的src按需加载
+			}
+			document.title = clients+"---"+divTop;
+		}
+		
+window.onscroll = showDiv;
+```
+
+ [在线演示](http://codepen.io/poetries/pen/RoeJgG)
+
+
+- **example2：网页滚动到顶部或者底部**
+
+```html
+<div id="example2" ></div>
+```
+
+```css
+#example2 {
+			width: 500px;
+			height: 350px;
+			background: red;
+			margin: 1000px auto 0 auto;
+}
+```
+
+```javascript
+function scrollTopOrBottom(){
+			var example2 = document.getElementById("example");
+			var clients = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;//可视区域的高度，兼容性写法
+			var scrollTop = document.body.scrollTop;
+			var wholeHeight = document.body.scrollHeight;
+			if(clients + scrollTop >= wholeHeight){
+				alert("我已经到了底部!");
+                              // 这里可以调用Ajax分页加载到页面中，实现多页加载功能
+			}else if(scrollTop == 0){
+				alert("我已经到了顶部了!");
+                      
+			}
+			document.title = (clients + scrollTop)+"---"+wholeHeight+"--"+scrollTop;
+		}
+		
+window.onscroll = scrollTopOrBottom;
+```
+
+
+[在线演示](http://codepen.io/poetries/pen/WoayJy)
+
+- **example3：DIV滚动到底部加载**
+
+```html
+<div id="example3" >
+			DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载
+			DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载
+			DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载
+			DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载
+			DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载
+			DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载DIV滚动到底部加载
+</div>
+```
+
+```css
+#example3 {
+			width: 500px;
+			height: 400px;
+			background: red;
+			margin: 10px auto;
+			padding: 10px;
+			overflow-y: scroll;
+}
+```
+
+```javascript
+var div = document.getElementById("example3");
+		function divScroll(){
+			
+			var wholeHeight = div.scrollHeight;//滚动区域高度
+			var divScrollTop = div.scrollTop;//卷上去的那部分高度
+			var divHeight = div.clientHeight; //div的可视区域的高度
+			
+			
+			if(divScrollTop + divHeight >= wholeHeight){
+				alert("我已经到了底部!");
+               // 这里可以在div中通过滚动加载分页按需显示
+			}else if(divScrollTop == 0){
+				alert("我已经到了顶部了!");
+			}
+			document.title = (divScrollTop + divHeight)+"---"+wholeHeight+"--"+divScrollTop;
+}
+		
+div.onscroll = divScroll;
+```
+
+[在线演示](http://codepen.io/poetries/pen/vyVrvm)
+
+
+- **example4：计算滚动轴的宽度**
+
+
+
+```javascript
+	//获取滚动轴的宽度
+		function getScrollBar(){
+			var el = document.createElement("p");
+			var styles = {
+				width:"100px",
+				height:"100px",
+				overflowY:"scroll"
+			};
+			for (var prop in styles){
+				el.style[prop] = styles[prop];//把 styles上的属性全部遍历拷贝到el.style上
+				
+			}
+			document.body.appendChild(el);
+			var scrollBarWidth = el.offsetWidth - el.clientWidth;
+			el.remove();
+			return scrollBarWidth;
+		}
+		alert(getScrollBar());//17
+```
+
+[在线演示](http://codepen.io/poetries/pen/RoeBbL)
+
+
+
+### 五、js中的宽高属性总结
+---
+
 
 ![](http://upload-images.jianshu.io/upload_images/1480597-41da370c1bd5e927.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -399,16 +564,219 @@ example.onclick = function(e){
 ## 第二部分 jQuery中的宽高属性
 ---
 
-- **`offset()`方法**
-  - 它的作用是获取元素在当前视窗的相对偏移其中返回的对象包含两个属性，即`top`和`left`，他只对可见元素有效 
-- **`position()`方法**
-  - 获取相对于最近的一个`position()`样式属性设置为`relative`或者`absolute`的祖父节点的相对偏移，与`offset()`一样，他返回的对象也包括两个属性，即`top`和`left`
-- **`scrollTop()`方法和`scrollLeft`方法**
-  - 这两个方法的作用分别是获取元素的滚动条距顶端的距离和距左侧的距离
-  
-
-
-
+### 一、jquery相关宽高介绍
 ---
 
-- [慕课网视频地址-强烈建议不熟悉这些属性的看一遍](http://www.imooc.com/learn/608)
+- **1.1 width()**
+  - 特殊元素`window.document`只可以读，普通元素可以读写，`width()`返回结果无单位，`css("width")`的结果有单位
+
+
+![width--height](http://upload-images.jianshu.io/upload_images/1480597-ff70f303d36189a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+![width](http://upload-images.jianshu.io/upload_images/1480597-3165dd16c1b1f88a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+- **1.2 innerWidth()**
+  - 包含padding（不推荐window,document调用）
+- **1.3 innerHeight()**
+
+![innerWidth--innerHeight](http://upload-images.jianshu.io/upload_images/1480597-d3307f8d63859946.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+![innerWidth](http://upload-images.jianshu.io/upload_images/1480597-687789708690ae32.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+- **1.4 outerWidth()**
+  - 包含padding和border，当传true时包含marging，不传时不包含marging（不推荐window,document调用）
+- **1.5 outerHeight()**
+
+![outerWidth--outerHeight](http://upload-images.jianshu.io/upload_images/1480597-d9db57f1d727af9a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+![outerWidth](http://upload-images.jianshu.io/upload_images/1480597-e8120f1da588eeae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+- **1.6 scrollLeft():**
+  - 相对于水平滚动条左边的距离，如果滚动条非常左、或者元素不能被滚动，这个值为0；
+- **1.7 scrollTop():**
+  - 相对于垂直滚动条上边的距离，如果滚动条非常上、或者元素不能被滚动，这个值为0；
+
+- **1.8 .offset():**
+  - 相对于document的当前坐标值(相对于body左上角的left,top的值)；
+- **1.9 .position():**
+  - 相对于offset parent的当前坐标值(相对于offset parent元素的左上角的left、top的值)
+
+
+![offset和position区别](http://upload-images.jianshu.io/upload_images/1480597-82d3c27b3e6297dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+### 二、jquery相关宽高举例
+---
+
+**2.1 exmaple1**
+
+![example1](http://upload-images.jianshu.io/upload_images/1480597-be57bb2c67d1618b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+```html
+	<div class="parentDiv">
+		<div class="childrenDiv"></div>
+	</div>
+```
+
+```css
+html,body {
+	margin:10px;
+	border:5px solid red;
+	padding:20px;
+}
+.parentDiv {
+	width:800px;
+	height:500px;
+	margin:5px auto;
+	background:#FF6600;
+	border:5px dashed green;padding:30px;position:relative;
+
+}
+.childrenDiv {
+	width:300px;
+	height:500px;
+	margin:5px auto;
+	background:yellow;
+	border:5px solid black;
+	padding:5px;
+	box-sizing:border-box;/*包括padding和border的值*/
+}
+```
+
+```javascript
+//特殊元素的高度
+//window  document
+console.log("$(window).height()"+$(window).height());
+console.log("$(document).height()"+$(document).height());
+
+//innerHeight 
+console.log("$(window).innerHeight()"+$(window).innerHeight());
+console.log("$(document).innerHeight()"+$(document).innerHeight());
+
+//普通child元素的高度
+
+//480 = 500 - border*2 - padding*2 (因为设置了box-sizing，box-sizing把border和padding的值计算了进去)
+console.log('$(".childrenDiv").height()'+ $(".childrenDiv").height());
+
+//490 = 500 - border*2 - padding*2（innerHeight不包括padding）
+console.log('$(".childrenDiv").innerHeight()'+ $(".childrenDiv").innerHeight());
+
+//500 = 500  不包括margin
+console.log('$(".childrenDiv").outerHeight()'+ $(".childrenDiv").outerHeight());
+
+//510 = 500 + margin true包括margin
+console.log('$(".childrenDiv").outerHeight()'+ $(".childrenDiv").outerHeight(true));
+
+//scrollTop
+
+$(window).scroll(function(){
+	document.title = "scrollTop  "+$(this).scrollTop();
+});
+
+// jquery宽高演示之offset和position
+
+console.log('$(".childrenDiv").offset().top '+$(".childrenDiv").offset().top);
+console.log('$(".childrenDiv").offset().left '+$(".childrenDiv").offset().left);
+console.log('$(".childrenDiv").position().top '+$(".childrenDiv").position().top);
+console.log('$(".childrenDiv").position().top '+$(".childrenDiv").position().left);
+
+```
+
+
+![Paste_Image.png](http://upload-images.jianshu.io/upload_images/1480597-295c298172ac58b7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+![offset-position](http://upload-images.jianshu.io/upload_images/1480597-d01e48f20b7cc5eb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+[在线演示](http://codepen.io/poetries/pen/yVRqZO)
+
+
+
+### 三、jquery各种宽高应用
+---
+
+**3.1 jquery可视区域加载**
+
+```html
+<div id="example" ></div>
+```
+
+```css
+#example {
+			width: 500px;
+			height: 350px;
+			background: red;
+			margin: 1000px auto 0 auto;
+		}
+		@-webkit-keyframes fadeInLeft{
+			0%{
+				opacity: 0;
+				transform: translate3d(-100%,0,0);
+			}
+			100%{
+				opacity: 1;
+				transform: none;
+				
+			}
+		}
+			.fadeInLeft {
+				animation-name: fadeInLeft;
+				animation-duration: 2s;
+			}
+```
+
+
+```javascript
+		$(window).scroll(function(){
+			var ks_area = $(window).height();//可视区域高度
+			var scrollHeight = $(window).scrollTop();//被卷上去的那部分
+			var divTop = $("#example").offset().top;//盒子距离浏览器顶部的距离
+			
+			if(ks_area + scrollHeight >= divTop){
+				$("#example").addClass("fadeInLeft");
+			}
+			document.title = ks_area+'-'+scrollHeight+'-'+divTop;
+		});
+
+```
+
+[在线演示](http://codepen.io/poetries/pen/MbPqVE)
+
+**3.2 jquery滚动到底部和顶部加载**
+
+
+```html
+<div id="example" ></div>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+```
+
+```css
+#example {
+			width: 500px;
+			height: 350px;
+			background: red;
+			margin: 1000px auto 0 auto;
+}
+```
+
+
+```javascript
+$(window).scroll(function(){
+	var ks_area = $(window).height();
+	var scrollTop = $(window).scrollTop();
+	var wholeHeight = $(document).height();
+	
+	if(ks_area + scrollTop >=wholeHeight ){
+		alert("已经到底部了");
+	}else if(scrollTop == 0){
+		alert("已经到头部了");
+	}
+})
+
+```
+[在线演示](http://codepen.io/poetries/pen/gLBdZa)
+
+（完）
