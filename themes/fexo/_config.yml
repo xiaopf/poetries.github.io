@@ -43,9 +43,9 @@ page_nav:
   - name: 关于
     url: /about/
     target_blank: false
-  - name: 留言
-    url: /guestbook/
-    target_blank: false
+  #- name: 留言
+    #url: /guestbook/
+    #target_blank: false
   - name: 搜索
     url: /search/
     target_blank: false # 在新页面打开
@@ -142,7 +142,7 @@ about:
     icon: icon-user
     text_value:
     - "poetries，1993."
-    - "热爱编程,热爱前端,专注于前端开发"
+    - "热爱前端,专注于前端开发"
   - type: Github
     icon: icon-github
     text_key: Github
@@ -159,8 +159,7 @@ about:
     text_value: "p@poetries.top"
   - type: location
     icon: icon-location
-    text_value: 广西北海
-
+    text_value: 广东深圳
 # 友链
 
 link:
@@ -171,11 +170,11 @@ link:
 
 
 project:
-#  - type: personal
-    #name: beside
-    #url: https://github.com/forsigner/beside
-    #intro: I need you beside me
-#  - type: personal
+  - type: personal
+    name: drawing-board
+    url: https://github.com/poetries/drawing-board
+    intro: canvas画图板
+  #- type: personal
     #name: web-fontmin
     #url: https://github.com/forsigner/web-fontmin
     #intro: 字体子集化，在线提取你需要的字体
