@@ -18,11 +18,11 @@ categories: Front-End
 
 #### 1.1 window.location和document.location
 ---
-<!--more-->
+
 - `window`对象的`location`属性引用的是`location`对象，表示该窗口中当前显示文档的`URL`
 - `document`的对象的`location`属性也是引用`location`对象
 - 所以 `window.location === document.location`    `//true`
-
+<!--more-->
 #### 1.2 window.screen
 ---
 
@@ -46,7 +46,7 @@ categories: Front-End
 - `window.outHeight`   外部的高度
 
 
-![与window相关的宽高](http://upload-images.jianshu.io/upload_images/1480597-28fed0baaf2ff31a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![与window相关的宽高](http://upload-images.jianshu.io/upload_images/1480597-7c90cc88a3355d8e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### 二、与document相关的宽高属性
 ---
