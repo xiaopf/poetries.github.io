@@ -143,7 +143,7 @@ article .article-content table thead tr {
   color: #fff;		
 }		
 article table tr:nth-child(odd) {		
-  background: #f6f4f0;		
+  /**background: #f6f4f0;**/		
 }		
 article table td, article table th {		
   font-size:14px;		
