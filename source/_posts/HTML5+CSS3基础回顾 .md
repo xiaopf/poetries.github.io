@@ -11,6 +11,9 @@ categories: Front-End
 
 这篇文章主要总结H5的一些新增的功能以及一些基础归纳，这里只是一个提纲，并不是很详细，后面会一直完善补充新的内容，本文是一些笔记记录，放在这里供自己参考也供他人学习！
 
+
+![HTML5概览](http://upload-images.jianshu.io/upload_images/1480597-63390b75c7b22ea1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+<!--more-->
 #### 第一课 HTML5结构
 ---
 
@@ -21,7 +24,7 @@ categories: Front-End
         - `ie8` 不兼容
 
 ![一些总结--from-dunitian](http://upload-images.jianshu.io/upload_images/1480597-ce00790dcabf9c47.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-<!--more-->
+
 ##### 常用的一些新的结构标签
 ---
 
@@ -29,9 +32,13 @@ categories: Front-End
 
 ![多媒体交互标签](http://upload-images.jianshu.io/upload_images/1480597-a13888da66c8fc8a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+
+![特殊样式标签](http://upload-images.jianshu.io/upload_images/1480597-458752a50858db60.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+![兼容性不是很好的标签](http://upload-images.jianshu.io/upload_images/1480597-2b18ca0ffce0ec14.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 - 补充说明
-  - `hground`如果有多级标题，这个元素可以将`H`元素进行分组
-  - `mark`这个元素可以显示特殊情况下的重要文字
   - `small` 这个元素表示边栏评论，如附属细则
   - `cite`这个元素可用于显示作品标题（图书、电影、诗歌等）
   - `adress`这个元素显示`article`或整个文档的合同信息，且位于`footer`这个元素之中
@@ -154,8 +161,9 @@ categories: Front-End
 #### 第三课 css3选择器
 ---
 
-![css3属性快速一览](http://upload-images.jianshu.io/upload_images/1480597-556426384ddcc4ce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![css3属性快速一览](http://upload-images.jianshu.io/upload_images/1480597-5c90a330f791f359.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+![css3属性快速一览](http://upload-images.jianshu.io/upload_images/1480597-556426384ddcc4ce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 - `CSS3`发展史简介
     
@@ -357,22 +365,23 @@ categories: Front-End
 - **CSS3新增背景属性**
 
 - `background-size`  背景尺寸
-	- `background-size:x y`
+	- `background-size:x y` 水平 垂直方向的尺寸，像素/百分比/auto/…
 	- `background-size:100% 100%`
 	- `background-size:cover` 比例放大
     - `background-size:contain` 包含（图片不溢出）
 
-- **多背景**
-  - `background:url() 0 0,url() 0 100%`;
-  - `background-origin ` 背景区域定位
+- 多背景
+  - `background-image:url(1.jpg),url(2.jpg)`;
+
+- `background-origin ` 背景区域定位
   - `border-box`： 从`borde`r区域开始显示背景。 
   - `padding-box`： 从`padding`区域开始显示背景。 
   - `content-box`： 从`content`内容区域开始显示背
-  - `background-clip`   背景绘制区域
+- `background-clip`   背景绘制区域
   - `border-box`： 从`border`区域向外裁剪背景。 
   - `padding-box`： 从`padding`区域向外裁剪背景。 
   - `content-box`： 从`content`区域向外裁剪背景。 
-  - `text`:背景填充文本
+- `text`:背景填充文本
   - `no-clip`： 从`border`区域向外裁剪背景
    
 - **颜色渐变**
@@ -666,10 +675,14 @@ obj.addEventListener('transitionend',function(){})
 ---
 
 - **`Css3`立体转换**
-    - `transform-style（preserve-3d）` 建立`3D`空间
-    - `Perspective` 视角
+    - `transform-style（preserve-3d）` 建立`3D`空间（指定元素的子元素展示的场景是在3D场景还是平面(投影)场景）
+    - `Perspective` 视角（指定观察者与z=0平面的距离，从而让元素及子元素看起来有3D透视位置效果
+	值：集体的带单位数值）
     - `Perspective- origin` 视角基点
-    - `transform-origin`：坐标轴基点
+       - 值：取值类似于变换基准
+    - `transform-origin`：坐标轴基点（变换基准）
+      - 值：具体的坐标值/百分比/(`left`/`right`/`center`/`top`/`bottom`)
+	默认 `center center`
 
 - **transform 新增函数**
     - `rotateX()`
@@ -1058,6 +1071,8 @@ obj.addEventListener('transitionend',function(){})
 			- `ev.loaded` 已发送的量
 		- `FormData`  构建提交二进制数据
 
+- 拓展阅读
+  - [HTML5 API 大盘点](http://mp.weixin.qq.com/s?__biz=MzI0ODA2ODU2NQ==&mid=2651130595&idx=2&sn=3d0f546f1867992729b3ace5d03766fc&chksm=f257ca59c520434f08e215b3bdcec3764712f73301b738c18163359e5aa5e949ff019616ffca&mpshare=1&scene=23&srcid=11289XUSBAQzrCp3Io55aoS1#rd)
 
 ###### 附录一　HTML5速查表
 ---
@@ -1067,5 +1082,7 @@ obj.addEventListener('transitionend',function(){})
 - [HTML5标签速查表](http://www.inmotionhosting.com/img/infographics/html5_cheat_sheet_tags.png)
 - [展示 flexbox 属性的作用--推荐](chrome-extension://ikhdkkncnoglghljlkmcimlnlhkeamad/pdf-viewer/web/viewer.html?file=http%3A%2F%2Fjonibologna.com%2Fcontent%2Fimages%2Fflexboxsheet.pdf)
 - [Flexbox 视觉指南--更好更容易地理解 Flexbox 某个属性的作用](https://demos.scotch.io/visual-guide-to-css3-flexbox-flexbox-playground/demos/)
+- []
+
 ---
 -  [本文md文件-仅供参考](https://github.com/poetries/poetries.github.io/blob/dev/source/_posts/HTML5+CSS3%E5%9F%BA%E7%A1%80%E5%9B%9E%E9%A1%BE%20.md)
