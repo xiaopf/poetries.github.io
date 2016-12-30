@@ -72,7 +72,7 @@ poster="examp1.jpg" >您的浏览器不支持video</video>
 |**poster**| imgurl   | 设置播放器初始默认显示图片   |
 |**autobuffer**| autobuffer   | 设置为浏览器缓冲方式，不设置autoply才有效   |
 
-- 其他
+- API 属性
 
 |属性|描述|
 |---|---|
