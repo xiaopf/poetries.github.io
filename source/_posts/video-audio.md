@@ -57,7 +57,7 @@ poster="examp1.jpg" >您的浏览器不支持video</video>
 </video>
 ```
 
-### 1.3 video属性
+### 1.3 重要的video标签属性
 ---
 
 |属性(常用)| 值| 功能描述|
@@ -101,6 +101,12 @@ poster="examp1.jpg" >您的浏览器不支持video</video>
 |videoTracks|	返回表示可用视频轨道的 VideoTrackList 对象|
 |volume	|设置或返回音频/视频的音量|
 
+ - 常用API属性
+ 
+	- `duration`：返回当前音频/视频的长度（以秒计） 
+	- `paused`：设置或返回音频/视频是否暂停 
+	- `currentTime`：设置或返回音频/视频中的当前播放位置（以秒计）
+	- `ended`：返回音频/视频的播放是否已结束
   
  ### 1.4 Video  API
  ---
@@ -115,6 +121,11 @@ poster="examp1.jpg" >您的浏览器不支持video</video>
 |**load**  |  video.load();   将全部属性回复默认值，视频恢复重新开始状态|
 |**canPlayType**  |var support = videoid.canPlayType(‘video/mp4′);   <br /><br />判断浏览器是否支持当前类型的视频格式<br /><br />返回值：<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;空字符串：不支持Maybe：可能支持Probably：完全支持  |
  
+
+- 常用方法
+
+  - `play()`：开始播放音频/视频 
+  - `pause()`：暂停当前播放的音频/视频
 
 #### 1.4.2网络状态 
 ---
@@ -194,52 +205,14 @@ poster="examp1.jpg" >您的浏览器不支持video</video>
 - TimeRanges.start(index) //第index段区域的开始位置
 - TimeRanges.end(index) //第index段区域的结束位置
 
-#### 1.4.6 相关事件
+#### 1.4.6 常用事件
 ---
 
-```javascript
-  var eventTester = function(e){
-     Media.addEventListener(e,function(){
-         console.log((new Date()).getTime(),e)
-     },false);
- }
-```
- 
-- eventTester("loadstart"); //客户端开始请求数据
-- eventTester("progress"); //客户端正在请求数据
-- eventTester("suspend"); //延迟下载
-- eventTester("abort"); //客户端主动终止下载（不是因为错误引起）
-- eventTester("loadstart"); //客户端开始请求数据
-- eventTester("progress"); //客户端正在请求数据
-- eventTester("suspend"); //延迟下载
-- eventTester("abort"); //客户端主动终止下载（不是因为错误引起），
-- eventTester("error"); //请求数据时遇到错误
-- eventTester("stalled"); //网速失速
-- eventTester("play"); //play()和autoplay开始播放时触发
-- eventTester("pause"); //pause()触发
-- eventTester("loadedmetadata"); //成功获取资源长度
-- eventTester("loadeddata"); //
-- eventTester("waiting"); //等待数据，并非错误
-- eventTester("playing"); //开始回放
-- eventTester("canplay"); //可以播放，但中途可能因为加载而暂停
-- eventTester("canplaythrough"); //可以播放，歌曲全部加载完毕
-- eventTester("seeking"); //寻找中
-- eventTester("seeked"); //寻找完毕
-- eventTester("timeupdate"); //播放时间改变
-- eventTester("ended"); //播放结束
-- eventTester("ratechange"); //播放速率改变
-- eventTester("durationchange"); //资源长度改变
-- eventTester("volumechange"); //音量改变
+- `oncanplay`：当文件就绪可以开始播放时运行的脚本（缓冲已足够开始时）。
+- `ontimeupdate`： 当播放位置改变时（比如当用户快进到媒介中一个不同的位置时）运行的脚本。 
+- `onended`：当媒介已到达结尾时运行的脚本（可发送类似“感谢观看”之类的消息）。
 
 #### 1.4.7 其他
-
-- Media.error; //null:正常
-- Media.error.code; 
-	- 1.用户终止 
-	- 2.网络错误 
-	- 3.解码错误 
-	- 4.`URL`无效
-
 
 - 全屏:   
   -  ` element.webkitRequestFullScreen();`( webkit)
@@ -252,6 +225,9 @@ poster="examp1.jpg" >您的浏览器不支持video</video>
   -  `document.exitFullscreen();` (W3C)
   
   
+
+
+
 ## 二、audio
 ---
 
