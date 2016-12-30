@@ -205,12 +205,41 @@ poster="examp1.jpg" >您的浏览器不支持video</video>
 - TimeRanges.start(index) //第index段区域的开始位置
 - TimeRanges.end(index) //第index段区域的结束位置
 
-#### 1.4.6 常用事件
+#### 1.4.6 相关事件
 ---
 
-- `oncanplay`：当文件就绪可以开始播放时运行的脚本（缓冲已足够开始时）。
-- `ontimeupdate`： 当播放位置改变时（比如当用户快进到媒介中一个不同的位置时）运行的脚本。 
-- `onended`：当媒介已到达结尾时运行的脚本（可发送类似“感谢观看”之类的消息）。
+- 首先绑定事件的话可以通过js中的addEventListener方法来绑定事件
+
+|事件|说明|
+|---|---|
+|**loadstart**|客户端开始请求数据|
+|**progress** | 客户端正在请求数据|
+|**suspend** | 延迟下载|
+|**abort** | 客户端主动终止下载（不是因为错误引起）|
+|**loadstart** |客户端开始请求数据 |
+|**progress** | 客户端正在请求数据|
+|**error** | 请求数据时遇到错误|
+|**stalled** | 网速失速|
+|**play** | play()和autoplay开始播放时触发|
+|**pause** | pause()触发|
+|**loadedmetadata** |成功获取资源长度 |
+|**loadeddata** |- |
+|**waiting** |等待数据，并非错误 |
+|**playing** |开始回放 |
+|**canplay** |可以播放，但中途可能因为加载而暂停 |
+|**canplaythrough** | 可以播放，歌曲全部加载完毕|
+|**seeking** | 寻找中|
+|**seeked** | 寻找完毕|
+|**timeupdate** |播放时间改变 |
+|**ended** |播放结束 |
+|**ratechange** | 播放速率改变|
+|**durationchange** | 资源长度改变|
+|**volumechange** |音量改变 |
+
+- 常用事件
+	- `oncanplay`：当文件就绪可以开始播放时运行的脚本（缓冲已足够开始时）。
+	- `ontimeupdate`： 当播放位置改变时（比如当用户快进到媒介中一个不同的位置时）运行的脚本。 
+	- `onended`：当媒介已到达结尾时运行的脚本（可发送类似“感谢观看”之类的消息）。
 
 #### 1.4.7 其他
 
@@ -225,7 +254,6 @@ poster="examp1.jpg" >您的浏览器不支持video</video>
   -  `document.exitFullscreen();` (W3C)
   
   
-
 
 
 ## 二、audio
