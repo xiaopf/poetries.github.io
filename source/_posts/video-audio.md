@@ -148,7 +148,7 @@ categories: Front-End
 - TimeRanges.start(index) //第index段区域的开始位置
 - TimeRanges.end(index) //第index段区域的结束位置
 
-### 1.3.5 相关事件
+#### 1.3.5 相关事件
 ---
 
 ```javascript
