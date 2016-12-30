@@ -231,7 +231,7 @@ poster="examp1.jpg" >您的浏览器不支持video</video>
 ## 二、audio
 ---
 
-### 2.1 HTML5 音频
+### 2.1 audio格式
 ---
 
 - 常见的音频格式
@@ -244,14 +244,76 @@ poster="examp1.jpg" >您的浏览器不支持video</video>
   - `MP3` 收费	支持的浏览器: `I`、`C`、`S`
   - `Wav` 收费	支持的浏览器: `F`、`O`、`S`
 
-### 2.2 audio	属性	
+### 2.2 audio标签中的一些常用属性
 	
-- `autoplay`	自动播放
-	
-- `controls`	向用户显示播放控件
-	
-- `loop`		循环
-	
-- `preload`	是否等加载完再播放
-	
-- `src`		要播放的音频的 URL
+
+|属性	|属性值	|注释|
+|---|---|---|
+|**src**|	url	|播放的音乐的url地址（火狐只支持ogg的音乐，而IE9只支持MP3格式的音乐。chrome貌似全支持）|
+|**preload**	|preload	|预加载（在页面被加载时进行加载或者说缓冲音频），如果使用了autoplay的话那么该属性失效。|
+|**loop** |loop|	循环播放|
+|**controls** |controls|	是否显示默认控制条（控制按钮）|
+|**autoplay**|	autoplay|	自动播放|
+
+- 对于音乐格式的支持
+
+|音频格式	|Chrome	|Firefox|	IE9|	Opera|	Safari|
+|---|---|---|---|---|---|
+|OGG	|支持|	支持|	支持	|不支持	|不支持|
+|MP3|	支持	|不支持|	支持	|不支持|	支持|
+|WAV	|不支持|	支持|	不支持	|支持	|不支持|
+
+- audio可通过new来创建。也可以通过用document来获取
+
+```javascript
+//通过new关键字来创建Audio对象
+var Music = new Audio("test.mp3");
+
+//通过document来获取已经存在的Audio对象
+var Music = document.getElementById("audio");
+//当然这里也可以使用document.getElementsByClassName('className')等其他的方法来获取。
+```
+
+### 2.3 api所提供的对audio标签操作的一些属性和方法
+---
+
+|属性|注释|
+|---|---|
+|**duration**|获取媒体文件的总时长，以s为单位，如果无法获取，返回NaN|
+|**paused** | 如果媒体文件被暂停，那么paused属性返回true，反之则返回false|
+|**ended** |如果媒体文件播放完毕返回true |
+|**muted** | 用来获取或设置静音状态。值为boolean|
+|**volume** |控制音量的属性值为0-1;0为音量最小，1为音量最大 |
+|**startTime** |返回起始播放时间 |
+|**error** |返回错误代码，为uull的时候为正常。否则可以通过Music.error.code来获取 |
+|**currentTime** |用来获取或控制当前播放的时间，单位为s。 |
+|**currentSrc** |以字符串形式返回正在播放或已加载的文件 |
+
+### 2.4 常用的控制用的函数
+---
+
+
+|函数 |作用|
+|---|---|
+|**load()**| 加载音频、视频软件|
+|**play()** |加载并播放音频、视频文件或重新播放暂停的的音频、视频|
+|**pause()** |暂停出于播放状态的音频、视频文件|
+|**canPlayType(obj)** |测试是否支持给定的Mini类型的文件|
+
+### 2.5 audio标签API中的常用事件
+---
+
+- 首先绑定事件的话可以通过js中的addEventListener方法来绑定事件
+
+|事件名称	|事件作用|
+|---|---|
+|**loadstart**	|客户端开始请求数据|
+|**progress**	|客户端正在请求数据（或者说正在缓冲）|
+|**play**	|play()和autoplay播放时|
+|**pause**	|pause()方法促发时|
+|**ended**	|当前播放结束|
+|**timeupdate**	|当前播放时间发生改变的时候。播放中常用的时间处理|
+|**canplaythrough**|	歌曲已经载入完全完成|
+|**canplay**|	缓冲至目前可播放状态。|
+
+其实`video`的`api`和`audio`几乎一致。稍稍有点不同。所以基本上会了一个其他的也就都会了
