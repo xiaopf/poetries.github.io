@@ -5,6 +5,10 @@ tags: bootstrap
 categories: Front-End
 ---
 
+> 原文出处 http://blog.poetries.top/2016/11/19/bootstrap-review
+
+最近项目中用到`bootstrap` 很是健忘各种属性类名，频繁翻阅文档，在这里暂且记录一下笔记
+<!--more-->
 #### 一、 `bootstrap`简介
 ---
 
@@ -20,8 +24,8 @@ categories: Front-End
     - 具有实用性强的组件
     - 内置`jquery`插件
 - `bootstrap`的结构
-   - 主要分为三大核心模块：`css`、`js`、`font`
-<!--more-->
+    - 主要分为三大核心模块：`css`、`js`、`font`
+
 #### 二、`bootstrap`排版样式
 ---
 
@@ -114,11 +118,11 @@ categories: Front-End
    
 - **代码**
    - `.pre-scrollable`  使 `<pre>` 元素可滚动 `scrollable`
-   - 内联代码   `<code>&lt;section&gt;</code>`
+   - 内联代码   `<code><section></code>`
    - 用户输入   `press <kbd>ctrl + ,</kbd>`
    - 标记变量   `<var>y</var> = <var>m</var><var>x</var> + <var>b</var>`
    - 程序输出   `<samp>This text is meant to be treated as sample output from a computer program.</samp>`
-   - 代码块     `<pre>&lt;article&gt;Please input...&lt;/article&gt;</pre>`
+   - 代码块     `<pre><article>Please input...</article></pre>`
 
 
 #### 三、表格、按钮、图片
@@ -378,7 +382,7 @@ categories: Front-End
 - 关闭按钮   `close`
 
 ```html
-<button class="close">&times;</button>
+<button class="close">×</button>
 ```
 
 - 下拉式菜单  `caret`
@@ -911,7 +915,7 @@ categories: Front-End
 ```html
   <nav class="navbar navbar-default">
 	  <div class="navbar-header">
-		  <a class="navbar-brand" href="">潭州教育</a>
+		  <a class="navbar-brand" href="">poetries blog</a>
 	  </div>
 	  <ul class="nav navbar-nav">
 		  <li class="active"><a href="">Home</a></li>
@@ -938,7 +942,7 @@ categories: Front-End
 			  <span class="icon-bar"></span>
 			  <span class="icon-bar"></span>
 		  </button>
-		  <a class="navbar-brand" href="">潭州教育</a>
+		  <a class="navbar-brand" href="">教育</a>
 	  </div>
 	  <div class="collapse navbar-collapse" id="navbar-collapse">
 		  <ul class="nav navbar-nav">
@@ -985,7 +989,7 @@ categories: Front-End
 ```html
   <nav class="navbar navbar-default navbar-fixed-top">
 	  <div class="navbar-header">
-		  <a class="navbar-brand" href="">潭州教育</a>
+		  <a class="navbar-brand" href="">教育</a>
 	  </div>
 	  <ul class="nav navbar-nav">
 		  <li class="active"><a href="">Home</a></li>
@@ -1026,11 +1030,11 @@ categories: Front-End
 
 ```html
   <ul class="pagination">
-	  <li><a href="">&laquo;</a></li>
+	  <li><a href="">«</a></li>
 	  <li><a href="">1</a></li>
 	  <li><a href="">2</a></li>
 	  <li><a href="">3</a></li>
-	  <li><a href="">&raquo;</a></li>
+	  <li><a href="">»</a></li>
   </ul>
 ```
 
@@ -1038,11 +1042,11 @@ categories: Front-End
 
 ```html
 <ul class="pagination">
-  <li class="disabled"><a href="">&laquo;</a></li>
+  <li class="disabled"><a href="">«</a></li>
   <li class="active"><a href="">1</a></li>
   <li><a href="">2</a></li>
   <li><a href="">3</a></li>
-  <li><a href="">&raquo;</a></li>
+  <li><a href="">»</a></li>
 </ul>
 ```
 
@@ -1061,8 +1065,8 @@ categories: Front-End
 
 ```html
   <ul class="pager">
-	  <li class="previous"><a href="">&larr; previous</a></li>
-	  <li class="next"><a href="">next &rarr;</a></li>
+	  <li class="previous"><a href="">← previous</a></li>
+	  <li class="next"><a href="">next →</a></li>
   </ul>
 ```
 
@@ -1070,8 +1074,8 @@ categories: Front-End
 
 ```html
   <ul class="pager">
-	  <li class="previous disabled"><a href="">&larr; previous</a></li>
-	  <li class="next"><a href="">next &rarr;</a></li>
+	  <li class="previous disabled"><a href="">← previous</a></li>
+	  <li class="next"><a href="">next →</a></li>
   </ul>
 ```
 
@@ -1162,7 +1166,7 @@ categories: Front-End
   <div class="alert alert-danger">错误！请进行一些更改。</div>
 ```
 
-- 可关闭的警告框` <button type="button" class="close" data-dismiss="alert">&times;</button>`
+- 可关闭的警告框` <button type="button" class="close" data-dismiss="alert">×</button>`
 
 - 警告中的链接
 
@@ -1455,7 +1459,7 @@ categories: Front-End
 //基本实例
 <div class="alert alert-warning">
 	<button class="close" type="button" data-dismiss="alert">
-		<span>&times;</span>
+		<span>×</span>
 	</button>
 	<p>警告：您的浏览器不支持！</p>
 </div>
@@ -1929,6 +1933,9 @@ $('#myCarousel').on('slid.bs.carousel', function () {
 	alert('当轮播完成一个幻灯片触发');
 });
 ```
+- bootstrap笔记总结【复制到浏览器打开放大】
+![bootstrap笔记总结](http://upload-images.jianshu.io/upload_images/1480597-0b43991d33718f5d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 #### 拓展阅读
 ---
