@@ -174,8 +174,8 @@ project:
     name: drawing-board
     url: https://github.com/poetries/drawing-board
     intro: canvas画图板
-  #- type: personal
-    #name: web-fontmin
-    #url: https://github.com/forsigner/web-fontmin
-    #intro: 字体子集化，在线提取你需要的字体
+  - type: personal
+    name: music-player
+    url: https://github.com/poetries/music-player
+    intro: 一个H5音频播放器
  
