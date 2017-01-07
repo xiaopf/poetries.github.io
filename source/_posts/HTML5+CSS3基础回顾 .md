@@ -11,9 +11,10 @@ categories: Front-End
 
 这篇文章主要总结H5的一些新增的功能以及一些基础归纳，这里只是一个提纲，并不是很详细，后面会一直完善补充新的内容，本文是一些笔记记录，放在这里供自己参考也供他人学习！
 
+<!--more-->
 
 ![HTML5概览](http://upload-images.jianshu.io/upload_images/1480597-63390b75c7b22ea1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-<!--more-->
+
 #### 第一课 HTML5结构
 ---
 
@@ -332,17 +333,42 @@ categories: Front-End
 
 - **CSS3弹性盒模型**
 
-    - `display:box`或者`display:inline-box`;  设置给父元素
-    - `box-orient `定义盒模型的布局方向   设置给父元素
-    	- `horizontal` 水平显示
-    	- `vertical` 垂直方向
-    - `box-direction` 元素排列顺序     设置给父元素
-    	- `normal`  正序
-        - `reverse`  反序
-    - `box-ordinal-group`  设置元素的具体位置   设置子元素
+   - **以下6个属性设置在容器上**
+     - `flex-direction`
+     - `flex-wrap`
+     - `flex-flow`
+     - `justify-content`
+     - `align-items`
+     - `align-content`
+   -  **属性详解**
+      - `flex-direction: row` | `row-reverse` | `column` | `column-reverse`;
+      - `flex-wrap: nowrap` | `wrap` | `wrap-reverse`;
+      - `flex-flow`属性是`flex-direction`属性和`flex-wrap`属性的简写形式，默认值为`row nowrap`
+         -  `flex-flow: <flex-direction> || <flex-wrap>`;
+      - `justify-content`属性定义了项目在主轴上的对齐方式。
+         - `justify-content: flex-start` | `flex-end` | `center` | `space-between` | `space-around`;
+      - `align-items`属性定义项目在交叉轴上如何对齐。
+         - `align-items: flex-start` | `flex-end` | `center` | `baseline` | `stretch`;
+      - `align-content`属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。
+         - `align-content: flex-start` | `flex-end` | `center` | `space-between` | `space-around` | `stretch`;
 
+   - **以下6个属性设置在项目上**
+     - `order`
+     - `flex-grow`
+     - `flex-shrink`
+     - `flex-basis`
+     - `flex`
+     - `align-self`
 
-- `flex`布局语法篇
+- **属性详解**
+     - `order`属性定义项目的排列顺序。数值越小，排列越靠前，默认为`0`
+     - `flex-grow`属性定义项目的放大比例，默认为`0`，即如果存在剩余空间，也不放大。
+     - `flex-shrink`属性定义了项目的缩小比例，默认为`1`，即如果空间不足，该项目将缩小。
+     - `flex-basis`属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为`auto`，即项目的本来大小。
+     - `flex`属性是`flex-grow`, `flex-shrink` 和 `flex-basis`的简写，默认值为`0 1 auto`。后两个属性可选。
+     - `align-self`属性允许单个项目有与其他项目不一样的对齐方式，可覆盖`align-items`属性。默认值为`auto`，表示继承父元素的`align-items`属性，如果没有父元素，则等同于`stretch`。
+        - `align-self: auto` | `flex-start` | `flex-end` | `center` | `baseline` | `stretch`;
+
 
 ![flex布局语法篇小结](http://upload-images.jianshu.io/upload_images/1480597-885b1d526653b87d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -918,6 +944,186 @@ obj.addEventListener('transitionend',function(){})
 <script src="http://api.map.baidu.com/api?v=2.0&ak=qZfInp9MaT9Qa0PoNy4Rmx3Y9W9ZXMfw"></script>
 ```
 
+- **examp01 getCurrentPosition**
+
+```html
+<button id="btn">请求位置信息</button>
+<div id="box"></div>
+```
+```javascript
+var btn = document.getElementById("btn");
+var box = document.getElementById("box");
+		
+btn.onclick = function(){
+			navigator.geolocation.getCurrentPosition(function(position){
+				box.innerHTML +="经度："+position.coords.longitude + "<br>";
+				box.innerHTML +="纬度："+position.coords.latitude + "<br>";
+				box.innerHTML +="海拔："+position.coords.accuracy + "<br>";
+				box.innerHTML +="海拔的准确度："+position.coords.altitudeAccuracy + "<br>";
+				box.innerHTML +="地面速度"+position.coords.speed + "<br>";
+				box.innerHTML +="行进方向"+position.coords.heading + "<br>";
+				box.innerHTML +="请求时间"+new Date(position.timestamp) + "<br>";
+			},function(err){
+				alert(err.code);
+			},{
+				enableHighAccuracy:false,//精确请求
+				timeout:5000,//设置超时
+				maximumAge:1000//缓存时间
+			});
+		}
+```
+
+[在线演示](http://codepen.io/poetries/pen/RKPWMg)
+
+
+- **examp02 **
+
+```javascript
+var btn = document.getElementById("btn");
+var box = document.getElementById("box");
+		
+btn.onclick = function(){
+			navigator.geolocation.watchPosition(function(position){
+				box.innerHTML +="经度："+position.coords.longitude + "<br>";
+				box.innerHTML +="纬度："+position.coords.latitude + "<br>";
+				box.innerHTML +="海拔："+position.coords.accuracy + "<br>";
+				box.innerHTML +="海拔的准确度："+position.coords.altitudeAccuracy + "<br>";
+				box.innerHTML +="地面速度"+position.coords.speed + "<br>";
+				box.innerHTML +="行进方向"+position.coords.heading + "<br>";
+				box.innerHTML +="请求时间"+new Date(position.timestamp) + "<br>";
+			},function(err){
+				alert(err.code);
+			},{
+				enableHighAccuracy:false,//精确请求
+				timeout:5000,//设置超时
+				maximumAge:1000//缓存时间
+			});
+		}
+```
+[在线演示](http://codepen.io/poetries/pen/zNGvjY)
+
+- **example03 高德地图应用**
+
+```css
+#container {
+    width:600px; 
+    height: 300px;
+    margin:40px auto;
+    border:1px solid red;
+} 
+```
+```html
+<div id="container"></div>  
+<script type="text/javascript" 
+src="http://webapi.amap.com/maps?v=1.3&key=278b7b8b4728ba302b7e566fc2a97b36">
+</script>
+```
+```javascript
+var map = new AMap.Map('container');
+```
+
+[在线演示](http://codepen.io/poetries/pen/qRdOKZ)
+
+- **examp04  搜索城市**
+
+```css
+#container {width:500px; height:500px; margin:100px auto;}  
+.menu{
+	width:100px;
+	box-shadow: 0 0 5px #000;
+	margin:auto;
+	background:#fff;
+}
+.menu ul li{
+	list-style:none;
+	line-height:30px;
+	text-align:center;
+	cursor:pointer;
+}
+#box{
+	width:400px;
+	height:40px;
+	position:absolute;
+	top:150px;
+	left:50%;
+	margin-left:-200px;
+	background:#fff;
+	box-shadow:0 0 10px #000;
+}
+input{
+	height:38px;
+	width:300px;
+	border:none;
+	outline:none;
+}
+#btn{
+	width:80px;
+}
+```
+```html
+<div id="container"></div> 
+<div id="box">
+	<input type="text" id="city" placeholder="请输入城市...">
+	<input type="button" value="搜索" id="btn">
+</div>
+<script type="text/javascript" 
+src="http://webapi.amap.com/maps?v=1.3&key=278b7b8b4728ba302b7e566fc2a97b36">
+</script>
+```
+```javascript
+var btn = document.getElementById("btn");
+var city = document.getElementById("city");
+var map = new AMap.Map('container');
+var toolBar,mouseTool,contextMenu;
+//在地图中添加操作toolBar插件、mouseTool插件
+map.plugin(["AMap.ToolBar","AMap.MouseTool"],function(){
+	toolBar = new AMap.ToolBar();
+	map.addControl(toolBar);
+	mouseTool = new AMap.MouseTool(map);
+});
+var menuContext = document.createElement("div");
+menuContext.innerHTML = "<div class=menu><ul><li onclick='zoomMenu(0)'>缩小</li>
+<li onclick='zoomMenu(1)'>放大</li>
+<li onclick='distanceMeasureMenu()'>距离量测</li>
+<li onclick = 'addMarkerMenu()'>添加标记</li></ul></div>";
+//创建一个自定义的右键菜单
+contextMenu = new AMap.ContextMenu({isCustom:true,content:menuContext});
+//给地图绑鼠标右键功能弹出右键菜单
+AMap.event.addListener(map,"rightclick",function(e){
+	contextMenu.open(map,e.lnglat);//e.lnglat鼠标点击的经纬度
+	contextMenuPosition = e.lnglat;
+})
+//右键菜单缩放地图
+function zoomMenu(n){
+	if(n === 0){map.zoomOut();}
+	if(n === 1){map.zoomIn();}
+	contextMenu.close();
+}
+contextMenu.close();
+//测量距离功能
+function distanceMeasureMenu(){
+	mouseTool.rule();
+	contextMenu.close();
+}
+//添加标注功能
+function addMarkerMenu(){
+	mouseTool.close();
+	var marker = new AMap.Marker({
+		map: map,
+		position: contextMenuPosition, //基点位置
+		offset: {x:-5,y:-10} //相对于基点位置
+	});
+	contextMenu.close();
+}
+//搜索城市
+btn.onclick = function(){
+	var val = city.value;
+	map.setCity(val);
+}
+```
+
+[在线演示](http://codepen.io/poetries/pen/xgGwaZ)
+
 ##### 本地存储
 ---
 
@@ -974,6 +1180,39 @@ obj.addEventListener('transitionend',function(){})
       - `defer=“defer ”`: 延迟加载，会按顺序执行，在`onload`执行前被触发
       - `async =“async”`: 异步加载，加载完就触发，有顺序问题
     - 浏览器兼容性：`Labjs`库
+
+```javascript
+/**
+* 动态加载script文件 （推荐方法） 只需请求一次 可加载多个JavaScript文件，减少请求次数以及页面的加载阻塞
+*/
+function loadScript(url,callback){
+	var script = document.createElement("script");
+	script.type = "text/javascript";
+	if(script.readyState){//IE
+		script.onreadystatechange = function(){
+			if(script.readyState == "loaded" || script.readyState == "complete"){
+				onreadystatechange = null;
+				callback();
+			}
+		}
+		
+	}else {
+		script.onload = function(){
+			callback();
+		}
+	}
+	script.src = url;
+	document.getElementsByTagName("head")[0].appendChild(script);
+}
+loadScript("js/defer.js",function(){
+	console.log("加载成功");
+      //  加载成功回调
+});
+loadScript("js/async.js",function(){
+	console.log("加载成功");
+   //  加载成功回调
+});
+```
 
 - **获取`class`列表属性**
     - `classList`
@@ -1074,7 +1313,69 @@ obj.addEventListener('transitionend',function(){})
 - 拓展阅读
   - [HTML5 API 大盘点](http://mp.weixin.qq.com/s?__biz=MzI0ODA2ODU2NQ==&mid=2651130595&idx=2&sn=3d0f546f1867992729b3ace5d03766fc&chksm=f257ca59c520434f08e215b3bdcec3764712f73301b738c18163359e5aa5e949ff019616ffca&mpshare=1&scene=23&srcid=11289XUSBAQzrCp3Io55aoS1#rd)
 
-###### 附录一　HTML5速查表
+###### 附录一　css3响应式布局
+---
+
+- 媒体类型
+  -  `*all` 所有媒体
+  -  `braille` 盲文触觉设备
+  -  `embossed` 盲文打印机
+  -  `*print` 手持设备 
+  -  `projection` 打印预览
+  -  `*screen` 彩屏设备
+  -  `speech` '听觉'类似的媒体类型
+  -  `tty `不适用像素的设备
+  -  `tv ` 电视
+
+- 关键字
+  -  `and `
+  -  `not  `    `not`关键字是用来排除某种制定的媒体类型
+  -  `only`     `only`用来定某种特定的媒体类型
+
+- 媒体特性
+  -  `(max-width:600px) `
+  -  `(max-device-width: 480px) ` 	设备输出宽度
+  -  `(orientation:portrait)`  		竖屏
+  -  `(orientation:landscape)`		横屏
+  -  `(-webkit-min-device-pixel-ratio: 2)` 像素比
+  -  `devicePixelRatio` 			设备像素比 
+  -  `window.devicePixelRatio = 物理像素 / dips`
+
+- 样式引入
+
+```css
+<link rel="stylesheet" href="css/index.css" media="print" />
+```
+```css
+ @import url("css/demo.css") screen;
+ @media screen{    }
+```
+
+```css
+<link rel=”stylesheet” media=”all and
+ (orientation:portrait)” href=”portrait.css”>
+```
+```css
+<link rel=”stylesheet” media=”all
+ and (orientation:landscape)”href=”landscape.css”>
+```
+```css
+@media screen and (min-width:360px) and (max-width:500px) {}
+```
+```css
+<link rel="stylesheet" type="text/css" 
+href="indexA.css"  media="screen and (min-width: 800px)">
+```
+```css
+<link rel="stylesheet" type="text/css" 
+href="indexB.css" media="screen and (min-width: 600px) and (max-width: 800px)">
+```
+```css
+<link rel="stylesheet" type="text/css" 
+href="indexC.css"    media="screen and (max-width: 600px)">
+```
+
+###### 附录二　HTML5速查表
 ---
 
 - [可以查阅支持H5+CSS3的属性](http://caniuse.com/#search=canvas)
@@ -1082,7 +1383,7 @@ obj.addEventListener('transitionend',function(){})
 - [HTML5标签速查表](http://www.inmotionhosting.com/img/infographics/html5_cheat_sheet_tags.png)
 - [展示 flexbox 属性的作用--推荐](chrome-extension://ikhdkkncnoglghljlkmcimlnlhkeamad/pdf-viewer/web/viewer.html?file=http%3A%2F%2Fjonibologna.com%2Fcontent%2Fimages%2Fflexboxsheet.pdf)
 - [Flexbox 视觉指南--更好更容易地理解 Flexbox 某个属性的作用](https://demos.scotch.io/visual-guide-to-css3-flexbox-flexbox-playground/demos/)
-- []
+
 
 ---
 -  [本文md文件-仅供参考](https://github.com/poetries/poetries.github.io/blob/dev/source/_posts/HTML5+CSS3%E5%9F%BA%E7%A1%80%E5%9B%9E%E9%A1%BE%20.md)
