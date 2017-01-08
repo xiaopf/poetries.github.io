@@ -10,7 +10,6 @@ categories: Front-End
 > 转载请声明 [原文链接](http://blog.poetries.top/2016/10/19/HTML5+CSS3%E5%9F%BA%E7%A1%80%E5%9B%9E%E9%A1%BE%20/)
 
 这篇文章主要总结H5的一些新增的功能以及一些基础归纳，这里只是一个提纲，并不是很详细，后面会一直完善补充新的内容，本文是一些笔记记录，放在这里供自己参考也供他人学习！
-
 <!--more-->
 
 ![HTML5概览](http://upload-images.jianshu.io/upload_images/1480597-63390b75c7b22ea1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -21,8 +20,7 @@ categories: Front-End
 - `HTML5` 是新一代的 `HTML`
 - `DTD`声明改变	`<!DOCTYPE html>`
     - 新的结构标签			
-    - 注意的地方			
-        - `ie8` 不兼容
+
 
 ![一些总结--from-dunitian](http://upload-images.jianshu.io/upload_images/1480597-ce00790dcabf9c47.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -787,36 +785,124 @@ obj.addEventListener('transitionend',function(){})
 
 - 标签 `<canvas>`
   - 不支持`canvas` 的浏览器可以看到的内容
+  - 默认宽度`300px`，默认高度` 150px`
+  - 注意：`canvas`宽高需要设置在标签中 否则绘制的东西可能出错
 - `<canvas>` 绘制环境
   - `getContext("2d")`;目前支持`2d`的场景
   
+```html
+<canvas width="" height="" id="">
+	您的浏览器不支持canvas，请更换浏览器！
+</canvas>
+```
 
 - **绘制矩形**
   - `rect(L,T,W,H)`:创建一个矩形
   - `fillRect(L,T,W,H)`:绘制填充的矩形
-  - `strokeRect(L,T,W,H)`绘制矩形(无填充)
+  - `clearRect(x,y,w,h) ` 清除矩形选区
+  - `strokeRect(L,T,W,H)`绘制空心矩形(无填充)
     - 默认一像素黑色边框
-- **设置绘图**
+	
+- **设置绘图样式**
   - `fillStyle`:填充颜色(绘制`canvas`是有顺序的)
-  - `lineWidth`:线宽度，笔迹粗细
-  - `strokeStyle`:边线颜色
+  - `lineWidth`:触笔宽度(线宽)
+  - `strokeStyle`:触笔颜色
 - **绘制路径**
-  - `stroke` ：绘制，划线(黑色默认)
-  - `fill` :填充(黑色默认)
-  - `rect(矩形区域)` 
-  - `clearRect` 擦除一个矩形区域
-  - `save` 进入到XXX（高逼格）状态
-  - `restore` 退出xxx（高逼格）状态
- 
+  - `beginPath()` :开始路径
+  - `closePath():`结束路径
+  - `moveTo(x,y)`:将触笔移动到x,y点
+  - `lineTo(x,y)`:绘制到x,y点
+  - `stroke():` 触笔方法 画线  默认为黑色
+  - `fill()`:填充方法 
+  - `rect(x,y,w,h)`:矩形路径
+  - `save()`:保存路径
+  - `restore()`:恢复路径
+- **绘制曲线** 
+  - `arcTo(x1,y1,x2,y2,r)`
+     - `x1`,`y1` 坐标一  `x2`,`y2`坐标二   r圆弧半斤
+  - `quadraticCurveTo(dx,dy,x1,y1)`
+     - 贝塞尔曲线:`dx`,`dy`控制点  `x1`,`y1`结束坐标
+  - `bezierCurveTo(dx1,dy1,dx2,dy2,x1,y1)`
+     - 贝塞尔曲线:`dx1,dy1` 控制点一 `dx2,dy2`控制点二 
+     - `x1,y1`结束坐标
+
 - **绘制圆形**
   - `arc(x,y,半径,起始弧度,结束弧度,旋转方向)`
-  - `x`，`y`起始位置
-  - 弧度与角度：`弧度=角度 x π / 180`
-  - 旋转方向：顺时针（默认：`false`），逆时针（`true`）
-- **绘制字体**
-  - `font`：设置字体大小
-  - `fillText`：填充字体
-  - `strokeText`：绘制字体
+    - `x`，`y`起始位置
+    - 弧度与角度：`弧度=角度值*Math.PI/180`
+    - 旋转方向：顺时针（默认：`false`），逆时针（`true`）
+- **绘制文本**
+  - `strokeText(文本,x,y)`;  绘制空心文本
+  - `fillText(文本,x,y)`; 绘制实心文本
+  - `font = "font-size  font-family" `注:尺寸 字体缺一不可
+	- `textAlign = "";`文本左右对齐方式  `start center end  left right`
+	- `textBaseline`文本上下对齐方式 
+         - `alphabetic`默认。文本基线是普通的字母基线。
+         - `top`	文本基线是 `em` 方框的顶端。。
+         - `hanging`	文本基线是悬挂基线。
+         - `middle`	文本基线是`em` 方框的正中。
+         - `ideographic`	文本基线是表意基线。
+         - `bottom`	文本基线是 `em` 方框的底端。
+         - `measureText(文本).width;` 文本实际宽度(只有宽度值)
+
+
+- **图形边界样式**
+  - `lineJoin`: 边界连接点样式
+       - `miter`(默认值),`round`(圆角),`bevel`(斜角)
+  - `lineCap`: 端点样式
+       - `butt`(默认值),`round`(圆角),`square`(高度多出线宽一半)
+
+- **绘制图片**
+  - 图片预加载，获取图片文件
+    - `onload`中调用
+    - `drawImage(img,x,y,w,h);`绘制图片(图片,坐标`x`,坐标`y`,宽度,高度)
+
+  - 设置背景
+    - `createPattern(img,平铺方式)`
+    - 平铺方式:`repeat`,`repeat-x`,`repeat-y`,`no-repeat`
+
+- **canvas变换**
+     - `translate(x,y)`
+	- 坐标基准点偏移 : 从起始点为基准，移动到当前位置
+     - `rotate(弧度)`: 旋转  `弧度公式 = 角度*PI/180`
+     - `scale(wb,hb)`缩放比例(缩放`canvas`绘制的图片)
+
+- **颜色渐变**
+   - 线性渐变:`createLinearGradient(x1,y1,x2,y2)`
+      - `x1`,`y1`起始坐标点
+      - `x2`,`y2`结束坐标点
+   - 径向渐变:`createRadialGradient(x1,y1,r1,x2,y2,r2)`
+      - `x1`,`y1`,`r1`内圆坐标及半径
+      - `x2`,`y2`,`r2`外圆坐标及半径
+      - `addColorStop`(位置,颜色)  位置:渐变点  `0-1`之间 可多个
+	
+- **阴影**
+  - `shadowOffsetX`,`shadowOffsetY`    `x`轴、`y`轴偏移
+  - `shadowBlur`    阴影模糊度
+  - `shadowColor`  阴影颜色 默认颜色:`rgba(0,0,0,0)`
+
+- **像素**
+  - `createImageData(sx,sy)` 创建新的、空白的 `ImageData` 对象
+  - `getImageData(x1,y1,sx,sy)`
+	- 返回` ImageData `对象，该对象为画布上指定的矩形复制像素数据`	putImageData(img,x2,y2)`
+	- 把图像数据（从指定的 `ImageData` 对象）放回画布上
+
+- **合成**
+   - `globalAlpha`  设置或返回绘图的当前` alpha `或透明值
+   - `globalCompositeOperation` 设置或返回新图像如何绘制到已有的图像上
+   - `source-over`默认。在目标图像上显示源图像。
+   - `source-atop`在目标图像顶部显示源图像。源图像位于目标图像之外的部分是不可见的。
+   - `source-in`	在目标图像中显示源图像。只有目标图像内的源图像部分会显示，目标图像是透明的。
+   - `source-out	`在目标图像之外显示源图像。只会显示目标图像之外源图像部分，目标图像是透明的。
+   - `destination-over`在源图像上方显示目标图像。
+   - `destination-atop`在源图像顶部显示目标图像。源图像之外的目标图像部分不会被显示。
+   - `destination-in`在源图像中显示目标图像。只有源图像内的目标图像部分会被显示，源图像是透明的。
+   - `destination-out`在源图像外显示目标图像。只有源图像外的目标图像部分会被显示，源图像是透明的。
+   - `lighter`显示源图像 + 目标图像。
+   - `copy`显示源图像。忽略目标图像。
+   - `xor`使用异或操作对源图像与目标图像进行组合。
+
+
 - 扩展阅读
 	- [canvas学习之API整理笔记（一）](http://luckykun.com/work/2016-09-01/canvas-study01.html)
 	- [HTML5 API大盘点](http://jartto.wang/2016/07/25/make-an-inventory-of-html5-api/)
@@ -834,7 +920,9 @@ obj.addEventListener('transitionend',function(){})
 - 方式一：
 ```html
 <?xml version="1.1" encoding="utf-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"      	"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!DOCTYPE svg 
+PUBLIC "-//W3C//DTD SVG 1.1//EN"  "http://www.w3.org/
+Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg"></svg> 
 ```
 - 方式二：
@@ -938,11 +1026,6 @@ obj.addEventListener('transitionend',function(){})
       - 配置参数：`frequency` 更新的频率
       - 关闭更新请求  :  `clearWatch`
 
-  - **百度地图`API`**
-  
-```javascript
-<script src="http://api.map.baidu.com/api?v=2.0&ak=qZfInp9MaT9Qa0PoNy4Rmx3Y9W9ZXMfw"></script>
-```
 
 - **examp01 getCurrentPosition**
 
@@ -1276,6 +1359,273 @@ loadScript("js/async.js",function(){
     - 参数为要读取的文件对象
         - `onload`当读取文件成功完成的时候触发此事件
         - `this. result` 获取读取的文件数据
+
+- **examp01 拖拽案例**
+
+```html
+<div id="drap" draggable="true"></div>
+<div id="box"></div>
+```
+```css
+#drap {
+	width: 100px;
+	height: 100px;
+	background: red;
+}
+#box {
+	width: 500px;
+	height: 500px;
+	border: 2px solid blue;
+	margin: 50px auto;
+}
+```
+```javascript
+//被拖拽元素事件
+drap.ondragstart = function(ev){ // 拖拽前
+	var ev = ev || window.event;
+
+	//火狐浏览器下需设置dataTransfer对象才可以拖拽除图片外的其他标签
+	ev.dataTransfer.setData("key","poetries");
+
+	//effectAllowed : 设置光标样式(none, copy, copyLink, copyMove, link, linkMove,move, all 和uninitialized)
+	ev.dataTransfer.effectAllowed = "copy";
+
+	//设置被拖拽的小元素 setDragImage ：三个参数（指定的元素，坐标X，坐标Y）
+	ev.dataTransfer.setDragImage(pic,25,25);
+
+	this.style.background = "green";
+}
+
+drap.ondrag = function(){ // 拖拽过程中
+	this.innerText = "被拖拽中...";
+}
+
+drap.ondragend = function(){ // 拖拽结束
+	this.style.background = "red";
+	this.innerHTML = "";
+}
+
+//目标元素事件
+box.ondragenter = function(){ //进入目标元素触发
+	this.innerHTML = "可将文件拖放到这里!";
+}
+box.ondragover = function(ev){ //进入目标、离开目标之间，连续触发
+	var ev = ev || window.event;
+	ev.preventDefault(); 
+	this.style.background = "pink";
+}
+box.ondragleave = function(){ //离开目标元素触发
+	this.innerHTML = "";
+	this.style.background = "none";
+}
+box.ondrop = function(ev){//在目标元素上释放鼠标触发
+	//alert("拖放结束")
+	this.innerHTML = ev.dataTransfer.getData("key");
+}
+```
+
+[在线演示](http://codepen.io/poetries/pen/Ndqaxx)
+
+- **example02 拖拽相册**
+
+```html
+<h1>请拖拽图片到红框中</h1>
+<div id="box"><span>可以将文件拖放到这里！！</span></div>
+<div id="dustbin">垃圾回收站</div>
+```
+
+```css
+#box{
+	position:relative;
+	width:500px;
+	height:500px;
+	border:2px solid red;
+	margin:100px auto 0px;
+	
+}
+#box span{
+	position:absolute;
+	left:0;
+	top:0;
+	right:0;
+	bottom:0;
+	height:50px;
+	width:192px;
+	margin:auto;
+	display:none;
+}
+img{
+	width:100px;height:100px;
+}
+#dustbin{
+	width:200px;
+	height:100px;
+	background:#000;
+	color:#fff;
+	font-size:40px;
+	text-align:center;
+	line-height:100px;
+	margin:auto;
+}
+```
+
+```javascript
+var box = document.getElementById("box");
+var dusTbin = document.getElementById("dustbin");
+var span = box.getElementsByTagName("span")[0];
+//目标元素事件
+var img = '';
+box.ondragenter = function(){//进入目标元素触发
+	span.style.display = "block";
+}
+box.ondragover = function(ev){//在目标元素上连续触发
+	var ev = ev||window.event;
+	ev.preventDefault();//阻止默认事件
+	span.style.display = "block";
+}
+box.ondragleave = function(){//离开目标元素
+	span.style.display = "none";
+}
+box.ondrop = function(ev){//在目标元素上面释放鼠标触发
+	//alert("拖拽结束！！");
+	var ev = ev||window.event;
+	ev.preventDefault();//阻止默认事件
+	span.style.display = "none";
+	var file = ev.dataTransfer.files;
+	//alert(file[0].type);
+	for (var i=0; i<file.length ;i++ )
+	{
+		if (file[i].type.indexOf("image")!=-1)
+		{
+			var read = new FileReader();//新建一个读取文件对象
+			read.readAsDataURL(file[i]);//读取文件
+			read.onload = function(){//读取文件成功之后调用什么函数
+				var img = document.createElement("img");
+				//alert(this.result);
+				img.src = this.result;
+				box.appendChild(img);
+				//获取img节点 实现删除功能
+				var oImg = document.getElementsByTagName("img");
+				if (oImg)
+				{
+					for (var j=0;j<oImg.length ;j++ )
+					{
+						oImg[j].ondragstart = function(ev){
+							ev.dataTransfer.setData("data",ev.target.innerHTML);
+							img = ev.target;
+						}
+						oImg[j].ondragend = function(ev){
+							ev.dataTransfer.clearData("data");//清楚数据
+							img = null;
+						}
+					}
+
+				}
+				//实现删除功能(移除img节点)
+				dusTbin.ondragover = function(ev){
+					ev.preventDefault();
+				}
+				dusTbin.ondrop = function(){
+					if (img)
+					{
+						img.parentNode.removeChild(img);
+					}
+				}
+			}
+		}else{
+			alert("请上传图片！");
+		}
+		
+	}
+	
+}
+```
+
+[在线演示](http://codepen.io/poetries/pen/Ndqagr)
+
+
+- **example03 拖拽排序**
+
+```html
+<div class="wrap" id="wrap">
+  <ul id="box">
+    <li style="background:#f3f" draggable="true">1</li>
+    <li style="background:#ff6" draggable="true">2</li>
+    <li style="background:#c60" draggable="true">3</li>
+    <li style="background:#903" draggable="true">4</li>
+    <li style="background:#0f6" draggable="true">5</li>
+    <li style="background:#636" draggable="true">6</li>
+    <li style="background:#36f" draggable="true">7</li>
+    <li style="background:#033" draggable="true">8</li>
+  </ul>
+</div>
+```
+
+```css
+.wrap{
+  width:500px;
+  height:500px;
+  margin:50px auto;
+}
+ul li{
+  list-style:none;
+  width:500px;
+  height:50px;
+  color:#fff;
+  text-align:center;
+  line-height:50px;
+  font-size:40px;
+  font-weight:bold;
+}
+```
+```javascript
+var oUl = document.getElementById("box");
+var oLi = oUl.getElementsByTagName("li");
+var curr = 0;
+function sort(){
+  for (var i = 0;i < oLi.length;i++) {
+    oLi[i].index = i;
+    oLi[i].ondragstart = function(ev){
+      var ev = ev || window.event;
+      ev.dataTransfer.setData("data",this.innerHTML);
+      //this.innerHTML = "被拖拽中...";
+      curr = this.index;
+    }
+
+    oLi[i].ondragenter = function(){
+      for(var i = 0;i < oLi.length;i++){
+        oLi[i].style.border = "none";
+      }
+      if(curr != this.index){
+        this.style.border = "2px solid #000";
+      }
+    }
+    oLi[i].ondragover = function(e){
+      var e = e || window.event;
+      e.preventDefault();
+    }
+    oLi[i].ondrop = function(ev){ //鼠标释放的时候
+      //oUl.insertBefore(oLi[curr],this);//insertBefore(新节点，目标节点)
+      inserAfter(oLi[curr],this);
+      this.style.border = "none";
+      //oLi[curr].innerHTML = ev.DataTransfer.getData("data");
+      sort();
+    }
+  }
+}
+sort();
+
+function inserAfter(newItem,targerItem){
+  var parentItem = targerItem.parentNode;
+  if(parentItem.lastChild == targerItem){
+    parentItem.appendChild(newItem);
+  }else {
+    parentItem.insertBefore(newItem,targerItem.nextSibling);
+  }
+}
+```
+
+[在线演示](http://codepen.io/poetries/pen/XpbEOW)
 
 
 #### 第十八课 跨文档操作
