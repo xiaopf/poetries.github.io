@@ -140,30 +140,4 @@ body {
 .content-home {
 	height:200px;
 }
-
-/*canvas*/
-canvas {
-  position:relative;
-  z-index:0;
-
-}
-.title {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  width: 100%;
-  height: 1.4em;
-  z-index: 22;
-  text-align: center;
-  font-size: 7.3em;
-  pointer-events: none;
-  color: #fff;
-  opacity: 0.2;
-}
-  .title span {
-	font-family: 'arial';
-	font-size: 0.13em;
-	display: block;
-  }
 /*# sourceMappingURL=styles.css.map */
