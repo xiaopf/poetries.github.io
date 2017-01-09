@@ -134,31 +134,42 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-article table>thead>tr>th, table>thead>tr>td {		
-  font-size:12px;
-  text-align: center;		
-}		
-article .article-content table thead tr {		
-  background-color: #555;		
-  color: #fff;		
-}		
-article table tr:nth-child(odd) {		
-  /**background: #f6f4f0;**/		
-}		
-article table td, article table th {		
-  font-size:14px;		
-}		
-article table>thead>tr>th, table>thead>tr>td {		
-    color:#fff;		
- }
 .content-home .nav .item a {
 	color: #9e9e9a;
 }
 .content-home {
 	height:200px;
 }
-.content.content-post .article-content blockquote {
-    background: #effaf0;
-    border-color: #4dc657;	
-}
+html, body {
+		  margin:0;
+		  padding:0;
+		  height: 100%;
+		  overflow: hidden;
+		}
+
+		canvas {
+		  position:relative;
+		  z-index:0;
+
+		}
+		.title {
+		  position: absolute;
+		  top: 0;
+		  bottom: 0;
+		  margin: auto;
+		  width: 100%;
+		  height: 1.4em;
+		  z-index: 22;
+		  text-align: center;
+		  font-size: 7.3em;
+		  pointer-events: none;
+		  color: #fff;
+		  opacity: 0.2;
+		}
+		  .title span {
+			font-family: 'arial';
+			font-size: 0.13em;
+			display: block;
+		  }
+
 /*# sourceMappingURL=styles.css.map */
