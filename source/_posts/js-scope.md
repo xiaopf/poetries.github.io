@@ -1,82 +1,224 @@
 ---
-title: OOP之作用域与闭包
-date: 2016-12-13 14:55:24
+title: JavaScript作用域分析总结
+date: 2017-01-10 12:50:43
 tags: 
    - JavaScript
    - 作用域
-   - 闭包
 categories: Front-End
 ---
 
-#### 作用域
+#### 一、JS解析顺序和作用域：
+
+- 解析顺序：
+   - 定义（先找`var`  `function`）  
+   - 执行 ( 在逐步执行 )
+   - 注意:如果函数名和`var`定义的变量相同，`var`会被函数覆盖
+- 作用域：
+   - 每个`script`是一个作用域
+   - 每个函数`{}`是一个作用域
+   - 程序没执行到一个作用域，都是按照解析顺序解析代码；
+   - 作用域链:从内往外找要找函数内的变量；
+
+
+#### 二、案例分析
 ---
 
-- 定义
+- 举例1
 
-> 在编程语言中，作用域控制着变量与参数的可见性及生命周期，它能减少名称冲突，而且提供了自动内存管理 --javascript 语言精粹
-
--  一个变量、函数或者成员可以在代码中访问到的范围
-    - `js`的变量作用域是基于其特有的作用域链的。
-    - 全局变量都是`window`对象的属性
-    - 没有块级作用域
-    - 函数中声明的变量在整个函数中都有定义
-<!--more-->
 ```javascript
-    //全局作用域
-    var a = 10;
-    
-    //没有块级作用域
-    if(fasle){
-        var b =2;
-    }
-    
-    //函数作用域
-    function f(){
-        var a = 1;
-        console.log(a);
-    }
+alert( a );
+var a = 10;
+alert( a );
+function a(){alert(20)};
+alert( a );
+var a = 30;
+alert( a );
+function a(){alert(40)};
+alert( a );
+// 函数块 10 10 30 30
 ```
 
-#### 作用域链
----
+- **分析前请记住这段话**
+  - 解析顺序：
+     -  定义（先找`var`  `function`）
+     - 执行 ( 在逐步执行 )
+     - 注意:如果函数名和`var`定义的变量相同，`var`会被函数覆盖
 
-- 作用域链是一个对象列表，上下文代码中出现的标识符在这个列表中进行查找
-- 如果一个变量在函数自身的作用域（在自身的变量/活动对象）中没有找到，那么将会查找它父函数（外层函数）的变量对象，以此类推
+>分析
+   - 1:找定义 function a(){alert(40)};
+   - 2:执行 alert( a ) //函数块
+             a = 10;
+             alert( a ); // 10
+             alert( a ); // 10
+             a = 30;
+             alert( a ); // 30
+             alert( a ); // 30
+
+
+- 举例2
 
 ```javascript
-function f (){
-    var x =100;
-    function g(){
-        console.log(x);
+a();
+var a = function(){alert( 1 );}
+a();
+function a(){alert(2);}
+a();
+var a = function(){alert(3);}
+a();
+//2 1 1 3
+```
+
+> 分析
+   - 1:找定义
+         function a(){alert(2);}
+   -  2:执行
+          a(); //2
+          a = function(){alert( 1 );}
+          a(); //1
+          a(); //1
+          a = function b(){alert(3);};
+          a();//3
+
+
+```javascript
+ var a = 0;
+  function fn(){
+           alert( a );
+           var a = 1;
+           alert( a );
     }
-    g();
+ alert(a);
+fn();
+```
+
+> 分析
+- 1:找定义
+	  var a
+	  function fn(){}
+- 2:执行
+	  a = 0;
+	  fn(); ===> 1:找定义
+			     2:执行 alert(a); //undefined
+					  a = 1;
+					  alert(a); //1
+
+
+
+- 举例3
+
+```javascript
+fn()();
+var a = 0;
+function fn(){
+	alert( a );
+	var a = 3;
+	function c(){
+		alert( a );
+	}
+	return c;
+};
+```
+
+> 分析
+- 1:找定义
+	  var a
+	  function fn
+- 2:执行
+	  fn() ===> 1:找定义 function c
+		        2:执行  alert(a); //undefined
+					  a = 3
+					  return function c
+	  fn()() ==>1:找定义 function c
+			  2:alert(a);//undefined 3
+	  a = 0;
+
+
+- 举例4
+
+```javascript
+var a = 5;
+function fn(){
+	var a = 10;
+	alert(a);
+	function b(){
+		a++;
+		alert(a);
+	};
+	return b;
+};
+var c = fn();
+c();
+fn()();
+c();
+```
+
+> 分析
+- 1:找定义 var a
+	  function fn
+	  var c
+- 2:执行  a = 5;
+	  c = fn(); === > 1:找定义 var a
+                           function b
+                      2:执行  a = 10;
+                           alert(a);  //10
+                           return function b(){};
+	  c();=========>  1:找定义
+                      2:执行 a++; //11
+                           alert(a);//11
+                           fn()(); //10 11
+	  c() ========>   1:找定义
+                      2:执行 a++;//11+1;
+                           alert(a); //12
+
+- 举例5
+
+```javascript
+//alert(x);//9:执行弹出x,结果x没定义,错误.
+alert(i);//9:执行弹出i,然而i之前已经定义,只不过没地址,因此是undefiend
+var i = 10;//1:var i;    10:把常量池中10的地址赋给栈中的i
+var j = "你好";//2:var j;   11:把常量池中 你好 的地址复给栈中的j
+var k = z = null;//3:var k,z;  12:把堆中null的地址赋值给z和k
+var m = function(){//4:var m;   5:function匿名函数  13:把匿名函数在堆中的地址赋给栈中的m
+    alert(2);
 }
-f();
+var b = document.body;//6:var b;    14:把堆中document.body对象的地址赋给栈中的b
+var f = true;//7:var f; 15:把常量池中true的地址赋给栈中的变量f
+function m(){//8:function m;
+    alert(1);
+}
 ```
 
-- 这里形成了一条作用域链，当函数`g`访问不到变量时，它会通过内部的`[[scope]]`对象查找作用域链上的执行上下文，当找到就终止，找不到会继续，直到`window`对象上也没有的时候，会报错
-- 需要注意的是，用`new Function`创建的函数，其作用域指向全局作用域
+- 举例6
 
 ```javascript
-function f(){
-    var x = 100;
-    // g.[[scope]] == window
-    var g = new Function("", "alert(x)");
-
-    g();
+function m(){
+    c = 50;//在局部变量中找不到定义的c 沿着作用域链找到了全局变量的c
+    alert('哈哈哈');
+    //var c;
 }
-f();
-//报错 x is not defined
+
+var c = 150; // 函数m()还未执行到 还没被销毁 此时全局c的值c=50
+m();
+var c = 20;//到这里一步 m()已经执行完了 函数已经销毁了  这里的c还是20
+alert(c);//20
+
 ```
 
-#### 闭包
----
+- 举例7
 
-- 我的理解就是，一个函数捕获其父函数的自由变量，这就形成了闭包
+```javascript
+function m(){
+    c = 50;//在局部变量中找不到定义的c 沿着作用域链找到了全局变量的c
+    alert('哈哈哈');
+    function inner(){
+        c = 30;
+        alert('嘻嘻');
+    }
+    inner();//c在函数内部找不到定义 所以沿着作用域链找到了全局的c
+}
 
-- 闭包的本质
-    - 作用域链的存在
-- 闭包的好处
-    - 减少全局变量
-    - 减少传递给函数的参数数量
-    - 封装
+var c = 20;//到这里一步 m()还没执行 函数没被销毁  这里的c是30
+m();
+
+alert(c);//30
+```
