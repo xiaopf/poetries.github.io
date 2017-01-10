@@ -7,6 +7,8 @@ tags:
 categories: Front-End
 ---
 
+> 原文链接 http://blog.poetries.top/2017/01/10/js-scope
+
 #### 一、JS解析顺序和作用域：
 
 - 解析顺序：
@@ -16,13 +18,19 @@ categories: Front-End
 - 作用域：
    - 每个`script`是一个作用域
    - 每个函数`{}`是一个作用域
-   - 程序没执行到一个作用域，都是按照解析顺序解析代码；
+   - 程序每执行到一个作用域，都是按照解析顺序解析代码；
    - 作用域链:从内往外找要找函数内的变量；
-   
+
 <!--more-->
 
 #### 二、案例分析
 ---
+
+- **分析前请记住这段话**
+  - 解析顺序：
+     -  定义（先找`var`  `function`）
+     - 执行 ( 在逐步执行 )
+     - 注意:如果函数名和`var`定义的变量相同，`var`会被函数覆盖
 
 - 举例1
 
@@ -38,12 +46,6 @@ function a(){alert(40)};
 alert( a );
 // 函数块 10 10 30 30
 ```
-
-- **分析前请记住这段话**
-  - 解析顺序：
-     -  定义（先找`var`  `function`）
-     - 执行 ( 在逐步执行 )
-     - 注意:如果函数名和`var`定义的变量相同，`var`会被函数覆盖
 
 >分析
    - 1:找定义 function a(){alert(40)};
@@ -80,6 +82,7 @@ a();
           a = function b(){alert(3);};
           a();//3
 
+- 举例3
 
 ```javascript
  var a = 0;
@@ -105,7 +108,7 @@ fn();
 
 
 
-- 举例3
+- 举例4
 
 ```javascript
 fn()();
@@ -134,7 +137,7 @@ function fn(){
 	  a = 0;
 
 
-- 举例4
+- 举例5
 
 ```javascript
 var a = 5;
@@ -171,7 +174,7 @@ c();
                       2:执行 a++;//11+1;
                            alert(a); //12
 
-- 举例5
+- 举例6
 
 ```javascript
 //alert(x);//9:执行弹出x,结果x没定义,错误.
@@ -189,7 +192,7 @@ function m(){//8:function m;
 }
 ```
 
-- 举例6
+- 举例7
 
 ```javascript
 function m(){
@@ -205,7 +208,7 @@ alert(c);//20
 
 ```
 
-- 举例7
+- 举例8
 
 ```javascript
 function m(){
