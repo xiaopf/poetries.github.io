@@ -22,7 +22,6 @@ categories: Front-End
    - 作用域链:从内往外找要找函数内的变量；
 
 <!--more-->
-
 #### 二、案例分析
 ---
 
@@ -226,3 +225,66 @@ m();
 
 alert(c);//30
 ```
+
+### 三、闭包
+---
+
+#### 3.1 概念
+---
+
+- 其实是函数嵌套函数
+- 每个函数都是一个独立的作用域
+- 每个都有自己的生命周期
+- 延长局部变量的生命周期
+
+#### 3.2 例子
+---
+
+```html
+ <ul id="list">
+        <li>01</li>
+        <li>02</li>
+        <li>03</li>
+        <li>04</li>
+</ul>
+```
+```javascript
+ var liDoms = document.getElementById("list").getElementsByTagName("li");
+        for(var i=0;i<liDoms.length;i++){
+            (function(a){
+                liDoms[a].onclick = function(){
+                    alert(a);
+                }
+            })(i)
+        }
+```
+
+```javascript
+//函数也是一种数据类型 它和 number string boolean object 特殊在可以打括号去执行它
+
+        //函数中的循环
+        function test(){
+            var arr = [],i;
+            for(i=0;i<3;i++){
+                // arr[i] = (function fn(a){
+                //     return a;
+                // })(i);
+
+                arr[i] = fn(i);
+            }
+            return arr;
+        }
+
+
+        function fn(a){
+            return a;
+        }
+
+        var c = test();
+        //alert(c);
+        for(var i=0;i<c.length;i++){
+            var value = c[i];
+            alert(value);
+        }
+```
+
