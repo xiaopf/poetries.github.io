@@ -7,6 +7,8 @@ categories: Build
 
 > 声明 本教程整理于互联网
 
+先看一个例子
+
 ```js
 // webpack.config.js
 module.exports = {
@@ -30,18 +32,27 @@ module.exports = {
 module.exports 是 CommonJS 规范中定义一个文件对外接口的语法，[webpack.config.js](webpack.config.js) 文件对外的接口是一个 object ，其中定义了一些配置参数。
 
 <!--more-->
-## entry
+
+###  一、参数详解
+---
+
+#### 1.1 entry
+---
 
 最初 webpack 是为了构建 SPA (Single Page Application) ，`entry` 是『入口』配置。在 `entry` 中的文件才会被编译。
 
-## output
+#### 1.2 output
+---
 
 `output` 控制构建后的文件的存放位置和命名。 `path` 定义所有构建后文件的所在目录，本例中构建到当前文件夹。
 
-## filename
+#### 1.3 filename
+---
+
 `filename` 控制构建后文件的文件名
 
-## 源码和构建结果
+#### 1.4 源码和构建结果
+---
 
 ```js
 // index.js
@@ -61,7 +72,7 @@ module.exports = "some string"
 </body>
 ```
 
-建议尽量理解构建后的代码，这样有助于理解 webpack
+建议尽量理解构建后的代码，这样有助于理解 `webpack`
 
 ```js
 /******/ (function(modules) { // webpackBootstrap
@@ -129,7 +140,7 @@ module.exports = "some string"
 模块 0 是 `index.js` 的代码，模块 1 是 `require("./content.js")` 的代码。如果你再  `require` 一个模块那么就会有模块 3。
 
 
-# JS包含样式
+### 二、JS包含样式
 ---
 
 
@@ -174,18 +185,21 @@ module.exports = {
 
 `module.loaders` 定义 `require` 的模块代码会被如何编译。 [官方文档 using-loaders](http://webpack.github.io/docs/using-loaders.html)
 
-## module.loaders[].test
+#### 2.1 module.loaders[].test
+---
 
 `test` 参数是一个正则表达式，用于匹配模块。`'./index.css'.test(/\.css&/)`
 
-## module.loaders[].loader
+#### 2.2 module.loaders[].loader
+---
 
 `loader` 参数定义被 `test` 匹配到的模块会执行哪些构建操作
 
 本例中 .css 后缀的文件会被 `style-loader` 和 `css-loader` 构建
 
 
-## require 时配置 loader
+#### 2.3 require 时配置 loader
+---
 
 如果你不想在 webpack.config.js 配置，你还可以在 require 时单独定义一个文件会使用哪些 loader
 
@@ -193,7 +207,8 @@ module.exports = {
 require('!style!css!./index.css')
 ```
 
-## 被嵌入 `<head>`
+#### 2.4 被嵌入 `<head>`
+---
 
 查看 [在线预览构建结果页面](http://nimojs.github.io/webpack-book/2-style/) 源码可以看到样式通过 JS 嵌入到 `<head>` 中使用的
 ```html
@@ -204,10 +219,8 @@ require('!style!css!./index.css')
 </head>
 ```
 
-# JS包含图片
-
+### 三、JS包含图片
 ---
-
 
 
 ```shell
@@ -220,14 +233,16 @@ webpack --watch
 
 > 代码解释待补充
 
-# 使用全局变量
+### 四、使用全局变量
+---
 
 
 ```shell
 webpack -w
 ```
 
-# 暴露全局变量
+### 五、暴露全局变量
+---
 
 > 有些模块依赖全局变量 `windows.jQuery` 才能使用，可以通过 [expose-loader](https://github.com/webpack/expose-loader) 暴露全局变量
 
@@ -240,7 +255,8 @@ npm install expose-loader -D
 webpack -w
 ```
 
-# 提取单独样式文件
+### 六、提取单独样式文件
+---
 
 有时候我们需要编译单独的 CSS 文件，这就需要 [extract-text-webpack-plugin](https://github.com/webpack/extract-text-webpack-plugin) 插件
 
@@ -254,7 +270,8 @@ npm install style-loader css-loader -D
 webpack -w
 ```
 
-# 自动打包公用资源
+### 七、自动打包公用资源
+---
 
 ```shell
 npm install jquery paging --save
@@ -264,13 +281,15 @@ npm install jquery paging --save
 webpack -w
 ```
 
-# 文件指纹 hash
+### 八、文件指纹 hash
+---
 
 ```shell
 webpack --watch
 ```
 
-# 异步加载
+### 九、异步加载
+---
 
 ```shell
 webpack --watch
