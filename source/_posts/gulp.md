@@ -5,9 +5,10 @@ tags: gulp
 categories: Build
 ---
 
+
 > 声明 本教程整理于互联网
 
-## gulp 入门简介
+## 一、gulp 入门简介
 ---
 
 `gulp` 是基于 `node` 实现`Web` 前端自动化开发的工具，利用它能够极大的提高开发效率。
@@ -15,23 +16,25 @@ categories: Build
 在 Web 前端开发工作中有很多“重复工作”，比如压缩`CSS/JS`文件。而这些工作都是有规律的。找到这些规律，并编写 `gulp` 配置代码,让 `gulp` 自动执行这些“重复工作”。
 
 <!--more-->
-将规律转换为 `gulp` 代码
----
+- 将规律转换为 `gulp` 代码
 
-现有目录结构如下：
+
+- 现有目录结构如下：
 
 ```
 └── js/
     └── a.js
 ```
 
-### 规律
+### 1.1 规律
+---
 
-1. 找到 `js/`目录下的所有 .`js` 文件
-2. 压缩这些 `js` 文件
-3. 将压缩后的代码另存在 `dist/js/` 目录下
+- 找到 `js/`目录下的所有 .`js` 文件
+- 压缩这些 `js` 文件
+- 将压缩后的代码另存在 `dist/js/` 目录下
 
-### 编写 gulp 代码
+### 1.2 编写 `gulp` 代码
+---
 
 ```js
 // 压缩 JavaScript 文件
@@ -45,7 +48,8 @@ gulp.task('script', function() {
 });
 ```
 
-### 代码执行结果
+### 1.3 代码执行结果
+---
 
 代码执行后文件结构
 
@@ -84,7 +88,7 @@ function demo(n){alert("--------\r\n"+n+"\r\n--------")}demo("Hi");
 4. 编译`CoffeeScript`
 5. `markdown `转换为 `html`
 
-## 安装 Node 和 gulp
+## 二、安装 Node 和 gulp
 ---
 
 `gulp` 是基于 `node` 实现的，那么我们就需要先安装 node。
@@ -94,22 +98,30 @@ function demo(n){alert("--------\r\n"+n+"\r\n--------")}demo("Hi");
 打开 https://nodejs.org/ 点击绿色的 **INSTALL** 按钮下载安装 node。
 
 
-使用终端/命令行
+
+### 2.1 命令行
 ---
 
-### 命令行
 在 `Windows` 中可按 `<kbd>`徽标键`</kbd>`（alt键左边）+ <kbd>R</kbd> 打开输入 `cmd` + <kbd>Enter</kbd> 打开命令行。
 
-### 终端(Mac)
+### 2.2 终端(Mac)
+---
+
 打开 Launchpad（像火箭一样的图标），在屏幕上方搜索框中输入 `终端` + <kbd>Enter</kbd> 打开终端。
 
-### 查看 node 版本号
+### 2.3 查看 node 版本号
+---
+
 在终端/命令行中输入 `node -v` 检测`node`是否安装成功，安装成功会显示出` node` 的版本号。
 
-### 跳转目录
+### 2.4 跳转目录
+---
+
 终端/命令行 中可使用 `cd 目录名` 跳转至指定目录，Mac 中还可以使用 `ls` 查看当前目录下的文件列表。
 
-#### Windows
+### 2.5 Windows
+---
+
 `Windows` 下可使用如下命令跳转至指定目录：
 
 ```
@@ -121,7 +133,9 @@ cd demo
 cd ..
 ```
 
-#### Mac
+### 2.6 Mac
+---
+
 `Mac `中建议只在 `Documents `目录下进行文件操作。
 
 ```
@@ -139,7 +153,9 @@ cd demo
 cd ..
 ```
 
-### 退出运行状态
+### 2.7 退出运行状态
+---
+
 如果你在命令行中启动了一些一直运行的命令，你的命令行会进入“运行”状态，此时你不可以在命令行进行其他操作。可通过 `Ctrl + C` 停止 gulp。（Mac 中使用 `control + C`）
 
 后面的章节中如果代码中存在 `gulp.watch` 并在命令行运行了 `gulp` 则需要使用 `Ctrl + C` 退出任务。
@@ -172,28 +188,25 @@ npm install -g gulp
 至此，我们完成了准备工作。接着让 `gulp `开始帮我们干活吧！
 
 
-## 使用 gulp 压缩 JS
+## 三、使用 gulp 压缩 JS
 ---
 
-
-
-压缩 js 代码可降低 `js` 文件大小，提高页面打开速度。在不利用 gulp 时我们需要通过各种工具手动完成压缩工作。
+压缩` js` 代码可降低 `js` 文件大小，提高页面打开速度。在不利用 gulp 时我们需要通过各种工具手动完成压缩工作。
 
 所有的 `gulp` 代码编写都可以看做是将规律转化为代码的过程。
 
-规律
+- **规律**
+
+找到 `js/` 目录下的所有` js` 文件，压缩它们，将压缩后的文件存放在 `dist/js/` 目录下。
+
+- `gulp`  代码
+
+
+`gulp`  的所有配置代码都写在 `gulpfile.js` 文件。
+
+### 3.1 新建一个 `gulpfile.js` 文件
 ---
 
-找到 `js/` 目录下的所有 js 文件，压缩它们，将压缩后的文件存放在 `dist/js/` 目录下。
-
-gulp 代码
-----
-
-
-
-gulp 的所有配置代码都写在 `gulpfile.js` 文件。
-
-**一、新建一个 `gulpfile.js` 文件**
 ```
 chapter2
 └── gulpfile.js
@@ -201,7 +214,8 @@ chapter2
 
 
 
-**二、在 `gulpfile.js` 中编写代码**
+### 3.2 在 `gulpfile.js` 中编写代码
+---
 
 ```js
 // 获取 gulp
@@ -214,7 +228,9 @@ var gulp = require('gulp')
 
 ---------
 
-**三、获取 `gulp-uglify` 组件**
+### 3.3 获取 `gulp-uglify` 组件
+---
+
 
 ```js
 // 获取 uglify 模块（用于压缩 JS）
@@ -223,7 +239,8 @@ var uglify = require('gulp-uglify')
 
 ---------
 
-**四、创建压缩任务**
+### 3.4 创建压缩任务
+---
 
 ```js
 // 压缩 js 文件
@@ -247,7 +264,8 @@ gulp.task('script', function() {
 
 ---------
 
-**五、跳转至 `gulpfile.js` 所在目录**
+### 3.5 跳转至 `gulpfile.js` 所在目录
+---
 
 打开命令行使用 `cd` 命令跳转至 `gulpfile.js` 文件所在目录。
 
@@ -262,7 +280,8 @@ cd C:\gulp-book\demo\chapter2
 
 ---------
 
-**六、使用命令行运行 script 任务**
+### 3.6 使用命令行运行 script 任务
+---
 
 在控制台输入 `gulp 任务名` 可运行任务，此处我们输入 `gulp script` 回车。
 
@@ -280,7 +299,9 @@ Error: Cannot find module 'gulp-uglify'
 
 ----------
 
-**七、安装 `gulp-uglify` 模块**
+### 3.7 安装 `gulp-uglify` 模块
+---
+
 
 因为我们并没有安装 `gulp-uglify` 模块到本地，所以找不到此模块。
 
@@ -321,7 +342,9 @@ gulp script
 
 ------------
 
-**八、编写 js 文件**
+### 3.8 编写 js 文件
+---
+
 
 我们发现 gulp 没有进行任何压缩操作。因为没有js这个目录，也没有 js 目录下的 `.js` 后缀文件。
 
@@ -368,7 +391,8 @@ function demo(n){alert("--------\r\n"+n+"\r\n--------")}demo("Hi");
 
 ---------
 
-**九、检测代码修改自动执行任务**
+### 3.9 检测代码修改自动执行任务
+---
 
 `js/a.js`一旦有修改 就必须重新在命令行输入 `gulp script` ，这很麻烦。
 
@@ -411,7 +435,9 @@ $gulp auto
 
 > Mac 下使用 `control + C` 停止 gulp
 
-**十、使用 gulp.task('default', fn) 定义默认任务**
+### 3.10 使用 gulp.task('default', fn) 定义默认任务
+---
+
 
 增加如下代码
 
@@ -458,17 +484,16 @@ gulp.task('default', ['script', 'auto'])
 
 你可以访问 [gulp-uglify](https://github.com/terinjokes/gulp-uglify) 以查看更多用法。
 
-## 使用 gulp 压缩 CSS
+## 四、使用 gulp 压缩 CSS
 ---
-
 
 
 压缩 css 代码可降低 css 文件大小，提高页面打开速度。
 
 我们接着将规律转换为 gulp 代码
 
-规律
----
+- **规律**
+
 找到 `css/` 目录下的所有 css 文件，压缩它们，将压缩后的文件存放在 `dist/css/` 目录下。
 
 gulp 代码
@@ -476,7 +501,9 @@ gulp 代码
 
 
 
-**一、安装 gulp-minify-css** 模块
+###  4.1 安装 gulp-minify-css模块
+---
+
 
 提示：你需要使用命令行的 `cd` 切换到对应目录后进行安装操作。
 
@@ -500,7 +527,8 @@ gulp-minify-css@1.0.0 node_modules/gulp-minify-css
 └── gulp-util@3.0.4 (array-differ@1.0.0, beeper@1.0.0, array-uniq@1.0.2, lodash._reescape@3.0.0, lodash._reinterpolate@3.0.0, lodash._reevaluate@3.0.0, replace-ext@0.0.1, minimist@1.1.1, multipipe@0.1.2, vinyl@0.4.6, chalk@1.0.0, lodash.template@3.3.2, dateformat@1.0.11)
 ```
 
-**二、参照 [使用 gulp 压缩 JS](chapter2.md) 创建 `gulpfile.js` 文件编写代码**
+###  4.2 参照 [使用 gulp 压缩 JS](chapter2.md) 创建 `gulpfile.js` 文件编写代码
+---
 
 在对应目录创建 `gulpfile.js` 文件并写入如下内容：
 
@@ -537,7 +565,8 @@ gulp.task('default', ['css', 'auto'])
 
 ------
 
-**三、创建 css 文件**
+###  4.3 创建 css 文件
+---
 
 在 `gulpfile.js` 对应目录创建 `css` 文件夹，并在 `css/` 目录下创建 `a.css` 文件。
 
@@ -550,7 +579,8 @@ body a{
 
 --------
 
-**四、运行 gulp 查看效果**
+###  4.4 运行 gulp 查看效果
+---
 
 在命令行输入 `gulp` +回车
 
@@ -571,7 +601,7 @@ gulp 会创建 `dist/css` 目录，并创建 `a.css` 文件，此文件存放压
 [dist/css/a.css](https://github.com/nimojs/gulp-book/blob/master/demo/chapter3/dist/css/a.css)
 
 
-使用 gulp 压缩图片
+## 五、使用 gulp 压缩图片
 ---
 
 
@@ -579,13 +609,14 @@ gulp 会创建 `dist/css` 目录，并创建 `a.css` 文件，此文件存放压
 
 找到规律转换为 gulp 代码
 
-规律
----
+- **规律**
+
 找到 `images/` 目录下的所有文件，压缩它们，将压缩后的文件存放在 `dist/images/` 目录下。
 
 
 
-**一、安装 gulp-imagemin** 模块
+###  5.1 安装 gulp-imagemin 模块
+---
 
 提示：你需要使用命令行的 `cd` 切换至对应目录再进行安装操作和 gulp 启动操作。
 
@@ -609,7 +640,8 @@ gulp-imagemin@2.2.1 node_modules/gulp-imagemin
 └── imagemin@3.1.0 (get-stdin@3.0.2, optional@0.1.3, vinyl@0.4.6, through2@0.6.3, stream-combiner@0.2.1, concat-stream@1.4.7, meow@2.1.0, vinyl-fs@0.3.13, imagemin-svgo@4.1.2, imagemin-optipng@4.2.0, imagemin-jpegtran@4.1.0, imagemin-pngquant@4.0.0, imagemin-gifsicle@4.1.0)
 ```
 
-**二、创建 `gulpfile.js` 文件编写代码**
+###  5.2 创建 `gulpfile.js` 文件编写代码
+---
 
 在对应目录创建 `gulpfile.js` 文件并写入如下内容：
 
@@ -648,14 +680,16 @@ gulp.task('default', ['images', 'auto'])
 
 ------
 
-**三、在 `images/` 目录下存放图片**
+###  5.3 在 `images/` 目录下存放图片
+---
 
 在 `gulpfile.js` 对应目录创建 `images` 文件夹，并在 `images/` 目录下存放图片。
 
 
 
 
-**四、运行 gulp 查看效果**
+###  5.4 运行 gulp 查看效果
+---
 
 在命令行输入 `gulp` +回车
 
@@ -765,13 +799,14 @@ LESS 代码和编译后的CSS代码
 }
 ```
 
-使用 gulp 编译 Sass
+## 六、使用 gulp 编译 Sass
 ---
 
 > 无论是 `node-sass` 还是 `ruby-sass` 使用 npm 安装都非常的慢，甚至会装不上。及其不利于团队协作。建议使用 less 作为 css 预处理器。
 > 如果因为 less 不支持自定义函数选择用 sass 可以使用 [less-plugin-functions](https://github.com/seven-phases-max/less-plugin-functions) 让 less 支持自定义函数。
 
-## gulp-sass
+### 6.1 gulp-sass
+---
 
 本章使用的是 ruby-sass 如果你不方便安装 ruby 或编译速度慢，建议使用 [gulp-sass](https://github.com/dlmanning/gulp-sass)
 
@@ -781,15 +816,15 @@ LESS 代码和编译后的CSS代码
 
 本章使用 `ruby-sass` 编译 css,若你没有安装 ruby 和 sass 请移步 [使用ruby.taobao安装 Sass](https://github.com/nimojs/blog/issues/14)
 
-安装
+### 6.2 安装
 ---
 
 ```
 npm install gulp-ruby-sass
 ```
 
-基本用法
--------
+### 6.3 基本用法
+---
 
 
 ```js
@@ -822,7 +857,6 @@ gulp.task('default', ['sass', 'auto'])
 
 
 Sass 代码和编译后的 CSS 代码
-----------
 
 [sass/a.scss](https://github.com/nimojs/gulp-book/tree/master/demo/chapter6/sass/a.scss)
 
@@ -865,9 +899,8 @@ Sass 代码和编译后的 CSS 代码
 }
 ```
 
-使用 gulp 构建一个项目
+## 七、使用 gulp 构建一个项目
 ---
-
 
 
 本章将介绍
@@ -881,8 +914,8 @@ Sass 代码和编译后的 CSS 代码
 
 若你不了解npm 请务必阅读 [npm模块管理器](http://javascript.ruanyifeng.com/nodejs/npm.html)
 
-package.json
-------------
+### 7.1 package.json
+---
 
 如果你熟悉 npm 则可以利用 `package.json` 保存所有 `npm install --save-dev gulp-xxx` 模块依赖和模块版本。
 
@@ -929,7 +962,8 @@ Is this ok? (yes)
 }
 ```
 
-### 安装依赖
+### 7.2 安装依赖
+---
 
 安装 gulp 到项目（防止全局 gulp 升级后与此项目 `gulpfile.js` 代码不兼容）
 ```
@@ -977,8 +1011,9 @@ npm install
 ```
 就可以检测 `package.json` 中的 `devDependencies` 并安装所有依赖。
 
-设计目录结构
-----------
+### 7.3 设计目录结构
+---
+
 我们将文件分为2类，一类是源码，一类是编译压缩后的版本。文件夹分别为 `src` 和 `dist`。(注意区分 `dist` 和 ·`dest` 的区别)
 
 ```
@@ -1004,8 +1039,9 @@ npm install
 
 
 
-让命令行输出的文字带颜色
--------------------
+### 7.4 让命令行输出的文字带颜色
+---
+
 gulp 自带的输出都带时间和颜色，这样很容易识别。我们利用 [gulp-util](https://github.com/gulpjs/gulp-util) 实现同样的效果。
 
 ```js
@@ -1021,9 +1057,9 @@ gulp.task('default', function () {
 使用 `gulp` 启动默认任务以测试
 ![gulp-util](https://cloud.githubusercontent.com/assets/3949015/7137629/a1def1b8-e2ed-11e4-83e0-5a6adb22de6f.png)
 
-配置 JS 任务
---------
-### gulp-uglify
+### 7.5 配置 JS 任务
+
+#### 7.5.1 gulp-uglify
 检测`src/js/`目录下的 js 文件修改后，压缩 `js/` 中所有 js 文件并输出到 `dist/js/` 中
 
 ```js
@@ -1057,7 +1093,9 @@ gulp.task('default', function () {
 [20:39:52] Finished 'js' after 14 ms
 ```
 
-### gulp-watch-path
+#### 7.5.2gulp-watch-path
+---
+
 此配置有个性能问题，当 `gulp.watch` 检测到  `src/js/` 目录下的js文件有修改时会将所有文件全部编译。实际上我们只需要重新编译被修改的文件。
 
 简单介绍 `gulp.watch` 第二个参数为 `function` 时的用法。
@@ -1110,7 +1148,8 @@ gulp.task('default', ['watchjs'])
 
 [use-gulp-watch-path 完整代码](https://github.com/nimojs/gulp-book/tree/master/demo/chapter7/use-gulp-watch-path.js)
 
-**`watchPath(event, search, replace, distExt)`**
+#### 7.5.3 watchPath(event, search, replace, distExt)
+---
 
 | 参数 | 说明 |
 |--------|--------|
@@ -1129,7 +1168,8 @@ gulp.task('default', ['watchjs'])
 
 你可以访问 [gulp-watch-path](https://github.com/nimojs/gulp-watch-path) 了解更多。
 
-### stream-combiner2
+#### 7.5.4 stream-combiner2
+---
 
 编辑 `log.js` 文件时，如果文件中有 js 语法错误时，gulp 会终止运行并报错。
 
@@ -1194,7 +1234,6 @@ gulp.task('watchjs', function () {
 })
 ```
 
-[watchjs-1 完整代码](https://github.com/nimojs/gulp-book/tree/master/demo/chapter7/watchjs-1.js)
 
 此时当编译错误的语法时，命令行会出现错误提示。而且不会让 gulp 停止运行。
 
@@ -1209,7 +1248,8 @@ message: /Users/nimojs/Documents/code/gulp-book/demo/chapter7/src/js/log.js: Une
 plugin: gulp-uglify
 ```
 
-### gulp-sourcemaps
+#### 7.5.5 gulp-sourcemaps
+---
 
 JS 压缩前和压缩后比较
 ```js
@@ -1266,12 +1306,13 @@ gulp.task('uglifyjs', function () {
 
 在命令行输入 `gulp uglifyjs` 以压缩 `src/js/` 下的所有 js 文件。
 
-配置 CSS 任务
+### 7.6 配置 CSS 任务
 -------
 
 有时我们不想使用 LESS 或 SASS而是直接编写 CSS，但我们需要压缩 CSS 以提高页面加载速度。
 
-### gulp-minify-css
+#### 7.6.1 gulp-minify-css
+---
 
 按照本章中压缩 JS 的方式，先编写 `watchcss` 任务
 
@@ -1296,7 +1337,7 @@ gulp.task('watchcss', function () {
 gulp.task('default', ['watchjs','watchcss'])
 ```
 
-### gulp-autoprefixer
+#### 7.6.2 gulp-autoprefixer
 
 autoprefixer 解析 CSS 文件并且添加浏览器前缀到CSS规则里。
 通过示例帮助理解 
@@ -1359,9 +1400,10 @@ gulp.task('minifycss', function () {
 
 在命令行输入 `gulp minifyss` 以压缩 `src/css/` 下的所有 .css 文件并复制到 `dist/css` 目录下
 
-配置 Less 任务
-------------
-参考配置 JavaScript 任务的方式配置 less 任务
+### 7.7 配置 Less 任务
+---
+
+- 参考配置 JavaScript 任务的方式配置 less 任务
 
 ```js
 var less = require('gulp-less')
@@ -1405,8 +1447,8 @@ gulp.task('lesscss', function () {
 gulp.task('default', ['watchjs', 'watchcss', 'watchless'])
 ```
 
-配置 Sass 任务
--------------
+### 7.8 配置 Sass 任务
+---
 
 参考配置 JavaScript 任务的方式配置 Sass 任务
 
@@ -1448,8 +1490,8 @@ gulp.task('sasscss', function () {
 gulp.task('default', ['watchjs', 'watchcss', 'watchless', 'watchsass', 'watchsass'])
 ```
 
-配置 image 任务
-----------
+### 7.9 配置 image 任务
+---
 
 ```js
 var imagemin = require('gulp-imagemin')
@@ -1478,8 +1520,9 @@ gulp.task('image', function () {
 })
 ```
 
-配置文件复制任务
------------
+### 7.10 配置文件复制任务
+---
+
 复制 `src/fonts/` 文件到 `dist/` 中
 
 ```js
@@ -1502,4 +1545,3 @@ gulp.task('copy', function () {
 
 gulp.task('default', ['watchjs', 'watchcss', 'watchless', 'watchsass', 'watchimage', 'watchcopy'])
 ```
-
