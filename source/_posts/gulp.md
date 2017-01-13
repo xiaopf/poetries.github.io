@@ -160,14 +160,15 @@ cd ..
 
 后面的章节中如果代码中存在 `gulp.watch` 并在命令行运行了 `gulp` 则需要使用 `Ctrl + C` 退出任务。
 
-npm 模块管理器
--------------
+### 2.8 npm 模块管理器
+---
+
 如果你了解 `npm` 则跳过此章节
 
 若你不了解npm 请阅读 [npm模块管理器](http://javascript.ruanyifeng.com/nodejs/npm.html)
 
-安装 `gulp`
-----
+### 2.9 安装 `gulp`
+---
 
 `npm` 是 node`` 的包管理工具，可以利用它安装 `gulp` 所需的包。（在安装 `node` 时已经自动安装了 `npm`）
 
@@ -495,10 +496,6 @@ gulp.task('default', ['script', 'auto'])
 - **规律**
 
 找到 `css/` 目录下的所有 css 文件，压缩它们，将压缩后的文件存放在 `dist/css/` 目录下。
-
-gulp 代码
----------
-
 
 
 ###  4.1 安装 gulp-minify-css模块
