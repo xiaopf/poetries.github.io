@@ -527,7 +527,7 @@ gulp-minify-css@1.0.0 node_modules/gulp-minify-css
 └── gulp-util@3.0.4 (array-differ@1.0.0, beeper@1.0.0, array-uniq@1.0.2, lodash._reescape@3.0.0, lodash._reinterpolate@3.0.0, lodash._reevaluate@3.0.0, replace-ext@0.0.1, minimist@1.1.1, multipipe@0.1.2, vinyl@0.4.6, chalk@1.0.0, lodash.template@3.3.2, dateformat@1.0.11)
 ```
 
-###  4.2 参照 [使用 gulp 压缩 JS](chapter2.md) 创建 `gulpfile.js` 文件编写代码
+###  4.2 参照 [使用 gulp 压缩 JS]创建 `gulpfile.js` 文件编写代码
 ---
 
 在对应目录创建 `gulpfile.js` 文件并写入如下内容：
