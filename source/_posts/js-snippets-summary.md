@@ -7,7 +7,7 @@ tags:
 categories: Front-End
 ---
 
-#### JS动画与动作不一致解决:  
+#### 一、JS动画与动作不一致解决:  
 ---
 
 ```javascript
@@ -17,7 +17,7 @@ if(!$( "#handle").is(":animated")){
 ```
 <!--more-->
 
-#### 停止事件冒泡
+#### 二、停止事件冒泡
 ---
 
 ```javascript
@@ -34,7 +34,7 @@ try {
 }
 ```
 
-#### 查看JS对象属性
+#### 三、查看JS对象属性
 ---
 
 ```javascript
@@ -47,7 +47,7 @@ var obj = eval( obj );
 	alert( res );
 ```
 
-#### 页面刷新时禁用提交按钮
+#### 四、页面刷新时禁用提交按钮
 ---
 
 ```javascript
@@ -57,7 +57,7 @@ var obj = eval( obj );
 ```
 **注意**：`Opera` 浏览器不支持，其他浏览器避免在同一页面中使用 `"javascrpt:"` 等伪协议
 
-#### 获取事件
+#### 五、获取事件
 ---
 
 ```javascript
@@ -72,7 +72,7 @@ var getEvent = function(){
 }
 ```
 
-#### 获取键盘码
+#### 六、获取键盘码
 ---
 
 ```javascript
@@ -85,7 +85,7 @@ var getKCode = function(){
 	}
 ```
 
-#### 鼠标滑入/滑出样式切换
+#### 七、 鼠标滑入/滑出样式切换
 ---
 
 ```javascript
@@ -94,7 +94,7 @@ $("div").on("mouseover mouseout", function(){
  });
 ```
 
-#### 点击鼠标,显示/隐藏切换
+#### 八、点击鼠标,显示/隐藏切换
 ---
 
 ```javascript
@@ -107,7 +107,7 @@ $("#panel h5.head").toggle(function(){
 });
 ```
 
-#### JS 调试
+#### 九、JS 调试
 ---
 
 ```javascript
@@ -118,7 +118,7 @@ console.trace() ; 		//打印函数调用轨迹
 window.document.title = str;  
 ```
 
-#### 为子元素集合绑定事件
+####  十、为子元素集合绑定事件
 ---
 
 ```javascript
@@ -127,7 +127,7 @@ $("div").delegate("button","click",function(){
 });
 ```
 
-#### 自定义`IE`浏览器渲染方式(解决`IE10`下`JS`或插件失效):
+#### 十一、自定义`IE`浏览器渲染方式(解决`IE10`下`JS`或插件失效):
 ---
 
 如果安装了`Chrome`内核，则使用`Chrome`内核来渲染页面`[chrome=1]`，如果未安装，则使用最高版本的IE内核进行渲染`[IE=edge]:`
@@ -136,7 +136,7 @@ $("div").delegate("button","click",function(){
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
 ```
 
-#### 注册事件
+#### 十二、注册事件
 ---
 
 ```javascript
