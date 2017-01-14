@@ -20,6 +20,7 @@ document.createElement("p");
 #### 1.2 `jQuery`创建元素节点
 ---
 <!--more-->
+
 ```javascript
 $('<p></p>');`
 ```
