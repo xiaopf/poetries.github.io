@@ -851,7 +851,7 @@ jshint: {
 npm run build
 ```
 
-- 可以发现`build`文件夹中生成了所有东西
+- 可以发现`build`文件夹中生成了所有东西.
 
 
 
