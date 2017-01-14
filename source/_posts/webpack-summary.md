@@ -12,11 +12,11 @@ categories: Build
 ## 一、模块系统的演进
 ---
 
-- 模块系统主要解决模块的定义、依赖和导出，先来看看已经存在的模块系统
+模块系统主要解决模块的定义、依赖和导出，先来看看已经存在的模块系统
 
-**<script>标签**
+**`<script>`标签**
 
-```
+```javascript
 <script src="module1.js"></script>
 <script src="module2.js"></script>
 <script src="libraryA.js"></script>
