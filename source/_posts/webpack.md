@@ -1,5 +1,5 @@
 ---
-title: webpack学习总结篇
+title: webpack学习总结(一)
 date: 2017-01-13 18:40:43
 tags: webpack
 categories: Build
