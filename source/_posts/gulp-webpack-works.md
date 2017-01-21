@@ -9,11 +9,15 @@ categories: Build
 
 > 配置一套基于gulp、webpack的工作流，满足日常的基本开发。配置因人而异，看项目需求了，这两套基本的工作流，足够日常的简单开发了
 
+<!--more-->
 
 ### 一、一套基于gulp的工作流
 ---
 
-#### 1.1 package.json
+#### 1.2 package.json
+---
+
+#### 1.2 package.json
 ---
 
 ```javascript
@@ -48,7 +52,7 @@ categories: Build
 }
 ```
 
-#### 1.2 gulpfile.js
+#### 1.3 gulpfile.js
 ---
 
 ```javascript
