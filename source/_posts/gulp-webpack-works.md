@@ -7,7 +7,7 @@ tags:
 categories: Build
 ---
 
-> 配置一套基于gulp、webpack的工作流，满足日常的基本开发。配置因人而异，看项目需求了，这两套基本的工作流，足够日常的简单开发了
+> 配置一套基于`gulp`、`webpack`的工作流，满足日常的基本开发。配置因人而异，看项目需求了，这两套基本的工作流，足够日常的简单开发了。
 
 <!--more-->
 
@@ -80,8 +80,7 @@ let gulp = require('gulp'),
 	git = require('gulp-git'),     //git
 	babel = require("gulp-babel"); //ES6 转es5
 
-
-// =========== 开发构建流程 [单文件输出] ==============
+// =========== 开发构建流程 [多文件输出] ==============
 
 //dev
 gulp.task('sass:dev', () => {
@@ -116,13 +115,11 @@ gulp.task('html:dev', () => {
         .pipe(gulp.dest('dist'))
 });
 
-
 // 将lib的库文件对应到指定位置
 gulp.task('lib:dev', () => {
     gulp.src('./src/lib/*')
         .pipe(gulp.dest('./dist/lib/'));
 });
-
 
 
 //开发构建
@@ -142,10 +139,6 @@ gulp.task('dev', ['css:dev', 'js:dev', 'html:dev', 'img','copyFonts','lib'], () 
     gulp.watch('src/images/**', ['img']);
     gulp.watch('src/lib/**', ['lib']);
 });
-
-
-
-
 
 // =========== 正式构建 build [单文件输出] ==============
 
@@ -185,7 +178,6 @@ gulp.task('js', () => {
         .pipe(uglify())
         .pipe(gulp.dest('dist/js'));
 });
-
 
 
 // 压缩HTML
@@ -268,9 +260,7 @@ gulp.task('zip', function(){
 
 gulp.task('build', ['clean','css', 'js', 'img', 'html','copyFonts','lib']);
 
-
 // ================ 上传 upload ====
-
 
 gulp.task('upload', () => {
     gulp.src('dist/**')
@@ -284,11 +274,6 @@ gulp.task('upload', () => {
         .pipe(gutil.noop())
 })
 ```
-
-
-
-
-
 
 ### 二、一套基于webpack的工作流
 ---
