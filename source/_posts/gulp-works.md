@@ -253,6 +253,9 @@ gulp.task('zip', function(){
         .pipe(gulp.dest('./zip'));
 });
 
+```
+
+```javascript
 //正式构建
 
 gulp.task('build', ['clean','css', 'js', 'img', 'html','copyFonts','lib']);
@@ -271,5 +274,3 @@ gulp.task('upload', () => {
         .pipe(gutil.noop())
 })
 ```
-
-
