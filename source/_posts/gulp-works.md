@@ -76,7 +76,9 @@ let gulp = require('gulp'),
     htmlmin = require('gulp-htmlmin'), // 压缩html
 	git = require('gulp-git'),     //git
 	babel = require("gulp-babel"); //ES6 转es5
+```
 
+```javascript
 // =========== 开发构建流程 [多文件输出] ==============
 
 //dev
@@ -136,7 +138,10 @@ gulp.task('dev', ['css:dev', 'js:dev', 'html:dev', 'img','copyFonts','lib'], () 
     gulp.watch('src/images/**', ['img']);
     gulp.watch('src/lib/**', ['lib']);
 });
+```
 
+
+```javascript
 // =========== 正式构建 build [单文件输出] ==============
 
 // sass解析
@@ -229,7 +234,9 @@ gulp.task('lib', () => {
     gulp.src('/src/lib/*')
         .pipe(gulp.dest('/dist/lib/'));
 });
+```
 
+```
 // ================ 打包主体dist 文件夹 zip ====
 
 //打包主体dist 文件夹并按照时间重命名
