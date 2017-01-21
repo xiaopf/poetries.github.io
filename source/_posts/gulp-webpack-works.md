@@ -14,8 +14,11 @@ categories: Build
 ### 一、一套基于gulp的工作流
 ---
 
-#### 1.2 package.json
+#### 1.1 目录结构
 ---
+
+![一套基于gulp的工作流](http://upload-images.jianshu.io/upload_images/1480597-12325acbb263363b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 #### 1.2 package.json
 ---
