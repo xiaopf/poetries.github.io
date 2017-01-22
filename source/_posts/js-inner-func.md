@@ -47,6 +47,7 @@ categories: Front-End
 - `unshift `返回一个数组，在该数组头部插入指定的元素
 - `sort()`返回一个元素被排序了的`Array`对象
 - `reverse()`返回一个元素反序的`Array`对象
-- `slice()`返回数组的一个片段
-- `splice()`从数组中删除元素
+- `splice(index.num,foo...) `返回数组的一个片段 --剪切
+- `slice(start,end)`复制 [start,end) 负数的时候 lenght+start/end
+
     
