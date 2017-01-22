@@ -72,6 +72,34 @@ var getEvent = function(){
 }
 ```
 
+- 获取鼠标距离浏览器顶部 左侧的实际距离 兼容IE
+
+```javascript
+function getXY(ev){
+	var ev = ev || window.event;
+	var xx  = 0;
+	var yy = 0;
+	if(ev.pageX){ //iE9+
+		xx = ev.pageX;
+		yy = ev.pageY;
+	}else{ 
+		//IE678 clientX,clientY + scroll
+		var scrollTop = document.documentElement.scrollTop || 
+				   document.body.scrollTop;//IE9+
+		var scrollLeft = document.documentElement.scrollLeft || 
+					document.body.scrollLeft;//IE9+     
+		xx = ev.clientX + scrollLeft;
+		yy = ev.clientY + scrollTop;
+	}
+	return {
+		x:xx,
+		y:yy
+	};
+
+	}
+```
+
+
 #### 六、获取键盘码
 ---
 
