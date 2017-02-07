@@ -7,6 +7,7 @@ tags:
 categories: Front-End
 ---
 
+
 > 原文出处 http://blog.poetries.top/2016/11/26/Ajax-summary
 
 本文主要总结整理`Ajax`的一些常用的基础知识，适合初学者。
@@ -20,7 +21,7 @@ categories: Front-End
 `JavaScript`和`XML`）
   - 它并不是一种单一的技术，而是有机利用一系列交互式网页应用相关的技术所形成的结合体
   - `AJAX` 是一种用于创建快速动态网页的技术。通过在后台与服务器进行少量数据交换，`AJAX` 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。
-<!--more-->
+
 - 优点：
   - 页面无刷新，用户体验好。
   - 异步通信，更加快的响应能力。
@@ -206,37 +207,49 @@ var sales = JSON.parse(responseText);
 
 
 
-#### 5、完整例子
+#### 5、封装例子
 ---
 
+-  将AJAX请求封装成ajax()方法，它接受一个配置对象params
+
 ```javascript
-var xhr = false;
+function ajax(params) {   
+  params = params || {};   
+  params.data = params.data || {};   
+  // 判断是ajax请求还是jsonp请求
+  var json = params.jsonp ? jsonp(params) : json(params);   
+  // ajax请求   
+  function json(params) {   
+    //  请求方式，默认是GET
+    params.type = (params.type || 'GET').toUpperCase(); 
+    // 避免有特殊字符，必须格式化传输数据  
+    params.data = formatParams(params.data);   
+    var xhr = null;    
 
- if(XMLHttpRequest){
-	xhr = new XMLHttpRequest();
- }else{
-	xhr = new ActiveXObject("Microsoft.XMLHTTP");
-};
-
-if(xhr) {//如果xhr创建失败，还是原来的false
-   xhr.open("GET","./data.json",true);
-   xhr.send();
-
-   xhr.onreadystatechange = function(){
-	if(xhr.readyState == 4 && xhr.status == 200){
-		console.log(JSON.parse(xhr.responseText).name);
-	}
-    }
-}
+    // 实例化XMLHttpRequest对象   
+    if(window.XMLHttpRequest) {   
+      xhr = new XMLHttpRequest();   
+    } else {   
+      // IE6及其以下版本   
+      xhr = new ActiveXObjcet('Microsoft.XMLHTTP');   
+    }; 
 ```
-- `data.json`
 
-```json
-{
-	"name":"tsrot",
-	"age":24
-}
+- 使用实例：
+
+```javascript
+ajax({   
+  url: 'test.php',   // 请求地址
+  type: 'POST',   // 请求类型，默认"GET"，还可以是"POST"
+  data: {'b': '异步请求'},   // 传输数据
+  success: function(res){   // 请求成功的回调函数
+    console.log(JSON.parse(res));   
+  },
+  error: function(error) {}   // 请求失败的回调函数
+});
 ```
+
+
 
 - 这个过程是一定要记在脑子里的
 
@@ -300,6 +313,200 @@ function ajax(url, success, fail){
 - 注意浏览器的缓存问题
   - 在末尾增加一个随机数可避免频繁请求同一个链接出现的缓存问题
   - `<script type="text/javascript" src="http://crossdomain.com/services.php?callback=jsonpCallback&random=(new Date()).getTime()"></script>  
+
+
+**原生JavaScript实现完整的Ajax、JSONP例子**
+
+```javascript
+function ajax(params) {
+	params = params || {};
+	params.data = params.data || {};
+	var json = params.jsonp ? jsonp(params) : json(params);
+	// ajax请求
+	function json(params) {
+		params.type = (params.type || 'GET').toUpperCase();
+		params.data = formatParams(params.data);
+		var xhr = null;
+
+		// 实例化XMLHttpRequest对象
+		if(window.XMLHttpRequest) {
+			xhr = new XMLHttpRequest();
+		} else {
+			// IE6及其以下版本
+			xhr = new ActiveXObjcet('Microsoft.XMLHTTP');
+		};
+
+		// 监听事件
+		xhr.onreadystatechange = function() {
+			if(xhr.readyState == 4) {
+				var status = xhr.status;
+				if(status >= 200 && status < 300) {
+					var response = '';
+					var type = xhr.getResponseHeader('Content-type');
+					if(type.indexOf('xml') !== -1 && xhr.responseXML) {
+						response = xhr.responseXML; //Document对象响应
+					} else if(type === 'application/json') {
+						response = JSON.parse(xhr.responseText); //JSON响应
+					} else {
+						response = xhr.responseText; //字符串响应
+					};
+					params.success && params.success(response);
+				} else {
+					params.error && params.error(status);
+				}
+			}
+		};
+
+		// 连接和传输数据
+		if(params.type == 'GET') {
+			xhr.open(params.type, params.url + '?' + params.data, true);
+			xhr.send(null);
+		} else {
+			xhr.open(params.type, params.url, true);
+			//设置提交时的内容类型
+			xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+			xhr.send(params.data);
+		}
+	}
+
+	// jsonp请求
+	function jsonp(params) {
+		//创建script标签并加入到页面中
+		var callbackName = params.jsonp;
+		var head = document.getElementsByTagName('head')[0];
+		// 设置传递给后台的回调参数名
+		params.data['callback'] = callbackName;
+		var data = formatParams(params.data);
+		var script = document.createElement('script');
+		head.appendChild(script);
+
+		//创建jsonp回调函数
+		window[callbackName] = function(json) {
+			head.removeChild(script);
+			clearTimeout(script.timer);
+			window[callbackName] = null;
+			params.success && params.success(json);
+		};
+
+		//发送请求
+		script.src = params.url + '?' + data;
+
+		//超时处理
+		if(params.time) {
+			script.timer = setTimeout(function() {
+				window[callbackName] = null;
+				head.removeChild(script);
+				params.error && params.error({
+					message: '超时'
+				});
+			}, time);
+		}
+	};
+	//格式化参数
+	function formatParams(data) {
+		var arr = [];
+		for(var name in data) {
+			arr.push(encodeURIComponent(name) + '=' + encodeURIComponent(data[name]));
+		};
+		// 添加一个随机数，防止缓存
+		arr.push('v=' + random());
+		return arr.join('&');
+	}
+	// 获取随机数
+	function random() {
+		return Math.floor(Math.random() * 10000 + 500);
+	}
+}
+```
+- 使用
+
+```javascript
+ajax({
+				url: 'get.php',
+				type: 'GET',
+				data: {'intro': 'get请求'},
+				success:function(res){
+					res = JSON.parse(res);
+					document.getElementById('a').innerHTML = res.intro;
+					console.log(res);
+				}
+			});
+		ajax({
+				url: 'post.php',
+				type: 'POST',
+				data: {'intro': 'post请求'},
+				success:function(res){
+					res = JSON.parse(res);
+					document.getElementById('b').innerHTML = res.intro;
+					console.log(res);
+				}
+			});
+		ajax({
+				url: 'http://music.qq.com/musicbox/shop/v3/data/hit/hit_all.js',
+				jsonp: 'jsonpCallback',
+				data: {'callback': 'jsonpCallback'},
+				success:function(res){
+					JsonCallback(json);
+				}
+			});
+```
+
+> 下面我们就根据以上 封装的例子跨域获取qq音乐的数据
+
+- [在线演示--跨域获取qq音乐的数据](http://codepen.io/poetries/pen/oBMKmG)
+
+**下面的方法也可以实现**
+
+- 使用jQuery实现
+
+```javascript
+<script src="jquery-3.1.0.min.js"></script>
+		<script type="text/javascript">
+
+			$.ajax({
+				  type: "get",
+				  async: false,
+				  url: "http://music.qq.com/musicbox/shop/v3/data/hit/hit_all.js",
+				  dataType: "jsonp",
+				  jsonp: "callback",
+				  jsonpCallback: "JsonCallback",
+				  scriptCharset: 'GBK',//设置编码，否则会乱码
+				  success: function(data) {
+				    //var result = JSON.stringify(data);
+					  JsonCallback(data);
+				  },
+				  error: function() {
+				    alert('fail');
+				  }
+				});
+			function JsonCallback(json){
+				var data = json.songlist;
+				var html = '';
+				for (var i=0;i<data.length;i++) {
+					document.write(data[i].url+"<br>");
+				}
+
+			}
+		</script>
+```      
+
+- 原生js简洁实现
+
+```javascript
+var script = document.createElement("script");
+			script.src = 'http://music.qq.com/musicbox/shop/v3/data/hit/hit_all.js?callback=JsonCallback';
+			document.body.appendChild(script);
+
+
+			function JsonCallback(json){
+				var data = json.songlist;
+				var html = '';
+				for (var i=0;i<data.length;i++) {
+					console.log(data[i]);
+				}
+
+			}
+```
 
 ### 三、 jQuery中的Ajax
 ---
