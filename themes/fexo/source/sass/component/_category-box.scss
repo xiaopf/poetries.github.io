@@ -14,6 +14,9 @@
     color: #555;
     border-radius: 50%;
     background: #f0f0f0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .category-list {
     margin-left: 50px;
