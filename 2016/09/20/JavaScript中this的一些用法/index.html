@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>JavaScript中的this的一些用法 | Poetry&#39;s Blog</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="JavaScript," />
+  
+
+  <meta name="description" content="一、global this
+
+总结起来就是：在浏览器里面this是老大，它等价于window对象，如果你声明一些全局变量(不管在任何地方)，这些变量都会作为this的属性。
+在node里面，有两种执行JavaScript代码的方式，一种是直接执行写好的JavaScript文件，另外一种是直接在里面执行一行行代码。
+对于直接运行一行行JavaScript代码的方式，global才是老大，this和它">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript中的this的一些用法">
+<meta property="og:url" content="http://blog.poetries.top/2016/09/20/JavaScript中this的一些用法/index.html">
+<meta property="og:site_name" content="Poetry's Blog">
+<meta property="og:description" content="一、global this
+
+总结起来就是：在浏览器里面this是老大，它等价于window对象，如果你声明一些全局变量(不管在任何地方)，这些变量都会作为this的属性。
+在node里面，有两种执行JavaScript代码的方式，一种是直接执行写好的JavaScript文件，另外一种是直接在里面执行一行行代码。
+对于直接运行一行行JavaScript代码的方式，global才是老大，this和它">
+<meta property="og:updated_time" content="2017-02-15T11:25:30.948Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript中的this的一些用法">
+<meta name="twitter:description" content="一、global this
+
+总结起来就是：在浏览器里面this是老大，它等价于window对象，如果你声明一些全局变量(不管在任何地方)，这些变量都会作为this的属性。
+在node里面，有两种执行JavaScript代码的方式，一种是直接执行写好的JavaScript文件，另外一种是直接在里面执行一行行代码。
+对于直接运行一行行JavaScript代码的方式，global才是老大，this和它">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=d671a41f" rel="stylesheet">
+
+
+  
+
+  
+
+  
+
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/categories/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tags/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/atom.xml"
+            rel="noopener noreferrer"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录<i class="iconfont toc-title" style="display:inline-block;color:#87998d;width:20px;height:20px;">&#xf004b;</i></strong>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、global-this"><span class="toc-text">一、global this</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、function-this"><span class="toc-text">二、function this</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三、prototype-this"><span class="toc-text">三、prototype this</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#四、object-this"><span class="toc-text">四、object this</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#五、DOM-event-this"><span class="toc-text">五、DOM event this</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#六、HTML-this"><span class="toc-text">六、HTML this</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#七、override-this"><span class="toc-text">七、override this</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#八、with-this"><span class="toc-text">八、with this</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#九、jQuery-this"><span class="toc-text">九、jQuery this</span></a></li></ol>
+  </div>
+  <i class="iconfont" id="toc-eye" style="display:inline-block;color:#b36619;position:absolute;top:72px;right:233px;cursor:pointer;
+    font-size: 24px;">&#xe61c;</i>
+  <script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+  <script>
+	$("#toc-eye").click(function(){
+	
+			$("#toc.toc-article").toggle(1000);
+			$(this).css({
+				"right":"265px"
+			});
+		
+	});
+  </script>
+
+
+
+<div class="content content-post CENTER">
+   <canvas id="evanyou" width="1302" height="678" style="position: fixed;width: 100%;height: 100%;top: 0;left:0;z-index:-1;"></canvas>
+<article id="post-JavaScript中this的一些用法" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">JavaScript中的this的一些用法</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2016.09.20</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Poetry</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/Front-End/">Front-End</a>
+  </span>
+
+
+
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h4 id="一、global-this"><a href="#一、global-this" class="headerlink" title="一、global this"></a>一、global this</h4><hr>
+<ul>
+<li>总结起来就是：在浏览器里面<code>this</code>是老大，它等价于<code>window</code>对象，如果你声明一些全局变量(不管在任何地方)，这些变量都会作为<code>this</code>的属性。</li>
+<li>在node里面，有两种执行<code>JavaScript</code>代码的方式，一种是直接执行写好的<code>JavaScript</code>文件，另外一种是直接在里面执行一行行代码。</li>
+<li>对于直接运行一行行<code>JavaScript</code>代码的方式，<code>global</code>才是老大，<code>this</code>和它是等价的。在这种情况下，和浏览器比较相似</li>
+<li>也就是声明一些全局变量会自动添加给老大<code>global</code>，顺带也会添加给<code>this</code>。</li>
+<li>但是在<code>node</code>里面直接脚本文件就不一样了，你声明的全局变量不会自动添加到<code>this</code>，但是会添加到<code>global</code>对象。所以相同点是，在全局范围内，全局变量终究是属于老大的</li>
+</ul>
+<a id="more"></a>
+<h4 id="二、function-this"><a href="#二、function-this" class="headerlink" title="二、function this"></a>二、function this</h4><hr>
+<ul>
+<li>如果不是用<code>new</code>调用，在函数里面使用<code>this</code>都是指代全局范围的<code>this</code></li>
+<li>函数里面的<code>this</code>其实相对比较好理解，如果我们在一个函数里面使用<code>this</code>，需要注意的就是我们调用函数的方式，如果是正常的方式调用函数，this指代全局的this</li>
+<li>如果我们加一个<code>new</code>，这个函数就变成了一个构造函数，我们就创建了一个实例，<code>this</code>指代这个实例，这个和其他面向对象的语言很像</li>
+<li>另外，写<code>JavaScript</code>很常做的一件事就是绑定事件处理程序，也就是诸如<code>button.addEventListener(‘click’, fn, false)</code>之类的，如果在<code>fn</code>里面需要使用<code>this</code>，<code>this</code>指代事件处理程序对应的对象，也就是<code>button</code></li>
+</ul>
+<h4 id="三、prototype-this"><a href="#三、prototype-this" class="headerlink" title="三、prototype this"></a>三、prototype this</h4><hr>
+<ul>
+<li>你创建的每一个函数都是函数对象。它们会自动获得一个特殊的属性<code>prototype</code>，你可以给这个属性赋值。当你用<code>new</code>的方式调用一个函数的时候，你就能通过<code>this</code>访问你给<code>prototype</code>赋的值了</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Thing</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="keyword">this</span>.foo);</div><div class="line"> &#125;</div><div class="line"> </div><div class="line"> Thing.prototype.foo = <span class="string">"bar"</span>;</div><div class="line"></div><div class="line"> <span class="keyword">var</span> thing = <span class="keyword">new</span> Thing(); <span class="comment">//logs "bar"</span></div><div class="line"> <span class="built_in">console</span>.log(thing.foo);  <span class="comment">//logs "bar"</span></div></pre></td></tr></table></figure>
+<ul>
+<li><p>当你使用<code>new</code>为你的函数创建多个实例的时候，这些实例会共享你给<code>prototype</code>设定的值。当你调用<code>this.foo</code>的时候，都会返回相同的值，除非你在某个实例里面重写了自己的<code>this.foo</code></p>
+</li>
+<li><p>实例里面的<code>this</code>是一个特殊的对象。你可以把<code>this</code>想成一种获取<code>prototype</code>的值的一种方式。当你在一个实例里面直接给<code>this</code>添加属性的时候，会隐藏<code>prototype</code>中与之同名的属性。如果你想访问<code>prototype</code>中的这个属性值而不是你自己设定的属性值，你可以通过在实例里面删除你自己添加的属性的方式来实现</p>
+</li>
+<li><p>通过一个函数创建的实例会共享这个函数的<code>prototype</code>属性的值，如果你给这个函数的<code>prototype</code>赋值一个<code>Array</code>，那么所有的实例都会共享这个<code>Array</code>，除非你在实例里面重写了这个<code>Array</code>，这种情况下，函数的<code>prototype</code>的<code>Array</code>就会被隐藏掉</p>
+</li>
+<li>给一个函数的<code>prototype</code>赋值一个<code>Array</code>通常是一个错误的做法。如果你想每一个实例有他们专属的<code>Array</code>，你应该在函数里面创建而不是在<code>prototype</code>里面创建</li>
+<li>实际上你可以通过把多个函数的<code>prototype</code>链接起来的从而形成一个原型链，因此<code>this</code>就会魔法般地沿着这条原型链往上查找直到找你你需要引用的值</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Thing1</span>(<span class="params"></span>) </span>&#123;</div><div class="line"> </div><div class="line">    Thing1.prototype.foo = <span class="string">"bar"</span>;</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Thing2</span>(<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line">    Thing2.prototype = <span class="keyword">new</span> Thing1();</div><div class="line"></div><div class="line">    <span class="keyword">var</span> thing = <span class="keyword">new</span> Thing2();</div><div class="line">    <span class="built_in">console</span>.log(thing.foo); <span class="comment">//logs "bar"</span></div></pre></td></tr></table></figure>
+<h4 id="四、object-this"><a href="#四、object-this" class="headerlink" title="四、object this"></a>四、object this</h4><hr>
+<ul>
+<li>在一个对象的一个函数里，你可以通过<code>this</code>来引用这个对象的其他属性。这个用<code>new</code>来新建一个实例是不一样的</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">     <span class="attr">foo</span>: <span class="string">"bar"</span>,</div><div class="line">     <span class="attr">logFoo</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">         <span class="built_in">console</span>.log(<span class="keyword">this</span>.foo);</div><div class="line">     &#125;</div><div class="line"> &#125;;</div><div class="line"> </div><div class="line"> obj.logFoo(); <span class="comment">//logs "bar"</span></div></pre></td></tr></table></figure>
+<ul>
+<li><strong>注意</strong>，没有使用<code>new</code>，没有使用<code>Object.create</code>，也没有使用函数调用创建一个对象。你也可以将对象当作一个实例将函数绑定到上面</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">    <span class="attr">foo</span>: <span class="string">"bar"</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">logFoo</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.foo);</div><div class="line">&#125;</div><div class="line"></div><div class="line">logFoo.apply(obj); <span class="comment">//logs "bar"</span></div></pre></td></tr></table></figure>
+<h4 id="五、DOM-event-this"><a href="#五、DOM-event-this" class="headerlink" title="五、DOM event this"></a>五、DOM event this</h4><hr>
+<ul>
+<li>在一个<code>HTML DOM</code>事件处理程序里面，<code>this</code>始终指向这个处理程序被所绑定到的<code>HTML DOM</code>节点</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Listener</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="built_in">document</span>.getElementById(<span class="string">"foo"</span>).addEventListener(<span class="string">"click"</span>,</div><div class="line">         <span class="keyword">this</span>.handleClick);</div><div class="line">  &#125;</div><div class="line">  Listener.prototype.handleClick = <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">//logs "&lt;div id="foo"&gt;&lt;/div&gt;"</span></div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  <span class="keyword">var</span> listener = <span class="keyword">new</span> Listener();</div><div class="line">  <span class="built_in">document</span>.getElementById(<span class="string">"foo"</span>).click();</div></pre></td></tr></table></figure>
+<ul>
+<li>除非你自己通过<code>bind</code>切换了上下文</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Listener</span>(<span class="params"></span>) </span>&#123;</div><div class="line">     <span class="built_in">document</span>.getElementById(<span class="string">"foo"</span>).addEventListener(<span class="string">"click"</span>, </div><div class="line">         <span class="keyword">this</span>.handleClick.bind(<span class="keyword">this</span>));</div><div class="line"> &#125;</div><div class="line"> Listener.prototype.handleClick = <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</div><div class="line">     <span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">//logs Listener &#123;handleClick: function&#125;</span></div><div class="line"> &#125;</div><div class="line"> </div><div class="line"> <span class="keyword">var</span> listener = <span class="keyword">new</span> Listener();</div><div class="line"> <span class="built_in">document</span>.getElementById(<span class="string">"foo"</span>).click();</div></pre></td></tr></table></figure>
+<h4 id="六、HTML-this"><a href="#六、HTML-this" class="headerlink" title="六、HTML this"></a>六、HTML this</h4><hr>
+<ul>
+<li>在<code>HTML</code>节点的属性里面，你可以放置<code>JavaScript</code>代码，<code>this</code>指向了这个元素</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;div id=<span class="string">"foo"</span> onclick=<span class="string">"console.log(this);"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"> &lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line"> <span class="built_in">document</span>.getElementById(<span class="string">"foo"</span>).click(); <span class="comment">//logs &lt;div id="foo"...</span></div><div class="line"> &lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="七、override-this"><a href="#七、override-this" class="headerlink" title="七、override this"></a>七、override this</h4><hr>
+<ul>
+<li>你不能重写<code>this</code>，因为它是保留字</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span> (<span class="params"></span>) </span>&#123;</div><div class="line">     <span class="keyword">var</span> <span class="keyword">this</span> = &#123;&#125;;  <span class="comment">// Uncaught SyntaxError: Unexpected token this </span></div><div class="line"> &#125;</div><div class="line"><span class="built_in">eval</span> <span class="keyword">this</span></div></pre></td></tr></table></figure>
+<ul>
+<li>你可以通过<code>eval</code>来访问<code>this</code></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Thing</span> (<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line">Thing.prototype.foo = <span class="string">"bar"</span>;</div><div class="line"></div><div class="line">Thing.prototype.logFoo = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">eval</span>(<span class="string">"console.log(this.foo)"</span>); <span class="comment">//logs "bar"</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> thing = <span class="keyword">new</span> Thing();</div><div class="line"></div><div class="line">thing.logFoo();</div></pre></td></tr></table></figure>
+<ul>
+<li>这会造成一个安全问题，除非不用<code>eval</code>，没有其他方式来避免这个问题</li>
+</ul>
+<h4 id="八、with-this"><a href="#八、with-this" class="headerlink" title="八、with this"></a>八、with this</h4><hr>
+<ul>
+<li>你可以通过<code>with</code>来将<code>this</code>添加到当前的执行环境，并且读写<code>this</code>的属性的时候不需要通过<code>this</code></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Thing</span> (<span class="params"></span>) </span>&#123;</div><div class="line"> &#125;</div><div class="line"> Thing.prototype.foo = <span class="string">"bar"</span>;</div><div class="line"> Thing.prototype.logFoo = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">     <span class="keyword">with</span> (<span class="keyword">this</span>) &#123;</div><div class="line">         <span class="built_in">console</span>.log(foo);</div><div class="line">         foo = <span class="string">"foo"</span>;</div><div class="line">     &#125;</div><div class="line"> &#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> thing = <span class="keyword">new</span> Thing();</div><div class="line">thing.logFoo(); <span class="comment">// logs "bar"</span></div><div class="line"><span class="built_in">console</span>.log(thing.foo); <span class="comment">// logs "foo"</span></div></pre></td></tr></table></figure>
+<ul>
+<li>许多人认为这样使用是不好的因为<code>with</code>本身就饱受争议</li>
+</ul>
+<h4 id="九、jQuery-this"><a href="#九、jQuery-this" class="headerlink" title="九、jQuery this"></a>九、jQuery this</h4><hr>
+<ul>
+<li>和<code>HTML DOM</code>元素节点的事件处理程序一样，在许多情况下<code>JQuery</code>的<code>this</code>都指向<code>HTML</code>元素节点。这在事件处理程序和一些方便的方法中都是管用的，比如<code>$.each</code></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"foo bar1"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"></div><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"foo bar2"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"> </div><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">     $(<span class="string">".foo"</span>).each(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">         <span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">//logs &lt;div class="foo...</span></div><div class="line">     &#125;);</div><div class="line">     $(<span class="string">".foo"</span>).on(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">         <span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">//logs &lt;div class="foo...</span></div><div class="line">     &#125;);</div><div class="line">    $(<span class="string">".foo"</span>).each(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.click();</div><div class="line">    &#125;);</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+
+    
+  </div>
+</article>
+
+<button class="assist-btn2 circle" id="assist_btn2" title="点亮屏幕" style="left: 27px; top: 152px;">
+         <i class="iconfont" style="display:inline-block;color:red;width:20px;height:20px;">&#xe61d;</i>
+    </button>
+<button class="assist-btn1 circle" id="assist_btn1" title="关闭屏幕亮度" style="left: 27px; top: 152px;">
+         <i class="iconfont toc-title" style="display:inline-block;color:red;width:20px;height:20px;">&#xe61d;</i>
+    </button>
+	
+
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>	
+<script type="text/javascript">
+
+
+    // white theme
+    var body = {color: "#555", background: "#000"};
+    var a_tag = {color: "#222"};
+    var header = { background: "#222"};
+    var logo_line_i = {background: "#222"};
+    // var post_code = {background: "#eee", color: "#222"};
+
+    function switch_theme() {
+        $("body").css(body);
+        $("a:not('.links-of-author-item a, .site-state-item a, .site-state-posts a, .feed-link a, .motion-element a, .post-tags a, .show-commit-cls a, #donate_board a')").css(a_tag);
+        $(".header, .footer").css(header);
+        $(".logo-line-before i, .logo-line-after i").css(logo_line_i);
+        //$(".post code").css(post_code);
+        $("#idhyt-surprise-ball #idhyt-surprise-ball-animation .drag").css(a_tag);
+        $(".post-title-link, .posts-expand .post-meta, .post-comments-count, .disqus-comment-count, .post-category a, .post-nav-next a, .post-nav-item a").css(a_tag);
+        
+        // $("code").css({color: '#c5c8c6', background: '#1d1f21'});
+        //$("#assist_btn1").hide(1500);
+    }
+
+    $(function () {
+		$("#assist_btn2").css("display","none");
+        $("#assist_btn1").click(function() {
+            switch_theme();
+			$("div#toc.toc-article").css({
+				"background":"#eaeaea",
+				"opacity":1
+			});
+			$(".toc-article ol").show();
+			$("#toc.toc-article .toc-title").css("color","#a98602");
+			$("#assist_btn1").css("display","none");
+			$("#assist_btn2").css("display","block");
+        });
+		$("#assist_btn2").click(function() {
+			$("#assist_btn2").css("display","none");
+			$("#assist_btn1").css("display","block");
+			 $("body").css("background","url(http://www.miaov.com/static/ie/images/news/bg.png)")
+            $(".header, .footer").css("background","url(http://www.miaov.com/static/ie/images/news/bg.png)")
+			$(".toc-article ol").toggle(1000);
+        });
+    });
+
+	
+	//背景随机
+
+	var Y, O, E, L, B, C, T, z, N, S, A, I;
+	!function() {
+	var e = function() {
+		for (O.clearRect(0, 0, L, B), T = [{
+			x: 0,
+			y: .7 * B + C
+		}, {
+			x: 0,
+			y: .7 * B - C
+		}]; T[1].x < L + C;) t(T[0], T[1])
+	}, t = function(e, t) {
+			O.beginPath(), O.moveTo(e.x, e.y), O.lineTo(t.x, t.y);
+			var n = t.x + (2 * I() - .25) * C,
+				r = a(t.y);
+			O.lineTo(n, r), O.closePath(), N -= S / -50, O.fillStyle = "#" + (127 * A(N) + 128 << 16 | 127 * A(N + S / 3) + 128 << 8 | 127 * A(N + S / 3 * 2) + 128).toString(16), O.fill(), T[0] = T[1], T[1] = {
+				x: n,
+				y: r
+			}
+		}, a = function n(e) {
+			var t = e + (2 * I() - 1.1) * C;
+			return t > B || t < 0 ? n(e) : t
+		};
+	Y = document.getElementById("evanyou"), O = Y.getContext("2d"), E = window.devicePixelRatio || 1, L = window.innerWidth, B = window.innerHeight, C = 90, z = Math, N = 0, S = 2 * z.PI, A = z.cos, I = z.random, Y.width = L * E, Y.height = B * E, O.scale(E, E), O.globalAlpha = .6, document.onclick = e, document.ontouchstart = e, e()
+	}()
+
+          
+
+
+
+</script>
+
+</div>
+
+
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫，支持poetries</div>
+        <ul class="theme.donation.items.length">
+        
+          <li class="item">
+            <img src="/images/weixin.jpg" alt="">
+          </li>
+        
+          <li class="item">
+            <img src="/images/zhifubao.jpg" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/categories/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tags/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/atom.xml"
+              rel="noopener noreferrer"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+  <section class="duoshuo-comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="http://blog.poetries.top/2016/09/20/JavaScript中this的一些用法/index.html" data-title="JavaScript中的this的一些用法" data-url="http://blog.poetries.top/2016/09/20/JavaScript中this的一些用法/index.html"></div>
+    <!-- 多说评论框 end -->
+  </section>
+
+
+
+
+  <script type="text/javascript">
+  var duoshuoQuery = {short_name:"poetry"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
